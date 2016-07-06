@@ -24,18 +24,10 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage[byname]{smartref}
-%\usepackage{hyperref} %comment out for hardcopy
+\usepackage{hyperref} %comment out for hardcopy
 \usepackage{txfonts}
 \usepackage{tocloft}
 \usepackage{amsmath}
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=True,
-    linkcolor=black,
-    filecolor=magenta,      
-    urlcolor=cyan,
-    citecolor=blue,
-}
 \usepackage{graphicx}
 \usepackage{natbib}
 \bibliographystyle{apj}
@@ -52,9 +44,14 @@
 \usepackage{multicol}        % Multi-column entries in tables
 \usepackage{bm}		% Bold maths symbols, including upright Greek
 \usepackage{pdflscape}	% Landscape pages
-%\usepackage{booktabs,fixltx2e}
 \usepackage[flushleft]{threeparttable}
 \usepackage{pgffor}
+\usepackage{chapterbib}
+\usepackage{mwe}    % loads »blindtext« and »graphicx«
+\usepackage{subfig}
+
+
+
 
 \makeatletter
 \numberwithin{figure}{chapter}
@@ -216,15 +213,12 @@
 %\renewcommand{\appendixtocname}{\Huge \textbf{List of Appendices} \normalsize}
 \newcommand{\blank}{\hspace{-2mm}}
 \newcommand{\super}{Dr. P. M. Barmby} %supervisor
-%\newcommand{\superj}{Dr. A. Manning} %joint supervisor, if there is one, leave blank if not (lbin)... only one of the three.
-\newcommand{\superc}{} %co-supervisor, if there is one, leave blank if not (lbin)
-\newcommand{\supera}{} %alternate supervisor, if there is one, leave blank if not (lbin)
 \newcommand{\sco}{Dr. E. Peeters}  %member of supervisory committee
 \newcommand{\sct}{Dr. G. Osinski}  %other member of supervisory committee (lbin)
-\newcommand{\examo}{Dr. S. Basu}  %examining committee (up to four, if less leave blank)
-\newcommand{\examt}{Dr. S. Gallagher}
-\newcommand{\examth}{Dr. M. Daley}
-\newcommand{\examf}{}
+\newcommand{\examo}{Dr. R. Abraham}  %examining committee (up to four, if less leave blank)
+\newcommand{\examt}{Dr. M. Daley}
+\newcommand{\examth}{Dr. S. C. Gallagher}
+\newcommand{\examf}{Dr. P. Wiegert}
 \newcommand{\department}{Physics and Astronomy}
 \newcommand{\degree}{Doctor of Philosophy}
 \newcommand{\firstname}{Sahar}
@@ -232,8 +226,8 @@
 \newcommand{\lastname}{Rahmani}
 %\renewcommand{\author}[1]{\ifx\empty#1\else\gdef\@author{#1}\fi} 
 \newcommand{\authorname}{{\firstname} {\middlename} {\lastname}}
-\newcommand{\titl}{Properties of nearby galaxies from modern statistical methods:Bayesian analysis and Data Mining}
-\newcommand{\spinetitle}{Properties of nearby galaxies}%only if the above is more than 60 characters
+\newcommand{\titl}{What governs star formation in galaxies? A modern statistical approach}
+\newcommand{\spinetitle}{Extragalactic star formation}%only if the above is more than 60 characters
 \newcommand{\thesisformat}{Integrated Article} %or Integrated Article
 \newcommand{\gyear}{\number\year}
 \newcommand{\makecoauthor}{
@@ -241,10 +235,10 @@
 Thanks to Sophia, Hossein and Els. 
 }
 \newcommand{\makeacknowlege} {
-I would like to thank all my Friends in Western.
+I would like to thank all my Friends in Western. Neven, dave, Matt, parshati, sina, zahra, fereshteh, aycha, maryam, Laura, Taylor, dimuthu, Sham, ghazal, pubu, robin, Hoori, Javad, ali, shanon, Mohad,
 }
 \newcommand{\makededications} {
-To my parents, my sisters, and Matin, for their unconditional love and supports. 
+To my parents, my sisters, and Matin, for their unconditional love and support. 
 }
 \newcommand{\listappendixname}{List of Appendices}
 \newlistof{myappendices}{app}{\listappendixname}
@@ -381,20 +375,42 @@ Chair of the Thesis Examination Board
 \newcommand \Spitzer {{\it Spitzer }}
 \newcommand \Galex {GALEX }
 \newcommand \Herschel {{\it Herschel }}
+\newcommand \sii {S~{\textsc II}} 
+\newcommand \oiii {O~{\textsc III}} 
+\newcommand \hi {H~{\textsc I}\ }
+\newcommand \hii {H~{\textsc II}\ }
+\newcommand \oii {O~{\textsc II}} 
+
 \newcommand \aaj {A\&A}
 \newcommand \aarv {A\&ARv}%: Astronomy and Astrophysics Review (the)
 \newcommand \aas{A\&AS}%: Astronomy and Astrophysics Supplement Series
+\newcommand \afz {Afz}%: Astrofizika
+\newcommand \aj {AJ}%: Astronomical Journal (the)
+\newcommand \apss {Ap\&SS}%: Astrophysics and Space Science
+\newcommand \apj {ApJ}
+\newcommand \apjs {ApJS}%: Astrophysical Journal Supplement Series (the)
+\newcommand \araa {ARA\&A} %: Annual Review of Astronomy and Astrophysics
 \newcommand \asp {ASP Conf. Ser.}%: Astronomy Society of the Pacific Conference Series
+\newcommand \azh {Azh}%: Astronomicheskij Zhurnal
+\newcommand \baas {BAAS}%: Bulletin of the American Astronomical Society
 \newcommand \mem {Mem. RAS}%: Memoirs of the Royal Astronomical Society
+\newcommand \mnassa {MNASSA}%: Monthly Notes of the Astronomical Society of Southern Africa
+\newcommand \mnras {MNRAS} %: Monthly Notices of the Royal Astronomical Society
+%\newcommand {Nature}%(do not abbreviate)
+\newcommand \pasj {PASJ}%: Publications of the Astronomical Society of Japan
+\newcommand \pasp {PASP}%: Publications of the Astronomical Society of the Pacific
+\newcommand \qjras {QJRAS}%: Quarterly Journal of the Royal Astronomical Society
 \newcommand \mex {Rev. Mex. Astron. Astrofis.}%: Revista Mexicana de Astronomia y Astrofisica
+%\newcommand {Science }%}%(do not abbreviate)
 \newcommand \sva {SvA}%: Soviet Astronomy
-
-\defcitealias{Hossein12}{T12}
-\defcitealias{Kinney96}{K96}
-\defcitealias{Noll09}{N09}
+\newcommand \aap {APP} %:American Academy of Pediatrics
+\newcommand \apjl {ApJL} %:The Astrophysical Journal Letters
 
 %% This sets the page style and numbering for preliminary sections.
 \begin{preliminary}
+\defcitealias{Hossein12}{T12}
+\defcitealias{Kinney96}{K96}
+\defcitealias{Noll09}{N09}
 
 %% This generates the title page from the information given above.
 \maketitle
@@ -414,8 +430,26 @@ Chair of the Thesis Examination Board
 \Large\begin{center}\textbf{Abstract}\end{center}\normalsize
 %%  ***  Put your Abstract here.   ***
 %% (150 words for M.Sc. and 350 words for Ph.D.)
+Understanding the process of star formation is one of the key steps in understanding the formation and evolution of galaxies.
+In this thesis, I address the empirical star formation laws, and study the properties of galaxies that can affect the star formation rate.
 
-I study properties of galaxies.
+The Andromeda galaxy (M31) is the nearest large spiral galaxy, and Therefore, high resolution images of this galaxy are available.
+These images provide data from various regions with different physical properties.
+Star formation rate and gas mass surface densities of M31have been measured using three different methods, and have been used to compare different star formation laws over the whole galaxy and in spatially-resolved regions.
+Using hierarchical Bayesian regression analysis, I conclude that there is a correlation between surface density of star formation and the stellar mass surface density.
+A weak correlation between star formation rate, stellar mass and metallicity is also found.
+
+To study the effect of other properties a galaxy on the star formation rate, I utilize an unsupervised data mining method (specifically the self-organizing map) on measurements of both nearby and high-redshift galaxies.
+Both observed data and derived quantities (e.g. star formation rate, stellar mass) of star-forming regions in M31 and the nearby spiral galaxy M101 are used as inputs to the self-organizing map.
+Clustering the M31 regions in the feature space reveals some (anti)-correlations between the properties the galaxy, which are not apparent when considering data from all regions in the galaxy. 
+The self-organizing map can be used to predict star formation rates for spatially-resolved regions in galaxies using other properties of those regions.
+
+I also apply the self-organizing map method to spectral energy distributions of high-redshift galaxies.
+Template spectra made from galaxies with known morphological type are used to train self-organizing maps.
+The trained maps are used to classify a sample of galaxy spectral energy distributions derived from fitting models to photometry data of 142 high-redshift galaxies.
+The grouped properties of the classified galaxies are found to be more tightly correlated in mean values of age, specific star formation rate, stellar mass, and far-UV extinction than in previous studies.
+
+
 
 \vfill
 \textbf{Keywords:} Nearby galaxies: M31, M101, Star formation rate, stellar mass, ISM, data mining
@@ -446,18 +480,19 @@ I study properties of galaxies.
 %% "\input" makes each chapter start on a new page.                   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\include{intro}
-\include{paper1}
-\include{paper2}
+\include{intro0.0}
+%\include{paper1}
+%\include{paper3}
+%\include{paper2}
 
 
 
 %% This adds a line for the Bibliography in the Table of Contents.
-\addcontentsline{toc}{chapter}{Bibliography}
+%\addcontentsline{toc}{chapter}{Bibliography}
 %% ***   Set the bibliography style.   ***
-\bibliographystyle{apj.bst} % (change according to your preference)
+%\bibliographystyle{apj.bst} % (change according to your preference)
 %%% ***   Set the bibliography file.   ***
-\bibliography{westernthesis}
+%\bibliography{westernthesis}
 
 
 %Appendices.

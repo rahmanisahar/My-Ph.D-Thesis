@@ -1,4 +1,8 @@
 \chapter[SOM: classifying high $Z$ galaxies]{Clustering galaxy spectra at $0.5<z<1$: an unsupervised approach}
+\defcitealias{Hossein12}{T12}
+\defcitealias{Kinney96}{K96}
+\defcitealias{Noll09}{N09}
+
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
@@ -99,7 +103,7 @@ Following the \citetalias{Hossein12} work, we chose these two sets of data not o
      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{../image_paper2/k96.jpg}
-        \caption{\citetalias{Kinney96} spectra template for 12 types of galaxies from \citetalias{Hossein12} paper (Fig. 1 in \citetalias{Hossein12}). The type of each template is shown in each frame. Plots B, E, S0, Sa, Sb and SC show spectra that belong to the early types galaxies. Starburst galaxies spectra are indicated with SB 1 to 6. Higher numbers represent more intrinsic colour extinction.}
+        \caption{\citet{Kinney96} spectra template for 12 types of galaxies from \citet{Hossein12} paper (Fig. 1 in \citet{Hossein12}). The type of each template is shown in each frame. Plots B, E, S0, Sa, Sb and SC show spectra that belong to the early types galaxies. Starburst galaxies spectra are indicated with SB 1 to 6. Higher numbers represent more intrinsic colour extinction.}
         \label{fig: k96}
     \end{figure}
       
@@ -138,7 +142,7 @@ Following the \citetalias{Hossein12} work, we chose these two sets of data not o
     
        
 \begin{table}
-\caption{Description of the properties of \citetalias{Hossein12} galaxies; the output result of {\em CIGALE}}     
+\caption{Description of the properties of \citet{Hossein12} galaxies; the output result of {\em CIGALE}}     
 \label{tab: props}
 \centering
 \begin{tabular}{l l l}
@@ -354,7 +358,7 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
                 \begin{subfigure}[b]{0.5\textwidth}
                      \includegraphics[width=\textwidth]{../image_paper2/1d/hit_t_1_by_2.png}
                 \end{subfigure}
-                \caption{Results of training network in $1\times2$~grid. As in Fig.~\ref{fig: sample}, the upper panel is a distance map and the lower panel is a hit map. In this network, 5 of the templates from \citetalias{Kinney96} are categorized as quiescent galaxies and the rest are starbursts. Because of their strong emission lines, Sc galaxies are moved towards the starburst ones.}
+                \caption{Results of training network in $1\times2$~grid. As in Fig.~\ref{fig: sample}, the upper panel is a distance map and the lower panel is a hit map. In this network, 5 of the templates from \citet{Kinney96} are categorized as quiescent galaxies and the rest are starbursts. Because of their strong emission lines, Sc galaxies are moved towards the starburst ones.}
                  \label{fig: 1by2T}
             \end{figure}
         
@@ -392,7 +396,7 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
                 \begin{subfigure}[b]{0.5\textwidth}
                      \includegraphics[width=\textwidth]{../image_paper2/1d/hit_t_1_by_3.png}
                 \end{subfigure}
-                \caption{The same as Fig.~\ref{fig: 1by2T} but showing the results of training network in $1\times3$~grid. In this network again, 5 of the \citetalias{Kinney96} templates are categorized as quiescent and 7 as starbursts. However, this time 2  templates (SB5 and SB6) are separated from the starburst groups.}
+                \caption{The same as Fig.~\ref{fig: 1by2T} but showing the results of training network in $1\times3$~grid. In this network again, 5 of the \citet{Kinney96} templates are categorized as quiescent and 7 as starbursts. However, this time 2  templates (SB5 and SB6) are separated from the starburst groups.}
                  \label{fig: 1by3T}
             \end{figure}
            
@@ -452,7 +456,7 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
                      %\caption{$1\times2$ hits map}
                      %\label{fig: 1by3Thits}
                 \end{subfigure}
-                \caption{Classification of fitted galaxy SEDs from \citetalias{Hossein12} using the $1\times2$~networks trained from the \citetalias{Kinney96} templates (Fig.~\ref{fig: 1by2T}). Upper panel: a hit map with the number in each node representing the number of galaxies belonging to that group. In this case 80 means that 80 of the 142 SEDs are classified into the early type group while the 62 of the 142 SEDs are categorized as starburst galaxies. Lower panel: Average SED of the galaxies in each group, early-type on the left and starburst on the right.}
+                \caption{Classification of fitted galaxy SEDs from \citet{Hossein12} using the $1\times2$~networks trained from the \citet{Kinney96} templates (Fig.~\ref{fig: 1by2T}). Upper panel: a hit map with the number in each node representing the number of galaxies belonging to that group. In this case 80 means that 80 of the 142 SEDs are classified into the early type group while the 62 of the 142 SEDs are categorized as starburst galaxies. Lower panel: Average SED of the galaxies in each group, early-type on the left and starburst on the right.}
                 \label{fig: 1by2V}
             \end{figure}          
             
@@ -654,7 +658,7 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
         \begin{subfigure}[b]{0.45\textwidth}
             \includegraphics[width=\textwidth]{../image_paper2/2d/hit_v_12_by_self_org_res12.png}
         \end{subfigure}
-        \caption{$12\times12$~2D SOM results. Upper pabel: SOMs trained using the \citetalias{Kinney96} templates. For training 2D SOMs two different approaches were considered: either only 12 types of galaxies exist (left) or not (right). Lower panel: classifying the galaxies from \citetalias{Hossein12}, using the trained networks shown in the upper panels. From the lower right panel, we can see that there are no outliers in the galaxies from \citetalias{Hossein12}, and we can use the map in the lower left panel as a final clustering result for the \citetalias{Hossein12} galaxies.}
+        \caption{$12\times12$~2D SOM results. Upper pabel: SOMs trained using the \citet{Kinney96} templates. For training 2D SOMs two different approaches were considered: either only 12 types of galaxies exist (left) or not (right). Lower panel: classifying the galaxies from \citetalias{Hossein12}, using the trained networks shown in the upper panels. From the lower right panel, we can see that there are no outliers in the galaxies from \citetalias{Hossein12}, and we can use the map in the lower left panel as a final clustering result for the \citetalias{Hossein12} galaxies.}
         \label{fig: 12by12}
     \end{figure*}
     
@@ -726,3 +730,7 @@ as belonging to one of the morphological types introduced by \citetalias{Kinney9
 The properties of the galaxies in the test sample using the new
 classification were found to more tightly correlate in mean values of age, specific star formation rate, stellar mass, and far-UV extinction than in previous studies. 
 The properties of the galaxies in each group are in good agreement with their morphological types.
+
+\addcontentsline{toc}{section}{Bibliography}
+\bibliographystyle{apj.bst}
+\bibliography{ref_paper2.bib}
