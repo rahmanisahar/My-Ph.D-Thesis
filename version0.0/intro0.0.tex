@@ -696,41 +696,43 @@ They can be used for more distant galaxies as well as nearby galaxies~\citep{Zhu
 \section{Preview}
 \label{sec: pre_intro}
 
-A complete picture of galaxies are formed and evolved are tied to unfolding the mystery of formation of stars.
- Various phenomena affect the collapse of molecular clouds and star formation which include environment of the star-forming region, chemical compositions of the region, initial mass distribution of gas, mass of sounding stars and other physical properties of galaxies
- For decades, Observational, theoretical and numerical studies have investigated star formation; nevertheless, their results have never been precise. 
- Empirical studies are used alongside of theoretical ones to find laws that indicate the relations between physical properties of galaxies and star formation.
+A complete picture of how galaxies are formed and evolve is tied to unfolding the mystery of the formation of stars.
+ Various phenomena affect the collapse of molecular clouds and star formation, including the environment of the star-forming region, chemical composition of the region, the initial density distribution of the gas, the mass of sounding stars and other physical properties of galaxies. %PB "sounding stars" ? "other physical properties" is vague - either be specific or delete it.
+ For decades, observational, theoretical and numerical studies have investigated star formation; nevertheless, their results have never been precise. %PB: not really clear what you mean by "precise" here.
+ Empirical studies are used alongside theoretical ones to find laws that indicate the relations between physical properties of galaxies and star formation.
 
-The most well-known scaling law is the relation between the surface density of FR and the gas surface density, which is known as the Kennicutt-Schmidt (KS) law~\citep{Schmidt59, Kennicutt98a}. 
-The K-S law and similar empirical laws were tested on local and high-redshift galaxies with various morphological types, on local and global scales and different ISM types~\citep[e.g][]{Kennicutt08,Bigiel08,Genzel10,Gnedin10,Shi11}.
-Despite all these studies, many questions about star formation laws still remain unanswered; the limitations of star formation laws are yet undetermined and there is no definitive answer on whether there is any universal star formation laws.
+The most well-known scaling law is the relation between the surface densities of the star formation rate and the gas mass, known as the Kennicutt-Schmidt (KS) law~\citep{Schmidt59, Kennicutt98a}. 
+The K-S law and similar empirical laws have been tested on local and high-redshift galaxies with various morphological types, on local and global scales and different ISM types~\citep[e.g][]{Kennicutt08,Bigiel08,Genzel10,Gnedin10,Shi11}.
+Despite all these studies, many questions about star formation laws still remain unanswered; the limitations of star formation laws are yet undetermined and there is no definitive answer on whether there is any universal star formation law.
 Their dependence on physical properties of galaxies is nontrivial and sometimes differs by type of star forming regions.
-Although relation between stars and gas are well established, the detail of this relation is not clear.
-Not only different types of gas change SFR in different ways, but also variations in metallicity for each type alter it.
-There is no fully sampled and universal IMF.
-In fact there are many debates on weather IMF is universal or not.
-Influence of evolved stars and distance of star forming regions from centre of galaxies on SFR is mentioned in studies but not fully investigated.
-Besides studying the impact of mentioned properties of galaxies on SFR, searching for other properties of galaxies/star forming regions is continuing.
+Although a relation between star formation and gas is well established, the details of this relation are not clear:
+different types of gas affect SFR in different ways, and variations in metallicity alter the effects.
+There is no fully sampled and universal IMF,
+in fact there are many debates on whether the IMF is universal or not.
+The influence of evolved stars and distance of star forming regions from centre of galaxies on SFR has been mentioned in studies but not fully investigated.
+Besides studying the impact of the above-mentioned properties of galaxies on SFR, searching for other relations between properties of galaxies and their star forming regions continues.
 
-Advances in observing facilities, image qualities, and methodology expands our knowledge of formation of stars.
-Besides these advances, in the past few decades,using advanced statistical methods grew in astronomical studies.
-Applying modern statistical methods on star formation studies can shed a light on unsolved problems in this field. 
-Studies show that using different statistical methods changes our perspective on star formation laws. 
-For example,~\cite{Shetty13} used Bayesian methods to show the K-S law is not universal. 
-On the other hand, since astronomy is a data driven science, data mining methods are quiet useful to get new insight on properties of star forming regions.
+Advances in observing facilities, image quality, and methodology expand our knowledge of star formation. 
+In the past few decades, the use of advanced statistical methods in astronomical studies has also grown.
+Applying modern statistical methods to star formation studies can shed light on unsolved problems in this field. 
+Studies show that using different statistical methods can change our perspective on star formation laws. 
+For example,~\cite{Shetty13} used Bayesian methods to show that the K-S law is not universal. 
+Since astronomy is a data-driven science, data-mining methods should be quite useful to gain new insight on properties of star-forming regions. However, these methods have not been widely-applied to studies of nearby galaxies, where the most detailed information about star formation is available.
 
-In this thesis, we present three projects that study effects of quantities of galaxies on SFR.
-We use UV to radio observations of both nearby and high-redshift galaxies, measure their physical properties and using modern statistical methods study their impact on SFR.
-Chapter~\ref{ch: paper1} focuses on investigating star formation laws in the Andromeda galaxies (M31) in both local and global scales using hierarchical Bayesian analysis.
-Additional to the K-S law, we study the extended Schmidt law~\citep{Shi11} and and the metallicity/star formation correlation~\citep{Krumholz09}.
-We also show the effect of using different SFR and ISM gas tracers on star formation laws.
-In Chapter~\ref{ch: paper3}, we explore nearby galaxies using an unsupervised data mining method (self organizing map, SOM).
-We cluster observational data and derived quantities of spatially resolved regions in M31 and examine the physical properties of each cluster.
-We find hidden structures in high dimensional data space during this process.
-In Chapter~\ref{ch: paper2}, we move to higher redshift and apply SOM algorithm on SED of high-redshift galaxies.
+%PB not sure, but you might need a little more intro to the papers 2 and 3 stuff here.
+
+In this thesis, we present three projects that study the effects of galaxy properties on star formation.
+We use UV to radio observations of both nearby and high-redshift galaxies, measure their physical properties, and using modern statistical methods, study their impact on SFR.
+Chapter~\ref{ch: paper1} focuses on investigating star formation laws in the Andromeda galaxy (M31) on both local and global scales using hierarchical Bayesian analysis.
+In addition to the Kennicutt-Schmidt law, we study the extended Schmidt law~\citep{Shi11} and the metallicity/star formation correlation~\citep{Krumholz09}.
+We also show the effect on star formation laws of using different SFR and ISM gas tracers.
+In Chapter~\ref{ch: paper3}, we explore nearby galaxies using an unsupervised data-mining method (the self-organizing map, or SOM).
+We cluster observational data to derive quantities of spatially resolved regions in M31 and examine the physical properties of each cluster.
+During this process, we find hidden structures in high-dimensional data space.
+In Chapter~\ref{ch: paper2}, we move to more distant galaxies and apply the SOM algorithm to their spectral energy distributions.
 We train networks using a set of galaxy SED templates covering the wavelength range from UV to IR and use them to classify the SEDs of a sample of 142 galaxies with $0.5 < z < 1$. 
-Then, we study the grouped properties of classified galaxies.
-For each chapter, we also describe the methodology and data used in that chapter.
+Then we study the grouped properties of the classified galaxies.
+%For each chapter, we also describe the methodology and data used in that chapter. %PB: not needed.
 We summarize our results and discuss potential future work and applications of the results of this thesis in Chapter~\ref{ch: summary}
 
 \addcontentsline{toc}{section}{Bibliography}
