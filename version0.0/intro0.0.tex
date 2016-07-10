@@ -248,7 +248,7 @@ This decrease in the intensity of the stellar radiation must be calculated and c
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{SFR}
+\section{SFR} %PB: suggest "Measuring the star formation rate in galaxies"
 \label{sec: sfr_intro}
 Understanding the formation of stars leads to better understanding of galaxies' formation and evolution. 
 Characterisation of the star formation processes such as star formation rate (SFR) and the stellar initial mass function (IMF) is necessary in examining galaxies' structure formation~\citep{McKee07}. 
@@ -309,52 +309,52 @@ Adopting a modified \cite{Kroupa01} IMF, with its maximum stellar mass set to 30
 
 \subsection{SFR Indicators}
 
-One of the main issues to study star formation in distant galaxies is calibration of SFR indicators~\citep[e.g.,][]{Lee10}. 
+One of the main issues in studying star formation in distant galaxies is the calibration of star formation rate indicators~\citep[e.g.,][]{Lee10}. 
 Calibration of SFR indicators can be affected by differences in star formation history (SFH), metallicity, distribution of stellar population and dust in galaxies~\citep{Calzetti13}. 
-Based on the spatial resolution of a system one can divide star formation indicators into two categories: resolved and unresolved star formation indicators.
+Based on the spatial resolution of a system, one can divide star formation indicators into two categories: resolved and unresolved star formation indicators.
 
 \subsubsection{Resolved Star Formation Indicators}
 The most direct way to measure the SFR and trace recent star formation is counting individual objects~\citep{Kennicutt12}. 
-These objects mostly have certain ages and usually are referred to as young stellar objects (YSOs). 
-Counting YSOs is a method that used for calculating star formation in molecular clouds within $0.5- 1$ kpc of the Solar System. 
+These objects mostly have certain ages and usually are referred to as young stellar objects (YSOs). %PB: "mostly have certain ages" ??
+Counting YSOs is used for calculating star formation rates in molecular clouds within $0.5- 1$ kpc of the Solar System. 
 The number of YSOs can be converted to SFR using: 
 \begin{equation}
 SFR(YSO) = N_{yso} <M>/\tau 
 \end{equation}
-where N$_{yso}$ is the number of YSOs, $<$M$>$ is the mean mass of YSO which depends on the IMF. 
-$\tau$ is the lifetime of the YSO considering some uncertainly $\tau \sim 2$Myr~\citep{Evans09},and the SFR(YSO) is in the unit of M$_{\odot}$yr$^{-1}$. 
-Due to observational difficulties, this method can only be applied to the Solar neighbourhood and the Milky Way. 
+where N$_{yso}$ is the number of YSOs, $<$M$>$ is the mean mass of YSO which depends on the IMF, 
+$\tau$ is the lifetime of the YSO considering some uncertainly $\tau \sim 2$Myr~\citep{Evans09}, and the SFR(YSO) is in units of M$_{\odot}$~yr$^{-1}$. 
+Due to observational difficulties, this method can only be applied to the Solar neighbourhood and the Milky Way. %PB: "observational difficulties" is vague. What is the issue? Actually, it's covered in the following 2 sentences so just drop this one.
 
-In theory, for any system with high enough spatial resolution ($\sim 0.5- 1$ kpc), counting YSOs can be used as a tracer of the star formation. 
-However, considering the limited capabilities of the present instruments, YSOs in most regions beyond the Magellanic clouds can not be resolved. 
-Therefore, most studies use the emission from the energetic ``O" and ``B" stars as a tracer of the SFR. 
-Another method to measure the SFR is by looking at the colour-magnitude diagram (CMD) of star-forming regions. 
-\cite{Kennicutt12} discusses the new progress made in the spatially-resolved mapping of CMDs to reproduce the spatially and age-resolved maps of star formation in nearby galaxies. 
-More detailed studies of CMDs are not in the scope of this paper; for more information, one can refer to~\citep{Kennicutt12}. 
+In theory, for any system with high enough spatial resolution ($\sim 0.5- 1$ kpc), counting YSOs can be used as a tracer of the star formation. %PB: I think you need higher than 0.5 kpc resolution to count YSOs - need to see individual stars, right?
+However, considering the limited capabilities of the present instruments, YSOs in most regions beyond the Magellanic Clouds can not be resolved. %PB: explain what the MCs are (& how far away), for the non-astronomer
+Therefore, most studies use the emission from the energetic ``O" and ``B" stars as a tracer of the SFR. %PB: O and B is astro-jargon. Leave it out or explain what is important about this class of stars?
+Another method to measure the SFR is via colour-magnitude diagrams (CMD) of star-forming regions. 
+\cite{Kennicutt12} discusses the new progress made in the spatially-resolved mapping of CMDs to produce spatially and age-resolved maps of star formation in nearby galaxies. 
+More detailed studies of CMDs are not in the scope of this paper; for more information, one can refer to~\citep{Kennicutt12}. %PB: I think you should give a one-sentence summary of the method here. 
 
 \subsubsection{Unresolved Star Formation Indicators}
 
- In star-forming regions farther away than the Magellanic clouds, spatial resolution is not high enough to find all the YSOs. 
- In unresolved systems, calibrating continuum or line emission at wavelengths that are sensitive to the young massive stars are primary method of measuring SFR.~\citep[e.g.,][]{Kennicutt98b, Kewley02, Bell03, Calzetti07, Calzetti08, Calzetti10, Calzetti13, Kennicutt07, Kennicutt09, Boquien10, Hao11, Kennicutt12}. 
-\cite{Kennicutt98b} calibrated luminosities of galaxies in specific wavelengths for measuring the SFR using relations between the SFR per unit mass or per unit luminosity and the integrated colour of a system provided by synthesis models~\citep[e.g.,][]{Bruzual93}. 
+ In star-forming regions farther away than the Magellanic Clouds, the spatial resolution of currently-available observations is not high enough to find all the young stellar objects. 
+ In unresolved systems, calibrating continuum or line emission at wavelengths sensitive to the young massive stars is the primary method of measuring SFR~\citep[e.g.,][]{Kennicutt98b, Kewley02, Bell03, Calzetti07, Calzetti08, Calzetti10, Calzetti13, Kennicutt07, Kennicutt09, Boquien10, Hao11, Kennicutt12}. 
+\cite{Kennicutt98b} calibrated the luminosities of galaxies at specific wavelengths for measuring the SFR, using relations between the SFR per unit mass or per unit luminosity and the integrated colour of a system provided by stellar populations synthesis models~\citep[e.g.,][]{Bruzual93}. 
 
-In unresolved systems, the SFR indicators can be divided into local and global ones. 
+In unresolved systems, SFR indicators can be divided into local and global indicators. 
 The global SFR indicators are defined for entire galaxies; therefore, they are luminosity-weighted averages across local star formation history and the physical condition inside each galaxy. 
-While local calibration is used for regions within a galaxy, on a scale of sub-galaxy~\citep[e.g.,][]{Zhu08, Kennicutt09, Boquien10, Boquien11, Hao11}.
-The limitations in the spatial resolution of the data on the one hand, and the broader applicability of distant galaxy populations on the other, have brought more attention to the calibrations of global SFR compared with the local SFR calibrations that had been done in the past. 
-Yet, because of its ability to trace the physical processes of the star formation, local SFR calibration is becoming increasingly important~\citep{Calzetti13}.
+Local calibration is used for regions within a galaxy~\citep[e.g.,][]{Zhu08, Kennicutt09, Boquien10, Boquien11, Hao11}.
+Limitations in the spatial resolution of observational data on the one hand, and the broader applicability to distant galaxy populations on the other, have in the past brought more attention to the calibrations of global SFR compared to local SFR. 
+Because of its ability to trace the physical processes of the star formation, local SFR calibration is becoming increasingly important~\citep{Calzetti13}.
 
-\subsubsection*{SFR Indicators Based on the Single-Band Emission}
+\subsubsection*{SFR Indicators Based on Single-Band Emission}
 
-In order to derive the conversion between the luminosity in specific wavelengths and the SFR, synthesis models are used~\citep{Kennicutt98b}. 
-General form of a SFR calibration using single-band emission is: 
+In order to derive conversions between the luminosity in specific wavelengths and the SFR, stellar population synthesis models are used~\citep{Kennicutt98b}. 
+The general form of a SFR calibration using single-band emission is: 
 \begin{equation}
 \label{equ: sfrsingle}
-SFR(\lambda)= CL(\lambda)
+{\rm SFR}(\lambda)= CL(\lambda)
 \end{equation}
-where SFR is in units of M${_\odot}$yr$^{-1}$, $L(\lambda)$ is luminosity in erg s$^{-1}$ at the wavelength $\lambda$, and C is the constant derived from stellar population models~\citep[e.g, starburst99][]{Leitherer99}). 
-The constant, C, can vary for different emission, mass ranges of the stellar IMF, and the timescale $\tau$ over which star formation needs to remain constant. 
-Table~\ref{table1} from \cite{Calzetti13}, summarises the changes in the constant of the calibration. 
+where SFR is in units of M${_\odot}$~yr$^{-1}$, $L(\lambda)$ is the luminosity in erg~s$^{-1}$ at the wavelength $\lambda$, and $C$ is a constant derived from stellar population models~\citep[e.g, starburst99][]{Leitherer99}). 
+The constant $C$ varies for different wavelengths, mass ranges of the stellar IMF, and the timescale $\tau$ over which star formation is assumed to remain constant. 
+Table~\ref{table1}, from \cite{Calzetti13}, summarises some values of $C$ and their changes with assumption about the IMF. 
 
 \begin{table}
 \centering
@@ -378,90 +378,90 @@ L(H${\alpha}$) & $3.1 \times 10^{(-41)}$&$0.1 -30 M_{\odot},  \tau \ge 10 Myr $\
 \hline
 \end{tabular}
 \begin{tablenotes}
-\item $^1$ Luminosities are in erg s$^{-1}$ and are given as $\nu L_{\nu}$.
-\item $^2$ The constant C appears in equation~\ref{equ: sfrsingle}. For SFR(UV), the numerical value is multiplied by the wavelength $\lambda$ in $\AA$.
-\item $^3$ Assumptions for mass range of the stellar IMF, which we adopt to have the expression derived by \cite{Kroupa01} (see Sec.~\ref{sec: imf}), and for the timescale $\tau$.
+\item $^1$ Luminosities are in erg~s$^{-1}$ and are given as $\nu L_{\nu}$.
+\item $^2$ The constant $C$ appears in equation~\ref{equ: sfrsingle}. For SFR(UV), the numerical value is multiplied by the wavelength $\lambda$ in $\AA$. %PB: why?
+\item $^3$ Assumptions for the mass range of the stellar IMF, using the expression derived by \cite{Kroupa01} (see Sec.~\ref{sec: imf}), and for the timescale $\tau$.
 \end{tablenotes}
 \end{table}
 
 
-The most common single-band wavelengths that are used as an SFR indicator, is UV emission.
-UV emission is an excellent tracer for the SFR due to the fact that the peak of emission for young  ``O" and ``B" stars are in the UV part of the spectrum.
-Using spectral energy distribution (SED) from Starburst99, with solar metallicity and assuming~\cite{Kroupa01} stellar IMF with the timescale of over 100 Myr, SFR can be measured as~\citep{Leitherer99}
+The most common single-band tracer of star formation rate is the ultraviolet.
+UV emission is an excellent tracer for the SFR due to the fact that the peak of emission for young  ``O" and ``B" stars is in the UV part of the spectrum. %PB only young O and B stars? what about old ones?
+Using a spectral energy distribution (SED) from Starburst99, with solar metallicity and assuming a~\cite{Kroupa01} stellar IMF with the timescale of over 100 Myr, SFR can be measured as~\citep{Leitherer99}:
 \begin{equation}
 SFR(UV) = 3.0 \times 10^{-47}\lambda L(\lambda)
 \end{equation}
-where SFR(UV) is in M$_{\odot}$yr$^{-1}$, $\lambda$ in the range of $(912< \lambda < 3000~\AA$), and $L(\lambda)$ is in erg s$^{-1}$. 
-As shown in table~\ref{table1}, with changes in the stellar ranges of the IMF, during timescales longer than 100 Myr, the calibration constant only decreases by a few per cent.
+where SFR(UV) is in M$_{\odot}$~yr$^{-1}$, $\lambda$ in the range of $(912< \lambda < 3000~\AA$), and $L(\lambda)$ is in erg s$^{-1}$. %PB: so L is the integrated luminosity from 912-3000A? or something else? 
+As shown in Table~\ref{table1}, with changes in the stellar ranges of the IMF, during timescales longer than 100 Myr, the calibration constant only decreases by a few per cent.
 However, the calibration constants' changes for shorter timescales are more significant~\citep{Calzetti13}. 
-The accuracy of the calibration constant is $\pm 15\%$ which can vary as a function of $\lambda$. 
-The UV light can easily be absorbed or scattered by interstellar dust. 
-Therefore, using the UV emission as a tracer might lead to underestimating of the SFR, if dust extinction corrections are not applied (\cite{Kennicutt12}; also see Section~\ref{sec: ism_intro}). 
+The accuracy of the calibration constant is $\pm 15\%$ which can vary as a function of $\lambda$.  %PB: ref?
+Ultraviolet light can easily be absorbed or scattered by interstellar dust. 
+Therefore, using the UV emission as a tracer might lead to underestimating of the SFR if dust extinction corrections are not applied (\cite{Kennicutt12}; also see Section~\ref{sec: ism_intro}). 
 
 Another single-band SFR indicator is the emission from hydrogen recombination lines. 
 Ionizing photons emitted from young massive stars ionize the surrounding gas. Hydrogen recombination line emission, such as the Balmer series lines of H${\alpha}$ $(0.6563 \mu$m) and H${\beta}$ $(0.4861 \mu$m), which are located in the optical wavelength range, are among the most traditional SFR indicators~\citep{Kennicutt98a}. 
-The relationship between the intensity of a hydrogen recombination line and the ionizing photon rate for a nebula is derived quantum mechanically. 
-To have such results, the nebula must be optically thick to ionizing photons~\citep{Osterbrock06}. 
-Being optically thick makes almost all transitions more energetic than Ly${\alpha}$ to be absorbed and re-emited via Ly${\alpha}$ and longer wavelengths.
+The relationship between the intensity of a hydrogen recombination line and the ionizing photon rate for a nebula is derived from quantum mechanics. 
+To have such results, the nebula must be optically thick to ionizing photons~\citep{Osterbrock06}. %PB: "The assumption is" rather than "To have such results" ?
+Being optically thick means that almost all transitions more energetic than Ly${\alpha}$ absorbed and re-emited via Ly${\alpha}$ and longer wavelengths.
 This is why the H${\alpha}$ emission line strength is greater in optically thick environments. The relation between the SFR, the luminosity of the \halpha emission line and the ionizing photon rate is~\citep[e.g.,][]{Osterbrock06, Kennicutt98b}:
-
+%PB: no new paragraph here
 \begin{align}
 \label{equ: halpha}
 SFR(H\alpha) = 5.5 \times 10^{-42}L(H\alpha) \\
                      = 7.4 \times 10^{-54}Q(H^{\circ})
 \end{align}
-where SFR(\halpha) is in M$_{\odot}$ yr$^{-1}$, L(\halpha) is in erg s$^{-1}$, and Q(H$^{\circ}$) which is the ionizing photon rate is in units of s$^{-1}$.
-The constant at the right-hand side of equation~\ref{equ: halpha} is the resulting coefficient for electron temperature T$_{\mathrm{e}}=10000$~K and density N$_{\mathrm{e}}=100$~cm$^{-3}$ which is the normal case in the interstellar medium. 
-All SFR indicators that use the ionization of hydrogen to trace the formation of massive stars are sensitive to the effects of dust.
-Dust extinction (Sec.~\ref{sec: ism_intro}) is the most important systematic error for calculating the SFR from hydrogen recombination line.
-The effects of dust must be measured and \halpha observations must be corrected or this could lead to underestimating the SFR~\citep{Kennicutt98b}. 
+where SFR(\halpha) is in M$_{\odot}$~yr$^{-1}$, L(\halpha) is in erg~s$^{-1}$, and Q(H$^{\circ}$) is the ionizing photon rate in units of s$^{-1}$.
+The constant on the right-hand side of equation~\ref{equ: halpha} is the resulting coefficient for electron temperature T$_{\mathrm{e}}=10000$~K and density N$_{\mathrm{e}}=100$~cm$^{-3}$ which is typical in the interstellar medium. %PB: typical in the ISM, or typical in HII regions?
+All SFR indicators that use the ionization of hydrogen to trace the formation of massive stars are sensitive to the effects of dust. %PB think you can drop this sentence.
+Dust extinction (Sec.~\ref{sec: ism_intro}) is the most important source of systematic error in calculating the SFR from hydrogen recombination lines.
+The effects of dust must be measured and \halpha observations must be corrected or this could lead to underestimating the SFR~\citep{Kennicutt98b}. %PB: are you going to explain how correction is done?
 
-Another nebular line, which is used as a tracer of the SFR is \oii~$\lambda$3727$\AA$.
-Although the luminosities of forbidden lines do not correlate with the ionizing atoms directly, their extinction has correlation with the \halpha emission. 
-As a result, \oii~luminosity can be used as a tracer of the SFR through \halpha luminosity.
+Another nebular line used as a tracer of the SFR is \oii~$\lambda$3727$\AA$. %PB: explain what a forbidden line is..
+Although the luminosities of forbidden lines do not correlate with the ionizing atoms directly, their extinction has a correlation with the \halpha emission. 
+As a result, \oii~luminosity can be used as a tracer of the SFR through \halpha luminosity. %PB: are you sure about the explanation in the 2 prev sentences? Please check.
 \cite{Gallagher89} calibrated the SFR based on the \oii luminosity by using a sample of 75 galaxies. 
-Another calibration for this luminosity was derived by \cite{Kennicutt92}, which has a different calibration factor. 
+Another calibration for this luminosity was derived by \cite{Kennicutt92}. 
 In his review on the SFR,~\citep{Kennicutt98b} averaged these calibrations and derived the following relation:
 \begin{equation}
 SFR([O\ II]) = 1.4 \times 10^{-41} L([O\ II])
 \end{equation}  
-where SFR(\oii) is in M$_{\odot}$ yr$^{-1}$, L(\halpha) is in erg s$^{-1}$. 
+where SFR(\oii) is in M$_{\odot}$~yr$^{-1}$ and L(\halpha) is in erg~s$^{-1}$. %PB: do you mean  L([O\ II]) instead of L(\halpha)?
 Although SFR(\oii) is not as accurate as the SFR(\halpha), it is one of major SFR indicators in high redshift galaxies.
-In high redshift galaxies, \halpha emission line is out of optical bands, as a consequence, calibration of the strongest emission feature in the blue light (\oii) as a SFR indicator is really useful~\citep{Kennicutt98b}.
+In these galaxies, the \halpha emission line is redshifted out of the optical band; as a consequence, calibration of the strongest emission feature in the blue (\oii) as an SFR indicator is really useful~\citep{Kennicutt98b}.
 
 
-Since interstellar dust absorbs approximately half the starlight and re-emits in the infrared, the IR emission can be used to trace the SFR.
-The IR luminosity of a system depends not only on the amount of the embedded dust, but also on the heating rate provided by the stars. 
-Since young stars heat the dust to higher mean temperatures than old stellar populations, to the first order the shape of the thermal IR SED depends on the starlight SED~\citep{Helou86}.
-The fact that heating rate provided by the young stellar population is higher than the old stellar population indicates that dust heated by the former is more luminous and consequently its SED has peaked at shorter wavelengths (observationally $\approx 60~\mu$m) in comparison with the dust heated by old or low-mass stars.
-Therefore, the IR wavelength is able to detect the emission from the young stellar population and be used as an SFR indicator.  
+Since interstellar dust absorbs approximately half the starlight and re-emits in the infrared, the infrared emission can be used to trace the SFR.
+The IR luminosity of a system depends not only on the amount of embedded dust, but also on the heating rate provided by the stars. 
+Since young stars heat the dust to higher mean temperatures than old stellar populations, to first order the shape of the thermal IR SED depends on the starlight SED~\citep{Helou86}.
+The fact that heating rate provided by the young stellar population is higher than the old stellar population indicates that dust heated by the former is more luminous and consequently its SED peaks at shorter wavelengths (observationally $\approx 60~\mu$m) in comparison with dust heated by old or low-mass stars.
+Therefore, infrared observations are able to detect the emission from the dust heated by young stellar populations, and can be used as an SFR indicator.  
 
-24~$\mu$m and 70~$\mu$m bands are two empirical single-band IR SFR calibrators. 
-The use of these two bands depends on the type of the galaxy studied or the physical environment in different regions within the galaxy. 
-Since the luminosity of a stellar population with constant star formation increases with time, the IR emission, which is used as a tracer of the emission of the stellar population, has different calibration constants in the case of a global (the entire galaxy SFR indicator) and a local indicator.
-That is because the global case includes the Hubble time integrated stellar population of a galaxy, while the other is calculated from regions with short star formation timescales such as: \hii~regions, large star-forming complexes, etc.~\cite{Calzetti13}. 
-Table~\ref{table2} shows the constant C from equation~\ref{equ: sfrsingle} for 24~$\mu$m and 70~$\mu$m luminosities and for local (spatial scale $\sim500$~pc for 24~$\mu$m band and spatial resolution less than $\sim 1$ kpc for 70~$\mu$m one) and global cases. 
+Two empirical single-band infrared star formation rate indicators are the 24~$\mu$m and 70~$\mu$m bands.  
+The use of these two bands depends on the type of galaxy studied or the physical environment in different regions within the galaxy. 
+Since the luminosity of a stellar population with constant star formation increases with time, the IR emission, which is used as a tracer of the emission of the stellar population, has different calibration constants in the case of a global (the entire galaxy SFR indicator) or a local indicator.
+That is because the global case includes the Hubble time integrated stellar population of a galaxy, while the other is calculated from regions with short star formation timescales such as \hii~regions, large star-forming complexes, etc.~\cite{Calzetti13}. %PB: "Hubble time" is astro-jargon..
+Table~\ref{table2} shows the constant $C$ from equation~\ref{equ: sfrsingle} for 24~$\mu$m and 70~$\mu$m luminosities, for local (spatial scale $\sim500$~pc for 24~$\mu$m and $\lesssim 1$ kpc for 70~$\mu$m) and global cases. 
 
 \begin{table}
 \centering
-\caption{IR Luminosity to SFR calibrations}
+\caption{Infrared Luminosity to star formation rate calibrations}
 \label{table2}
 \begin{tabular}{ c c c c }
 \hline\hline
-Luminosity$^1$ & C & Assumptions & references\\
+Luminosity$^1$ & $C$ & Assumptions & references\\ %PB: please check the edits I made here.
 \hline
-L(24)$^{0.885}_{local}$ & $1.31 \times 10^{(-38)}$ &$(1.10^{40} \le L(24) \le 3.10^{44})$& Calzetti et al. (2007)  \\
-L(24)$_{global}$ & $2.04 \times 10^{(-43)}$ &$ (4.10^{42} \le L(24)  \le 5.10^{43})$& Calzetti et al. (2007) \\
-L(70)$_{local}$ & $9.4 \times 10^{(-44)} $ &$(5.10^{40} \le  L(70) \le 5.10^{43})$& \cite{Li12} \\
-L(70) $_{global}$& $5.9 \times 10^{(-44)}$ &$(L(70) \ge 1.4 \times 10^{42} $& \cite{Li10}\\
+L(24)$^{0.885}_{local}$ & $1.31 \times 10^{-38}$ &$1.10\times 10^{40} \le L(24) \le 3.10\times 10^{44}$& Calzetti et al. (2007)  \\ %PB: use \cite
+L(24)$_{global}$ & $2.04 \times 10^{-43}$ &$ 4.10\times 10^{42} \le L(24)  \le 5.10\times 10^{43}$& Calzetti et al. (2007) \\
+L(70)$_{local}$ & $9.4 \times 10^{-44} $ &$5.10\times 10^{40} \le  L(70) \le 5.10\times 10^{43}$& \cite{Li12} \\
+L(70)$_{global}$& $5.9 \times 10^{-44}$ &$L(70) \ge 1.4 \times 10^{42} $& \cite{Li10}\\
 \hline
 \end{tabular}
 \begin{tablenotes}
-\item $^1$ Luminosities are in form of L($\lambda$) = $\lambda$ L($\lambda$) in erg s$^{-1}$
+\item $^1$ Luminosities are in the form of L($\lambda$) = $\lambda$ L($\lambda$) in erg s$^{-1}$ %PB: this doesn't make sense: L = \lambda L ?? Or is this missing a _{\lambda} or _{\nu} ?
 \end{tablenotes}
 \end{table}  
 
-\subsubsection*{SFR Indicators Based on the Multi-Band Emission}
+\subsubsection*{SFR Indicators Based on Multi-Band Emission}
 
 %%add PAHs here
 Despite the usefulness of having single-band SFR tracers, in many cases the corrections due to dust effects and luminosity ranges increases the uncertainty in measurements.
