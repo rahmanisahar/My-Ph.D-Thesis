@@ -268,30 +268,29 @@ In general each tracer has some systematic errors, and one should decide which t
 
 \subsection{Stellar Initial Mass Function}
 \label{sec: imf}
-One of the most fundamental and difficult questions that a complete theory of star formation must answer is what is the stellar (or cores) initial mass distribution of star forming region. 
-Since, most of SFR calibrations use emission from specific mass range stars, it is necessary to know the stellar IMF to determine a more accurate SFR from calibrated photometry data. 
-Most problems in modern astrophysical studies regarding the origin and evolution of stars and galaxies can be solved by sampling an IMF ~\citep{Bastin10}. 
-\cite{Salpeter55} empirically derived stellar IMF from the observed stellar luminosity function of the Solar neighbourhood~\citep{Shu87}. 
-He introduced a power-law IMF in the form of:
-
+One of the most fundamental and difficult questions that a complete theory of star formation must answer is what is the stellar (or cores) initial mass distribution of a star forming region. % PB: leave out the cores part. Explain why we care about the mass distribution (because mass determines the important properties of a star like luminosity, lifetime, etc)
+Since most SFR calibrations use emission from stars in a specific mass range, it is necessary to know the stellar IMF to extrapolate to the full stellar population.
+Most problems in modern astrophysical studies regarding the origin and evolution of stars and galaxies can be solved by sampling an IMF ~\citep{Bastin10}. %PB: this sentence doesn't really add anything
+\cite{Salpeter55} empirically derived the stellar IMF from the observed stellar luminosity function of the Solar neighbourhood~\citep{Shu87}. 
+He introduced a power-law IMF in the form:
 \begin{equation}
 \label{equ: salp}
 \Phi (\log M) = dN / d \log M \propto M^{-\gamma }
 \end{equation} 
-where M is the stellar mass, $\gamma$ is the power index, and $N$ is the number of stars in logarithmic mass range of $\log M + d\log M$. 
+where $M$ is the stellar mass, $\gamma$ is a power index, and $N$ is the number of stars in the logarithmic mass range of $\log M + d\log M$. %PB: what is \Phi ?? Could write "introduced a power-law IMF $\Phi$ in the form"
 
-In the late 70s, it was recognised that using the single power-law IMF over all stellar masses is not a correct assumption and might overestimate number of low-mass stars~\citep{Kroupa93, Bastin10}. 
-Since then, many groups have studied the stellar IMFs and found different power-law relations for them (Fig.~\ref{fig: imf} ). 
+In the late 70s, it was recognised that the assumption of a the single power-law IMF over all stellar masses is not correct and might overestimate the number of low-mass stars~\citep{Kroupa93, Bastin10}. 
+Since then, many groups have studied the stellar IMF and found different power-law relations (Fig.~\ref{fig: imf} ). 
 Most SFR calibrations have the same assumption that the stellar IMF is constant across all environments and adopt it from the standard stellar IMF introduced by\cite{Kroupa01}:
 \begin{align}
 \chi (M) = dN/dM = A M^{-1.3}    \quad    (0.1 \le M(M{\odot}) \le 0.5)\\                  
            = 0.5 A M^{-2.3}    \quad    (0.5 \le M(M{\odot}) \le 100)
 \end{align}
-where $\chi(M)$ is the number of stars between masses $M$ and $M+dM$. 
-Although the Salpeter IMF produces more low-mass stars than the Krupa IMF, they produce almost the same number of the high-mass stars. 
-Therefore, the SFR calibrations, which mostly trace massive stars in galaxies, based on the Kroupa IMF and Salpeter IMF can be converted to one another by multiplying the calibration's constant by 1.6~\citep{Calzetti13}. 
-In more recent study,~\cite{Weisz15} used data from the Panchromatic Hubble Andromeda Treasury program~\citep[PHAT][]{Dalcanton12} and showed that for nearby galaxies both Kroupa and Salpeter stellar IMF overestimate amount of stars in all masses.
-\cite{Bastin10} reviewed the stellar IMF by using many observational results and showed that the stellar IMF is constant and universal, though there are uncertainties in different mass bins especially at the high mass end.
+where $\chi(M)$ is the number of stars between masses $M$ and $M+dM$. %PB: what is $A$? 
+Although the Salpeter IMF produces more low-mass stars than the Kroupa IMF, they produce almost the same number of high-mass stars. 
+Therefore, the SFR calibrations, which mostly trace massive stars in galaxies, based on the Kroupa IMF and Salpeter IMF can be converted to one another by multiplying the calibration constant by 1.6~\citep{Calzetti13}. %PB: clarify this: multiply calibration based on Kroupa by 1.6 to get calibration based on Salpeter? Or the other way around? 
+In a more recent study,~\cite{Weisz15} used data from the Panchromatic Hubble Andromeda Treasury program~\citep[PHAT][]{Dalcanton12} and showed that for nearby galaxies both Kroupa and Salpeter stellar IMFs overestimate the number of stars at all masses.%PB: doesn't quite make sense. Does't an overestimate at all masses just mean an incorrect normalization?
+\cite{Bastin10} reviewed the stellar IMF as derived from many observational results and showed that the stellar IMF is constant and universal, though there are uncertainties in different mass bins especially at the high-mass end. %PB: check that you are using "high-mass" vs "high mass" (same for low) consistently
 
 
 \begin{figure}
@@ -299,14 +298,14 @@ In more recent study,~\cite{Weisz15} used data from the Panchromatic Hubble Andr
 \centering
 \includegraphics[width=16cm]{../image_intro/imf}
 \small
-\caption{Comparing the IMFs by plotting the mass fraction per dex versus mass that is normalized so that the integral under each curve is unity. The mass ranges from 0.1 to 120 M$_\odot$. Adopted from~\cite{Baldry03}}
+\caption{Comparing stellar initial mass functions (IMFs) by plotting the mass fraction per dex versus mass, normalized so that the integral under each curve is unity. The mass ranges from 0.1 to 120~M$_\odot$. Adopted from~\cite{Baldry03}.} %PB: note that "dex" is astro-jargon.
 \end{figure}
 
 
-The careful measurement of the stellar IMF is a key factor in understanding the SFR. 
-In distant galaxies, only massive stars can be detected; therefore, the IMF must be measured to include all stellar mass ranges in the SFR calibrations. 
+Careful measurement of the stellar initial mass function is a key factor in understanding the star formation rate. 
+In distant galaxies, only massive stars can be detected; therefore, the IMF must be measured to include all stellar mass ranges in the SFR calibrations. %PB: but how can you measure the IMF if you only detect the massive stars?
 To show the impact of the different stellar IMF assumptions on the SFR calibrations, \cite{Calzetti13} used two different stellar IMFs and derived the SFR calibrations with these new assumptions.
-Adopting a modified \cite{Kroupa01} IMF, with its maximum stellar mass set to 30 M$_{\odot}$ instead of 100 M$_{\odot}$, changes SFR calibrations' constants by factors ranging from 1.4 to 5.6 for different SFR indicators (Tab.~\ref{table1}). 
+Adopting a modified \cite{Kroupa01} IMF, with its maximum stellar mass set to 30~M$_{\odot}$ instead of 100~M$_{\odot}$, changes the SFR calibration constants by factors ranging from 1.4 to 5.6 for different SFR indicators (Tab.~\ref{table1}). 
 
 \subsection{SFR Indicators}
 
