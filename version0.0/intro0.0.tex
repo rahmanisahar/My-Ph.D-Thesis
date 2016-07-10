@@ -464,52 +464,51 @@ L(70)$_{global}$& $5.9 \times 10^{-44}$ &$L(70) \ge 1.4 \times 10^{42} $& \cite{
 \subsubsection*{SFR Indicators Based on Multi-Band Emission}
 
 %%add PAHs here
-Despite the usefulness of having single-band SFR tracers, in many cases the corrections due to dust effects and luminosity ranges increases the uncertainty in measurements.
-Nowadays, thanks to large surveys, enormous data is available at different wavelengths for galaxies, which allows for combining the emission from different bands and finding new calibrations.
-Conversion between SFR and luminosities at different bands mostly helps avoiding problems regarding dust extinction or attenuation (see~\ref{sec: ism_intro}). 
-The simplest possible way to combine luminosities at different bands in order to convert them to SFR is through a linear relation, whose correlation with the SFR is empirically proved~\citep{Kennicutt12}. 
+Despite the usefulness of having single-band SFR tracers, in many cases the corrections due to dust effects and luminosity ranges increase the uncertainty in measurements.
+Nowadays, thanks to large surveys, enormous amounts of data are available at different wavelengths for galaxies, which allows for combining the emission from different bands and finding new calibrations.
+The conversion between SFR and luminosities in multiple bands mostly helps to avoid problems regarding dust extinction or attenuation (see~\ref{sec: ism_intro}). 
+The simplest possible way to combine luminosities at different bands in order to convert them to SFR is through a linear relation, whose correlation with the SFR is empirically derived~\citep{Kennicutt12}. 
 %There are studies that use a higher order polynomial relation to combine luminosities~\citep[e.g.,][]{Buat05}; however, this discussion is out of the scope of this paper.
 
-Integrating over the full wavelength range of the IR part of spectrum gives the total infrared (TIR) emission of a system, which can be used as an SFR indicator. 
-As mentioned earlier, dust absorbs stellar radiation at all wavelengths; however, here we are only interested in radiation emitted from UV luminous stars. 
-It must be noted that since there is no one-to-one mapping between IR and UV emission~\citep{Calzetti13}, it is better to use the TIR emission as a tracer of the SFR instead of single-band IR emission.
+Integrating over the full wavelength range of the infrared part of the spectrum gives the total infrared (TIR) emission of a system, which can be used as an SFR indicator. 
+As mentioned earlier, dust absorbs stellar radiation at all wavelengths; however, here we are only interested in radiation emitted from UV luminous stars. % PB: not obvious how this sentence relates to ones before and after it
+Since there is no one-to-one mapping between IR and UV emission~\citep{Calzetti13}, it is better to use the TIR emission as a tracer of the SFR instead of single-band IR emission.
  
-\cite{Draine07} modelled observations from \Spitzer telescope and found a calibration for TIR luminosity from photometry images instead of using IR SED. 
-\cite{Boquien10} tested this calibration and found the modified version of calibration to estimate total infrared luminosity: 
+\cite{Draine07} modelled observations from the \Spitzer Space Telescope and found a calibration for TIR luminosity from spatially-resolved infrared photometry instead of the integrated infrared SED. %PB: please check that edits OK. Also, this sentence doesn't flow well from the previous text.
+\cite{Boquien10} tested this calibration and found a modified version to estimate the total infrared luminosity: 
 \begin{equation}
 L(\rm TIR) = 0.95L(PAH 8 \mu m) + 1.15L(24 \mu m) + L(70 \mu m) + L(160 \mu m)
 \end{equation}
-where $L = \nu L_{\nu}$ and $L_{\nu}$ is the luminosity  in erg s$^{-1}$ at frequency $\nu$. 
-\cite{Calzetti07} indicated that star formation rate calibration for a stellar population undergoing constant star formation over $\tau=100Myr$ is:
+where $L = \nu L_{\nu}$ and $L_{\nu}$ is the luminosity  in erg~s$^{-1}$ at frequency $\nu$. 
+\cite{Calzetti07} indicated that the star formation rate calibration for a stellar population undergoing constant star formation over $\tau=100$~Myr is:
 \begin{equation}
 \label{sfr_tot_IR}
 SFR(\rm TIR) = 2.8 \times10^{-44}L(\rm TIR)
 \end{equation}
-where SFR(TIR) is in M${\odot}$yr$^{-1}$, and L(TIR) is in erg s$^{-1}$. 
-To do this calculation, it is assumed that stellar bolometric emission is completely absorbed and re-emitted by dust, i.e., $L_{\mathrm{star}}({\rm bol})=L(\rm TIR)$.
+where SFR(TIR) is in M${\odot}$~yr$^{-1}$, and L(TIR) is in erg~s$^{-1}$. 
+To do this calculation, it is assumed that stellar bolometric emission is completely absorbed and re-emitted by dust, i.e., $L_{\mathrm{star}}({\rm bol})=L(\rm TIR)$. %PB: is this a reasonable assumption.
 
-As mentioned before emission from PAHs in ISM can be used as SFR indicator~\citep[e.g.][]{Peeters04}.
-Most of studies used MIR emission, which contains PAHs emission, to calibrate SFR~\citep[e.g.][]{Calzetti07}.
-\cite{Shipley16} calibrated SFR using observation from 105 star framing galaxies with $z < 0.4$ as:
-
+As mentioned before emission from PAHs in ISM can be used as SFR indicator~\citep[e.g.][]{Peeters04}. %PB: give section ref instead of "before"
+Most studies used infrared emission, which contains PAHs emission, to calibrate SFR~\citep[e.g.][]{Calzetti07}. %PB: are you saying that previous studies use broad bands which contain PAHs, but here you're dealing with the PAH features only?
+\cite{Shipley16} calibrated SFR using observation from 105 star-forming galaxies with $z < 0.4$ as:
 \begin{equation}
-log SFR = A + B log L_{\mathrm{PAH}, \lambda}
+\log SFR = A + B \log L_{\mathrm{PAH}, \lambda}
 \end{equation}
-where $L_{\mathrm{PAH}, \lambda}$ is luminosity of PAH features at 6.2, 7.7, 11.3~$\mu$m PAHs features and any combination thereof in erg s$^{-1}$.
+where $L_{\mathrm{PAH}, \lambda}$ is the luminosity of the PAH features at 6.2, 7.7, 11.3~$\mu$m or combinations thereof, in erg~s$^{-1}$.
 Tab.~\ref{table_PAH} shows the constants for each $L_{\mathrm{PAH}, \lambda}$.
-These calibration underestimates SFR for low-redshift galaxies with IR luminosity more than $10^12$erg s$^{-1}$.
-\cite{Shipley16} showed that adding 7.7~$\mu$m features in calibrations reduces the scatter and concluded that this wavelengths provides the most robust SFR tracer.
+These calibrations underestimate the SFR for low-redshift galaxies with IR luminosity more than $10^12$~erg~s$^{-1}$.
+\cite{Shipley16} showed that using the 7.7~$\mu$m feature in the calibration reduces the scatter and concluded that this wavelength provides the most robust SFR tracer.
 
 
 \begin{table}
 \centering
-\caption{SFR calibrations from PAHs luminosities; adopted from~\cite{Shipley16}}
+\caption{SFR calibrations from PAH luminosities; adopted from~\cite{Shipley16}}
 \label{table_PAH}
 \begin{tabular}{ l c c}
 \hline\hline
 PAH Feature(s) & A & B\\
 \hline
-6.2 + 7.7 + 11.3 & -42.56 $\pm$ 0.03 & 1.00 $\pm$ 0.03 \\ 
+6.2 + 7.7 + 11.3 & -42.56 $\pm$ 0.03 & 1.00 $\pm$ 0.03 \\ %PB: change from x $\pm$ y to $x\pm y$
 6.2 & -40.06 $\pm$ 0.09 & 0.96 $\pm$ 0.04 \\ 
 7.7 & -42.38 $\pm$ 0.06 & 1.00 $\pm$ 0.03 \\ 
 11.3 & -44.14 $\pm$ 0.08 & 1.06 $\pm$ 0.03 \\ 
@@ -520,21 +519,21 @@ PAH Feature(s) & A & B\\
 \end{tabular}
 \end{table}  
 
-The most common use of combining luminosities to trace the SFR is calibration of the SFR by combination of TIR measurements with both far and near UV observations, with the latter being more commonly used. 
-This combination helps to avoid uncertainties from dust attenuation in FUV observations.
+The most common use of combining luminosities to trace the SFR is the combination of total infrared measurements with both far- and near-ultraviolet observations, with the latter being more commonly used. 
+This combination helps to avoid uncertainties from corrections for dust attenuation in far-UV (FUV) observations. The calibration is: %PB: need ref
 \begin{equation}
 L_{FUV}(\rm corr) = L_{FUV}(\rm obs) + \alpha L_{\rm TIR}
 \end{equation}
-where the luminosities are $L = \nu L_{\nu}$ in erg s$^{-1}$, and the coefficient $\alpha$ depends on the bandpasses that are chosen for the UV and IR measurements. $\alpha$ is usually less than 1 because significant amounts of IR emission in many galaxies is from dust heated by older population stars~\citep{Kennicutt12}. The coefficient $\alpha$ is calibrated both theoretically, using evolutionary synthesis models, and empirically, by using measurements of dust corrected SFRs (~\citep[e.p][]{Hao11, Leroy08}. 
+where the luminosities are $L = \nu L_{\nu}$ in erg~s$^{-1}$, and the coefficient $\alpha$ depends on the bandpasses chosen for the UV and IR measurements. $\alpha$ is usually less than 1 because significant amounts of IR emission in many galaxies are from dust heated by older populations of stars~\citep{Kennicutt12}. The coefficient $\alpha$ is calibrated both theoretically, using evolutionary synthesis models, and empirically, by using measurements of dust corrected SFRs (~\citep[e.p][]{Hao11, Leroy08}. 
 
 Another common method for using the multi-wavelength indicator for star formation is using H${\alpha}$ emission in combination with the 24~$\mu$m emission. 
 This combination gives a more accurate dust-corrected estimate of the SFR~\citep{Kennicutt09}:
 \begin{equation} 
 \label{equ: halphaplus24}
-SFR = 7.9 \times 10^{-42}[L(H{\alpha})_{obs} + 0.020L(24)]
+SFR = 7.9 \times 10^{-42}[L(H{\alpha})_{\rm obs} + 0.020L(24)]
 \end{equation}
-where L(H${\alpha}$)$_{obs}$ is the observed H${\alpha}$ luminosity without correction for internal dust attenuation, given in the unit of erg s$^{-1}$. 
-L(24) is the 24~$\mu$m IR luminosity in erg s$^{-1}$, and SFR is in M$_{\odot}$yr$^{-1}$.
+where L(H${\alpha}$)$_{\rm obs}$ is the observed H${\alpha}$ luminosity without correction for internal dust attenuation, given in the unit of erg~s$^{-1}$. 
+L(24) is the 24~$\mu$m IR luminosity in erg~s$^{-1}$, and SFR is in M$_{\odot}$~yr$^{-1}$.
 
 \begin{table}
 \centering
@@ -544,30 +543,34 @@ L(24) is the 24~$\mu$m IR luminosity in erg s$^{-1}$, and SFR is in M$_{\odot}$y
 \hline\hline
 Combined luminosities$^1$ & references\\
 \hline
-L(FUV)$_{corr}$=L(FUV)$_{obs}$ + 0.46L(TIR)& Hao et al. (2011)\\
-L(FUV)$_{corr}$=L(FUV)$_{obs}$ + 3.89L(24~$\mu$m)& Hao et al. (2011)\\
-L(NUV)$_{corr}$=L(NUV)$_{obs}$ + 0.27L(TIR)& Hao et al. (2011)\\
-L(NUV)$_{corr}$=L(NUV)$_{obs}$ + 2.26L(24~$\mu$m)& Hao et al. (2011)\\
-L(\halpha)$_{corr}$=L(\halpha)$_{obs}$ + 0.0024L(TIR)& Kennicutt et al. (2009)\\
-L(\halpha)$_{corr}$=L(\halpha)$_{obs}$ + 0.020L(24~$\mu$m)& Kennicutt et al. (2009)\\
+L(FUV)$_{\rm corr}$=L(FUV)$_{\rm obs}$ + 0.46L(TIR)& Hao et al. (2011)\\ % use \cite
+L(FUV)$_{\rm corr}$=L(FUV)$_{\rm obs}$ + 3.89L(24~$\mu$m)& Hao et al. (2011)\\
+L(NUV)$_{\rm corr}$=L(NUV)$_{\rm obs}$ + 0.27L(TIR)& Hao et al. (2011)\\
+L(NUV)$_{\rm corr}$=L(NUV)$_{\rm obs}$ + 2.26L(24~$\mu$m)& Hao et al. (2011)\\
+L(\halpha)$_{\rm corr}$=L(\halpha)$_{\rm obs}$ + 0.0024L(TIR)& Kennicutt et al. (2009)\\
+L(\halpha)$_{\rm corr}$=L(\halpha)$_{\rm obs}$ + 0.020L(24~$\mu$m)& Kennicutt et al. (2009)\\
 \hline
 \end{tabular}
 \begin{tablenotes}
-\item $^1$ Luminosities are in form of L($\lambda$) = $\lambda$ L($\lambda$) in erg s$^{-1}$
+\item $^1$ Luminosities are in the form of L($\lambda$) = $\lambda$ L($\lambda$) in erg~s$^{-1}$ %PB see comments above on this.
 \end{tablenotes}
 \end{table}  
  
-Other combinations of luminosities that are used as tracers of the SFR are listed in table~\ref{table3}. 
+Other combinations of luminosities that are used as tracers of the SFR are listed in Table~\ref{table3}. %PB: are these corrected values used with the SFR calibrations in table 1? Or do they need different calibrations?
 These composite SFR indicators also have systematic uncertainties; yet, it seems that there is good correlation between multi-band tracers and single-band tracers. 
 Moreover, less uncertainty arises in this case than when using the single-band emission as a tracer~\citep{Kennicutt09}. 
 
-As mentioned in section~\ref{sec: imf}, using different IMFs results in having different SFR calibrations' constant. 
-From table~\ref{table1} it is clear that changing the IMF affects the H${\alpha}$ SFR calibration more than other SFR calibrations. 
-This effect is more than four times larger than UV SFR calibrations because newly-formed stars having up to $\sim 5$ M$_{\odot}$ emit more strongly at UV radiations; however, significant amounts of ionising photons are produced by stars more massive than $\sim 20$ M$_{\odot}$. 
-Furthermore, reaching an asymptotic value takes longer for more massive stars (10 Myr for the upper mass limit of 30 M$_{\odot}$ versus 6 Myr for 100 M$_{\odot}$). 
-Therefore, changes in the H${\alpha}$ SFR calibration constant are more pronounced, while for UV and TIR calibration constants are fairly close to each other.
-On the other hand, using the mean stellar mass for the Kroupa IMF $(<$M$> \sim 0.6$ M$_{\odot})$ yields less than $10\%$ difference between using the upper mass limit of 100 M$_{\odot}$ and 30 M$_{\odot}$. 
+%PB: would it make sense to put this paragraph closer to where you first discuss Table 1?
+As mentioned in Section~\ref{sec: imf}, using different IMFs results in having different calibration constants for star formation rate. 
+From Table~\ref{table1} it is clear that changing the IMF affects the H${\alpha}$ SFR calibration more than other SFR calibrations. 
+This effect is more than four times larger than for UV SFR calibrations because newly-formed stars having up to $\sim 5$ M$_{\odot}$ emit more strongly at UV wavelengths; however, significant amounts of ionising photons are produced by stars more massive than $\sim 20$ M$_{\odot}$. % PB: "more strongly" than what?
+Furthermore, reaching an asymptotic value takes longer for more massive stars (10 Myr for the upper mass limit of 30 M$_{\odot}$ versus 6 Myr for 100 M$_{\odot}$). % PB: "asymptotic value" of what?
+Therefore, changes in the H${\alpha}$ SFR calibration constant are more pronounced, while for UV and TIR the calibration constants are fairly close to each other.
+On the other hand, using the mean stellar mass for the Kroupa IMF $(<$M$> \sim 0.6$ M$_{\odot})$ yields less than a $10\%$ difference between using the upper mass limit of 100 M$_{\odot}$ and 30 M$_{\odot}$. 
 As a result, calibrations derived with the mean stellar mass of a system are more accurate than those that are based on tracing the most massive stars~\citep{Calzetti13}.
+
+% PB: SFR section is pretty long, might help to have a short summary here, perhaps when you would use different indicators. Expanding the "Other combinations" paragraph a bit would be a way to do this.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%Stellar Mass%%%%%%%%%%%%%%
