@@ -117,106 +117,104 @@ Mid-infrared emission from dust grains is mainly dominated by PAHs heated by evo
 Large grains that are either heated by light from star-forming regions or by the interstellar radiation field from total stellar population emit most of their light in far-infrared~\citep[e.g.][]{Calapa14, lu14}
 Dust is the main source of extinction and reddening of starlight (See Sec.\ref{sec: extinction} for more information).
 
-\subsection{Map of ISM}
+\subsection{Map of ISM} %PB: suggest "Mapping the Interstellar Medium"
 \label{sec: ismmap}
-Measuring mass of gas in galaxies is a necessary step to now how much row material is available for forming stars.
-A map of total gas mass in ISM is produced by direct observations of gas or using interstellar dust as a tracer. 
-Neutral and molecular hydrogen are the most common elements in ISM. 
-Therefore, for producing the total gas mass map in galaxies, maps of these two components can be added together and multiplied by a constant factor to account for heavier elements which are mostly He. 
-Another way to do the mapping is assuming that the ratio of total gas and dust is constant across the galaxy, and convert dust observations to the map of total gas mass.
+Measuring the mass of gas in galaxies is a necessary step to know how much raw material is available for forming stars.
+A map of the total gas mass in the ISM can be produced by direct observations of gas or using interstellar dust as a tracer. 
+Neutral atomic and molecular hydrogen are the most common components of the ISM. %PB: same element
+Therefore, to produce a total gas mass map in galaxies, maps of these two components can be added together and multiplied by a constant factor to account for heavier elements which are mostly He. %PB: point out that He can't be observed directly
+Another way to do the mapping is to assume that the ratio of total gas to dust is constant across the galaxy, and convert dust observations to a map of total gas mass.
 
 \subsubsection{Direct Measurement of the Gas}
 
 The surface density of gas in the ISM of galaxies can be measured by direct observation of the neutral and molecular hydrogen.
-This method can be promising provided that the spatial resolution of observational data is high enough; nonetheless, due to technical limitations, attaining enough spatial resolutions to resolve clouds is almost impossible. This problem shows itself for distant galaxies more than nearby galaxies. 
-As a result, using this method is limited and has a lot of uncertainties. 
+This method can be promising provided that the spatial resolution of observational data is high enough, although due to technical limitations, attaining enough spatial resolution to resolve clouds is almost impossible. This problem shows itself for distant galaxies more than nearby galaxies. 
+As a result, using this method is limited and has a lot of uncertainties. % PB last 3 sentences are vague. What exactly ar the limitations and uncertainties? 
  
 %\subsubsection{Molecular Clouds}
-
-CO molecule has a weak permanent electric dipole moment and a ground rotational transition with low excitation energy. 
+%PB: some repetition from earlier subsection here. 
+The carbon monoxide molecule has a weak permanent electric dipole moment and a ground rotational transition with low excitation energy. 
 Given its low energy and critical density, CO can easily be excited even in cold molecular clouds.
-Hence CO (usually the $J(1\rightarrow 0)$ rotational transition, observed at 2.6 mm) is used as a tracer of the mass of the molecular cloud dominated by molecular hydrogen~\citep[e.g.][] {Sanders84}.
-Higher rotational transition of CO can be used as a tracer as well, but they are not as common as $J(1\rightarrow 0)$.
+Hence CO (usually the $J(1\rightarrow 0)$ rotational transition, observed at 2.6 mm) is used as a tracer of the mass of molecular clouds dominated by molecular hydrogen~\citep[e.g.][] {Sanders84}.
+Higher rotational transitions of CO can be used as a tracer as well, but they are not as common as $J(1\rightarrow 0)$.
 
-\cite{Young91} described the relationship between the CO luminosity of a cloud and its mass. The CO luminosity of a cloud is :
+\cite{Young91} described the relationship between the CO luminosity of a cloud and its mass. The CO luminosity of a cloud is:
 \begin{equation}
-L_{CO} = D^2 \int I_{CO} d\Omega 
+L_{CO} = D^2 \int I_{\rm CO} d\Omega 
 \end{equation}
-where D is the distance to the cloud. 
-$I_{CO}$ is the CO brightness temperature integrated over the line profile.
-It shows in the form of ${\int T_{co} dV}$ where $T_{CO}$ is the peak brightness temperature in CO line and $V$ is the line-width. 
-For a uniform cloud with a radius $R$, the CO luminosity is given by
-
+where $D$ is the distance to the cloud and 
+$I_{\rm CO}$ is the CO brightness temperature integrated over the line profile.
+It can be written as ${\int T_{\rm CO} dV}$ where $T_{\rm CO}$ is the peak brightness temperature in the CO line and $V$ is the line-width. %PB units for these quantities?
+For a uniform cloud with a radius $R$, the CO luminosity is given by:
  \begin{equation}
-L_{CO} = \pi R^2 T_{CO} \Delta V
+L_{\rm CO} = \pi R^2 T_{\rm CO} \Delta V
 \end{equation}
 
-Galactic molecular clouds are self-gravitating systems.
-Thus, using the Virial theorem would lead to calculating the mass of the cloud.
-
+Galactic molecular clouds are self-gravitating systems. %PB: ref?
+Thus, using the virial theorem leads to calculating the mass of the cloud: %(PB note: "Virial" is not a name, no capital needed)
  \begin{equation}
  \label{equ: vir}
- M_{cloud} = L_{CO} \sqrt{\frac{4\rho}{3\pi G T_{CO}}}
+ M_{cloud} = L_{\rm CO} \sqrt{\frac{4\rho}{3\pi G T_{\rm CO}}}
  \end{equation}
- where $\sqrt{\frac{4\rho}{3\pi G T_{CO}}}$ is called the conversion factor. 
- Equation~\ref{equ: vir} shows that the total mass of molecular clouds and the total CO luminosity of a galaxy are directly related~\citep{Young91}. 
+ where $\sqrt{\frac{4\rho}{3\pi G T_{\rm CO}}}$ is called the conversion factor. %PB: what is \rho here?
+ Equation~\ref{equ: vir} shows that the total mass of molecular clouds and the total CO luminosity of a galaxy are directly related~\citep{Young91}. % PB: you refer to individual clouds above, then you jump to totals for the galaxy.  Is this OK to do? (what assumption about optical depth is being made?)
  The relation between CO emission and H$_2$ cloud mass is shown as
-
+%PB: no paragaph break between the text and the beginning of the equation
 \begin{equation}
-N_{H_2}/\rm cm^{-2} = X_{CO} \times I_{CO}/\rm K km s^{-1}
+N_{\rm H_2}/\rm cm^{-2} = X_{\rm CO} \times I_{\rm CO}/{\rm K km s}^{-1}
 \end{equation}
-where X$_{CO}$ is the conversion factor (also known as the X-factor).
-The X-factor is different in each galaxy and sometimes is even different in regions within a galaxy due to differences in properties of regions such as metallicity. 
-Though assuming constant conversion factor for galaxies like M82 and M31 can lead to accurate estimation of global molecular gas mass, in regions with low metallicity there are uncertainties. 
-Various groups are working on observation from different types of galaxies to measure the X-factor for them~\citep{Wilson95, Bosselli02, Bolato13}.
+where X$_{\rm CO}$ is the conversion factor (also known as the X-factor).
+The X-factor is different in each galaxy and sometimes is even different in regions within a galaxy due to differences in properties such as metallicity. 
+Though assuming a constant conversion factor for galaxies like M82 and M31 can lead to accurate estimation of global molecular gas mass, in regions with low metallicity there are uncertainties. %PB: need references here
+Various groups are working on observations of different types of galaxies to measure the X-factor for them~\citep{Wilson95, Bosselli02, Bolato13}.
 
-In order to empirically determine the relation between H$_2$ masses and CO luminosities, many observational attempts have been made in both galactic and extragalactic scales. 
-One of the most significant studies in this regard had been done by~\cite{Solomon87}, who studied this relation on more than 273 clouds inside the Milky Way and found a strong correlation between Virial mass of molecular clouds and CO luminosity. 
-In the Local Group galaxies, several groups measured size, line width, and CO luminosity of molecular clouds and investigate the relation between  their Virial masses and CO emission in environment other than the Milky Way. However, extragalactic investigations were limited to nearby galaxies due to technical problems regarding resolution and sensitivity of the telescopes. 
-To measure the clouds in distant galaxies, spatial resolution of maps must be better than 40 pc which is the typical size of a giant molecular cloud~\citep[e.g.][and refrences therein]{Bolato13}. 
-
+In order to empirically determine the relation between H$_2$ masses and CO luminosities, many observational attempts have been made on both Galactic and extragalactic scales. 
+One of the most significant studies in this regard was done by~\cite{Solomon87}, who studied this relation over more than 273 clouds inside the Milky Way and found a strong correlation between the virial mass of molecular clouds and CO luminosity. 
+In Local Group galaxies, several groups have measured size, line width, and CO luminosity of molecular clouds and investigated the relation between  their virial masses and CO emission in environment other than the Milky Way. However, extragalactic investigations were limited to nearby galaxies due to technical problems regarding resolution and sensitivity of the telescopes. 
+To measure the clouds in distant galaxies, spatial resolution of maps must be better than 40 pc which is the typical size of a giant molecular cloud~\citep[e.g.][and refrences therein]{Bolato13}. %PB: put these last 2 sentences at end of paragraph
+%PB no new paragraph here
 Pioneering works in measuring the extragalactic conversion factor were done for M31 and M32~\citep[e.g.,][]{Wilson89, Wilson90}. 
-Fig.~\ref{fig: mco} shows the CO luminosity verses Virial masses of molecular clouds in the Milky Way, M31, M33, and IC10. 
+Fig.~\ref{fig: mco} shows the CO luminosity verses virial masses of molecular clouds in the Milky Way, M31, M33, and IC~10. 
 The extragalactic molecular clouds are similar to those in the Milky Way. 
 The conversion between the CO luminosity and H$_2$ masses is still a controversial topic~\citep[e.g.][]{Narayanan11, Bolato13, Sandstrom13}.
-Problems regarding metallicity are not solved yet and it is still not clear whether the conversion factor is global or local. 
+Problems regarding metallicity are not yet solved and it is still not clear whether the conversion factor is global or local. 
 
 \begin{figure}
 \label{fig: mco}
 \centering
 \includegraphics[width=16cm]{../image_intro/mvirial_lco.eps}
-\caption{Relation between The Virial mass and CO luminosity for the Milky Way (dots), M33 (open circles), m31 (triangles), and IC 10 (squares) clouds. The Virial masses measured from selected high spatial resolution CO observations are shown. The extragalactic molecular clouds are very similar to those in the Milky Way. Adapted from~\cite{Young91}}
+\caption{Relation between the virial mass and CO luminosity for the Milky Way (dots), M33 (open circles), M31 (triangles), and IC~10 (squares) clouds. Virial masses are measured from selected high spatial resolution CO observations. The extragalactic molecular clouds are very similar to those in the Milky Way. Adapted from~\cite{Young91}.}
 \end{figure}
  
-%\subsubsection{Neutral Gas}
-The density of the atomic hydrogen along the line-of-sight is proportional to the intensity of the 21-cm emission. 
-Atomic hydrogens, that are along the line-of-sight contribute to the energy received. 
-These properties make the 21-cm a very useful tool to study gas in the ISM and trace the large-scale distribution of galaxies in the universe (\hi is detectable in most spiral galaxies and some elliptical galaxies).
-Although the 21-cm emission is the most reliable technique to map the ISM, the linear relationship between the intensity and the column density of the gas breaks down when the gas is optically thick~\citep{Braun09}.
+%\subsubsection{Neutral Gas} %PB: paragraph needs a topic sentence
+The density of the atomic hydrogen along the line-of-sight is proportional to the intensity of the 21-cm emission. %PB: reverse: intensity of 21cm is proportional to density. Is this optically thin/thick ?
+Atomic hydrogen along the line-of-sight contributes to the energy received. %PB does this sentence add something to the previous one?
+These properties make the 21-cm line a very useful tool to study gas in the ISM and trace the large-scale distribution of galaxies in the universe (\hi is detectable in most spiral galaxies and some elliptical galaxies).
+Although the 21-cm emission is the most reliable technique to map the ISM, the linear relationship between the intensity and the column density of the gas breaks down when the gas is optically thick~\citep{Braun09}. %PB: do you want to give the equation for converting between intensity and mass for HI, the way you did for CO? 
 
-\subsubsection{Dust Emission as a Tracer of Gas}
+\subsubsection{Dust Emission as a Tracer of Gas} 
 
-Studying the gas cloud in the ISM of distant galaxies by using direct methods is almost impossible and not practical. 
-\cite{Hildebran83} was the first person to suggest that one way to estimate the mass of the gas in the ISM might be from the optical depth of the sub-mm continuum emission from the dust; continuum dust emission is generally optically thin. 
+Studying the gas clouds in the ISM of distant galaxies by using direct methods is almost impossible and not practical. %PB: why?
+\cite{Hildebran83} was the first to suggest that one way to estimate the mass of the gas in the ISM might be from the optical depth of the sub-mm continuum emission from the dust; continuum dust emission is generally optically thin. 
 The Herschel Space Telescope \cite{Pilbratt10} measured the continuum dust emission from hundreds of galaxies\citep{Eales10, Oliver12}. 
 This amount of observational data provides a unique opportunity to study the ISM of galaxies using dust emission. 
+%PB: join these 2 paragraphs
+One of the advantages of using the dust emission as a tracer of the gas mass is that unlike the direct method, high spatial resolution is not necessary. %PB: why?
+The other important advantage is that this method solves the newly-found problem of the ``dark gas" in galaxies. 
+Dark gas is a significant fraction of gas in galaxies which is traced by neither 21-cm emission nor CO emission~\citep{Abdo10}. 
+As such it is very difficult to detect with telescopes, but an accurate gas to dust ratio can lead to an accurate estimate of dark gas mass in galaxies. 
 
-One of the advantages of using the dust emission as a tracer of the gas mass is that unlike the direct method, the high spatial resolution is not necessary anymore. 
-The other important advantage is that this method solves the newly-found problem of the ``dark gas" in the galaxies. 
-Dark gas is a significant fraction of the gas in the galaxy which is traced by neither the 21-cm emission nor the CO emission~\citep{Abdo10}. 
-So it is really hard to detect them by telescopes, but accurate gas to dust ratio can lead to an accurate estimate of dark gas mass in galaxies. 
-
-There are many disadvantages regarding the use of the gas to dust ratio in the ISM.
+There are many disadvantages of the use of the gas to dust ratio to trace gas in the ISM.
 In order to use the dust as a tracer of the gas mass, first a relationship between the optical depth and the mass of the dust and then a relationship between the mass of the dust and the mass of the gas must be derived. \cite{Draine03} pointed out that this approach is uncertain because of the uncertainly in the radiative efficiency of dust grains. 
-Also methods of measuring the gas to dust ratio in galaxies are not accurate, which means that there are problems in both steps~\citep{Hildebran83}. 
-Also by using current telescopes, it is difficult to detect dust emission from galaxies at z $>$ 0.1~\citep{Ealas12}. 
-Besides, in some cases such as the Virgo cluster, dust mass is more tightly correlated with the total gas mass than to the masses of molecular or atomic gas separately~\citep{Corbelli11}. 
+Also, methods of measuring the gas to dust ratio in galaxies are not accurate, which means that there are problems in both steps~\citep{Hildebran83}. 
+Using current telescopes, it is difficult to detect dust emission from galaxies at $z > 0.1$~\citep{Ealas12}. %PB: this doesn't seem correct to me - what about submm galaxies?
+In some cases such as Virgo cluster galaxies, dust mass is more tightly correlated with the total gas mass than with the masses of molecular or atomic gas separately~\citep{Corbelli11}. %PB: so why is this a problem?
 
-In addition to all the disadvantages mentioned before, the dust method has two major practical problems: firstly, to apply this method, knowing the temperature of the dust is necessary. 
-To solve this problem, measurement of the continuum emission at far-infrared wavelengths enough to cover the peak of the emission must be very accurate~\citep{Ealas12}. 
+In addition to all the disadvantages mentioned above, the dust method has two major practical problems: firstly, to apply this method, knowing the temperature of the dust is necessary. 
+To solve this problem, measurement of the continuum emission at far-infrared wavelengths long enough to cover the peak of the emission must be very accurate~\citep{Ealas12}. 
 The other problem is that there is evidence that the gas to dust ratio depends on the metallicity of the gas~\citep{Lisenfeld98, Draine07}, but even in direct methods the dependence on metallicity must be solved. 
-Certainly the gas to dust ratio as a tracer of the total gas in galaxies has a number of problems. 
-Unfortunately, at present, given the available devices and technologies, we cannot reach a high-resolution that is sufficient to detect the gas cloud directly.
+%Certainly the gas to dust ratio as a tracer of the total gas in galaxies has a number of problems. PB: sentence doesn't add anything
+Unfortunately, at present, given the available devices and technologies, we cannot reach the spatial resolution that is sufficient to detect the gas clouds directly. %PB why do we need high spatial resolution? Or is it sensitivity that is the problem?
 Therefore, so far this method is the best available solution for measuring the total gas in distant galaxies. 
 
 \subsection{Extinction and Attenuation}
