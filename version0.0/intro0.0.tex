@@ -590,7 +590,7 @@ In principle there are two ways to measure stellar mass in galaxies.
 The first is measuring the dynamical mass of a galaxy using kinematics~\citep{Cappellari06} or lensing~\citep{Auger09}, and then modelling the mass of the dark matter and subtracting it from the measured mass. %PB: "kinematics" and "lensing" are astro-jargon: please explain a bit more
 This method has been successful to predict and subtract the mass of the dark matter, which is the dominant mass in galaxies~\citep{Zaritsky94}, and can easily cause uncertainties as high as the order of the measurement. %PB: but is it successful in measuring the stellar mass?
 
-The second method is based on stellar population models~\citep[e.g.][]{ Bruzual93, Kotulla09} and using them to connect stellar mass to an observable, such as luminosity in different wavelengths, colours, or spectral energy distribution. 
+The second method is based on stellar population models~\citep[e.g.][]{ Bruzual93, Kotulla09} and using them to connect stellar mass to an observable, such as luminosity in different wavelengths, colours, or spectral energy distribution. %PB: need a one-sentence description of what these models do.
 This method has uncertainties too, and one must also model the uncertainties. %PB: sentence not useful.
 Uncertainties come from uncertainties in the stellar initial mass function (see Sec.~\ref{sec: imf}), the stellar evolution models, especially the stage where stars have the most luminosity in their evolution, the evolutionary state of the galaxy~\citep[see,][]{Dalcanton12}, and star formation histories. 
 
@@ -605,76 +605,76 @@ Having two independent methods to measure stellar mass helps to check whether th
 Comparing the results from measuring stellar mass in stellar clusters shows there is no huge difference. %PB: ref?
 Comparing the results from measuring stellar mass within galaxies shows that the differences are on the order of a few x10 per cent, so one should be careful to model subtleties~\citep{McLaughlin05}. 
 
-\subsection{Dynamical Mass}
+\subsection{Dynamical Mass} %PB: suggest "galaxy masses from dynamics"
+% PB: should following paragraph go after the second paragraph?
 The mass distribution in disk galaxies is usually calculated from rotation curves or integrated line profiles from emission lines such as H${\alpha}$, CO, and \hi lines. 
 Thanks to the current generation of detectors, it is possible to obtain  very high-resolution spectra in the \halpha and CO lines  over most of the optical disks of galaxies. % and cover most regions in the sky. PB: not sure about "most regions of sky"
-Integrated line widths only yield an estimate of a total mass within some (uncertain) isophotal radius.
+Integrated line widths only yield an estimate of total mass within some (uncertain) isophotal radius.
 
-Resolved rotation curves produced from \halpha, \hi and CO lines are proportional to optical emission lines within the optical disk of galaxies,~\citep{Courteau13} which helps us to measure the rotational curves. 
-The simplest way to estimate the mass of a galaxy is assuming that the physics of the galaxy is the simple Newtonian physics. 
-Therefore, the Mass within a potential $\phi$ and the circular velocity in the spherical system is given by:
+Resolved rotation curves produced from \halpha, \hi and CO lines are proportional to optical emission lines within the optical disk of galaxies,~\citep{Courteau13} which helps us to measure the rotational curves. %PB: don't get the purpose of this sentence
+The simplest way to estimate the mass of a galaxy is assuming that the physics of the galaxy is simple Newtonian physics. %PB should be clear that this is what nearly everyone does (almost no one assumes that physics isn't Newtonian)
+Therefore, the circular velocity $v{\rm circ}(r)$ of an orbit within a spherical system of gravitational potential $\phi$ and mass $M$ is given by:
 \begin{equation}
 \label{eq: simpmass}
-V^2_{circ}(r)=r\frac{d\phi}{dr} = G\frac{M(r)}{r}
+v^2_{\rm circ}(r)=r\frac{d\phi}{dr} = G\frac{M(r)}{r}
 \end{equation}
-where $M(r)$ is the mass within a sphere of radius $r$. 
-For a flattened disk which is the case in most spiral galaxies, the right hand side of equation~\ref{eq: simpmass} must be replaced by the more exact expression derived by~\cite{Freeman70}. 
-He assumed in case of no dark matter or bulge, the rotation curve of a self-gravitating disk is:
+where where $G$ is the gravitational constant and $M(r)$ is the mass within a sphere of radius $r$. 
+For a flattened disk, which is the case in most spiral galaxies, the right hand side of equation~\ref{eq: simpmass} must be replaced by the more exact expression derived by~\cite{Freeman70}. 
+For the case of no dark matter or bulge, \cite{Freeman70} showed that the rotation curve of a self-gravitating disk is:
 \begin{equation}
-V^2_{circ}(R)= 4\pi G \Sigma_{0}R_{d} y^2[I_0(y)K_0(y) - I_1(y)K_1(y)]
+v^2_{circ}(R)= 4\pi G \Sigma_{0}R_{d} y^2[I_0(y)K_0(y) - I_1(y)K_1(y)]
 \end{equation}
-where $G$ is the gravitational constant, $\Sigma_0$ the central surface brightness, $R_d$ the disk scale length, $4y=\frac{R}{2R_d}$, and $I_i(y)$ and $K_i(y)$ are the first and second kind of modified Bessel functions.
+where $\Sigma_0$ the central surface brightness, $R_d$ the disk scale length, $4y=\frac{R}{2R_d}$, and $I_i(y)$ and $K_i(y)$ are the first and second kinds  modified Bessel functions. %PB what is y? Also need to define scale length.
 
-Describing more about calculating dynamical masses in galaxies is beyond the scope of this paper. 
-Just note that methods mentioned above is the first order of approximation. 
-For more accurate result one should consider that the rotational velocity is not circular and the fact that galaxies contain millions of stars plus interstellar objects therefore simple two object Newtonian physics is not the case here. 
-There are lots of different profiles to fit the rotation curve for galaxies.
-A detailed review of dynamical mass of galaxies can be found in Courteau et al review paper (2013).
+A detailed description of calculating dynamical masses in galaxies is beyond the scope of this work. 
+The methods mentioned represent the first order of approximation. 
+For more accurate results, one should consider non-circular rotational velocities and the fact that galaxies contain millions of stars plus interstellar objects; therefore simple two-object Newtonian physics is not the case here. 
+%There are many different profiles to fit the rotation curve for galaxies. PB: not useful.
+A detailed review of dynamical masses of galaxies can be found in \citet{Courteau13}.
 
-\subsection{Stellar Population Method}
-Galaxies can be observed because of their stellar emission and stars radiate the energy produced from nuclear reactions in their cores. 
-Given the star's initial mass, the theory of stellar evolution can describe the amount of energy released. 
-Hence, stellar mass that is responsible for radiation of stars can be derived by modelling the spectral energy distribution of galaxies. 
-However, there is a fraction of mass of evolved stars which no longer emit radiation yet still contribute to the galaxy mass as stellar remnants. 
+\subsection{Stellar Population Method} %PB: suggest  "galaxy masses from stellar population modelling"
+Galaxies can be observed because of their stellar emission; stars radiate the energy produced from nuclear reactions in their cores. 
+Given a star's initial mass, the theory of stellar evolution can describe the amount of energy released. 
+Hence, stellar mass that is responsible for radiation of stars can be derived by modelling the spectral energy distributions of galaxies. 
+However, some fraction of the mass of galaxies consists of evolved stars which no longer emit radiation yet still contribute to the galaxy mass as stellar remnants. %PB: so what do we do about this?
 
-As mentioned before, stellar population synthesis models is used to reproduce the SED of a stellar population using many physical parameters. 
-These parameters, which control the time evolution of the stellar population are:
-the age, $t$, of the population, measured in years, also referred to the time passed since the star formation was began;
-the star formation history (SFH), often parametrized with SFR $\propto e^{-1/\tau}$; the IM; The metallicity; and the chemical composition ratios, or the fraction of all key elements in galaxies and those values measured in the Sun. 
-The stellar evolutionary tracks, the stellar spectral libraries, the parametrization for the mass-loss which affects several late stages of evolution are necessary for stars placing at specific evolutionary phases~\citep{Courteau13}.
+Stellar population synthesis models are used to predict the SED of a stellar population using many physical parameters. 
+These parameters, which control the time evolution of the stellar population, are:
+the age, $t$, of the population, measured in years, also referred to as the time passed since the star formation began;
+the star formation history (SFH), often parametrized with SFR $\propto e^{-1/\tau}$; the IMF; the metallicity; and the chemical composition ratios, usually measured relative to values measured in the Sun. 
+Stellar evolutionary tracks, the stellar spectral libraries, and the parametrization for mass-loss which affects several late stages of evolution are necessary for stars placing at specific evolutionary phases~\citep{Courteau13}. %PB: this sentence has a lot of astro-jargon
 
-
+%PB: please think about how info in following few paragraphs should logically go together into paragraphs.
 %\subsubsection{Calibration light of stars} 
-The basic idea behind the finding the suitable calibration between flux/luminosity of the stars in different wavelengths and stellar mass is that one can use the SFHs recovered from synthesizing the stellar optical CMs in different regions in the galaxies. 
-The calculated stellar mass can be used to calibrate the fluxes from the stars as the easily measurable parameters of stars. 
-Using NIR bands, different groups tried to make a map of stellar mass distributions within galaxies~\citep[e.g.,][]{Elmgreen84}.
-Using $B-V$ colours~\citep{Bell01} and $Spitzer$ 3.6- and 4.5-$\mu$m, M/L correction, \cite{Kendall08} produced stellar mass surface densities of M81. 
+The basic idea behind finding a suitable calibration between flux/luminosity of the stars in different wavelengths and stellar mass is that one can use the SFHs recovered from synthesizing the stellar optical colour-magnitude diagrams in different regions of a galaxy. 
+The calculated stellar mass can be used to calibrate the fluxes from the stars as the easily measurable parameters of stars. %PB: don't understand what "as the easily.." means here.
+Using NIR bands, different groups tried to make a map of stellar mass distribution within galaxies~\citep[e.g.,][]{Elmgreen84}.
+Using $B-V$ colours~\citep{Bell01} and {\em Spitzer} 3.6- and 4.5-$\mu$m, M/L correction, \cite{Kendall08} produced stellar mass surface densities of M81. %PB: unclear how this  sentence relates to other text.
 
-\cite{Zibetti08} suggested for reaching the maximum spatial resolution one can recombine the photometric information on a pixel-by-pixel study~\citep{Conti03}. 
-They used this method to study the stellar mass distribution in galaxies as well as the dependence of the SED on stellar mass density. 
+\cite{Zibetti08} suggested that to reach the maximum spatial resolution one can recombine the photometric information on a pixel-by-pixel basis~\citep{Conti03}. 
+They used this method to study the stellar mass distribution in galaxies as well as the dependence of the SED on stellar mass density. %PB: join paragraphs. 
 To do so the surface density of stellar mass is derived by 
 \begin{equation}
 \label{equ: massphot}
 \Sigma M_\star (\alpha, \delta) = \Sigma \lambda(\alpha, \delta) \gamma_{\lambda}(\alpha, \delta)
 \end{equation}
-where $\Sigma \lambda(\alpha, \delta)$ is the surface brightness and $\gamma_{\lambda}(\alpha, \delta)$ is the effective stellar M/L in an effective wavelength $\lambda$. 
+where $\Sigma \lambda(\alpha, \delta)$ is the surface brightness and $\gamma_{\lambda}(\alpha, \delta)$ is the effective stellar M/L at an effective wavelength $\lambda$. % PB what are \alpha, \delta ?
 In equation~\ref{equ: massphot},  $\gamma_{\lambda}$ can be described as a function of one or more colours as observed at the specified location in galaxy. 
 Equation~\ref{equ: massphot} can be used for each position in a galaxy.
 
 
 \cite{Eskew12} related easily observable quantities to the stellar mass. 
-They used 3.6 and 4.5$\mu$m fluxes for calibration of the stellar mass, because these two bandpasses are almost insensitive to the emission from young stellar population, dust absorption and emission. 
-Also thanks to \Spitzer~\citep{Wener04} data and WISE~\citep{Wright10} telescopes, great amount of data from many regions in the sky is available, in these bands, which help to test them on more regions and have a more accurate calibration. 
-They also test the 3.6- and 4.5 $\mu$m fluxes as proxies for stellar mass in the Large Magellanic Cloud and find the empirical relation between mass of the stars and the luminosities of stars as below:
-
+They used 3.6 and 4.5$\mu$m fluxes for calibration of the stellar mass, because these two bandpasses are almost insensitive to the emission from young stellar population or to dust absorption and emission. 
+Thanks to the \Spitzer~\citep{Wener04} and WISE~\citep{Wright10} telescopes, a large amount of data in these bands from many regions in the sky is available, which helps thave a more accurate calibration. 
+\cite{Eskew12} tested the 3.6- and 4.5 $\mu$m fluxes as proxies for stellar mass in the Large Magellanic Cloud and found an empirical relation between mass of the stars and the luminosities of stars as:
 \begin{equation}
 \label{equ:eskew}
 M = 31.84 \times 10^{5.65} L_{3.6}^{2.85} L_{4.5}^{-1.85}
 \end{equation}
-where M$_{\star}$ is the stellar mass and $L = \nu L_{\nu}[\lambda]$ is luminosity in erg s$^{-1}$/$\AA$.
+where M$_{\star}$ is the stellar mass and $L = \nu L_{\nu}[\lambda]$ is luminosity in erg~s$^{-1}$/$\AA$. %PB: units of stellar mass? 
  
-\cite{Zhu10} used the SDSS and the $Spitzer$ Wide-area Infrared Extragalactic Survey~\citep[SWIRE;][] {Lonsdale03} to find the calibration between luminosity of the galaxies and stellar masses. 
-Using the M/L of galaxies, they found the correlation between $K_s$ band, 3.6 and 4.5 $\mu$m band luminosities and stellar masses and formulate these correlations as:
+\cite{Zhu10} used the SDSS and the {\em Spitzer} Wide-area Infrared Extragalactic Survey~\citep[SWIRE;][] {Lonsdale03} to find another calibration between galaxy luminosity and stellar mass. 
+Using the $M/L$ of galaxies, they found correlations between $K_s$ band, 3.6 and 4.5 $\mu$m band luminosities and stellar masses and formulated these correlations as:
 \begin{align}
 \label{equ: zhu1}
 \log M_{\star} = (-1.60 ) + (1.12)\times \log \nu L_{\nu}[K_s]\\
@@ -682,11 +682,11 @@ Using the M/L of galaxies, they found the correlation between $K_s$ band, 3.6 an
 \label{equ: zhu3}
 \log M_{\star} = (-0.25) + (1.15)\times \log \nu L_{\nu}[4.5\mu \rm m] 
 \end{align}
-where M$_{\star}$ is the stellar mass and $ \nu L_{\nu}[\lambda]$ is the luminosity in erg s$^{-1}$ in specified wavelength. 
-Measuring the stellar mass from equation~\ref{equ:eskew} is limited to the nearby galaxies, and might break down for high star forming regions, moreover, this equation have not tested on regions with different metallicity. 
-Thus there is no calibration regarding variation in  metallicity~\citep{Eskew12}. 
-On the other hand equations~\ref{equ: zhu1} -~\ref{equ: zhu3} have been derived from a large sample of galaxies, and was tested on different type of regions and galaxies. 
-Beside they can be used for more distanced galaxy as well as nearby galaxies~\citep{Zhu10}. 
+where M$_{\star}$ is the stellar mass and $ \nu L_{\nu}[\lambda]$ is the luminosity in erg~s$^{-1}$ at the specified wavelength. 
+Measuring the stellar mass from equation~\ref{equ:eskew} is limited to nearby galaxies, and might break down for highly star-forming regions; moreover, this equation has not tested on regions with different metallicity. 
+Thus there is no information on the effects of variation in  metallicity~\citep{Eskew12}. 
+On the other hand equations~\ref{equ: zhu1}--~\ref{equ: zhu3} have been derived from a large sample of galaxies, and were tested on different type of regions and galaxies. 
+They can be used for more distant galaxies as well as nearby galaxies~\citep{Zhu10}. %PB: why is Zhu et al good for distant galaxies but Eskew is not?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%Preview%%%%%%%%%%%%%%
@@ -696,7 +696,7 @@ Beside they can be used for more distanced galaxy as well as nearby galaxies~\ci
 \section{Preview}
 \label{sec: pre_intro}
 
-Complete picture of galaxies are formed and evolved are tied to unfolding the mystery of formation of stars.
+A complete picture of galaxies are formed and evolved are tied to unfolding the mystery of formation of stars.
  Various phenomena affect the collapse of molecular clouds and star formation which include environment of the star-forming region, chemical compositions of the region, initial mass distribution of gas, mass of sounding stars and other physical properties of galaxies
  For decades, Observational, theoretical and numerical studies have investigated star formation; nevertheless, their results have never been precise. 
  Empirical studies are used alongside of theoretical ones to find laws that indicate the relations between physical properties of galaxies and star formation.
