@@ -217,30 +217,30 @@ The other problem is that there is evidence that the gas to dust ratio depends o
 Unfortunately, at present, given the available devices and technologies, we cannot reach the spatial resolution that is sufficient to detect the gas clouds directly. %PB why do we need high spatial resolution? Or is it sensitivity that is the problem?
 Therefore, so far this method is the best available solution for measuring the total gas in distant galaxies. 
 
-\subsection{Extinction and Attenuation}
+\subsection{Extinction and Attenuation} %PB: suggest "The ISM and starlight: extinction and attenuation" or something like that, to make clear why we care about this.
 \label{sec: extinction}
-In this section, dust ``attenuation" and ``extinction" will be introduced and their effects on measuring the SFR will be briefly discussed.
-More advanced and detailed discussions on this topic is out of the scope of this paper; and for more information one can refer to the review by~\citep{Calzetti01}. 
-Extinction happens when there is a combination of both absorption and scattering of radiation by dust. The distribution of the dust that lies between a source and the observer is irrelevant to the total extinction value because the source is a background point source.
-
-Attenuation refers to the effect of dust with embedded light sources distributed throughout. 
-The dust itself can be clumpy or smooth\citep{Calzetti13}. 
+In this section, dust ``attenuation" and ``extinction" will be introduced and their effects on measuring the SFR will be briefly discussed. %PB: explain why we care (because stars and dust are spatially mixed in galaxies, and dust affects emitted SED). A  sentence like that is more useful than "in this section we will discuss X".
+More advanced and detailed discussion on this topic can be found in the review by~\citep{Calzetti01}. 
+Extinction happens when there is a combination of both absorption and scattering of radiation by dust. The distribution of the dust that lies between a source and the observer is irrelevant to the total extinction value because the source is a background point source. %PB: source is *considered* to be a background point source (but what if it isn't a point source?)
+% PB: join paragraphs
+Attenuation refers to the effects of dust with embedded light sources distributed throughout. 
+The dust itself can be clumpy or smooth \citep{Calzetti13}. 
 In this situation the relative location of the dust and light sources affect the net absorbed and scattered light, and that happens because both the light sources and the dust have extended distributions. 
-Dust scattering's effect depends on whether it is in or out of the line of sight. 
-When the dust is in the line of sight, attenuation will make the emerging light dimmer and the SED will be bluer. 
-This is the typical situation that comes across when studying galaxies or extended regions within galaxies.
+Dust scattering's effect depends on whether the dust is in or out of the line of sight. 
+When the dust is in the line of sight, attenuation will make the emerging light dimmer and the SED will be bluer. %PB: bluer? really?
+This is the typical situation that occurs when studying galaxies or extended regions within galaxies.
 
-In order to describe the decrease in the intensity of the original beam when it passes through a region where dust particles are present while taking into account the radiation added to the beam by scattering into the line of sight, an integro-differential equation of the radiative transfer of light through dust is used. 
-At UV/optical/near-IR wavelengths, the radiative transfer equation is:
+To describe the decrease in the intensity of the original beam when it passes through a region where dust particles are present while taking into account the radiation added to the beam by scattering into the line of sight, an integro-differential equation of the radiative transfer of light through dust is used. % PB: "beam" is jargon, change to something else. Simplify this sentence.
+At UV/optical/near-IR wavelengths, the radiative transfer equation is: %PB: why does this eqn only apply at UV/opt/NIR? 
 \begin{equation}
 \frac{dI_{\nu}}{d\tau} = -I_{\nu}  + \frac{a_{\nu}}{\pi} \int I_{\nu}\phi(\nu,\cos \Theta)d\Omega
 \end{equation}
-where I$_{\nu}$ is the intensity of radiation, $\tau$ is the dust's optical depth.
-a$_{\nu}$ is the dust albedo, which refers to the ratio of the scattering coefficient to the sum of the scattering and absorption coefficients. 
-$\phi(\nu,\cos \Theta)$ is the scattering phase function, and $\Theta$ is the angle between the scattered photon and the line of sight. 
-Both a$_{\nu}$ and $\phi(\nu,\cos \Theta)$ are described in more detail in~\citep{Draine03}. 
-The source function, i.e., the dust emission, which usually has small values for wavelengths shorter than a few $\mu$m is neglected in the equation above. 
-This decrease in the intensity of the stellar radiation must be calculated and corrected for different emission; otherwise, it causes underestimation of the SFR. 
+where I$_{\nu}$ is the intensity of radiation and $\tau$ is the dust's optical depth.
+$a_{\nu}$ is the dust albedo,  the ratio of the scattering coefficient to the sum of the scattering and absorption coefficients. 
+$\phi(\nu,\cos \Theta)$ is the scattering phase function, and $\Theta$ is the angle between the scattered photon and the line of sight. %PB: what is \phi? Need to explain at least a little
+Both $a_{\nu}$ and $\phi(\nu,\cos \Theta)$ are described in more detail in~\citep{Draine03}. 
+The source function, i.e., the dust emission, which usually has small values for wavelengths shorter than a few $\mu$m, is neglected in the equation above. %PB: why no dust emission at short wavelengths? (temperature)
+This decrease in the intensity of the stellar radiation must be calculated and corrected for different emission; otherwise, there will be an underestimation of the star formation rate. %PB: what do you mean by "different emission" in this sentence?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
