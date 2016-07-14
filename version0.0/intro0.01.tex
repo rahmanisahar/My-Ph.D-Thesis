@@ -258,7 +258,7 @@ Extinction can be defined as a reduction of the original intensity caused by dus
 \label{equ: extinction}
 {\mathrm I}(\lambda) = {\mathrm I}_0(\lambda)\exp[-\tau_{\lambda}]
 \end{equation}
-where I$(\lambda)$ is the observed intensity in wavelength $\lambda$, I$_0(\lambda)$ is the intensity of light before passing through dust, and $\tau_{\lambda}$ is the otpical depth at wavelength $\lambda$.
+where I$(\lambda)$ is the observed intensity at wavelength $\lambda$, I$_0(\lambda)$ is the intensity of light before passing through dust, and $\tau_{\lambda}$ is the optical depth at wavelength $\lambda$.
 The extinction depends also on the size of grains and their extinction cross section.
 For measuring SFR using various wavebands, 
 the decrease in the intensity of radiation must be calculated and corrected for each wavelength; otherwise, there will be an underestimation of SFR. 
@@ -639,18 +639,18 @@ After measuring the corrected luminosities for star forming regions in galaxies 
 \section{Stellar mass}
 \label{sec: starmass_intro}
 One of the most fundamental physical parameters which describes the present state of a galaxy is its stellar mass. 
-Stellar mass is linked with the structure and star formation history of disc galaxies~\citep{Gavvazi96} and allmorphologies~\citep{Scodeggio02}. 
+Stellar mass is linked with the structure and star formation history of disc galaxies~\citep{Gavvazi96} and galaxies of all morphologies~\citep{Scodeggio02}. 
 Measuring the mass of a stellar population is indirect and subject to significant uncertainties. 
 In principle there are two ways to measure stellar mass in galaxies. 
-The first is measuring the dynamical mass of a galaxy using kinematics (the mostion of stars)~\citep{Cappellari06} or lensing (bending light as the light pass near a galaxy)~\citep{Auger09}, and then modelling the mass of the dark matter and subtracting it from the measured mass. 
+The first is measuring the dynamical mass of a galaxy using kinematics (the mostion of stars)~\citep{Cappellari06} or gravitational lensing (bending of light as the light passes near a galaxy)~\citep{Auger09}, and then modelling the mass of the dark matter and subtracting it from the measured mass. 
 
-The second method is based on stellar population models~\citep[e.g.][]{ Bruzual93, Kotulla09} and using them to connect stellar mass to an observable, such as luminosity in different wavelengths, colours, or spectral energy distribution. 
-Stellar population models predict the expected SEDs for stellar populations based on parameters of regions such as star formation history, metallicity, and IMF
-Uncertainties come from uncertainties in the stellar initial mass function (see Sec.~\ref{sec: imf}), the stellar evolution models, especially the stage where stars have the most luminosity in their evolution, the evolutionary state of the galaxy~\citep[see,][ans references therein]{Dalcanton12}, and star formation histories. 
+The second method is based on stellar population models~\citep[e.g.][]{ Bruzual93, Kotulla09} and using them to connect stellar mass to an observable, such as luminosity at different wavelengths, colours, or spectral energy distribution. 
+Stellar population models predict the expected SEDs for stellar populations based on parameters of regions such as star formation history, metallicity, and IMF.
+Uncertainties come from uncertainties in the stellar initial mass function (see Sec.~\ref{sec: imf}), the stellar evolution models, especially the stage where stars have the most luminosity in their evolution, the evolutionary state of the galaxy~\citep[see,][and references therein]{Dalcanton12}, and star formation histories. 
 
 
 In order to translate between photometry and stellar mass the stellar mass-to-light ratio ($M/L$) is needed.
-The use of $M/L$ is one way to measure stellar mass surface density. It is an indirect method and has high uncertainties in specific cases, but can help to study the stellar mass in large samples. 
+The use of $M/L$ is one way to measure stellar mass surface density. It is an indirect method and has high uncertainties in specific cases, but can help in studying the stellar mass in large samples. 
 For integrated galaxy light, the $M/L$ is estimated using scaling relations between $M/L$ and broadband colours \citep[e.g.]{Bell03} and then multiplied by luminosity to estimate a mass.
 For resolved galaxies, one can produce a map of the stellar mass surface density distribution in galaxies using resolved colour to measure spatial variations in $M/L$.
 This method gives more accurate results than measuring the stellar mass surface density distribution from single-band images rescaled by a uniform mass to light ratio~\citep{Zibetti09}.
@@ -661,7 +661,7 @@ Comparing the results from measuring stellar mass within galaxies shows that the
 Therefore, to model subtleties, the advantages and disadvantages of using each method should be carefully considered. 
 
 
-\subsection{galaxy masses from dynamics}
+\subsection{Galaxy masses from dynamics}
 
 The simplest and the most common way to estimate the mass of a galaxy is assuming that the physics of the galaxy is simple Newtonian physics.
 Therefore, the circular velocity $v{\rm circ}(r)$ of an orbit within a spherical system of gravitational potential $\phi$ and mass $M$ is given by:
@@ -675,14 +675,14 @@ For the case of no dark matter or bulge, \cite{Freeman70} showed that the rotati
 \begin{equation}
 v^2_{circ}(R)= 4\pi G \Sigma_{0}R_{d} y^2[I_0(y)K_0(y) - I_1(y)K_1(y)]
 \end{equation}
-where $\Sigma_0$ the central surface brightness, $R_d$ the disk scale length, where ratio of the intensity of disk to bulge is $e$ ($\sim$2.71).  
-$y=\frac{R}{2R_d}$, and $I_i(y)$ and $K_i(y)$ are the first and second kind modified Bessel functions. 
+where $\Sigma_0$ is the central surface brightness, and $R_d$ the disk scale length, where the ratio of the intensity of disk to bulge is $e$ ($\sim$2.71).  %PB: Not quite the right definition of scale length? Please check.
+$y=\frac{R}{2R_d}$, and $I_i(y)$ and $K_i(y)$ are the first and second kinds of modified Bessel functions. 
 
 
 The mass distribution in disk galaxies is usually calculated from rotation curves or integrated line profiles from emission lines such as H${\alpha}$, CO, and \hi~lines. 
 Integrated line widths only yield an estimate of total mass within some (uncertain) isophotal radius.
 Thanks to the current generation of detectors, it is possible to obtain very high-resolution spectra in the \halpha and CO lines over most of the optical disks of galaxies.
-The higher resolution data 
+The higher resolution data %PB sentence incomplete.
 
 A detailed description of calculating dynamical masses in galaxies is beyond the scope of this work. 
 The methods mentioned represent the first order of approximation. 
@@ -690,11 +690,11 @@ For more accurate results, one should consider non-circular rotational velocitie
 A detailed review of dynamical masses of galaxies can be found in \citet{Courteau13}.
 
 \subsection{Galaxy masses from stellar population modelling}
-
+%PB: quite a bit of repetition in the following sentences.
 Galaxies can be observed because of their stellar emission; stars radiate the energy produced from nuclear reactions in their cores. 
 Given a star's initial mass, the theory of stellar evolution can describe the amount of energy released. 
 Hence, stellar mass that is responsible for radiation of stars can be derived by modelling the spectral energy distributions of galaxies. 
-However, some fraction of the mass of galaxies consists of evolved stars which no longer emit radiation yet still contribute to the galaxy mass as stellar remnants and should be considered in models.
+However, some fraction of the mass of galaxies consists of evolved stars which no longer emit radiation yet still contribute to the galaxy mass as stellar remnants. These should be considered in models.
 Stellar population synthesis models are used to predict the SED of a stellar population using many physical parameters. 
 These parameters, which control the time evolution of the stellar population such as age, $t$, of the population, measured in years, also referred to as the time passed since the star formation began, IMF, and metallicity~\citep{Courteau13}.
 
@@ -702,22 +702,22 @@ The basic idea behind finding a suitable calibration between flux/luminosity of 
 The calculated stellar mass in nearby galaxies can be used to calibrate the fluxes from the stars in other galaxies.
 \cite{Zibetti09} suggested that to reach the maximum spatial resolution one can recombine the photometric information on a pixel-by-pixel basis. 
 They used this method to study the stellar mass distribution in galaxies as well as the dependence of the SED on stellar mass density.
-To do so the surface density of stellar mass at each position is derived by 
+To do so, the surface density of stellar mass at each position is derived by: 
 \begin{equation}
 \label{equ: massphot}
 \Sigma_{{\mathrm M_\star}} (\alpha, \delta) = \Sigma_{\lambda}(\alpha, \delta) \gamma_{\lambda}(\alpha, \delta)
 \end{equation}
-where $\alpha$ and $\delta$ are position, right ascension and declination, respectively.
-$\Sigma_{{\mathrm M_\star}} (\alpha, \delta)$ is the stellar surface density.
-$\Sigma_{\lambda}(\alpha, \delta)$ is the surface brightness and $\gamma_{\lambda}(\alpha, \delta)$ is the effective stellar M/L at an effective wavelength $\lambda$.
-In Equ.\ref{equ: massphot},  $\gamma_{\lambda}$ can be described as a function of one or more colours as observed at the specified location in galaxy. 
+where $\alpha$ and $\delta$ are sky position (right ascension and declination, respectively),
+$\Sigma_{{\mathrm M_\star}} (\alpha, \delta)$ is the stellar surface density,
+$\Sigma_{\lambda}(\alpha, \delta)$ is the surface brightness and $\gamma_{\lambda}(\alpha, \delta)$ is the effective stellar $M/L$ at an effective wavelength $\lambda$.
+In Equ.\ref{equ: massphot},  $\gamma_{\lambda}$ can be described as a function of one or more colours as observed at the specified location in the galaxy. 
 
-Peak of emission from evolved stars are in NIR part of spectrum.
-Therefore, many studies tried to make a map of stellar mass distribution using this bandpass within galaxies~\citep[e.g.,][]{Elmgreen84}.
-Thanks to the \Spitzer~\citep{Wener04} and WISE~\citep{Wright10} space telescopes, a large amount of data in these bands from many regions in the sky is available, which helps thave a more accurate calibration. 
-Fluxes from 3.6 and 4.5$\mu$m are suitable for calibration of the stellar mass, due to fact these two band-passes not only trace evolved stellar population but also they are almost insensitive to the emission from young stellar population or to dust absorption and emission. 
-\cite{Zhu10} used the Sloan Digital Sky Survey~\citep[SDSS][]{York00} and the \Spitzer Wide-area Infrared Extragalactic Survey~\citep[SWIRE;][] {Lonsdale03} to find calibration between galaxy luminosity and stellar mass. 
-Using the M/L of galaxies, they found correlations between $K_s$ band, 3.6 and 4.5 $\mu$m band luminosities and stellar masses and formulated these correlations as:
+The peak of emission from evolved stars is in the near-infrared part of the spectrum.
+Therefore, many studies tried to make a map of stellar mass distribution within galaxies using this bandpass~\citep[e.g.,][]{Elmgreen84}.
+Thanks to the \Spitzer~\citep{Wener04} and WISE~\citep{Wright10} space telescopes, a large amount of data in these bands from many regions in the sky is available, which helps to make a more accurate calibration. 
+Fluxes at 3.6 and 4.5$\mu$m are suitable for calibration of the stellar mass, due to fact these two band-passes not only trace evolved stellar population but also they are almost insensitive to the emission from young stellar population or to dust absorption and emission. 
+\cite{Zhu10} used the Sloan Digital Sky Survey~\citep[SDSS][]{York00} and the \Spitzer Wide-area Infrared Extragalactic Survey~\citep[SWIRE;][] {Lonsdale03} to find a calibration between galaxy luminosity and stellar mass. 
+Using the $M/L$ of galaxies, they found correlations between the $K_s$ (2.2 $\mu$m) band, 3.6 and 4.5 $\mu$m band luminosities and stellar masses and formulated these correlations as:
 \begin{align}
 \label{equ: zhu1}
 \log M_{\star} = -1.60  + 1.12  \log \nu L_{\nu}[K_s]\\
@@ -727,15 +727,15 @@ Using the M/L of galaxies, they found correlations between $K_s$ band, 3.6 and 4
 \end{align}
 where M$_{\star}$ is the stellar mass in solar masses and $ \nu L_{\nu}[\lambda]$ is the luminosity in erg~s$^{-1}$ at the specified wavelength.
 
-\cite{Eskew12} tested the 3.6- and 4.5 $\mu$m fluxes as proxies for stellar mass in the Large Magellanic Cloud and found an empirical relation between mass of the stars and the luminosities of stars as:
+\cite{Eskew12} tested the 3.6- and 4.5 $\mu$m fluxes as proxies for stellar mass in the Large Magellanic Cloud and found an empirical relation between stellar mass and luminosities as:
 \begin{equation}
 \label{equ:eskew}
   M_{\star} = 31.84 \times 10^{5.65} L_{3.6}^{2.85} L_{4.5}^{-1.85}
  %\log M_{\star} = 5.6 +2.85\log (F_{3.6})-1.85 \log (F_{4.5})+2\log \left(\frac{D}{0.05}\right)
 \end{equation}
-where M$_{\star}$ is the stellar mass in solar masses, and $L = \lambda L_{\lambda}$ is luminosity in erg~s$^{-1}$/$\AA$.
-Equ.~\ref{equ: zhu1}--~\ref{equ: zhu3} have been derived from a large sample of galaxies, and were tested on different type of regions and galaxies. 
-on the other hand,~\cite{Eskew12} mentioned that since their calibration is based on data from Magellanic clouds this,
+where M$_{\star}$ is the stellar mass in solar masses, and $L = \lambda L_{\lambda}$ is luminosity in erg~s$^{-1}$~\AA$^{-1}$.
+Equ.~\ref{equ: zhu1}--~\ref{equ: zhu3} have been derived from a large sample of galaxies, and were tested on different types of regions and galaxies. 
+On the other hand,~\cite{Eskew12} mentioned that since their calibration is based on observations of the Magellanic Clouds,
 measuring the stellar mass from Equ.~\ref{equ:eskew} might break down for highly star-forming regions; moreover, this equation has not tested on regions with different metallicity. 
 In more recent work,~\cite{Laura16} measured stellar mass for group of galaxies with ($z < 0.035$) and  showed they are tightly correlate with stellar mass measured from other calibrations. 
 
