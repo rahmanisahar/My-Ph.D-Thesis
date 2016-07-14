@@ -15,11 +15,12 @@ Inside every galaxy, there are millions of stars, planets, and black holes, as w
 They all affect each others' formation, evolution, and extinction.
 There is also dark matter inside every galaxy, which, to the best of our knowledge, only has gravitational effects on the other components.
 Nearly all the information we can obtain from galaxies other than our own comes from their light.
-Since each observable phenomenon inside galaxies emits most of its energy in specific wavelengths, 
-a plot of brightness/flux density of galaxies as a function of wavelengths, which is called spectral energy distribution (SED), is a useful tool to gain a information about galaxies. 
-Young and evolved stars, dust, and gas in the space between the stars are the most important contributors to the SEDs of galaxies.
+Since each observational phenomenon inside galaxies emits most of its energy in specific wavelengths, 
+a plot of brightness/flux density of galaxies as a function of wavelength, called a spectral energy distribution (SED), is a useful tool to understand galaxies. 
+Young and evolved stars, dust and gas in the space between the stars are the most important contributors to the spectral energy distributions of galaxies.
 Planets and black holes without an accretion disc, on the other hand, have a much lower intensity compared to the other aforementioned components, and therefore contribute less to the SED.
-Therefore, with properly modeling observed features in SEDs we can extract information about the evolution of stars, dust, and gas inside galaxies.
+Therefore, with properly modeling observed features in SEDs we can extract information about the evolution of stars, dust and gas inside galaxies.
+
 
 %stars
 Arguably, stars are the main component of normal galaxies.
@@ -40,45 +41,45 @@ The effect of the ISM on stellar formation is undeniable; it provides the raw ma
 Studying the interstellar medium is not only essential to understanding the formation of stars, but also it is necessary for interpretation of stellar evolution due to fact that stars release their material into ISM when they reach the end of their evolutionary track.
 
 In a galaxy, like our own, star formation begins with the condensation of giant molecular clouds (GMCs, $\sim 10^7$ M$_{\odot}$) in the ISM due to gravitational instabilities. 
-The denser regions within GMCs collapse under their own gravity, self-gravity, and creates clumps.
-Some of these clumps, which have a similar distribution to stellar initial mass function (IMF), develop into self-gravitating cores.
-Then these clumps continue to become denser and transfer to protostars. 
-Since the protostars have a higher mass than their surroundings, more gas from GMCs add to protostars.
+The denser regions within GMCs collapse under their own gravity (self-gravity) and create clumps.
+Some of these clumps, which have a similar mass distribution to the stellar initial mass function (IMF), develop into self-gravitating cores.
+Then these clumps continue to become denser and turn into protostars. 
+Since the protostars have a higher mass than their surroundings, more gas from GMCs accretes on to protostars.
 This procedure continues until hydrogen burning in centre of protostars starts (see~\cite{McKee07} for more detail). 
 
 Metallicity, which is defined as the ratio of abundance of metals (any element heavier than hydrogen and helium) to the abundance of hydrogen, affects formation and evolution of stars indisputably.
 \cite{Walch11} showed that in the case of large scale turbulence, the effect of metallicity on star formation is negligible, but if turbulence is decaying,  metallicity has a strong impact on stabilizing self-gravitating cores.
 Metals also play an important role in heating, cooling, and ionizing processes in the ISM.
 Since cooling is one of the main reasons for condensation of GMCs~\citep[e.g.][]{Maio07}, in low metallicity regions star formation may be suppressed. 
-The amount of metals in stars also affect their evolutionary tracks~\citep[e.g.][and references therein]{Maeder02}.
-For instance, low metallicity stars tend to be have lower mass loss by stellar wind than that with higher metallicity.
-Observation shows that massive low metallicity stars rotate faster.
-Being more massive at the end of evolutionary track makes massive low metallicity stars have a lower chance to explode and become a supernova.
+The amount of metals in stars affects their evolutionary tracks~\citep[e.g.][and references therein]{Maeder02}.
+For example, low metallicity stars tend to have lower mass loss from stellar winds than those with higher metallicity.
+Observations show that massive low metallicity stars rotate faster.
+Being more massive at the end of their evolutionary track gives massive low metallicity stars a lower chance to explode and become a supernova.
 
 
 %what does SED look like?
 Our primary source of information about galaxies, specifically unresolved ones, is their spectral energy distributions. 
 Broadly speaking, young and hot stars emit most of their light in ultraviolet (UV) wavelengths, evolved stellar populations show themselves in optical and near-infrared (NIR) emission, and gas and dust heated by stellar emission are bright in mid-infrared (MIR) or far-infrared (FIR) wavelengths.
 Therefore, UV-to-IR SEDs contain valuable information about galaxies' stellar evolution and their ISM. 
-Other wavelengths regimes in galaxy SEDs (e.g. X--ray, radio), that are dominated by processes such as active galactic nuclei, quasars, and supernovae shocks, are beyond the scope of this thesis.
-The general shape of SEDs mirrors the morphological type of galaxies; starburst galaxies, which have high star formation rates (SFRs), emit the bulk of their energy in the UV, while the light of quiescent galaxies is dominated by optical and IR emission. 
+Other wavelengths regimes in galaxy SEDs (i.e. X--ray, radio), that are dominated by processes such as active galactic nuclei, quasars, and supernovae shocks, are beyond the scope of this thesis.
+The general shape of SEDs mirrors the morphological types of galaxies: starburst galaxies, which have high star formation rates (SFRs), emit the bulk of their energy in the UV, while the light of quiescent galaxies is dominated by optical and IR emission. 
 Detailed information about the age of stellar populations and other properties of galaxies can be determined by modelling their SEDs.
 
  %how do you model it? %SED model CIGALE %Population synthesis ----> SFR, stellar mass 
-The stellar population synthesis method, which sums stellar spectra of a galaxy to produce its spectrum, has been widely utilized since the 1970s~\citep[e.g.][]{Tinsley72,Searle73} to model SEDs of galaxies.
+The stellar population synthesis method, which sums stellar spectra to produce a composite spectrum, has been widely utilized since the 1970s~\citep[e.g.][]{Tinsley72,Searle73} to model SEDs of galaxies.
 A thorough SED model must include stellar population models~\citep[e.g.][]{Bruzual93,Bruzual03,Maraston05}, stellar emission and dust attenuation~\citep[e.g.][]{Calzetti00,Dopita05}, dust grain emission such as from polycyclic aromatic hydrocarbons~\citep[PAHs; e.g.][and references therein]{Tielens08}, and IR emission from gas and dust~\citep[e.g.][]{Chary01,Dale02,Lagache03,Lagache04,Smith07a,Draine07}.
 Many groups have modelled SEDs for different types of galaxies and created SED templates (for more information see the review of \cite{Walcher11} on fitting of SEDs and references therein).
-Since the physical parameters of templates generated by the SED models are known, we can find properties of observed galaxies by fitting their SEDs, (either by minizing $\chi^2$ or by Bayesian analysis)  using the templates.
+Since the physical parameters of templates generated by the SED models are known, we can find properties of observed galaxies by fitting their SEDs (either by minizing $\chi^2$ or by Bayesian analysis),  using the templates.
 One example of an SED-fitting code is {\em CIGALE}: Code Investigating GALaxy Emission~\citep{Noll09}.
 It combines SED models and uses Bayesian analysis to find the best-fit SED for observed data in the rest-frame UV-to-IR.
-Some of the physical properties of gaalxies should be assumed as an input data to find the best SED, and others will be derived from SED results~\citep[See][for more detail]{Walch08}.
-For example, the Best fitted SED has information regarding star formation history and stellar mass to light ratio.
-By integrating star formation history over a specific time scale, SFR can be derived. 
-knowing the stellar mass to light ratio, one can use the observed luminosity to calculate stellar mass in galaxies.
+Some of the physical properties of gaalxies must be assumed as input data to find the best SED, and others are derived from SED results~\citep[see ][for more detail]{Walch08}.
+For example, the best-fit SED has information regarding star formation history and stellar mass to light ratio.
+By integrating the star formation history over a specific time scale, SFR can be derived. %PB: please check: integrate SFH to get SFR, or SFR to get SFH?
+Knowing the stellar mass to light ratio, one can use the observed luminosity to calculate stellar mass in galaxies.
 
-Formation of stars in galaxies depends on many parameters such as gas, stellar mass, metallicity, dust, galaxy's morphology, and location of the star forming region inside the galaxy.
-In extragalactic astronomy, measuring the rate that stars form is uncertain and relies upon theoretical models and observational data.
-Studying star formation and its relation to other quantities in galaxies in an ongoing research.
+The formation of stars in galaxies depends on many parameters, including gas, stellar mass, metallicity, dust, the galaxy's morphology and the location of the star forming region inside the galaxy.
+In extragalactic astronomy, measuring the rate at which stars form is uncertain and relies upon theoretical models and observational data.
+Studying star formation and its relation to other quantities in galaxies is the subject of ongoing research.
 In this chapter, we present a review of observational methods of measuring the star formation rate and the main properties that affect measuring and scaling the SFR. A discussion of the ISM and its role in star formation is presented in $\S$~\ref{sec: ism_intro}. In $\S$~\ref{sec: sfr_intro} we discuss measuring the star formation rate, followed by a discussion of the measurement of the stellar mass in $\S$~\ref{sec: starmass_intro}. Current issues about star formation and its relation to other properties of a galaxy are discussed in $\S$~\ref{sec: pre_intro}. 
 %% We or I?!
 
@@ -96,28 +97,28 @@ In this chapter, we present a review of observational methods of measuring the s
 %what the observation tell us
 % how do we measure the dust and gas
 The interstellar medium in galaxies is a complex system with a wide range of structures, but these structures can be divided into two main components: gas and dust.
-The gas in the ISM of galaxies is mostly made of hydrogen and helium, with 1 per cent heavier elements (metals), and can be in the form of clouds or diffuse (diffused?) regions.
-Gas clouds include molecular clouds, cold neutral atomic hydrogen (\hi) or hot \hi~clouds, and diffuse gas can be either \hii~(ionized hydrogen) regions or hot intercloud medium.
-Dust mostly contains silicate, and graphite grains can be seen in dark clouds or galactic cirrus.
-Emission lines from atoms or ions (i.e \hii~regions) in a hot gas, lines from molecules in cold clouds, and 21~cm emission of \hi~are the main observable signatures of gas in the ISM of galaxies.
+The gas in the ISM of galaxies is mostly made of hydrogen and helium with 1 per cent heavier elements (metals), and can be in the form of clouds or diffuse regions.
+Gas clouds include molecular clouds, cold neutral atomic hydrogen (\hi) or hot \hi~clouds, and diffuse gas can be either \hii~(ionized hydrogen) regions or a hot intercloud medium.
+Dust mostly contains silicate and graphite grains, and can be seen in dark clouds or galactic cirrus. %PB: please check changes to this sentence
+Emission lines from atoms or ions (i.e \hii~regions) in hot gas, lines from molecules in cold clouds and 21~cm emission of \hi~are the main observational signatures of the gas in the ISM of galaxies.
 Dust can be observed directly through far-infrared and sub-millimeter wavelength emission or indirectly through its extinction and attenuation effects (see Sec.~\ref{sec: extinction}).
 
 Molecular clouds in the ISM are cold ($\sim10$ K) and dense ($ 50<n<500$ cm$^{-3}$); masses of molecular clouds range from a few to millions of solar masses~\citep{Bolato08}.
 Density in the molecular clouds is not uniform. There are dense and colds clumps inside these clouds.
-Since these clumps are ideal places to form stars, studying molecular clouds has an important role in understanding formation of stars
+Since these clumps are ideal places to form stars, studying molecular clouds has an important role in understanding formation of stars.
 However, H$_2$ molecules, the main component of molecular clouds, have no permanent electric dipole moment which makes them difficult to detect.
 The second dominant component, helium, is a mono-atomic gas and has the same problem as hydrogen, but these clouds also contain heavier elements such as carbon monoxide, hydrogen cyanide, water, ammonia and more than tens of others.
 Carbon monoxide (CO) molecules are the third-most abundant constituent of molecular clouds.
 In fact, most of our knowledge from molecular clouds comes from observing line emission of CO molecules, which {\bf due to their heavy weight, they have very low energy rotational state} and can be excited in the temperature of molecular clouds.%%Sr: I'll add more detail here
-Other heavier molecules have emission lines which are also detectable in the spectrum of clouds (specially galactic ones), but observing CO emission is the most common way to study the properties of molecular clouds i.e. their mass (see Sec.~\ref{sec: ismmap} for more details).
+Other heavier molecules have emission lines which are also detectable in the spectra of clouds (specially galactic ones), but observing CO emission is the most common way to study the properties of molecular clouds i.e. their mass (see Sec.~\ref{sec: ismmap} for more details).
 
 The molecular clouds are surrounded by clouds of atomic gas~\citep{Kennicutt12}, which are easily traceable by 21-cm emission.
 Hydrogen atoms in the ISM (excluding the regions close to hot stars, see below) are in their ground state. 
 The electron and proton spins in the ground state can be parallel (i.e. both spin up) or anti-parallel (i.e. the proton's spin is up and the electron's spin is down or vice versa). 
 The energy of the anti-parallel mode is slightly less than the parallel mode.
 Since atoms always want to be in the state with lowest energy possible, electrons in the parallel mode have a tendency to flip to the anti-parallel mode. 
-However, the difference between these two states is very small and it takes millions of years before the transition happens.
-The large amount of hydrogen atoms compensates for the rareness of the transition and at any given time, there are enough hydrogen atoms to emit the 21-cm radiation. 
+However, the energy difference between these two states is very small and it takes millions of years before the transition happens.
+The large amount of hydrogen atoms compensates for the rarity of the transition and at any given time, there are enough hydrogen atoms to emit the 21-cm radiation. 
 Observation of the \hi atoms is specifically necessary for understanding physical properties and dynamics of the ISM, which leads to understanding the star formation process~\citep{Walter08}.
 
 \hii~regions are hot and low density regions that are mostly located in the disks of spiral galaxies.
@@ -132,7 +133,7 @@ Studying \hii~regions provides valuable insight into star forming regions by pro
 Dust has an insignificant effect on the mass of the ISM, but it plays crucial roles in the ISM's evolution.
 %The total gas mass of galaxies can be determined using optical depth in sub-mm waveband of dust emission. 
 In spiral galaxies, dust grains are located in cold regions ($\sim$30~K) and have a power-law size distribution.
-The source of thermal emission of dust is from stars, and shape of the continuum depends on size of the grain.
+The source of dust thermal emission is heating from stars and the shape of the continuum depends on size of the grain.
 Mid-infrared emission from dust grains is mainly dominated by PAHs heated by evolved stellar population~\cite{Smith07a} or recently formed intermediate-mass young stars~\cite{Peeters04}. 
 Large grains that are either heated by light from star-forming regions or by the interstellar radiation field from total stellar population emit most of their light in far-infrared~\citep[e.g.][]{Calapa14, lu14}
 Dust is the main source of extinction and reddening of starlight (See Sec.\ref{sec: extinction} for more information).
@@ -142,16 +143,16 @@ Dust is the main source of extinction and reddening of starlight (See Sec.\ref{s
 Measuring the mass of gas in galaxies is a necessary step to knowing how much raw material is available for forming stars.
 A map of the total gas mass in the ISM can be produced by direct observations of gas or using interstellar dust as a tracer. 
 Neutral atomic and molecular hydrogen are the most common components of the ISM. 
-Therefore, to produce a total gas mass map in galaxies, maps of these two components can be added together and multiplied by a constant factor to account for heavier elements, which are mostly helium and cannot be observed directly. 
+Therefore, to produce a total gas mass map in galaxies, maps of these two components can be added together and multiplied by a constant factor to account for heavier elements (mostly helium), which cannot be observed directly. 
 Another way to do the mapping is to assume that the ratio of total gas to dust is constant across the galaxy, and convert dust observations to a map of total gas mass.
 
 \subsubsection{Direct Measurement of the Gas}
 
 The surface density of gas in the ISM of galaxies can be measured by direct observation of the neutral and molecular hydrogen.
 This method can be promising if observational data with resolved molecular and atomic clouds are available.
-However, given the state of the current technology, having high resolution images of clouds for most galaxies is not possible. 
+However, given the state of current technology, having high resolution images of clouds for most galaxies is not possible. 
 This problem shows itself for distant galaxies more than nearby galaxies. 
-As a result, using images of molecular and atomic cloud to measure surface density of gas in ISM is limited to the telescopes resolution. 
+As a result, using images of molecular and atomic clouds to measure surface density of gas in galaxies' ISM is limited by telescopes' resolution. 
  
 %\subsubsection{Molecular Clouds}
 %PB: some repetition from earlier subsection here. 
@@ -165,8 +166,9 @@ Higher rotational transitions of CO can be used as a tracer as well, but they ar
 L_{CO} = D^2 \int I_{\rm CO} d\Omega, 
 \end{equation}
 %NOTE: Equations must be punctuated.%
-where $D$ is the distance to the cloud and $I_{\mathrm CO}$ is the CO brightness temperature integrated over the line profile in KKms$^{-1}$.
-It can be written as ${\int T_{\mathrm CO} dV}$ where $T_{\mathrm CO}$(k) is the peak brightness temperature in the CO line and $V$ is the line-width in Kms$^{-1}$.
+where $D$ is the distance to the cloud and $I_{\mathrm CO}$ is the CO brightness temperature integrated over the line profile in K~km~s$^{-1}$.
+It can be written as ${\int T_{\mathrm CO} dV}$ where $T_{\mathrm CO}$(K) is the peak brightness temperature in the CO line and $V$ is the line-width in km~s$^{-1}$.
+
 For a uniform cloud with a radius $R$, the CO luminosity is given by:
  \begin{equation}
 L_{\rm CO} = \pi R^2 T_{\rm CO} \Delta V.
@@ -180,7 +182,7 @@ Thus, using the virial theorem leads to calculating the mass of the cloud:
 \end{equation}
 where $\rho$ is the mass density of the cloud and $\sqrt{\frac{4\rho}{3\pi G T_{\rm CO}}}$ is called the conversion factor.
 Equ.~\ref{equ: vir} shows that the total mass of molecular clouds and the CO luminosity of the cloud are directly related~\citep{Young91}. 
-Since the dependency of $I_{\mathrm CO}$ to optical depth is negligible~\citep{Krumholz09}, total CO luminosity of the galaxies can be used to measure the total H$_2$ mass of galaxies.
+Since the dependence of $I_{\mathrm CO}$ on optical depth is negligible~\citep{Krumholz09}, total CO luminosity can be used to measure the total H$_2$ mass of galaxies.
 The relation between CO emission and H$_2$ cloud mass is shown to be
 \begin{equation}
 N_{\rm H_2}/\rm cm^{-2} = X_{\rm CO} \times I_{\rm CO}/{\rm K km s}^{-1},
@@ -199,14 +201,589 @@ Various groups are working on observations of different types of galaxies to mea
 
 In order to empirically determine the relation between H$_2$ masses and CO luminosities, many observational attempts have been made on both Galactic and extragalactic scales. 
 One of the most significant studies in this regard was done by~\cite{Solomon87}, who studied this relation over more than 273 clouds inside the Milky Way and found a strong correlation between the virial mass of molecular clouds and CO luminosity. 
-In Local Group galaxies, several groups have measured size, line width, and CO luminosity of molecular clouds and investigated the relation between  their virial masses and CO emission in environment other than the Milky Way. 
+In Local Group galaxies, several groups have measured size, line width, and CO luminosity of molecular clouds and investigated the relation between  their virial masses and CO emission in environments other than the Milky Way. 
 Pioneering works in measuring the extragalactic conversion factor were done for M31 and M32~\citep[e.g.,][]{Wilson89, Wilson90}. 
 Fig.~\ref{fig: mco} shows the CO luminosity verses virial masses of molecular clouds in the Milky Way, M31, M33, and IC~10. 
 The extragalactic molecular clouds are similar to those in the Milky Way. 
 The conversion between the CO luminosity and H$_2$ masses is still a controversial topic~\citep[e.g.][]{Narayanan11, Bolato13, Sandstrom13}.
 Problems regarding metallicity are not yet resolved and it is still not clear whether the conversion factor is global or local. 
-Extragalactic investigations were limited to nearby galaxies due to technical problems regarding resolution and sensitivity of the telescopes. 
-To measure the clouds in distant galaxies, spatial resolution of maps must be better than 40 pc which is the typical size of a giant molecular cloud~\citep[e.g.][and refrences therein]{Young91,Bolato13}. 
+Extragalactic investigations have been limited to nearby galaxies due to technical problems regarding resolution and sensitivity of the telescopes. 
+To measure the clouds in distant galaxies, the spatial resolution of maps must be better than 40 pc, which is the typical size of a giant molecular cloud~\citep[e.g.][and refrences therein]{Young91,Bolato13}. 
 
+ 
+Atomic gas in galaxies is dominated by \hi~atoms, which are relatively easy to observe in 21-cm.
+Assuming optically thin lines for \hi~emission, the intensity of the 21-cm emission is proportional to the density of the atomic hydrogen, $N_{H {\sc I}}$~(cm$^{-3}$), along the line-of-sight.
+\begin{equation}
+N_{H {\sc I}}  \propto \int T_{\mathrm B} dV
+\end{equation}
+where $T_{\mathrm B}$ is the temperature brightness in K and dV is in km~s$^{-1}$, with the integral over the line profile. 
+These properties make the 21-cm line a very useful tool to study gas in the ISM and trace the large-scale distribution of galaxies in the universe (\hi is detectable in most spiral galaxies and some elliptical galaxies).
+Although the 21-cm emission is the most reliable technique to map the ISM, the linear relationship between the intensity and the column density of the gas breaks down when the gas is optically thick~\citep{Braun09}. 
+
+\subsubsection{Dust Emission as a Tracer of Gas} 
+
+Studying the gas clouds in the ISM of distant galaxies by using direct methods is almost impossible and not practical, due to low spatial resolution of data.
+\cite{Hildebran83} was the first to suggest that one way to estimate the mass of the gas in the ISM might be from the optical depth of the sub-mm continuum emission from the dust; continuum dust emission is generally optically thin. 
+The Herschel Space Telescope \cite{Pilbratt10} measured the continuum dust emission from hundreds of galaxies\citep{Eales10, Oliver12}. 
+This amount of observational data provides a unique opportunity to study the ISM of galaxies using dust emission. 
+The observed FIR flux has almost no dependence on distance, thus, one of the advantages of using the dust emission as a tracer of the gas mass is that unlike the direct method, high spatial resolution is not necessary. 
+The other important advantage is that this method solves the newly-found problem of the ``dark gas" in galaxies. 
+Dark gas is a significant fraction of gas in galaxies which is traced by neither 21-cm emission nor CO emission~\citep{Abdo10}. 
+As such it is very difficult to detect with telescopes, but an accurate gas to dust ratio can lead to an accurate estimate of dark gas mass in galaxies. 
+
+There are disadvantages of the use of the gas to dust ratio to trace gas in the ISM.
+In order to use the dust as a tracer of the gas mass, first a relationship between the optical depth and the mass of the dust and then a relationship between the mass of the dust and the mass of the gas must be derived.
+\cite{Draine03} pointed out that the former approach is uncertain because of the uncertainly in the radiative efficiency of dust grains. 
+Measuring the gas to dust ratio in galaxies are not accurate, neither~\citep{Hildebran83}, which means that there are problems in both steps. 
+In addition, the dust method has two major practical problems: firstly, to apply this method, knowing the temperature of the dust is necessary. 
+To solve this problem, measurement of the continuum emission at far-infrared wavelengths long enough to cover the peak of the emission must be very accurate~\citep{Ealas12}. 
+The other problem is that there is evidence that the gas to dust ratio depends on the metallicity of the gas~\citep{Lisenfeld98, Draine07}, but even in direct methods the dependence on metallicity must be solved. 
+This method is the best alternative for measuring the total gas in galaxies where there are no observations of CO or \hi~emission. 
+
+\subsection{The ISM and starlight: extinction and attenuation}
+\label{sec: extinction}
+Dust in ISM affects stellar emission by attenuating, scattering or absorption.
+Attenuation refers to the effects of dust with embedded light sources distributed throughout. 
+The dust itself can be clumpy or smooth. 
+The effect of dust clouds with embedded light sources on the distribution of the light is called attenuation.
+The dust cloud could have any distribution and be clumpy or smooth.
+Since both light sources and dust have an extended distribution, the relative locations of the dust and light sources affect the net absorbed and scattered light.
+The other parameter that is important for the scattering and absorption is the relative position of dust and observer.
+When the dust is in the line of sight, attenuation will make the emerging light dimmer~\citep[e.g.][and references therein]{Calzetti13}.
+This is the typical situation that occurs when studying galaxies or extended regions within galaxies.
+
+Extinction happens when there is a combination of both absorption and scattering of radiation by dust and varies with the wavelength of emission; UV light passing through dust is more affected than visible light.
+Extinction can be defined as a reduction of the original intensity caused by dust:
+\begin{equation}
+\label{equ: extinction}
+{\mathrm I}(\lambda) = {\mathrm I}_0(\lambda)\exp[-\tau_{\lambda}]
+\end{equation}
+where I$(\lambda)$ is the observed intensity at wavelength $\lambda$, I$_0(\lambda)$ is the intensity of light before passing through dust, and $\tau_{\lambda}$ is the optical depth at wavelength $\lambda$.
+The extinction depends also on the size of grains and their extinction cross section.
+For measuring SFR using various wavebands, 
+the decrease in the intensity of radiation must be calculated and corrected for each wavelength; otherwise, there will be an underestimation of SFR. 
+% By converting Equ.~\ref{equ: extinction} to magnetidue system:
+% \begin{equation}
+%      {\mathrm m}_{\lambda} - {\mathrm m_0}_{\lambda}  = -2.5\log(\frac{{\mathrm I}(\lambda)}{{\mathrm I}_0(\lambda)})
+% \end{equation}
+% and by substituting $\frac{{\mathrm I}(\lambda)}{{\mathrm I}_0(\lambda)}$ with $exp[-\tau_{\lambda}]$, we have:
+% \begin{equation}
+% \begin{split}
+%     {\mathrm m}_{\lambda} - {\mathrm m_0}_{\lambda} & = -2.5\log(exp[-\tau_{\lambda}]) \\
+%               & = 1.086\tau_{\lambda}
+% \end{split}
+% \end{equation}
+% By defining ${\mathrm m}_{\lambda} - {\mathrm m_0}_{\lambda} & = {\mathrm A}_{\lambda}$  extinction in magnitude is A$_{\lambda} = 1.086\tau_{\lambda}$.
+
+
+
+
+% To describe the decrease in the intensity of the original beam when it passes through a region where dust particles are present while taking into account the radiation added to the beam by scattering into the line of sight, an integro-differential equation of the radiative transfer of light through dust is used. % PB: "beam" is jargon, change to something else. Simplify this sentence.
+% At UV/optical/near-IR wavelengths, the radiative transfer equation is: %PB: why does this eqn only apply at UV/opt/NIR? 
+% \begin{equation}
+% \frac{dI_{\nu}}{d\tau} = -I_{\nu}  + \frac{a_{\nu}}{\pi} \int I_{\nu}\phi(\nu,\cos \Theta)d\Omega
+% \end{equation}
+% where I$_{\nu}$ is the intensity of radiation and $\tau$ is the dust's optical depth.
+% $a_{\nu}$ is the dust albedo,  the ratio of the scattering coefficient to the sum of the scattering and absorption coefficients. 
+% $\phi(\nu,\cos \Theta)$ is the scattering phase function, and $\Theta$ is the angle between the scattered photon and the line of sight. %PB: what is \phi? Need to explain at least a little
+% Both $a_{\nu}$ and $\phi(\nu,\cos \Theta)$ are described in more detail in~\citep{Draine03}. 
+% The source function, i.e., the dust emission, which usually has small values for wavelengths shorter than a few $\mu$m, is neglected in the equation above. %PB: why no dust emission at short wavelengths? (temperature)
+% This decrease in the intensity of the stellar radiation must be calculated and corrected for different emission; otherwise, there will be an underestimation of the star formation rate. %PB: what do you mean by "different emission" in this sentence?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%SFR%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Measuring the star formation rate in galaxies} 
+\label{sec: sfr_intro}
+Understanding the formation of stars leads to better understanding of galaxies' formation and evolution. 
+Characterisation of the star formation processes such as star formation rate (SFR) and the stellar initial mass function (IMF) is necessary in examining galaxies' structure formation~\citep{McKee07}. 
+Measuring the SFR is not trivial and depends on a galaxy's morphology, metallicity, IMF, observational spatial resolution, and other properties. 
+There is a large number of review papers on how stars form and how their formation is traced. 
+From a theoretical perspective, one can refer to the classic picture of the theory of star formation as reviewed by \cite{Shu87} and more recently by~\citep{McKee07}. 
+From an observational standpoint, star formation is discussed by \cite[][and references therein]{Kennicutt98b, Kewley02, Calzetti13, Boquien10, Kennicutt12}.
+
+In principle, emission from new stars can be traced by ultraviolet, visible light, near-IR and radio wavelengths, hydrogen recombination lines, forbidden metal lines, and also in the sub-mm range by using  Bremsstrahlung emission. 
+Some of this emission is directly from stars, e.g.\ UV emission, and some is from ISM components that absorb and re-emit light from young stars, e.g.\ far-infrared emission.
+Techniques to calibrate emission from newly-born stars, preferably hot and massive ones, to the rate at which stars are being formed have been the subject of many studies~\citep[e.g.][]{Calzetti07, Kennicutt11, Hao11,Bigiel08} 
+The peak of emission of young, hot, and massive stars is at UV wavelengths, which makes them an ideal tracer of the current SFR.
+One of the main assumptions in using the luminosity of massive stars is that the SFR has remained largely constant during the timescale probed by the specific wavelength which is being used as the tracer. 
+By knowing the IMF, the number of massive stars can be used to extrapolate to the total number of stars formed in a given star-forming region.
+To have a reliable SFR indicator, the stellar IMF must be fully sampled to have at least one star in all mass bins (for more detail see Sec.~\ref{sec: imf}).
+In general each tracer has some systematic errors, and one should decide which tracer is more accurate for a given system. 
+
+\subsection{Stellar Initial Mass Function}
+\label{sec: imf}
+Stellar mass determines the important properties of a star, such as luminosity, lifetime and its evolutionary path. 
+One of the most fundamental and difficult questions that a complete theory of star formation must answer is ``what is the stellar initial mass distribution?'' of a star forming region.
+Since most SFR calibrations use emission from stars in a specific mass range, it is necessary to know the stellar IMF to extrapolate to the full stellar population.
+\cite{Salpeter55} empirically derived the stellar IMF from the observed stellar luminosity function of the Solar neighbourhood~\citep{Shu87}. 
+He introduced a power-law IMF $\Phi$  in the form:
+\begin{equation}
+\label{equ: salp}
+\Phi (\log M) = dN / d \log M \propto M^{-\gamma }
+\end{equation} 
+where $M$ is the stellar mass, $\gamma$ is a power index, and $N$ is the number of stars in the logarithmic mass range of $\log M + d\log M$.
+
+In the late 70s, it was recognised that the assumption of a single power-law IMF over all stellar masses is not correct and might overestimate the number of low-mass stars~\citep{Kroupa93, Bastin10}. 
+Since then, many groups have studied the stellar IMF and found different power-law relations (Fig.~\ref{fig: imf} ). 
+Most SFR calibrations have the same assumption that the stellar IMF is constant across all environments and adopt it from the standard stellar IMF introduced by\cite{Kroupa01}:
+\begin{equation}
+\begin{split}
+    \Phi (\log M) & \propto M^{-2.3}    \quad    (0.1 \le M(M{\odot}) \le 0.5)\\                  
+           & \propto M^{-3.3}    \quad    (0.5 \le M(M{\odot}) \le 100)
+\end{split}
+\end{equation}
+Although the Salpeter IMF produces more low-mass stars than the Kroupa IMF, they produce almost the same number of high-mass stars. 
+Therefore, the SFR calibrations, which mostly trace massive stars in galaxies, can be converted from the Kroupa IMF  to the Salpeter IMF by multiplying the calibration constant by 0.67~\citep{Madau14}.
+In a more recent study,~\cite{Weisz15} used data from the Panchromatic Hubble Andromeda Treasury program~\citep[PHAT][]{Dalcanton12} and showed that for nearby galaxies both Kroupa and Salpeter stellar IMFs overestimate the number of stars with masses greater than 8~M$_\odot$.
+\cite{Bastin10} reviewed the stellar IMF as derived from many observational results and showed that the stellar IMF is constant and universal, though there are uncertainties in different mass bins, especially at the high-mass end. 
+
+\begin{figure}
+\label{fig: imf}
+\centering
+\includegraphics[width=16cm]{../image_intro/imf}
+\small
+\caption{Comparing stellar initial mass functions (IMFs) by plotting the mass fraction per dex, power of 10, versus mass, normalized so that the integral under each curve is unity. The mass ranges from 0.1 to 120~M$_\odot$. Adopted from~\cite{Baldry03}.} 
+\end{figure}
+
+
+Since in using SFR calibration for different galaxies, we assume the initial mass function is universal, careful measurement of the IMF is a key factor in understanding the star formation rate. 
+In distant galaxies, only massive stars can be detected; therefore, the IMF must be assumed to include all stellar mass ranges in the SFR calibrations. 
+To show the impact of the different stellar IMF assumptions on the SFR calibrations, \cite{Calzetti13} used two different stellar IMFs and derived the SFR calibrations with these new assumptions.
+Adopting a modified \cite{Kroupa01} IMF, with its maximum stellar mass set to 30~M$_{\odot}$ instead of 100~M$_{\odot}$, changes the SFR calibration constants by factors ranging from 1.4 to 5.6 for different SFR indicators (Tab.~\ref{table1}). 
+
+\subsection{SFR Indicators}
+
+One of the main issues in studying star formation in distant galaxies is the calibration of star formation rate indicators~\citep[e.g.,][]{Lee10}. 
+Calibration of SFR indicators can be affected by differences in star formation history (SFH), metallicity, distribution of stellar population and dust in galaxies~\citep{Calzetti13}. 
+Based on the spatial resolution of a system, one can divide star formation indicators into two categories: resolved and unresolved star formation indicators.
+
+\subsubsection{Resolved Star Formation Indicators}
+The most direct way to measure the SFR and trace recent star formation is counting individual objects~\citep{Kennicutt12}. 
+These objects are mostly a few million years old and  are usually referred to as young stellar objects (YSOs). 
+Counting YSOs is used for calculating star formation rates in molecular clouds within $0.5- 1$ kpc of the Solar System. 
+The number of YSOs can be converted to SFR using: 
+\begin{equation}
+SFR(YSO) = N_{yso} <M>/\tau 
+\end{equation}
+where SFR(YSO) is in units of M$_{\odot}$~yr$^{-1}$, N$_{yso}$ is the number of YSOs.
+$<$M$>$ is the mean mass of YSO which depends on the IMF; considering current IMFs $<$M$> = $0.5~M$_{\odot}$ ~\citep[][]{Kennicutt12}. 
+$\tau$ is the lifetime of the YSO  $\tau \sim 2$Myr~\citep{Evans09}. 
+Since our current devices cannot resolve individual YSOs in distant galaxies, this method can only be applied to the Milky Way and its neighbourhood. 
+
+In theory, for any system with high enough spatial resolution, counting YSOs can be used as a tracer of the star formation. 
+However, considering the limited capabilities of present instruments, YSOs in most regions beyond the Magellanic Clouds (satellite galaxies of the Milky Way with a distance of 0.05 Mpc) cannot be resolved. 
+Therefore, most studies use the emission from energetic young stars as a tracer of the SFR. 
+% Another method to measure the SFR is via colour-magnitude diagrams (CMD) of star-forming regions. 
+% \cite{Kennicutt12} discusses the new progress made in the spatially-resolved mapping of CMDs to produce spatially and age-resolved maps of star formation in nearby galaxies. 
+% More detailed studies of CMDs are not in the scope of this paper; for more information, one can refer to~\citep{Kennicutt12}. %PB: I think you should give a one-sentence summary of the method here. 
+%Sr: I think later whether I want to keep this section or not.
+\subsubsection{Unresolved Star Formation Indicators}
+
+ In star-forming regions farther away than the Magellanic Clouds, the spatial resolution of currently-available observations is not high enough to find all the young stellar objects. 
+ In unresolved systems, calibrating continuum or line emission at wavelengths sensitive to young massive stars is the primary method of measuring SFR~\citep[e.g.,][]{Kennicutt98b, Kewley02, Bell03, Calzetti07, Calzetti08, Calzetti10, Calzetti13, Kennicutt07, Kennicutt09, Boquien10, Hao11, Kennicutt12}. 
+\cite{Kennicutt98b} calibrated the luminosities of galaxies at specific wavelengths for measuring the SFR, using relations between the SFR per unit mass or per unit luminosity and the integrated colour of a system provided by stellar population synthesis models~\citep[e.g.,][]{Bruzual93}. 
+
+In unresolved systems, SFR indicators can be divided into local and global indicators. 
+The global SFR indicators are defined for entire galaxies; therefore, they are luminosity-weighted averages across local star formation history and the physical condition inside each galaxy. 
+Local calibrations are used for regions within a galaxy~\citep[e.g.,][]{Zhu08, Kennicutt09, Boquien10, Boquien11, Hao11}.
+Limitations in the spatial resolution of observational data on the one hand, and the broader applicability to distant galaxy populations on the other, have in the past brought more attention to the calibrations of global SFR compared to local SFR. 
+Because of its ability to trace the physical processes of the star formation, local SFR calibration is becoming increasingly important~\citep{Calzetti13}.
+
+\subsubsection*{SFR Indicators Based on Single-Band Emission}
+
+In order to derive conversions between the luminosity in specific wavelengths and the SFR, stellar population synthesis models are used~\citep{Kennicutt98b}. 
+The general form of a SFR calibration using single-band emission is: 
+\begin{equation}
+\label{equ: sfrsingle}
+{\rm SFR}(\lambda)= CL(\lambda)
+\end{equation}
+where SFR is in units of M${_\odot}$~yr$^{-1}$, $L(\lambda)$ is the luminosity in erg~s$^{-1}$ at the wavelength $\lambda$, and $C$ is a constant derived from stellar population models~\citep[e.g, starburst99][]{Leitherer99}). 
+The constant $C$ varies for different wavelengths, mass ranges of the stellar IMF, and the timescale $\tau$ over which star formation is assumed to remain constant. 
+Table~\ref{table1}, from \cite{Calzetti13}, summarises some values of $C$ and their changes with assumption about the IMF. 
+
+\begin{table}
+\centering
+\caption{Luminosity-to-SFR calibrations adapted from~\cite{Calzetti13}}
+\label{table1}
+\begin{tabular}{ c c c }
+\hline\hline
+Luminosity$^1$ & C$^2$ & Assumptions$^3$\\
+\hline
+L$_{UV}$ & $3.0 \times 10^{(-47)} \lambda$ &$0.1 -100 M_{\odot}, \tau \ge 100 Myr $\\
+L$_{UV}$ & $4.2 \times 10^{(-47)} \lambda$ &$0.1 -30 M_{\odot}, \tau \ge 100 Myr $\\
+L$_{UV}$ & $4.3 \times 10^{(-47)}\lambda$ &$0.1 -100 M_{\odot}, \tau = 10 Myr $\\
+L$_{UV}$ & $1.0 \times 10^{(-46)}\lambda$ &$0.1 -100 M_{\odot}, \tau = 100 Myr $\\
+L(TIR) & $1.6 \times 10^{(-44)}$ &$0.1 -100 M_{\odot}, \tau = 100 Myr $\\
+L(TIR) & $2.8 \times 10^{(-44)}$ &$0.1 -100 M_{\odot}, \tau = 100 Myr $\\
+L(TIR) & $4.1 \times 10^{(-44)}$ &$0.1 -30 M_{\odot}, \tau = 100 Myr $\\
+L(TIR) & $3.7 \times 10^{(-44)}$ &$0.1 -100 M_{\odot}, \tau = 100 Myr $\\
+L(TIR) & $8.3 \times 10^{(-44)}$ &$0.1 -100 M_{\odot}, \tau = 100 Myr $\\
+L(H${\alpha}$) & $5.5 \times 10^{(-42)}$&$0.1 -100 M_{\odot},  \tau \ge 6 Myr $\\
+L(H${\alpha}$) & $3.1 \times 10^{(-41)}$&$0.1 -30 M_{\odot},  \tau \ge 10 Myr $\\
+\hline
+\end{tabular}
+\begin{tablenotes}
+\item $^1$ Luminosities (except for UV) are in erg~s$^{-1}$ and are given as $\nu L_{\nu}$.
+\item $^2$ The constant $C$ appears in Equ.~\ref{equ: sfrsingle}. For SFR(UV), the numerical value is multiplied by the wavelength $\lambda$ in $\AA$ to convert luminosity density to luminosity. %or flux density?  
+\item $^3$ Assumptions for the mass range of the stellar IMF, using the expression derived by \cite{Kroupa01} (see Sec.~\ref{sec: imf}), and for the timescale $\tau$.
+\end{tablenotes}
+\end{table}
+
+
+The most common single-band tracer of star formation rate is the ultraviolet.
+As mentioned before, UV emission is an excellent tracer for the SFR.
+Using a spectral energy distribution (SED) from Starburst99, with solar metallicity and assuming a~\cite{Kroupa01} stellar IMF with the timescale of over 100 Myr, SFR can be measured as~\citep{Leitherer99}:
+\begin{equation}
+SFR(UV) = 3.0 \times 10^{-47}\lambda L_{\lambda}
+\end{equation}
+where SFR(UV) is in M$_{\odot}$~yr$^{-1}$, $\lambda$ could be in the range of $(912< \lambda < 3000~\AA$), and $L_{\lambda}$ is in erg s$^{-1}$\AA. %PB: should be \AA$^{-1}$? please check.
+As shown in Table~\ref{table1}, with changes in the stellar ranges of the IMF, during timescales longer than 100 Myr, the calibration constant only decreases by a few per cent.
+The calibration constants' changes for shorter timescales are more significant and 
+their accuracy is 15 per cent which can vary as a function of $\lambda$~\citep{Calzetti13}.
+Ultraviolet light can easily be absorbed or scattered by interstellar dust. 
+Therefore, using the UV emission as a tracer might lead to underestimation of the SFR if dust extinction corrections are not applied (\cite{Kennicutt12}; also see Section~\ref{sec: ism_intro}). 
+
+Another single-band SFR indicator is the emission from hydrogen recombination lines. 
+Ionizing photons emitted from young massive stars ionize the surrounding gas. Hydrogen recombination line emission, such as the Balmer series lines of H${\alpha}$ $(0.6563 \mu$m) and H${\beta}$ $(0.4861 \mu$m), which are located in the optical wavelength range, are among the most traditional SFR indicators~\citep{Kennicutt98a}. 
+The relationship between the intensity of a hydrogen recombination line and the ionizing photon rate for a nebula is derived from quantum mechanics. 
+The assumption is that the nebula must be optically thick to ionizing photons~\citep{Osterbrock06}.
+Being optically thick means that almost all transitions more energetic than Ly${\alpha}$ absorbed and re-emitted via Ly${\alpha}$ and longer wavelengths.
+This is why the H${\alpha}$ emission line strength is greater in optically thick environments. The relation between the SFR, the luminosity of the \halpha emission line and the ionizing photon rate is~\citep[e.g.,][]{Osterbrock06, Kennicutt98b}:
+\begin{align}
+\label{equ: halpha}
+SFR(H\alpha) = 5.5 \times 10^{-42}L(H\alpha) \\
+                     = 7.4 \times 10^{-54}Q(H^{\circ})
+\end{align}
+where SFR(\halpha) is in M$_{\odot}$~yr$^{-1}$, L(\halpha) is in erg~s$^{-1}$, and Q(H$^{\circ}$) is the ionizing photon rate in units of s$^{-1}$.
+The constant on the right-hand side of Equ.~\ref{equ: halpha} is the resulting coefficient for electron temperature T$_{\mathrm{e}}=10000$~K and density N$_{\mathrm{e}}=100$~cm$^{-3}$ which is typical in \hii~regions.
+Dust extinction (Sec.~\ref{sec: ism_intro}) is the most important source of systematic error in calculating the SFR from hydrogen recombination lines.
+The effects of dust must be measured and \halpha observations must be corrected for extinction (e.g. by adding L(24$\mu$m) to account for dust emission) or this could lead to underestimating the SFR~\citep{Kennicutt98b}.
+
+
+Another nebular line used as a tracer of the SFR is \oii~$\lambda$3727$\AA$. 
+Although the luminosities of forbidden lines do not correlate with the ionizing atoms directly, their extinction has a correlation with the \halpha emission. 
+As a result, \oii~luminosity can be used as a tracer of the SFR through the \halpha luminosity. 
+\cite{Gallagher89} calibrated the SFR based on the \oii luminosity by using a sample of 75 galaxies. 
+Another calibration for this luminosity was derived by \cite{Kennicutt92}. 
+In his review on the SFR,~\citep{Kennicutt98b} averaged these calibrations and derived the following relation:
+\begin{equation}
+SFR([O\ II]) = 1.4 \times 10^{-41} L([O\ II])
+\end{equation}  
+where SFR(\oii) is in M$_{\odot}$~yr$^{-1}$ and L(\oii) is in erg~s$^{-1}$.
+Although SFR(\oii) is not as accurate as the SFR(\halpha), it is one of the major SFR indicators in high-redshift galaxies.
+In these galaxies, the \halpha emission line is redshifted out of the optical band; as a consequence, calibration of the strongest emission feature in the blue (\oii) as an SFR indicator is really useful~\citep{Kennicutt98b}.
+
+
+Since interstellar dust absorbs approximately half the starlight and re-emits in the infrared, the infrared emission can be used to trace the SFR.
+The IR luminosity of a system depends not only on the amount of embedded dust, but also on the heating rate provided by the stars. 
+Since young stars heat the dust to higher mean temperatures than old stellar populations, to first order the shape of the thermal IR SED depends on the starlight SED~\citep{Helou86}.
+The fact that the heating rate provided by the young stellar population is higher than  that of the old stellar population indicates that dust heated by the former is more luminous and consequently its SED peaks at shorter wavelengths (observationally $\approx 60~\mu$m) in comparison with dust heated by old or low-mass stars.
+Therefore, infrared observations are able to detect the emission from the dust heated by young stellar populations, and can be used as an SFR indicator.  
+
+Two empirical single-band infrared star formation rate indicators are the 24~$\mu$m and 70~$\mu$m bands.  
+The use of these two bands depends on the type of galaxy studied or the physical environment in different regions within the galaxy. 
+Since the luminosity of a stellar population with constant star formation increases with time, the IR emission, which is used as a tracer of the emission of the stellar population, has different calibration constants in the case of a global (the entire galaxy SFR indicator) or a local indicator.
+That is because the global case includes the integrated stellar population of a galaxy, while the other is calculated from regions with short star formation timescales such as \hii~regions, large star-forming complexes, etc.~\cite{Calzetti13}.
+Table~\ref{table2} shows the constant $C$ from Equ.\ref{equ: sfrsingle} for 24~$\mu$m and 70~$\mu$m luminosities, for local (spatial scale $\sim500$~pc for 24~$\mu$m and $\lesssim 1$ kpc for 70~$\mu$m) and global cases. 
+
+\begin{table}
+\centering
+\caption{Infrared Luminosity to star formation rate calibrations}
+\label{table2}
+\begin{tabular}{ c c c c }
+\hline\hline
+Luminosity$^1$ & $C$ & Assumptions & references\\ 
+\hline
+L(24)$^{0.885}_{local}$ & $1.31 \times 10^{-38}$ &$1.10\times 10^{40} \le L(24) \le 3.10\times 10^{44}$&  \cite{Calzetti07}   \\ 
+L(24)$_{global}$ & $2.04 \times 10^{-43}$ &$ 4.10\times 10^{42} \le L(24)  \le 5.10\times 10^{43}$& \cite{Calzetti07} \\
+L(70)$_{local}$ & $9.4 \times 10^{-44} $ &$5.10\times 10^{40} \le  L(70) \le 5.10\times 10^{43}$& \cite{Li12} \\
+L(70)$_{global}$& $5.9 \times 10^{-44}$ &$L(70) \ge 1.4 \times 10^{42} $& \cite{Li10}\\
+\hline
+\end{tabular}
+\begin{tablenotes}
+\item $^1$ Luminosities are in the form of L($\lambda$) = $\lambda$ L$_{\lambda$} in erg s$^{-1}$ 
+\end{tablenotes}
+\end{table}  
+
+\subsubsection*{SFR Indicators Based on Multi-Band Emission}
+
+%%add PAHs here
+Despite the usefulness of having single-band SFR tracers, in many cases the corrections due to dust effects and luminosity ranges increase the uncertainty in measurements.
+Nowadays, thanks to large surveys, enormous amounts of data are available at different wavelengths for galaxies, which allows for combining the emission from different bands and finding new calibrations.
+The conversion between SFR and luminosities in multiple bands mostly helps to avoid problems regarding dust extinction or attenuation (see~\ref{sec: ism_intro}). 
+The simplest possible way to combine luminosities at different bands in order to convert them to SFR is through a linear relation, whose correlation with the SFR is empirically derived~\citep{Kennicutt12}.
+
+The emission from dust heated by young stars changes with the amount of high energy photons heating the dust and by properties of dust such as grain size.
+Therefore, the calibration of SFR varies with each infrared band.
+Assuming that dust heating is dominated by emission from young stars, integrating over the full wavelength range of the infrared part of the spectrum gives the total infrared (TIR) emission of a system, which can be used as an SFR indicator~\citep{Kennicutt98b}. 
+ 
+TIR luminosity can be measured from the integrated infrared SED or a calibration of spatially-resolved infrared photometry introduced by~\cite{Draine07}. 
+\cite{Boquien10} modified the calibration of the total infrared luminosity as: 
+\begin{equation}
+L(\rm TIR) = 0.95L(PAH 8 \mu m) + 1.15L(24 \mu m) + L(70 \mu m) + L(160 \mu m)
+\end{equation}
+where $L = \nu L_{\nu}$ is the luminosity in erg~s$^{-1}$ at frequency $\nu$. 
+\cite{Calzetti07} indicated that the star formation rate calibration for a stellar population undergoing constant star formation over $\tau=$100~Myr is:
+\begin{equation}
+\label{sfr_tot_IR}
+SFR(\rm TIR) = 2.8 \times10^{-44}L(\rm TIR)
+\end{equation}
+where SFR(TIR) is in M${\odot}$~yr$^{-1}$, and L(TIR) is in erg~s$^{-1}$. 
+
+
+In Sec.~\ref{sec: overview} we mentioned that emission from PAHs in the ISM can be used as SFR indicator~\citep[e.g.][]{Peeters04}.
+Most studies used broad infared bands, which contain PAHs, to calibrate SFR~\citep[e.g.][]{Calzetti07}, but SFR can be calibrated using the PAH features only.
+\cite{Shipley16} calibrated SFR using observation from 105 star-forming galaxies with $z < 0.4$ as:
+\begin{equation}
+\log SFR = A + B \log L_{\mathrm{PAH}, \lambda}
+\end{equation}
+where $L_{\mathrm{PAH}, \lambda}$ is the luminosity of the PAH features at 6.2, 7.7, 11.3~$\mu$m or combinations thereof, in erg~s$^{-1}$.
+Tab.~\ref{table_PAH} shows the constants for each $L_{\mathrm{PAH}, \lambda}$.
+These calibrations underestimate the SFR for low-redshift galaxies with IR luminosity more than $10^12$~erg~s$^{-1}$.
+\cite{Shipley16} showed that using the 7.7~$\mu$m feature in the calibration reduces the scatter and concluded that this wavelength provides the most robust SFR tracer.
+
+
+\begin{table}
+\centering
+\caption{SFR calibrations from PAH luminosities; adopted from~\cite{Shipley16}}
+\label{table_PAH}
+\begin{tabular}{ l c c}
+\hline\hline
+PAH Feature(s) & A & B\\
+\hline
+6.2 + 7.7 + 11.3 & $ -42.56 \pm 0.03 $ &  1.00 \pm 0.03 \\ 
+6.2 & $ -40.06 \pm 0.09 $ &  0.96 \pm 0.04 \\ 
+7.7 & $ -42.38 \pm 0.06 $ &  1.00 \pm 0.03 \\ 
+11.3 & $ -44.14 \pm 0.08 $ &  1.06 \pm 0.03 \\ 
+6.2 + 7.7 & $ -42.05 \pm 0.04 $ &  0.99 \pm 0.03 \\ 
+6.2 + 11.3 & $ -42.52 \pm 0.05 $ &  1.01 \pm 0.03 \\ 
+7.7 + 11.3 & $ -42.85 \pm 0.04 $ &  1.01 \pm 0.03 \\ 
+\hline
+\end{tabular}
+\end{table}  
+
+The most common use of combining luminosities to trace the SFR is the combination of total infrared measurements with both far- and near-ultraviolet observations, with the latter being more commonly used. 
+This combination helps to avoid uncertainties from corrections for dust attenuation in far-UV (FUV) observations~\citep[e.g.][]{Hao11}. The calibration is:
+\begin{equation}
+L_{FUV}(\rm corr) = L_{FUV}(\rm obs) + \alpha L_{\rm TIR}
+\end{equation}
+where the luminosities are $L = \nu L_{\nu}$ in erg~s$^{-1}$, and the coefficient $\alpha$ depends on the bandpasses chosen for the UV and IR measurements. $\alpha$ is usually less than 1 because significant amounts of IR emission in many galaxies are from dust heated by older populations of stars~\citep{Kennicutt12}. The coefficient $\alpha$ is calibrated both theoretically, using evolutionary synthesis models, and empirically, by using measurements of dust corrected SFRs (~\citep[e.g.][]{Hao11, Leroy08}. 
+
+Another common multi-wavelength indicator for star formation is using H${\alpha}$ emission in combination with the 24~$\mu$m emission. 
+This combination gives a more accurate dust-corrected estimate of the SFR~\citep{Kennicutt09}:
+\begin{equation} 
+\label{equ: halphaplus24}
+SFR = 7.9 \times 10^{-42}[L(H{\alpha})_{\rm obs} + 0.020L(24)]
+\end{equation}
+where L(H${\alpha}$)$_{\rm obs}$ is the observed H${\alpha}$ luminosity without correction for internal dust attenuation, given in the units of erg~s$^{-1}$. 
+L(24) is the 24~$\mu$m IR luminosity in erg~s$^{-1}$, and SFR is in M$_{\odot}$~yr$^{-1}$.
+
+
+Infrared emission in other bands can be used for correcting dust effects on UV or \halpha~emission (see Tab.~\ref{table3}). 
+The corrected emission then can be used as a SFR tracer.
+These composite SFR indicators also have systematic uncertainties; yet, it seems that there is good correlation between multi-band tracers and single-band tracers. 
+Moreover, less uncertainty arises in this case than when using the single-band emission as a tracer~\citep{Kennicutt09}. 
+
+\begin{table}
+\centering
+\caption{Multi-wavelength dust-corrected luminosities, adopted from~\cite{Kennicutt12}}
+\label{table3}
+\begin{tabular}{ c c}
+\hline\hline
+Combined luminosities$^1$ & references\\
+\hline
+L(FUV)$_{\rm corr}$=L(FUV)$_{\rm obs}$ + 0.46L(TIR)& \cite{Hao11}\\
+L(FUV)$_{\rm corr}$=L(FUV)$_{\rm obs}$ + 3.89L(24~$\mu$m)& \cite{Hao11}\\
+L(NUV)$_{\rm corr}$=L(NUV)$_{\rm obs}$ + 0.27L(TIR)& \cite{Hao11}\\
+L(NUV)$_{\rm corr}$=L(NUV)$_{\rm obs}$ + 2.26L(24~$\mu$m)& \cite{Hao11}\\
+L(\halpha)$_{\rm corr}$=L(\halpha)$_{\rm obs}$ + 0.0024L(TIR)& \cite{Kennicutt09}\\
+L(\halpha)$_{\rm corr}$=L(\halpha)$_{\rm obs}$ + 0.020L(24~$\mu$m)& \cite{Kennicutt09}\\
+\hline
+\end{tabular}
+\begin{tablenotes}
+\item $^1$ Luminosities are in the form of L($\lambda$) = $\lambda$ L_{$\lambda$} in erg~s$^{-1}$ 
+\end{tablenotes}
+\end{table}  
+
+%PB: would it make sense to put this paragraph closer to where you first discuss Table 1? Sahar: I thought because IMF affect all of the calibration it would be better to have at the end of the section. %PB: OK.
+As mentioned in Section~\ref{sec: imf}, using different IMFs results in having different calibration constants for star formation rate. 
+From Table~\ref{table1} it is clear that changing the IMF affects the H${\alpha}$ SFR calibration more than other SFR calibrations. 
+This effect is more than four times larger than for UV SFR calibrations because newly-formed stars having up to $\sim 5$ M$_{\odot}$ emit more strongly at UV wavelengths than in other parts of the spectrum; however, significant amounts of ionising photons are produced by stars more massive than $\sim 20$ M$_{\odot}$.
+Furthermore, reaching an asymptotic value of ionizing photons takes longer for more massive stars (10 Myr for the upper mass limit of 30 M$_{\odot}$ versus 6 Myr for 100 M$_{\odot}$). 
+Therefore, changes in the H${\alpha}$ SFR calibration constant are more pronounced, while for UV and TIR the calibration constants are fairly close to each other.
+On the other hand, using the mean stellar mass for the Kroupa IMF $(<$M$> \sim 0.6$ M$_{\odot})$ yields less than a 10 per cent difference between using the upper mass limit of 100 M$_{\odot}$ and 30 M$_{\odot}$. 
+As a result, calibrations derived with the mean stellar mass of a system are more accurate than those that are based on tracing the most massive stars~\citep{Calzetti13}.
+
+Our understanding of star formation in extragalactic systems depends on the light emitted by those systems.
+While emission from massive and young stars dominates the light of the system, the mass of low-mass stars dominates the mass  (see Sec.~\ref{sec: imf}).
+Therefore, SFRs are calibrated based on the dominant light and low-mass stars are accounted for using the initial mass function.
+Emission from star forming regions should be corrected before it can be used in calibrations.
+On its way to the Earth this emission passes through dust and gas clouds which cause extinction or attenuation (see Sec.~\ref{sec: extinction}).
+On the other hand, evolved stars emit their light in the whole spectrum as well as UV. 
+Therefore, even though it might have an insignificant part in the UV emission from galaxies, a correction for emission from evolved stars should be considered~\citep{Leroy08}.
+After measuring the corrected luminosities for star forming regions in galaxies (global or local), using proper calibrations can give the best estimation of SFR in galaxies. 
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%Stellar Mass%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Stellar mass}
+\label{sec: starmass_intro}
+One of the most fundamental physical parameters which describes the present state of a galaxy is its stellar mass. 
+Stellar mass is linked with the structure and star formation history of disc galaxies~\citep{Gavvazi96} and galaxies of all morphologies~\citep{Scodeggio02}. 
+Measuring the mass of a stellar population is indirect and subject to significant uncertainties. 
+In principle there are two ways to measure stellar mass in galaxies. 
+The first is measuring the dynamical mass of a galaxy using kinematics (the mostion of stars)~\citep{Cappellari06} or gravitational lensing (bending of light as the light passes near a galaxy)~\citep{Auger09}, and then modelling the mass of the dark matter and subtracting it from the measured mass. 
+
+The second method is based on stellar population models~\citep[e.g.][]{ Bruzual93, Kotulla09} and using them to connect stellar mass to an observable, such as luminosity at different wavelengths, colours, or spectral energy distribution. 
+Stellar population models predict the expected SEDs for stellar populations based on parameters of regions such as star formation history, metallicity, and IMF.
+Uncertainties come from uncertainties in the stellar initial mass function (see Sec.~\ref{sec: imf}), the stellar evolution models, especially the stage where stars have the most luminosity in their evolution, the evolutionary state of the galaxy~\citep[see,][and references therein]{Dalcanton12}, and star formation histories. 
+
+
+In order to translate between photometry and stellar mass the stellar mass-to-light ratio ($M/L$) is needed.
+The use of $M/L$ is one way to measure stellar mass surface density. It is an indirect method and has high uncertainties in specific cases, but can help in studying the stellar mass in large samples. 
+For integrated galaxy light, the $M/L$ is estimated using scaling relations between $M/L$ and broadband colours \citep[e.g.]{Bell03} and then multiplied by luminosity to estimate a mass.
+For resolved galaxies, one can produce a map of the stellar mass surface density distribution in galaxies using resolved colour to measure spatial variations in $M/L$.
+This method gives more accurate results than measuring the stellar mass surface density distribution from single-band images rescaled by a uniform mass to light ratio~\citep{Zibetti09}.
+ 
+
+Comparing results from independent methods to measure stellar mass helps to determine whether there are any systematic differences.
+Comparing the results from measuring stellar mass within galaxies shows that the differences are on the order of a few tens per cent~\citep{McLaughlin05}.
+Therefore, to model subtleties, the advantages and disadvantages of using each method should be carefully considered. 
+
+
+\subsection{Galaxy masses from dynamics}
+
+The simplest and the most common way to estimate the mass of a galaxy is assuming that the physics of the galaxy is simple Newtonian physics.
+Therefore, the circular velocity $v{\rm circ}(r)$ of an orbit within a spherical system of gravitational potential $\phi$ and mass $M$ is given by:
+\begin{equation}
+\label{eq: simpmass}
+v^2_{\rm circ}(r)=r\frac{d\phi}{dr} = G\frac{M(r)}{r}
+\end{equation}
+where where $G$ is the gravitational constant and $M(r)$ is the mass within a sphere of radius $r$. 
+For a flattened disk, which is the case in most spiral galaxies, the right hand side of Equ.\ref{eq: simpmass} must be replaced by the more exact expression derived by~\cite{Freeman70}. 
+For the case of no dark matter or bulge, \cite{Freeman70} showed that the rotation curve of a self-gravitating disk is:
+\begin{equation}
+v^2_{circ}(R)= 4\pi G \Sigma_{0}R_{d} y^2[I_0(y)K_0(y) - I_1(y)K_1(y)]
+\end{equation}
+where $\Sigma_0$ is the central surface brightness, and $R_d$ the disk scale length, where the ratio of the intensity of disk to bulge is $e$ ($\sim$2.71).  %PB: Not quite the right definition of scale length? Please check.
+$y=\frac{R}{2R_d}$, and $I_i(y)$ and $K_i(y)$ are the first and second kinds of modified Bessel functions. 
+
+
+The mass distribution in disk galaxies is usually calculated from rotation curves or integrated line profiles from emission lines such as H${\alpha}$, CO, and \hi~lines. 
+Integrated line widths only yield an estimate of total mass within some (uncertain) isophotal radius.
+Thanks to the current generation of detectors, it is possible to obtain very high-resolution spectra in the \halpha and CO lines over most of the optical disks of galaxies.
+The higher resolution data %PB sentence incomplete.
+
+A detailed description of calculating dynamical masses in galaxies is beyond the scope of this work. 
+The methods mentioned represent the first order of approximation. 
+For more accurate results, one should consider non-circular rotational velocities and the fact that galaxies contain millions of stars plus interstellar objects; therefore simple two-object Newtonian physics is not the case here. 
+A detailed review of dynamical masses of galaxies can be found in \citet{Courteau13}.
+
+\subsection{Galaxy masses from stellar population modelling}
+%PB: quite a bit of repetition in the following sentences.
+Galaxies can be observed because of their stellar emission; stars radiate the energy produced from nuclear reactions in their cores. 
+Given a star's initial mass, the theory of stellar evolution can describe the amount of energy released. 
+Hence, stellar mass that is responsible for radiation of stars can be derived by modelling the spectral energy distributions of galaxies. 
+However, some fraction of the mass of galaxies consists of evolved stars which no longer emit radiation yet still contribute to the galaxy mass as stellar remnants. These should be considered in models.
+Stellar population synthesis models are used to predict the SED of a stellar population using many physical parameters. 
+These parameters, which control the time evolution of the stellar population such as age, $t$, of the population, measured in years, also referred to as the time passed since the star formation began, IMF, and metallicity~\citep{Courteau13}.
+
+The basic idea behind finding a suitable calibration between flux/luminosity of the stars in different wavelengths and stellar mass is that one can use the SFHs recovered from synthesizing the stellar optical colour-magnitude diagrams in different regions of a galaxy. 
+The calculated stellar mass in nearby galaxies can be used to calibrate the fluxes from the stars in other galaxies.
+\cite{Zibetti09} suggested that to reach the maximum spatial resolution one can recombine the photometric information on a pixel-by-pixel basis. 
+They used this method to study the stellar mass distribution in galaxies as well as the dependence of the SED on stellar mass density.
+To do so, the surface density of stellar mass at each position is derived by: 
+\begin{equation}
+\label{equ: massphot}
+\Sigma_{{\mathrm M_\star}} (\alpha, \delta) = \Sigma_{\lambda}(\alpha, \delta) \gamma_{\lambda}(\alpha, \delta)
+\end{equation}
+where $\alpha$ and $\delta$ are sky position (right ascension and declination, respectively),
+$\Sigma_{{\mathrm M_\star}} (\alpha, \delta)$ is the stellar surface density,
+$\Sigma_{\lambda}(\alpha, \delta)$ is the surface brightness and $\gamma_{\lambda}(\alpha, \delta)$ is the effective stellar $M/L$ at an effective wavelength $\lambda$.
+In Equ.\ref{equ: massphot},  $\gamma_{\lambda}$ can be described as a function of one or more colours as observed at the specified location in the galaxy. 
+
+The peak of emission from evolved stars is in the near-infrared part of the spectrum.
+Therefore, many studies tried to make a map of stellar mass distribution within galaxies using this bandpass~\citep[e.g.,][]{Elmgreen84}.
+Thanks to the \Spitzer~\citep{Wener04} and WISE~\citep{Wright10} space telescopes, a large amount of data in these bands from many regions in the sky is available, which helps to make a more accurate calibration. 
+Fluxes at 3.6 and 4.5$\mu$m are suitable for calibration of the stellar mass, due to fact these two band-passes not only trace evolved stellar population but also they are almost insensitive to the emission from young stellar population or to dust absorption and emission. 
+\cite{Zhu10} used the Sloan Digital Sky Survey~\citep[SDSS][]{York00} and the \Spitzer Wide-area Infrared Extragalactic Survey~\citep[SWIRE;][] {Lonsdale03} to find a calibration between galaxy luminosity and stellar mass. 
+Using the $M/L$ of galaxies, they found correlations between the $K_s$ (2.2 $\mu$m) band, 3.6 and 4.5 $\mu$m band luminosities and stellar masses and formulated these correlations as:
+\begin{align}
+\label{equ: zhu1}
+\log M_{\star} = -1.60  + 1.12  \log \nu L_{\nu}[K_s]\\
+\log M_{\star} = -0.79 + 1.19 \log \nu L_{\nu}[3.6\mu \rm m]\\
+\label{equ: zhu3}
+\log M_{\star} = -0.25 + 1.15\log \nu L_{\nu}[4.5\mu \rm m] 
+\end{align}
+where M$_{\star}$ is the stellar mass in solar masses and $ \nu L_{\nu}[\lambda]$ is the luminosity in erg~s$^{-1}$ at the specified wavelength.
+
+\cite{Eskew12} tested the 3.6- and 4.5 $\mu$m fluxes as proxies for stellar mass in the Large Magellanic Cloud and found an empirical relation between stellar mass and luminosities as:
+\begin{equation}
+\label{equ:eskew}
+  M_{\star} = 31.84 \times 10^{5.65} L_{3.6}^{2.85} L_{4.5}^{-1.85}
+ %\log M_{\star} = 5.6 +2.85\log (F_{3.6})-1.85 \log (F_{4.5})+2\log \left(\frac{D}{0.05}\right)
+\end{equation}
+where M$_{\star}$ is the stellar mass in solar masses, and $L = \lambda L_{\lambda}$ is luminosity in erg~s$^{-1}$~\AA$^{-1}$.
+Equ.~\ref{equ: zhu1}--~\ref{equ: zhu3} have been derived from a large sample of galaxies, and were tested on different types of regions and galaxies. 
+On the other hand,~\cite{Eskew12} mentioned that since their calibration is based on observations of the Magellanic Clouds,
+measuring the stellar mass from Equ.~\ref{equ:eskew} might break down for highly star-forming regions; moreover, this equation has not tested on regions with different metallicity. 
+In more recent work,~\cite{Laura16} measured stellar mass for group of galaxies with ($z < 0.035$) and  showed they are tightly correlate with stellar mass measured from other calibrations. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%Preview%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Preview}
+\label{sec: pre_intro}
+
+A complete picture of how galaxies are formed and evolve is tied to unfolding the mystery of the formation of stars.
+ Various phenomena affect the collapse of molecular clouds and star formation, including the environment of the star-forming region, chemical composition of the region, the initial density distribution of the gas and the mass of stars in galaxies.
+ For decades, observational, theoretical and numerical studies have investigated star formation;  in many cases, their results disagree with each other.
+ Empirical studies are used alongside theoretical ones to find laws that indicate the relations between physical properties of galaxies and star formation.
+
+The most well-known scaling law is the relation between the surface densities of the star formation rate and the gas mass, known as the Kennicutt-Schmidt (KS) law~\citep{Schmidt59, Kennicutt98a}. 
+The K-S law and similar empirical laws have been tested on local and high-redshift galaxies with various morphological types, on local and global scales and different ISM types~\citep[e.g][]{Kennicutt08,Bigiel08,Genzel10,Gnedin10,Shi11}.
+Despite all these studies, many questions about star formation laws still remain unanswered; the limitations of star formation laws are yet undetermined and there is no definitive answer on whether there is any universal star formation law.
+Their dependence on physical properties of galaxies is nontrivial and sometimes differs by type of star forming regions.
+Although a relation between star formation and gas is well established, the details of this relation are not clear:
+different types of gas affect SFR in different ways, and variations in metallicity alter the effects.
+There is no fully sampled and universal IMF,
+in fact there are many debates on whether the IMF is universal or not.
+The influence of evolved stars and distance of star forming regions from centre of galaxies on SFR has been mentioned in studies but not fully investigated.
+Besides studying the impact of the above-mentioned properties of galaxies on SFR, searching for other relations between properties of galaxies and their star forming regions continues.
+
+Advances in observing facilities, image quality, and methodology expand our knowledge of star formation. 
+In the past few decades, the use of advanced statistical methods in astronomical studies has also grown.
+Applying modern statistical methods to star formation studies can shed light on unsolved problems in this field. 
+Studies show that using different statistical methods can change our perspective on star formation laws. 
+For example,~\cite{Shetty13} used Bayesian methods to show that the K-S law is not universal. 
+Since astronomy is a data-driven science, data-mining methods should be quite useful to gain new insight on properties of star-forming regions. However, these methods have not been widely-applied to studies of nearby galaxies, where the most detailed information about star formation is available.
+
+%PB not sure, but you might need a little more intro to the papers 2 and 3 stuff here.
+
+In this thesis, we present three projects that study the effects of galaxy properties on star formation.
+We use UV to radio observations of both nearby and high-redshift galaxies, measure their physical properties, and using modern statistical methods, study their impact on SFR.
+Chapter~\ref{ch: paper1} focuses on investigating star formation laws in the Andromeda galaxy (M31) on both local and global scales using hierarchical Bayesian analysis.
+In addition to the Kennicutt-Schmidt law, we study the extended Schmidt law~\citep{Shi11} and the metallicity/star formation correlation~\citep{Krumholz09}.
+We also show the effect on star formation laws of using different SFR and ISM gas tracers.
+In Chapter~\ref{ch: paper3}, we explore nearby galaxies using an unsupervised data-mining method (the self-organizing map, or SOM).
+We cluster observational data to derive quantities of spatially resolved regions in M31 and examine the physical properties of each cluster.
+During this process, we find hidden structures in high-dimensional data space.
+In Chapter~\ref{ch: paper2}, we move to more distant galaxies and apply the SOM algorithm to their spectral energy distributions.
+We train networks using a set of galaxy SED templates covering the wavelength range from UV to IR and use them to classify the SEDs of a sample of 142 galaxies with $0.5 < z < 1$. 
+Then we study the grouped properties of the classified galaxies.
+We summarize our results and discuss potential future work and applications of the results of this thesis in Chapter~\ref{ch: summary}.
 
 %%%to be conticued
