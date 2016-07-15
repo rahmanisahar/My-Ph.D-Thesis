@@ -1,2 +1,82 @@
-\chapter{Summary and feature works}
+\chapter{Conclusion \& Feature Works}
 \label{ch: summary}
+ %General
+Formation of stars is one of the fundamental factors in formation and evolution of galaxies.
+Star formation rate and its variations during time help us to learn about how a galaxy forms and evolves.
+Many efforts have been made to find a universal law for rate of which stars form. %of or on?
+In order to find a universal law, finding a method to measure SFR accurately is the first step.
+Then correlations between SFR and other properties of galaxies must be investigated, to find SFR law.
+Afterward, each law have to be tested on various environments to confirm its universality.
+Therefore, we need high quality data and good statistical methods to test the laws.
+
+It has been well established that to form stars, gas m is the main ingredient.
+However, the relation between SFR and different tracers of gas mass (atomic, molecular, or total gas) changes in different type of galaxies.
+Relations between stellar mass and metallicity with SFR is not clear and there are fewer studies on them than the relation between SFR and gas mass.
+Dependency of SFR on other properties of galaxies such as morphology and dust mass were tested as well, but there is no SFR law that consider all of the mentioned quantities together.
+% Are these correlations holds for all the regions in galaxies? local and global? nearby and high-redshift?
+% The limitation of these relations should be considered  whether all these relations hold in all types of galaxies, both in nearby and high-redshift galaxies, and 
+Kennicutt-Schmidt law was the first empirical star formation law, which suggest that SFR and molecular gas have a logarithmic correlation with each other~\citep{Schmidt59, Kennicutt98b}. %cite? again?
+However, after many years and studies, it is still ongoing question whether it is a universal law or not.
+\citet{Shetty13} showed besides the physical and environmental, fitting methods also changes our perspective of the K-S law.
+Extended version of K-S law were introduced by adding  affect of stars (extended Schmidt law; introduced by ~\citealt{Shi11}) or by adding effect of metallicity (Krumholz law; introduced by ~\citealt{Krumholz09}).
+Compare to K-S law, the extended Schmidt law and Krumholz law are are relatively recently introduced and yet need to be tested with divers statistical methods in different scales (local and global), various morphological types and in both nearby and high-redshift galaxies.
+
+%Chapter 2
+The spatially resolved images of the Andromeda galaxy (M31) cover different types of environment in galaxies; high or low stellar surface density, gas mass, and metallicity.
+These images helps to examine star formation laws in various environments, in detail.
+In Chapter~\ref{ch: paper1}, we investigated three star formation laws in M31 in both local and global scale in order to determine which one of these laws can be fitted to M31 data more accurately.
+To achieve this goal, We have produced maps of surface density of SFR, gas mass, stellar mass and metallicity of the galaxy.
+We created SFR map using three tracers, a combination of the FUV and 24 \um emission, a combination of the \halpha and 24 \um emission, and TIR luminosity. 
+Using a combination of the FUV and 24 \um emission, we determined the total SFR for M31 is $0.31\pm 0.04$ M$_\odot$ yr$^{−1}$.
+We measured ISM gas mass using molecular gas only, atomic gas only and the total gas.
+we confirmed that the extended Schmidt law works on M31 in local regions and effect of stellar mass in regions with low gas density is even more pronounced 
+By applying both K-S law and the extended Schmidt law on all SFR maps and gas maps, we concluded that changes in SFR tracer does not affect these laws as much as changes in gas tracer does.
+Our fitting results shows that, in regions with higher star formation, power lows are more precise.
+In order to examine Shetty's suggestion on effect of fitting methods on results of fitting SFR laws, we used hierarchical Bayesian regression fitting and normal regression fitting to fit SFR laws.
+The results from two different methods are contrary, which is mostly because of the way these two methods handles the errors.
+We could not re-produced the measured SFR, using Krumholz law and also could not find any high correlation between metallicity and SFR.
+
+
+%Chapter 3 
+for the reminder of chapter we used machine learning method to have a fresh look on star formation and its relation to other properties of galaxies.
+we chose SOM method to apply data mining method because of its ability to classifying results and showing the morphology of data
+amount of observation in M31 makes it a good target for machine learning studies, therefore Chapter~\ref{ch: paper3} we apply a SOM method on data from M31.
+We used observational data and derived quantities of 10 regions in M31, which were chosen due to availability of IRS data for those regions.
+Therefore, we were able to focus on relations between SFR and dust, specifically PAHs.
+Using a network with 2 neurons, we divided data into two major groups.
+comparing data for clustered regions we found correlations between groups that otherwise cannot be seen.
+In one of the clustered data flux from PAHs showed strong anti-correlation with \halpha, \sii, \oiii~and IRAC 5.8~$\mu$m emission, stellar mass and radiation hardness index.
+what anti correlation tell us (after finishing the corrections on the chapter 3)
+Since for 10 regions in M31 we need at least 14 neurons to separate all 10 regions from each other, we conclude that some of these 10 regions have very similar properties.
+using subsets of data we generated various two dimensional networks.
+These subsets showed that except for PAHs only subset, region 10, which is located in the bulge of M31, become isolated.
+Therefore, we can conclude that despite differences in underlying structure of regions, PAHs are very similar together in M31.
+We created network using M31 data that are similar to M101 data.
+We applied these network on M101 data and showed that regions with relative similarity place in the same neurons.
+therefore, we can use these networks to predict properties of other galaxies.
+and whatever after correction of paper I will add
+
+%chapter 4
+In Chapter~\ref{ch: paper2}, we used SOM algorithm on data from high-redshift galaxies.
+We classified the template spectra of \citet{Kinney96}, made from galaxies with known morphological type, and created networks with different uses.
+similar to results from Chapter~\ref{ch: paper3}, since we need at least 22 neurons to separate 12 spectra types, we conclude that some of the spectra types have very similar features (\citet{Kinney96} types B and E, and types SB1 and SB2).
+We showed that network generated by SOM methods, can be used to identify new types of spectra in large surveys.
+Using trained networks, we classify a sample of 142 galaxies.
+the classification by SOM allow us to identify galaxies with SEDs similar to two or more morphological types.
+comparing our results with classifications from trained networks, shows this unsupervised method can classify all 142 spectra while, the supervised one failed to classify 37 out 142 galaxies. 
+properties of 142 galaxies shows better correlations in ..... compare to the other methods.
+these correlations are in agreement with morphological type of galaxies.
+
+%future work
+We can compare SFR tracers in many galaxies using SOM!
+In future work, we can use SOM on other galaxies, 
+we can show that SOM is a good tool to predict properties of galaxies and estimate values of unobserved quantities.
+better data with more coverage specially for PAHs.
+improving SOM by adding the uncertainty to analysis.
+
+
+
+
+\addcontentsline{toc}{section}{Bibliography}
+\bibliographystyle{apj.bst}
+\bibliography{western_bib.bib}

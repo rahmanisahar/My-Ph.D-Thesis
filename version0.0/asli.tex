@@ -1,9 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% University of Western Ontario Thesis Template
-% By: Justin Quinn Veenstra, 2010
-% With thanks to Mr. (soon to be Dr.) Will Robertson.
-
-
 \documentclass[12pt,twoside]{report}
 %% Decomment next line to use PostScript fonts
 %%\UsePackage{times}
@@ -28,7 +22,6 @@
 \usepackage{txfonts}
 \usepackage{tocloft}
 \usepackage{amsmath}
-\usepackage{graphicx}
 \usepackage{natbib}
 \bibliographystyle{apj}
 \usepackage{times}
@@ -46,12 +39,6 @@
 \usepackage[flushleft]{threeparttable}
 \usepackage{pgffor}
 \usepackage{chapterbib}
-\usepackage{mwe}    % loads »blindtext« and »graphicx«
-\usepackage{subfig}
-\usepackage{slantsc}
-\usepackage[latin1]{inputenc}   
-\usepackage[T1]{fontenc}   
-\usepackage[finnish]{babel}
 \makeatletter
 \numberwithin{figure}{chapter}
 \newenvironment{acknowledgements}%
@@ -226,23 +213,38 @@
 %\renewcommand{\author}[1]{\ifx\empty#1\else\gdef\@author{#1}\fi} 
 \newcommand{\authorname}{{\firstname} {\middlename} {\lastname}}
 \newcommand{\titl}{What governs star formation in galaxies? A modern statistical approach}
-\newcommand{\spinetitle}{Extragalactic star formation}%only if the above is more than 60 characters
+\newcommand{\spinetitle}{Extragalactic Star Formation}%only if the above is more than 60 characters
 \newcommand{\thesisformat}{Integrated Article} %or Integrated Article
 \newcommand{\gyear}{\number\year}
 \newcommand{\makecoauthor}{
 %Type information about coauthorship here/
-Thanks to Sophia, Hossein and Els. 
+The work presented in this thesis has greatly benefited from advice by my supervisor Dr. Pauline Barmby and collaborators: Dr. Sofia Lianue, Dr. Hossein Teimoorinia, and Dr. Els Peeters. Although I led the projects, performed the analysis and wrote the manuscripts, their suggestions and feedback on the analyses and manuscripts were greatly helpful.
+
+{\bf Chapter 2}: Star formation laws in the Andromeda galaxy: gas, stars, metals and the surface density of star formation, has been published in the Monthly Notices of the Royal Astronomical Society, Volume 456, Issue 4, 2016.
+
+{\bf Chapter 3}: Data Mining in Nearby Galaxies, will be submitted in the near future.
+
+{\bf Chapter 4}: Clustering galaxy spectra at $0.5<z<1$: an unsupervised approach, has been submitted to The Monthly Notices of The Royal Astronomical Society.
 }
+
 \newcommand{\makeacknowlege} { 1) Pauline
 2) Els, Sophia, Hossein,
-3)I would like to thank all my Friends in Western. Neven, dave, Matt, parshati, sina, zahra, fereshteh, aycha, maryam, Laura, Taylor, dimuthu, Sham, ghazal, pubu, robin, Hoori, Javad, ali, shanon, Mohad, Boshra
+3)I would like to thank all my Friends in Western. Neven, dave, Matt, parshati, sina, zahra, fereshteh, aycha, maryam(s) , Laura, Taylor, dimuthu, Sham, ghazal, pubu, robin, Hoori, Javad, ali, shanon, Mohad, Boshra
 4) bacheha
 5) western ppl; Jodi, Brian, Henry, Phin,...
 6) Mohad, shahin, pejman, pouria, masood,babak
 7) fako famil
 }
 \newcommand{\makededications} {
-To my parents, my sisters, and Matin, for their unconditional love and support. 
+
+\emph{To my parents, my sisters,}
+
+\emph{\& Matin,}
+
+\emph{for their unconditional love and support.}
+
+
+
 }
 \newcommand{\listappendixname}{List of Appendices}
 \newlistof{myappendices}{app}{\listappendixname}
@@ -301,10 +303,7 @@ School of Graduate and Postdoctoral Studies\\
 \begin{minipage}[t]{0.5\linewidth} %tabular instead?
 \begin{tabular}{l}
 \underline{Supervisor:}\vspace{0.35in}
-\isdefinedsig{\super}
-\isco{\superc}
-\isjoint{\superj}
-\isalt{\supera}
+\isdefinedsig{\super}\\
 \underline{Supervisory Committee:}\vspace{0.35in}
 \isdefinedsig{\sco}\vspace{0.15in}
 \isdefinedsig{\sct}
@@ -499,17 +498,25 @@ The grouped properties of the classified galaxies are found to be more tightly c
 
 
 %% This adds a line for the Bibliography in the Table of Contents.
-%\addcontentsline{toc}{chapter}{Bibliography}
-%% ***   Set the bibliography style.   ***
-%\bibliographystyle{apj.bst} % (change according to your preference)
-%%% ***   Set the bibliography file.   ***
-%\bibliography{westernthesis}
+% \addcontentsline{toc}{chapter}{Bibliography}
+% %% ***   Set the bibliography style.   ***
+% \bibliographystyle{apj.bst} % (change according to your preference)
+% %%% ***   Set the bibliography file.   ***
+% \bibliography{western_bib}
 
+% \addcontentsline{toc}{section}{Bibliography}
+% \bibliographystyle{apj.bst}
+% \bibliography{western_bib.bib}
 
 %Appendices.
+
+% %Appendices.
 \begin{appendices}
 \include{appendixa}
+\include{appendixb}
+\include{appendixc}
 \end{appendices}
+
 
 %CV only relevant stuff... not full CV.
 % \addcontentsline{toc}{chapter}{Curriculum Vitae}
@@ -533,4 +540,3 @@ The grouped properties of the classified galaxies are found to be more tightly c
 % \subsubsection*{Publications:}
 % La La
 \end{document}
-

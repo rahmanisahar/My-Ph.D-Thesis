@@ -1,2 +1,843 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University of Western Ontario Thesis Template
+% By: Justin Quinn Veenstra, 2010
+% With thanks to Mr. (soon to be Dr.) Will Robertson.
 
-\import{version0.0/asli.tex}
+
+\documentclass[12pt,twoside]{report}
+%% Decomment next line to use PostScript fonts
+%%\UsePackage{times}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                    %%
+%%                    ***   I M P O R T A N T   ***                   %%
+%%                                                                    %%
+%% Fill in the following fields with the required information:        %%
+%%  - \department{...}  name of the graduate department               %%
+%%  - \degree{...}      name of the degree obtained                   %%
+%%  - \author{...}      name of the author                            %%
+%%  - \title{...}       title of the thesis                           %%
+%%  - \gyear{...}       year of graduation                            %%
+%%  - \super{...}    supervisor
+%%  - \firstname, \middlename, \lastname... there is additional documentation by the actual fields, so I'll leave it at that
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{appendix}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[byname]{smartref}
+\usepackage{hyperref} %comment out for hardcopy
+\usepackage{txfonts}
+\usepackage{tocloft}
+\bibliographystyle{apj}
+\usepackage{natbib}
+\usepackage{times}
+\usepackage{float}
+%\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{color,soul}
+\usepackage{import}
+\usepackage{ae,aecompl}
+\usepackage{amssymb}	% Extra maths symbols
+\usepackage{multicol}        % Multi-column entries in tables
+\usepackage{bm}		% Bold maths symbols, including upright Greek
+\usepackage{pdflscape}	% Landscape pages
+%\usepackage{booktabs,fixltx2e}
+\usepackage[flushleft]{threeparttable}
+\usepackage[T1]{fontenc}   
+
+\makeatletter
+\numberwithin{figure}{chapter}
+\newenvironment{acknowledgements}%
+{\clearemptydoublepage
+ \begin{center}
+  \section*{Acknowledgements}
+ \end{center}
+ \begingroup
+}{\newpage\endgroup}
+
+\newenvironment{dedication}%
+{\clearemptydoublepage 
+ \begin{center}
+  \section*{Dedication}
+ \end{center}
+ \begingroup
+}{\newpage\endgroup}
+
+\newenvironment{preliminary}%
+{\pagestyle{plain}\pagenumbering{roman}}%
+{\pagenumbering{arabic}}
+
+\addtoreflist{chapter}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\newenvironment{proof}[1][Proof]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{definition}[1][Definition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{example}[1][Example]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\newcommand{\qed}{\nobreak \ifvmode \relax \else
+      \ifdim\lastskip<1.5em \hskip-\lastskip
+      \hskip1.5em plus0em minus0.5em \fi \nobreak
+      \vrule height0.75em width0.5em depth0.25em\fi}
+
+% Default values for title page.
+
+%% To produce output with the desired line spacing, the argument of
+%% \spacing should be multiplied by 5/6 = 0.8333, so that 1 1/2 spaced
+%% corresponds to \spacing{1.5} and double spaced is \spacing{1.66}.
+\def\normalspacing{1.5} % default line spacing
+
+
+%% Define the "thesis" page style.
+\if@twoside % If two-sided printing.
+\def\ps@thesis{\let\@mkboth\markboth
+   \def\@oddfoot{}
+   \let\@evenfoot\@oddfoot
+   \def\@oddhead{
+      {\sc\rightmark} \hfil \rm\thepage
+      }
+   \def\@evenhead{
+      \rm\thepage \hfil {\sc\leftmark}
+      }
+   \def\chaptermark##1{\markboth{\ifnum \c@secnumdepth >\m@ne
+      Chapter\ \thechapter. \ \fi ##1}{}}
+   \def\sectionmark##1{\markright{\ifnum \c@secnumdepth >\z@
+      \thesection. \ \fi ##1}}}
+\else % If one-sided printing.
+\def\ps@thesis{\let\@mkboth\markboth
+   \def\@oddfoot{}
+   \def\@oddhead{
+      {\sc\rightmark} \hfil \rm\thepage
+      }
+   \def\chaptermark##1{\markright{\ifnum \c@secnumdepth >\m@ne
+      Chapter\ \thechapter. \ \fi ##1}}}
+\fi
+
+\pagestyle{thesis}
+% Set up page layout.
+\setlength{\textheight}{9in} % Height of the main body of the text
+\setlength{\topmargin}{-.5in} % .5" margin on top of page
+\setlength{\headsep}{.5in}  % space between header and top of body
+\addtolength{\headsep}{-\headheight} % See The LaTeX Companion, p 85
+\setlength{\footskip}{.5in}  % space between footer and bottom of body
+\setlength{\textwidth}{6.25in} % width of the body of the text
+\setlength{\oddsidemargin}{.25in} % 1.25" margin on the left for odd pages
+\setlength{\evensidemargin}{0in} % 1.25"  margin on the right for even pages
+
+% Marginal notes
+\setlength{\marginparwidth}{.75in} % width of marginal notes
+\setlength{\marginparsep}{.125in} % space between marginal notes and text
+
+% Make each page fill up the entire page. comment this out if you
+% prefer. 
+\flushbottom
+
+\setcounter{tocdepth}{3} % Number the subsubsections 
+\def\normalspacing{1.5} % default line spacing
+
+\newcommand\isco[1]{%
+  \edef\@tempa{#1}%
+  \def\@tempb{}%
+  \ifx\@tempa\@tempb
+	\else \\\underline{Co-Supervisor:}\vspace{0.35in}\\\dots\dots\dots\dots\dots\dots\dots\\{#1}\\
+  \fi
+}
+
+\newcommand\isjoint[1]{%
+  \edef\@tempa{#1}%
+  \def\@tempb{}%
+  \ifx\@tempa\@tempb
+	\else \\\underline{Joint Supervisor:}\vspace{0.35in}\\\dots\dots\dots\dots\dots\dots\dots\\{#1}\\
+  \fi
+}
+
+\newcommand\isalt[1]{%
+  \edef\@tempa{#1}%
+  \def\@tempb{}%
+  \ifx\@tempa\@tempb
+	\else \\\underline{Alternate Supervisor:}\vspace{0.35in}\\\dots\dots\dots\dots\dots\dots\dots\\{#1}\\
+  \fi
+}
+
+\newcommand\isdefinedsig[1]{%
+  \edef\@tempa{#1}%
+  \def\@tempb{}%
+  \ifx\@tempa\@tempb
+	\else \\ \dots\dots\dots\dots\dots\dots\dots\\{#1}\\
+  \fi
+}
+\newcommand\isdefinedspinetitle[1]{%
+  \edef\@tempa{#1}%
+  \def\@tempb{}%
+  \ifx\@tempa\@tempb
+	\else (Spine title: #1)\\
+  \fi
+}
+\newcommand\coauthor[1]{%
+  \edef\@tempa{#1}%
+  \def\@tempb{}%
+  \ifx\@tempa\@tempb
+	\else \newpage \Large Co-Authorship Statement\normalsize\\\indent\\#1\\
+  \fi
+}
+
+\newcommand\acknowlege[1]{%
+  \edef\@tempa{#1}%
+  \def\@tempb{}%
+  \ifx\@tempa\@tempb
+	\else \newpage \Large Acknowledgements\normalsize\\\indent\\#1\newpage
+  \fi
+}
+\newcommand\dedications[1]{%
+  \edef\@tempa{#1}%
+  \def\@tempb{}%
+  \ifx\@tempa\@tempb
+	\else \newpage \Large Dedication\normalsize\\\indent\\#1\newpage
+  \fi
+}
+%\renewcommand{\appendixtocname}{\Huge \textbf{List of Appendices} \normalsize}
+\newcommand{\blank}{\hspace{-2mm}}
+\newcommand{\super}{Dr. P. M. Barmby} %supervisor
+\newcommand{\sco}{Dr. E. Peeters}  %member of supervisory committee
+\newcommand{\sct}{Dr. G. Osinski}  %other member of supervisory committee (lbin)
+\newcommand{\examo}{Dr. R. Abraham}  %examining committee (up to four, if less leave blank)
+\newcommand{\examt}{Dr. M. Daley}
+\newcommand{\examth}{Dr. S. C. Gallagher}
+\newcommand{\examf}{Dr. P. Wiegert}
+\newcommand{\department}{Physics and Astronomy}
+\newcommand{\degree}{Doctor of Philosophy}
+\newcommand{\firstname}{Sahar}
+%\newcommand{\middlename}{}
+\newcommand{\lastname}{Rahmani}
+%\renewcommand{\author}[1]{\ifx\empty#1\else\gdef\@author{#1}\fi} 
+\newcommand{\authorname}{{\firstname} {\middlename} {\lastname}}
+\newcommand{\titl}{What governs star formation in galaxies? A modern statistical approach}
+\newcommand{\spinetitle}{Extragalactic star formation}%only if the above is more than 60 characters
+\newcommand{\thesisformat}{Integrated Article} %or Integrat
+\newcommand{\gyear}{\number\year}
+\newcommand{\makecoauthor}{
+%Type information about coauthorship here/
+The work presented in this thesis has greatly benefited from advice by my supervisor Dr. Pauline Barmby and collaborators: Dr. Sofia Lianue, Dr. Hossein Teimoorinia, and Dr. Els Peeters. Although I led the projects, performed the analysis and wrote the manuscripts, their suggestions and feedback on the analyses and manuscripts were greatly helpful.
+
+{\bf Chapter 2}: Star formation laws in the Andromeda galaxy: gas, stars, metals and the surface density of star formation, has been published in the Monthly Notices of the Royal Astronomical Society, Volume 456, Issue 4, 2016.
+
+{\bf Chapter 3}: Data Mining in Nearby Galaxies, will be submitted in the near future.
+
+{\bf Chapter 4}: Clustering galaxy spectra at $0.5<z<1$: an unsupervised approach, has been submitted to The Monthly Notices of The Royal Astronomical Society.
+}
+\newcommand{\makeacknowlege} { 1) Pauline
+2) Els, Sophia, Hossein,
+3)I would like to thank all my Friends in Western. Neven, dave, Matt, parshati, sina, zahra, fereshteh, aycha, maryam, Laura, Taylor, dimuthu, Sham, ghazal, pubu, robin, Hoori, Javad, ali, shanon, Mohad, Boshra
+4) bacheha
+5) western ppl; Jodi, Brian, Henry, Phin,...
+6) Mohad, shahin, pejman, pouria, masood,babak
+7) fako famil
+}
+\newcommand{\makededications} {
+To my parents, my sisters, and Matin, for their unconditional love and support. 
+}
+\newcommand{\listappendixname}{List of Appendices}
+\newlistof{myappendices}{app}{\listappendixname}
+\newcommand{\myappendices}[1]{%
+\addcontentsline{app}{myappendices}{#1}\par}
+
+\renewcommand{\maketitle}
+{\begin{titlepage}
+   \setcounter{page}{1}
+   %% Set the line spacing to 1 for the title page.
+   %\begin{spacing}{1} 
+   \begin{large}
+   \begin{center}
+      \mbox{}
+      \vfill
+      {\MakeUppercase{\titl}}\\
+      \isdefinedspinetitle{\spinetitle}
+      (Thesis format: \thesisformat)\\
+      \vfill
+      by \\
+      \vfill
+      {\firstname} \underline{\lastname}\\
+      \vfill
+      Graduate Program in {\department}\\
+      \vfill
+		A thesis submitted in partial fulfillment\\
+		of the requirements for the degree of\\
+		\degree\\
+		\vfill
+		The School of Graduate and Postdoctoral Studies\\
+		The University of Western Ontario\\
+		London, Ontario, Canada\\
+		\vfill
+      {\copyright} {\authorname} {\gyear}  \\
+      \vspace*{.2in}
+   \end{center}
+   \end{large}
+%   \end{spacing}
+   \end{titlepage}
+
+}%\maketitle
+
+\newcommand{\makecert}{
+   \setcounter{page}{2}
+\vfill
+\begin{center}
+\large
+THE UNIVERSITY OF WESTERN ONTARIO\\
+School of Graduate and Postdoctoral Studies\\
+\vfill
+\textbf{CERTIFICATE OF EXAMINATION}
+\end{center}
+
+\vfill
+\begin{table}[ht]
+\begin{minipage}[t]{0.5\linewidth} %tabular instead?
+\begin{tabular}{l}
+\underline{Supervisor:}\vspace{0.35in}
+\isdefinedsig{\super}
+\isco{\superc}
+\isjoint{\superj}
+\isalt{\supera}
+\underline{Supervisory Committee:}\vspace{0.35in}
+\isdefinedsig{\sco}\vspace{0.15in}
+\isdefinedsig{\sct}
+\end{tabular}
+\vfill
+\end{minipage}
+\hspace{0.5in}
+\begin{minipage}[t]{0.5\linewidth}
+\begin{tabular}{l}
+\underline{Examiners:} \\\vspace{.5cm}
+\isdefinedsig{\examo}\\
+\isdefinedsig{\examt}\\
+\isdefinedsig{\examth}\\
+\isdefinedsig{\examf}
+\end{tabular}
+\vfill
+\end{minipage}
+\vfill
+\end{table}
+\vfill
+\begin{center}
+The thesis by \\ \vfill
+\textbf{\firstname{} \middlename{} \underline{\lastname}}\\
+\vfill
+entitled:\\\vfill
+\textbf{\titl}\\\vfill
+is accepted in partial fulfillment of the \\
+requirements for the degree of\\
+\degree\\
+\end{center}
+\begin{table}[ht]
+\begin{minipage}[t]{0.5\linewidth}
+\begin{tabular}{l}
+\dots\dots\dots\dots\dots\\
+Date
+\end{tabular}
+\end{minipage}
+\hspace{0.5in}
+\begin{minipage}[t]{0.5\linewidth}
+\begin{tabular}{l}
+\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\\
+Chair of the Thesis Examination Board
+\end{tabular}
+\end{minipage}
+\end{table}
+
+}
+
+\makeatother
+\begin{document}
+%% ***   NOTE   ***
+%% You should put all of your '\newcommand', '\newenvironment', and
+%% '\newtheorem's (in other words, all the global definitions that you
+%% will need throughout your thesis) in a separate file and use
+%% "\input{filename}" to input it here.
+
+
+
+\newcommand \kpc        {\,{\rm kpc}}
+\newcommand \sigmagas    {$\Sigma_{\mathrm{gas }} $\ }
+\newcommand \sigmatotalgas {$\Sigma_{\mathrm {total\, gas }} $\ }
+\newcommand{\eqsigmagas}    {\Sigma_{\mathrm {gas }}}
+\newcommand{\sigmasfr}   {$\Sigma_{\mathrm {sfr }} $\ }
+\newcommand{\eqsigmasfr}{\Sigma_{\mathrm{sfr }}}
+\newcommand{\sigmastar}    {$\Sigma_{\mathrm {star }} $\ }
+\newcommand{\eqsigmastar}    {\Sigma_{\mathrm {star }}}
+\newcommand{\halpha}    {H$\alpha $\ }
+\newcommand{\um}    {$\mu$m\ }
+\newcommand{\mice} {$\mu$m}
+\newcommand{\nprime}{N$^\prime$}
+\newcommand{\eqnprime} {N^\prime}
+\newcommand{\degr} {$^{\circ}$}
+\newcommand{\arcmin} {$^{\prime}$}
+\newcommand {\arcsec} {$^{\prime\prime}$}
+\newcommand \Spitzer {{\it Spitzer }}
+\newcommand \Galex {GALEX\ }
+\newcommand \Herschel {{\it Herschel }}
+\newcommand \sii {[S~{\textsc ii}]} 
+\newcommand \oiii {[O~{\textsc iii}]} 
+\newcommand \hi {H~{\textsc i}}
+\newcommand \hii {H~{\textsc ii}}
+\newcommand \oii {[O~{\textsc ii}]}
+\newcommand \nii {[N~{\textsc ii}]} 
+
+\newcommand \aaj {A\&A}
+\newcommand \aarv {A\&ARv}%: Astronomy and Astrophysics Review (the)
+\newcommand \aas{A\&AS}%: Astronomy and Astrophysics Supplement Series
+\newcommand \afz {Afz}%: Astrofizika
+\newcommand \aj {AJ}%: Astronomical Journal (the)
+\newcommand \apss {Ap\&SS}%: Astrophysics and Space Science
+\newcommand \apj {ApJ}
+\newcommand \apjs {ApJS}%: Astrophysical Journal Supplement Series (the)
+\newcommand \araa {ARA\&A} %: Annual Review of Astronomy and Astrophysics
+\newcommand \asp {ASP Conf. Ser.}%: Astronomy Society of the Pacific Conference Series
+\newcommand \azh {Azh}%: Astronomicheskij Zhurnal
+\newcommand \baas {BAAS}%: Bulletin of the American Astronomical Society
+\newcommand \mem {Mem. RAS}%: Memoirs of the Royal Astronomical Society
+\newcommand \mnassa {MNASSA}%: Monthly Notes of the Astronomical Society of Southern Africa
+\newcommand \mnras {MNRAS} %: Monthly Notices of the Royal Astronomical Society
+%\newcommand {Nature}%(do not abbreviate)
+\newcommand \pasj {PASJ}%: Publications of the Astronomical Society of Japan
+\newcommand \pasp {PASP}%: Publications of the Astronomical Society of the Pacific
+\newcommand \qjras {QJRAS}%: Quarterly Journal of the Royal Astronomical Society
+\newcommand \mex {Rev. Mex. Astron. Astrofis.}%: Revista Mexicana de Astronomia y Astrofisica
+%\newcommand {Science }%}%(do not abbreviate)
+\newcommand \sva {SvA}%: Soviet Astronomy
+\newcommand \aap {APP} %:American Academy of Pediatrics
+\newcommand \apjl {ApJL} %:The Astrophysical Journal Letters
+
+
+\defcitealias{Hossein12}{T12}
+\defcitealias{Kinney96}{K96}
+\defcitealias{Noll09}{N09}
+%% This sets the page style and numbering for preliminary sections.
+\begin{preliminary}
+
+
+%% This generates the title page from the information given above.
+\maketitle
+\addcontentsline{toc}{chapter}{Certificate of Examination}
+\makecert
+\newpage
+\addcontentsline{toc}{chapter}{Co-Authorship Statement}
+\coauthor{\makecoauthor}  %comment this out if none
+\newpage
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\acknowlege{\makeacknowlege}	%as above
+\newpage
+\addcontentsline{toc}{chapter}{Dedication}
+\dedications{\makededications}
+\newpage
+\addcontentsline{toc}{chapter}{Abstract}
+\Large\begin{center}\textbf{Abstract}\end{center}\normalsize
+%%  ***  Put your Abstract here.   ***
+%% (150 words for M.Sc. and 350 words for Ph.D.)
+Understanding the process of star formation is one of the key steps in understanding the formation and evolution of galaxies.
+In this thesis, I address the empirical star formation laws, and study the properties of galaxies that can affect the star formation rate.
+
+The Andromeda galaxy (M31) is the nearest large spiral galaxy, and Therefore, high resolution images of this galaxy are available.
+These images provide data from various regions with different physical properties.
+Star formation rate and gas mass surface densities of M31have been measured using three different methods, and have been used to compare different star formation laws over the whole galaxy and in spatially-resolved regions.
+Using hierarchical Bayesian regression analysis, I conclude that there is a correlation between surface density of star formation and the stellar mass surface density.
+A weak correlation between star formation rate, stellar mass and metallicity is also found.
+
+To study the effect of other properties a galaxy on the star formation rate, I utilize an unsupervised data mining method (specifically the self-organizing map) on measurements of both nearby and high-redshift galaxies.
+Both observed data and derived quantities (e.g. star formation rate, stellar mass) of star-forming regions in M31 and the nearby spiral galaxy M101 are used as inputs to the self-organizing map.
+Clustering the M31 regions in the feature space reveals some (anti)-correlations between the properties the galaxy, which are not apparent when considering data from all regions in the galaxy. 
+The self-organizing map can be used to predict star formation rates for spatially-resolved regions in galaxies using other properties of those regions.
+
+I also apply the self-organizing map method to spectral energy distributions of high-redshift galaxies.
+Template spectra made from galaxies with known morphological type are used to train self-organizing maps.
+The trained maps are used to classify a sample of galaxy spectral energy distributions derived from fitting models to photometry data of 142 high-redshift galaxies.
+The grouped properties of the classified galaxies are found to be more tightly correlated in mean values of age, specific star formation rate, stellar mass, and far-UV extinction than in previous studies.
+
+
+
+\vfill
+\textbf{Keywords:} Nearby galaxies: M31, M101, Star formation rate, stellar mass, ISM, data mining
+\newpage
+\tableofcontents\newpage
+\newpage
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+\newpage
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables\newpage
+\addcontentsline{toc}{chapter}{List of Appendices}
+\listofmyappendices\newpage
+%\addcontentsline{toc}{chapter}{List of Abbreviations, Symbols, and Nomenclature}
+%\large List of Abbreviations, Symbols, and Nomenclature \normalsize
+%\newpage
+\end{preliminary}
+%% End of the preliminary sections: reset page style and numbering.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                    %%
+%%                    ***   I M P O R T A N T   ***                   %%
+%%                                                                    %%
+%% Put your Chapters here; the easiest way to do this is to keep each %%
+%% chapter in a separate file and \include all the files right here.  %%
+%% Note that each chapter file should start with the line             %%
+%% "\chapter{ChapterName}".  Note that using "\include" instead of    %%
+%% "\input" makes each chapter start on a new page.                   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{intro0.0}
+\include{paper1}
+\include{paper3}
+\include{paper2}
+\include{summary}
+
+
+
+%% This adds a line for the Bibliography in the Table of Contents.
+%\addcontentsline{toc}{chapter}{Bibliography}
+%% ***   Set the bibliography style.   ***
+%\bibliographystyle{apj.bst} % (change according to your preference)
+%%% ***   Set the bibliography file.   ***
+%\bibliography{westernthesis}
+
+
+%Appendices.
+\begin{appendices}
+\include{appendixa}
+\end{appendices}
+
+%CV only relevant stuff... not full CV.
+% \addcontentsline{toc}{chapter}{Curriculum Vitae}
+% \chapter*{Curriculum Vitae}
+% \begin{table}[ht]
+% \begin{tabular}{ll}
+% \textbf{Name:} & \firstname{} \lastname\\\\
+% \textbf{Post-Secondary} & La La School\\
+% \textbf{Education and}& La La Land\\
+% \textbf{Degrees:}& 1996 - 2000 M.A.\\\\
+% & University of Western Ontario\\
+% & London, ON\\
+% & 2008 - 2012 Ph.D.\\\\
+% \textbf{Honours and}& NSERC PGS M\\
+% \textbf{Awards:}& 2006-2007\\\\
+% \textbf{Related Work}& Teaching Assistant\\
+% \textbf{Experience:}& The University of Western Ontario\\
+% & 2008 - 2012\\
+% \end{tabular}
+% \end{table}
+% \subsubsection*{Publications:}
+% La La
+\end{document}
+
+ed Article
+\newcommand{\gyear}{\number\year}
+\newcommand{\makecoauthor}{The work presented in this thesis has greatly benefited from advice by my supervisor Dr. Pauline Barmby and collaborators: Dr. Sofia Lianue, Dr. Hossein Teimoorinia, and Dr. Els peeters. Although I led the projects, performed the analysis and wrote the manuscripts, my worked greatly benefited from their suggestions and feedback on the analyses and manuscripts in chapters 2,3, and 4.\\
+Chapter 2: Star formation laws in the Andromeda galaxy: gas, stars, metals and the surface density of star formation, has been published in the Monthly Notices of the Royal Astronomical Society, Volume 456, Issue 4, 2016.\\
+Chapter 3: Data Mining in Nearby Galaxies, will be submitted in the near future.\\
+Chapter 4: Clustering galaxy spectra at $0.5<z<1$: an unsupervised approach, has been submitted to The Monthly Notices of The Royal Astronomical Society
+}
+\newcommand{\makeacknowlege} { 1) Pauline
+2) Els, Sophia, Hossein,
+3)I would like to thank all my Friends in Western. Neven, dave, Matt, parshati, sina, zahra, fereshteh, aycha, maryam, Laura, Taylor, dimuthu, Sham, ghazal, pubu, robin, Hoori, Javad, ali, shanon, Mohad, Boshra
+4) bacheha
+5) western ppl; Jodi, Brian, Henry, Phin,...
+6) Mohad, shahin, pejman, pouria, masood,babak
+7) fako famil
+}
+\newcommand{\makededications} {
+To my parents, my sisters, and Matin, for their unconditional love and support. 
+}
+\newcommand{\listappendixname}{List of Appendices}
+\newlistof{myappendices}{app}{\listappendixname}
+\newcommand{\myappendices}[1]{%
+\addcontentsline{app}{myappendices}{#1}\par}
+
+\renewcommand{\maketitle}
+{\begin{titlepage}
+   \setcounter{page}{1}
+   %% Set the line spacing to 1 for the title page.
+   %\begin{spacing}{1} 
+   \begin{large}
+   \begin{center}
+      \mbox{}
+      \vfill
+      {\MakeUppercase{\titl}}\\
+      \isdefinedspinetitle{\spinetitle}
+      (Thesis format: \thesisformat)\\
+      \vfill
+      by \\
+      \vfill
+      {\firstname} \underline{\lastname}\\
+      \vfill
+      Graduate Program in {\department}\\
+      \vfill
+		A thesis submitted in partial fulfillment\\
+		of the requirements for the degree of\\
+		\degree\\
+		\vfill
+		The School of Graduate and Postdoctoral Studies\\
+		The University of Western Ontario\\
+		London, Ontario, Canada\\
+		\vfill
+      {\copyright} {\authorname} {\gyear}  \\
+      \vspace*{.2in}
+   \end{center}
+   \end{large}
+%   \end{spacing}
+   \end{titlepage}
+
+}%\maketitle
+
+\newcommand{\makecert}{
+   \setcounter{page}{2}
+\vfill
+\begin{center}
+\large
+THE UNIVERSITY OF WESTERN ONTARIO\\
+School of Graduate and Postdoctoral Studies\\
+\vfill
+\textbf{CERTIFICATE OF EXAMINATION}
+\end{center}
+
+\vfill
+\begin{table}[ht]
+\begin{minipage}[t]{0.5\linewidth} %tabular instead?
+\begin{tabular}{l}
+\underline{Supervisor:}\vspace{0.35in}
+\isdefinedsig{\super}
+\isco{\superc}
+\isjoint{\superj}
+\isalt{\supera}
+\underline{Supervisory Committee:}\vspace{0.35in}
+\isdefinedsig{\sco}\vspace{0.15in}
+\isdefinedsig{\sct}
+\end{tabular}
+\vfill
+\end{minipage}
+\hspace{0.5in}
+\begin{minipage}[t]{0.5\linewidth}
+\begin{tabular}{l}
+\underline{Examiners:} \\\vspace{.5cm}
+\isdefinedsig{\examo}\\
+\isdefinedsig{\examt}\\
+\isdefinedsig{\examth}\\
+\isdefinedsig{\examf}
+\end{tabular}
+\vfill
+\end{minipage}
+\vfill
+\end{table}
+\vfill
+\begin{center}
+The thesis by \\ \vfill
+\textbf{\firstname{} \middlename{} \underline{\lastname}}\\
+\vfill
+entitled:\\\vfill
+\textbf{\titl}\\\vfill
+is accepted in partial fulfillment of the \\
+requirements for the degree of\\
+\degree\\
+\end{center}
+\begin{table}[ht]
+\begin{minipage}[t]{0.5\linewidth}
+\begin{tabular}{l}
+\dots\dots\dots\dots\dots\\
+Date
+\end{tabular}
+\end{minipage}
+\hspace{0.5in}
+\begin{minipage}[t]{0.5\linewidth}
+\begin{tabular}{l}
+\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\\
+Chair of the Thesis Examination Board
+\end{tabular}
+\end{minipage}
+\end{table}
+
+}
+
+\makeatother
+\begin{document}
+%% ***   NOTE   ***
+%% You should put all of your '\newcommand', '\newenvironment', and
+%% '\newtheorem's (in other words, all the global definitions that you
+%% will need throughout your thesis) in a separate file and use
+%% "\input{filename}" to input it here.
+
+
+
+\newcommand \kpc        {\,{\rm kpc}}
+\newcommand \sigmagas    {$\Sigma_{\mathrm{gas }} $\ }
+\newcommand \sigmatotalgas {$\Sigma_{\mathrm {total\, gas }} $\ }
+\newcommand{\eqsigmagas}    {\Sigma_{\mathrm {gas }}}
+\newcommand{\sigmasfr}   {$\Sigma_{\mathrm {sfr }} $\ }
+\newcommand{\eqsigmasfr}{\Sigma_{\mathrm{sfr }}}
+\newcommand{\sigmastar}    {$\Sigma_{\mathrm {star }} $\ }
+\newcommand{\eqsigmastar}    {\Sigma_{\mathrm {star }}}
+\newcommand{\halpha}    {H$\alpha $\ }
+\newcommand{\um}    {$\mu$m\ }
+\newcommand{\mice} {$\mu$m}
+\newcommand{\nprime}{N$^\prime$}
+\newcommand{\eqnprime} {N^\prime}
+\newcommand{\degr} {$^{\circ}$}
+\newcommand{\arcmin} {$^{\prime}$}
+\newcommand {\arcsec} {$^{\prime\prime}$}
+\newcommand \Spitzer {{\it Spitzer }}
+\newcommand \Galex {GALEX\ }
+\newcommand \Herschel {{\it Herschel }}
+\newcommand \sii {[S~{\textsc ii}]} 
+\newcommand \oiii {[O~{\textsc iii}]} 
+\newcommand \hi {H~{\textsc i}}
+\newcommand \hii {H~{\textsc ii}}
+\newcommand \oii {[O~{\textsc ii}]}
+\newcommand \nii {[N~{\textsc ii}]} 
+
+\newcommand \aaj {A\&A}
+\newcommand \aarv {A\&ARv}%: Astronomy and Astrophysics Review (the)
+\newcommand \aas{A\&AS}%: Astronomy and Astrophysics Supplement Series
+\newcommand \afz {Afz}%: Astrofizika
+\newcommand \aj {AJ}%: Astronomical Journal (the)
+\newcommand \apss {Ap\&SS}%: Astrophysics and Space Science
+\newcommand \apj {ApJ}
+\newcommand \apjs {ApJS}%: Astrophysical Journal Supplement Series (the)
+\newcommand \araa {ARA\&A} %: Annual Review of Astronomy and Astrophysics
+\newcommand \asp {ASP Conf. Ser.}%: Astronomy Society of the Pacific Conference Series
+\newcommand \azh {Azh}%: Astronomicheskij Zhurnal
+\newcommand \baas {BAAS}%: Bulletin of the American Astronomical Society
+\newcommand \mem {Mem. RAS}%: Memoirs of the Royal Astronomical Society
+\newcommand \mnassa {MNASSA}%: Monthly Notes of the Astronomical Society of Southern Africa
+\newcommand \mnras {MNRAS} %: Monthly Notices of the Royal Astronomical Society
+%\newcommand {Nature}%(do not abbreviate)
+\newcommand \pasj {PASJ}%: Publications of the Astronomical Society of Japan
+\newcommand \pasp {PASP}%: Publications of the Astronomical Society of the Pacific
+\newcommand \qjras {QJRAS}%: Quarterly Journal of the Royal Astronomical Society
+\newcommand \mex {Rev. Mex. Astron. Astrofis.}%: Revista Mexicana de Astronomia y Astrofisica
+%\newcommand {Science }%}%(do not abbreviate)
+\newcommand \sva {SvA}%: Soviet Astronomy
+\newcommand \aap {APP} %:American Academy of Pediatrics
+\newcommand \apjl {ApJL} %:The Astrophysical Journal Letters
+
+
+\defcitealias{Hossein12}{T12}
+\defcitealias{Kinney96}{K96}
+\defcitealias{Noll09}{N09}
+%% This sets the page style and numbering for preliminary sections.
+\begin{preliminary}
+
+
+%% This generates the title page from the information given above.
+\maketitle
+\addcontentsline{toc}{chapter}{Certificate of Examination}
+\makecert
+\newpage
+\addcontentsline{toc}{chapter}{Co-Authorship Statement}
+\coauthor{\makecoauthor}  %comment this out if none
+\newpage
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\acknowlege{\makeacknowlege}	%as above
+\newpage
+\addcontentsline{toc}{chapter}{Dedication}
+\dedications{\makededications}
+\newpage
+\addcontentsline{toc}{chapter}{Abstract}
+\Large\begin{center}\textbf{Abstract}\end{center}\normalsize
+%%  ***  Put your Abstract here.   ***
+%% (150 words for M.Sc. and 350 words for Ph.D.)
+Understanding the process of star formation is one of the key steps in understanding the formation and evolution of galaxies.
+In this thesis, I address the empirical star formation laws, and study the properties of galaxies that can affect the star formation rate.
+
+The Andromeda galaxy (M31) is the nearest large spiral galaxy, and Therefore, high resolution images of this galaxy are available.
+These images provide data from various regions with different physical properties.
+Star formation rate and gas mass surface densities of M31have been measured using three different methods, and have been used to compare different star formation laws over the whole galaxy and in spatially-resolved regions.
+Using hierarchical Bayesian regression analysis, I conclude that there is a correlation between surface density of star formation and the stellar mass surface density.
+A weak correlation between star formation rate, stellar mass and metallicity is also found.
+
+To study the effect of other properties a galaxy on the star formation rate, I utilize an unsupervised data mining method (specifically the self-organizing map) on measurements of both nearby and high-redshift galaxies.
+Both observed data and derived quantities (e.g. star formation rate, stellar mass) of star-forming regions in M31 and the nearby spiral galaxy M101 are used as inputs to the self-organizing map.
+Clustering the M31 regions in the feature space reveals some (anti)-correlations between the properties the galaxy, which are not apparent when considering data from all regions in the galaxy. 
+The self-organizing map can be used to predict star formation rates for spatially-resolved regions in galaxies using other properties of those regions.
+
+I also apply the self-organizing map method to spectral energy distributions of high-redshift galaxies.
+Template spectra made from galaxies with known morphological type are used to train self-organizing maps.
+The trained maps are used to classify a sample of galaxy spectral energy distributions derived from fitting models to photometry data of 142 high-redshift galaxies.
+The grouped properties of the classified galaxies are found to be more tightly correlated in mean values of age, specific star formation rate, stellar mass, and far-UV extinction than in previous studies.
+
+
+
+\vfill
+\textbf{Keywords:} Nearby galaxies: M31, M101, Star formation rate, stellar mass, ISM, data mining
+\newpage
+\tableofcontents\newpage
+\newpage
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+\newpage
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables\newpage
+\addcontentsline{toc}{chapter}{List of Appendices}
+\listofmyappendices\newpage
+%\addcontentsline{toc}{chapter}{List of Abbreviations, Symbols, and Nomenclature}
+%\large List of Abbreviations, Symbols, and Nomenclature \normalsize
+%\newpage
+\end{preliminary}
+%% End of the preliminary sections: reset page style and numbering.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                    %%
+%%                    ***   I M P O R T A N T   ***                   %%
+%%                                                                    %%
+%% Put your Chapters here; the easiest way to do this is to keep each %%
+%% chapter in a separate file and \include all the files right here.  %%
+%% Note that each chapter file should start with the line             %%
+%% "\chapter{ChapterName}".  Note that using "\include" instead of    %%
+%% "\input" makes each chapter start on a new page.                   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \import{../version0.0/}{intro0.0}
+% \include{paper1}
+% %\include{paper3}
+% \include{paper2}
+% \include{summary}
+
+
+
+%% This adds a line for the Bibliography in the Table of Contents.
+%\addcontentsline{toc}{chapter}{Bibliography}
+%% ***   Set the bibliography style.   ***
+%\bibliographystyle{apj.bst} % (change according to your preference)
+%%% ***   Set the bibliography file.   ***
+%\bibliography{westernthesis}
+
+
+%Appendices.
+\begin{appendices}
+\include{appendixa}
+\end{appendices}
+
+%CV only relevant stuff... not full CV.
+% \addcontentsline{toc}{chapter}{Curriculum Vitae}
+% \chapter*{Curriculum Vitae}
+% \begin{table}[ht]
+% \begin{tabular}{ll}
+% \textbf{Name:} & \firstname{} \lastname\\\\
+% \textbf{Post-Secondary} & La La School\\
+% \textbf{Education and}& La La Land\\
+% \textbf{Degrees:}& 1996 - 2000 M.A.\\\\
+% & University of Western Ontario\\
+% & London, ON\\
+% & 2008 - 2012 Ph.D.\\\\
+% \textbf{Honours and}& NSERC PGS M\\
+% \textbf{Awards:}& 2006-2007\\\\
+% \textbf{Related Work}& Teaching Assistant\\
+% \textbf{Experience:}& The University of Western Ontario\\
+% & 2008 - 2012\\
+% \end{tabular}
+% \end{table}
+% \subsubsection*{Publications:}
+% La La
+\end{document}
+
