@@ -104,7 +104,7 @@ Following the \citetalias{Hossein12} work, we chose these two sets of data not o
      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{../image_paper2/k96.jpg}
-        \caption{\citet{Kinney96} spectra template for 12 types of galaxies from \citet{Hossein12} paper (Fig. 1 in \citet{Hossein12}). The type of each template is shown in each frame. Plots B, E, S0, Sa, Sb and SC show spectra that belong to the early types galaxies. Starburst galaxies spectra are indicated with SB 1 to 6. Higher numbers represent more intrinsic colour extinction.}
+        \caption[\citet{Kinney96} spectra template for 12 types of galaxies]{\citet{Kinney96} spectra template for 12 types of galaxies from \citet{Hossein12} paper (Fig. 1 in \citet{Hossein12}). The type of each template is shown in each frame. Plots B, E, S0, Sa, Sb and SC show spectra that belong to the early types galaxies. Starburst galaxies spectra are indicated with SB 1 to 6. Higher numbers represent more intrinsic colour extinction.}
         \label{fig: k96}
     \end{figure}
       
@@ -137,13 +137,13 @@ Following the \citetalias{Hossein12} work, we chose these two sets of data not o
 %    This code was successfully tested on data from 39 galaxies selected from the Spitzer Infrared Nearby Galaxy Survey (SINGS;~\citep{Kennicutt03}) by \citetalias{Noll09}.
     \citetalias{Hossein12} produced the best SED match, with wavelength interval of 910~\AA~to $\sim 80$~cm, for each galaxy\footnote{This wavelength interval is the default output of the {\em CIGALE} code}.
     Assuming decreasing SFR and visual attenuation ($\tau$) model, Salpeter initial mass function~\citep{Salpeter55}, and old stellar population with age of $\sim 10$~Gyr, they derived physical properties of the galaxies such as age and stellar mass.
-    Some of these properties are shown in Tab.~\ref{tab: props}.
-    In Sec.~\ref{sec: 1D}, we study these properties for each category.
+    Some of these properties are shown in Table~\ref{tab: props}.
+    In Section~\ref{sec: 1D}, we study these properties for each category.
     More details on creating SEDs and extracting information about galaxy properties using {\em CIGALE} can be found in \citetalias{Noll09} and \citetalias{Hossein12}.
     
        
 \begin{table}
-\caption{Description of the properties of \citet{Hossein12} galaxies; the output result of {\em CIGALE}}     
+\caption[Description of the properties of \citet{Hossein12} galaxies]{Description of the properties of \citet{Hossein12} galaxies; the output result of {\em CIGALE}}     
 \label{tab: props}
 \centering
 \begin{tabular}{l l l}
@@ -227,9 +227,7 @@ $A_\mathrm{FUV}$ & mag & attenuation at 1500\,\AA{} \\
 \subsection{Creating self-organizing maps}
 \label{sec: create_som}
      In order to create SOMs, we use {\sc matlab} neural network toolbox~\citep[NNT,][]{matlabtolbox}.
-     %%Sr160611: Last time I got the following note from the MNRAS editor:
-     %"Please note that computer software/programming lan- guages must be styled in SMALL CAPITAL LETTERS, according to journal style. Please check and correct this paper accordingly."
-     % PB20160603: right, but I think the right way to do this is {\sc newsom}, not {\tiny NEWSOM} -- the distinction being that {\sc.. } will scale up or down with the global font size but {\tiny} will not.
+     
      SOM in {\sc nnt} can be created by {\sc newsom} or {\sc selforgmap} library, both of which work in two phases, an ``ordering phase" and a ``tuning phase". 
      The first phase is called the ``ordering phase" and
      starts with maximum neighbourhood distance and an initial high learning factor (usually 0.9) is provided by the user. 
@@ -242,11 +240,10 @@ $A_\mathrm{FUV}$ & mag & attenuation at 1500\,\AA{} \\
      the neighbourhood distance is kept at the user-defined minimum.
      The learning factor, however, decreases gradually.
      The gradual change in the leaning factor helps to fine-tune the topology results, leading to a more stable SOM. 
-     To allow the fine tuning, the number of iterations in this phase must be much larger than the that of the ordering phase. %cite kohenen book?!
+     To allow the fine tuning, the number of iterations in this phase must be much larger than the that of the ordering phase.
      We chose the number of epochs in the tuning phase to be 3 times the number of epochs in the ordering phase.
      
      To present our results, we use {\sc nnt}'s built-in plotting tool.
-%     This tool is designed to show the distance between each cluster more clearly.
      Specifically, we use two of the plots in this tool: a hits map, which shows the number of times each neuron has became the winner (hits), and a distance map, which shows the distance between those neurons.
      In the maps, the purple hexagonal shapes represent the neurons. 
      The distances in a distance map are shown by the grey cycle colours:
@@ -268,14 +265,13 @@ $A_\mathrm{FUV}$ & mag & attenuation at 1500\,\AA{} \\
             \begin{subfigure}[b]{0.5\textwidth}
                 \includegraphics[width=\textwidth]{../image_paper2/sample/sample2_hits.png}
             \end{subfigure}
-            \caption{SOM of the mock sample. In both plots, the axes show the position of the neurons. Hexagonal shapes represent the neurons. The top plot is a distance map. The grey cycle colours show the differences between the weights of each neuron with white being the minimum difference and black being the maximum one. The lower plot is a ``hits plot". It represents the number of samples in each neuron, where empty means zero hits. In this sample, the 27 galaxies are clustered in 4 groups, containing 8, 7, 6 and 6 galaxies respectively.}
+            \caption[Self-organizing map of the mock sample]{SOM of the mock sample. In both plots, the axes show the position of the neurons. Hexagonal shapes represent the neurons. The top plot is a distance map. The grey cycle colours show the differences between the weights of each neuron with white being the minimum difference and black being the maximum one. The lower plot is a ``hits plot". It represents the number of samples in each neuron, where empty means zero hits. In this sample, the 27 galaxies are clustered in 4 groups, containing 8, 7, 6 and 6 galaxies respectively.}
             \label{fig: sample}
         \end{figure}
  
  To illustrate how self-organizing maps work, we create a mock sample of 27 galaxies.
-% We create a mock sample of 27 galaxies to show how this method works, illustrate the results of SOMs, and how they can be analysed.(<- I don't like this sentence)
  The mock sample contains two attributes for each galaxy: the type (type 1 or type 2), and the star formation rate (high or low). 
- We generated a SOM of size $10 \times 10$ using the same initial values mentioned in Sec.~\ref{sec: create_som}.
+ We generated a SOM of size $10 \times 10$ using the same initial values mentioned in Section~\ref{sec: create_som}.
 
  Fig. ~\ref{fig: sample} shows the SOM of this mock sample. 
  The upper panel is the distance map. 
@@ -293,7 +289,6 @@ The left half of the plot is where type 1 galaxies belong, and type 2 galaxies r
 Different shades of gray show the border between regions.
 The lower panel in Fig.~\ref{fig: sample} shows that only 4 neurons (out of 100) are occupied. 
 8 galaxies are type 1 galaxies with high SFR, 7 are type 2 galaxies with high SFR, 6 are type 1 galaxies with low SFR and the other 6 are type 2 galaxies with low SFR. 
-%Since the input data are chosen to not to be complex, each entry only could get either 0 or 1 as a type of galaxy and 0 or 0.5 as an indicator of  high or low SFR, only four of the neurons were filled.
 We can conclude that although each galaxy had  the chance to occupy any of the neurons in the network, because of the similarity in the values of their attributes, they remained only in four groups.
 This network is considered a training network and can be used to cluster any new dataset with similar entries.
 
@@ -324,8 +319,7 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
     In this section we show the results of the neural networks trained using the \citetalias{Kinney96} template spectra.
     Training with \citetalias{Kinney96} templates results in networks that have regions corresponding to galaxies of known morphological type. 
     The trained networks can then be used to categorize other galaxies.
-    %In following we show how we trained data and used galaxies from \citetalias{Hossein12} to show how the clustering using trained networks works.
-    
+
     In order to find a sufficient size for the trained networks, we created maps with sizes ranging from $1\times2$ to $50\times50$.
     Varying the grid size of the maps helps us to monitor whether tighter grouping of galaxies is due to their similar properties or a lack of map space to separate them.
    Based on the size of the data and SOM results, we found the optimum grid size to be $1\times22$ and $12\times12$ in 1D and 2D maps, respectively. 
@@ -333,8 +327,8 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
     We create the final SOMs with initial values for number of iterations in ordering phase, ordering phase learning factor, tuning phase learning factor, and tuning phase neighbourhood distance of 1000, 0.9, 0.02, and 1, respectively.
    
     We started our analysis by creating 1D SOMs. 
-    First, we created SOMs with only two neurons ($1\times2$ map), and then increased the number of neurons one at a time in the 1D case (Sec.~\ref{sec: 1D}).
-    We generate 2D networks (Sec.~\ref{sec: 2D}),  again starting with the smallest possible number of neurons (4 neurons in a $2\times2$ map), increasing to 144 in a $12\times12$ map.    
+    First, we created SOMs with only two neurons ($1\times2$ map), and then increased the number of neurons one at a time in the 1D case (Section~\ref{sec: 1D}).
+    We generate 2D networks (Section~\ref{sec: 2D}),  again starting with the smallest possible number of neurons (4 neurons in a $2\times2$ map), increasing to 144 in a $12\times12$ map.    
     For each generated network, we compare the results with the \citetalias{Kinney96} categorization.
     We also use these networks to classify the \citetalias{Hossein12} galaxy sample, and compare this classification with that from the supervised networks in \citetalias{Hossein12}.
 
@@ -347,19 +341,19 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
             We increased the size of the map gradually until the 12 input samples divide into the 12 neurons. 
         
             Figs.~\ref{fig: 1by2T} --\ref{fig: 1by22T} show the results of the training networks.
-            As in to Fig.~\ref{fig: sample}, the upper part of the figures shows the neurons and their relative distances, $D_j$.
-            As mentioned in Sec.~\ref{sec: method}, an increase in the darkness of colours between neurons represents an increase in relative distance between the neurons.
+            As in to Fig.~\ref{fig: sample}, the upper part of the figures shows the neurons and their relative distances between weight of neurons.
+            As mentioned in Section~\ref{sec: method}, an increase in the darkness of colours between neurons represents an increase in relative distance between the neurons.
             The lower panels of the figures show the number of \citetalias{Kinney96} templates that are placed in each neuron. 
             \begin{figure}
-                \begin{subfigure}[b]{0.5\textwidth}
+                \begin{subfigure}[b]{\textwidth}
                     \centering
                     \includegraphics[width=\textwidth]{../image_paper2/1d/dist_1_by_2.png}
                 \end{subfigure}
                 \hfill
-                \begin{subfigure}[b]{0.5\textwidth}
+                \begin{subfigure}[b]{\textwidth}
                      \includegraphics[width=\textwidth]{../image_paper2/1d/hit_t_1_by_2.png}
                 \end{subfigure}
-                \caption{Results of training network in $1\times2$~grid. As in Fig.~\ref{fig: sample}, the upper panel is a distance map and the lower panel is a hit map. In this network, 5 of the templates from \citet{Kinney96} are categorized as quiescent galaxies and the rest are starbursts. Because of their strong emission lines, Sc galaxies are moved towards the starburst ones.}
+                \caption[Results of training network in $1\times2$~grid]{Results of training network in $1\times2$~grid. As in Fig.~\ref{fig: sample}, the upper panel is a distance map and the lower panel is a hit map. In this network, 5 of the templates from \citet{Kinney96} are categorized as quiescent galaxies and the rest are starbursts. Because of their strong emission lines, Sc galaxies are moved towards the starburst ones.}
                  \label{fig: 1by2T}
             \end{figure}
         
@@ -373,8 +367,6 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
 
             Fig.~\ref{fig: 1by3T} shows the results of the training in a 1$\times$3 network.
             In these plots we force the galaxies to be categorize in a maximum 3 groups. 
-            %If the galaxies in Fig.~\ref{fig: 1by2T} were very similar to each other or were exactly the same, they still wanted to be divided into two groups and left the middle node empty(this sentence does not make much sense. I kind of think I know what you're trying to say (because once I translate this sentence to farsi word by word, it kind of comes together) but please phrase it more carefully.).
-            %[suggested sentence: 
             If the templates in Fig.~\ref{fig: 1by2T} truly belonged in two groups, they would be grouped into two groups in this network, even when we try to cluster them into three. 
             However, in the lower panel of Fig.~\ref{fig: 1by3T}, we can see that the middle node contains two templates.
             These two templates, which are separated from the group of starburst templates in the lower part of Fig.~\ref{fig: 1by2T},  are the SB5 and SB6 types.
@@ -389,15 +381,15 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
             Therefore, in the networks, SB5 and SB6 types are to be grouped close to the early type galaxy templates.
                 
             \begin{figure}
-                \begin{subfigure}[b]{0.5\textwidth}
+                \begin{subfigure}[b]{\textwidth}
                     \centering
                     \includegraphics[width=\textwidth]{../image_paper2/1d/dist_1_by_3.png}
                 \end{subfigure}
                 \hfill
-                \begin{subfigure}[b]{0.5\textwidth}
+                \begin{subfigure}[b]{\textwidth}
                      \includegraphics[width=\textwidth]{../image_paper2/1d/hit_t_1_by_3.png}
                 \end{subfigure}
-                \caption{The same as Fig.~\ref{fig: 1by2T} but showing the results of training network in $1\times3$~grid. In this network again, 5 of the \citet{Kinney96} templates are categorized as quiescent and 7 as starbursts. However, this time 2  templates (SB5 and SB6) are separated from the starburst groups.}
+                \caption[Results of training network in $1\times3$~grid]{The same as Fig.~\ref{fig: 1by2T} but showing the results of training network in $1\times3$~grid. In this network again, 5 of the \citet{Kinney96} templates are categorized as quiescent and 7 as starbursts. However, this time 2  templates (SB5 and SB6) are separated from the starburst groups.}
                  \label{fig: 1by3T}
             \end{figure}
            
@@ -411,7 +403,7 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
             The SB3 and SB4 grouping breaks when we increase the size of the network to $1\times15$~(Fig.~\ref{fig: 1by15T}).
             The SB1 and SB2 templates, however, remain in the same neuron until the size of the map is increased to $1\times20$~(Fig.~\ref{fig: 1by20T}).
             The separation between templates B and E only happens when the size of the SOM exceeds $1\times22$~(Fig.~\ref{fig: 1by22T}).
-        \begin{figure*}
+        \begin{figure}
             \begin{subfigure}[b]{\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{../image_paper2/1d/dist_1_by_22.png}
@@ -420,9 +412,9 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
             \begin{subfigure}[b]{\textwidth}
                 \includegraphics[width=\textwidth]{../image_paper2/1d/hit_t_1_by_22.png}
             \end{subfigure}
-            \caption{The same as Fig.~\ref{fig: 1by2T} but this time the figure shows results of training network in $1\times22$~grid.}
+            \caption[Results of training network in $1\times22$~grid]{The same as Fig.~\ref{fig: 1by2T} but this time the figure shows results of training network in $1\times22$~grid.}
             \label{fig: 1by22T}
-        \end{figure*} 
+        \end{figure} 
     
             In Fig.~\ref{fig: 1by22T}, we can see twelve different groups:
             5 groups in the left-side neurons are separated from 7 groups on the right side of the map with two dark-grey colours between them.
@@ -435,29 +427,28 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
            
         \subsubsection{Classifying the galaxy sample}
          \label{sec: 1Dv}
-            After training the networks as discussed in Sec.~\ref{sec: 1Dt}, we used them to classify the fitted SEDs of the sample of 142 galaxies from \citetalias{Hossein12}.
+            After training the networks as discussed in Section~\ref{sec: 1Dt}, we used them to classify the fitted SEDs of the sample of 142 galaxies from \citetalias{Hossein12}.
             The upper panel in Fig.~\ref{fig: 1by2V} shows the result of this classification using the $1\times2$~network from Fig.~\ref{fig: 1by2T}.
             Eighty of the galaxies have SEDs similar to those of the early type galaxies and the SEDs of the rest are similar to the starburst galaxies.
-            %The lower panels show the average SED of the galaxies in each node. 
             The lower left panel shows the average SED of the 80 galaxies that were classified as early type 
             These galaxies are similar to the ones in the left node in the upper panel of Fig.~\ref{fig: 1by2T}:
             the SEDs clearly show the 4000\AA~break, one of the signatures of early type galaxies.
             The H$\alpha$ emission in the spectrum could be from galaxies with similar SEDs to Sa galaxies, but with stronger emission lines.
             The average SED in the lower right panel of Fig.~\ref{fig: 1by2V} shows strong emission lines and bright ultraviolet continuum, indications of a high star formation rate.
             \begin{figure}
-                \begin{subfigure}[b]{0.5\textwidth}
+                \begin{subfigure}[b]{\textwidth}
                     \centering
                     \includegraphics[width=\textwidth]{../image_paper2/1d/hit_v_1_by_2.png}
                     %\caption{$1\times2$ weight map}
                      %\label{fig: 1by3T}
                 \end{subfigure}
                 \hfill
-                \begin{subfigure}[b]{0.5\textwidth}
+                \begin{subfigure}[b]{\textwidth}
                      \includegraphics[width=\textwidth]{../image_paper2/1d/SED_total1by2.png}
                      %\caption{$1\times2$ hits map}
                      %\label{fig: 1by3Thits}
                 \end{subfigure}
-                \caption{Classification of fitted galaxy SEDs from \citet{Hossein12} using the $1\times2$~networks trained from the \citet{Kinney96} templates (Fig.~\ref{fig: 1by2T}). Upper panel: a hit map with the number in each node representing the number of galaxies belonging to that group. In this case 80 means that 80 of the 142 SEDs are classified into the early type group while the 62 of the 142 SEDs are categorized as starburst galaxies. Lower panel: Average SED of the galaxies in each group, early-type on the left and starburst on the right.}
+                \caption[Classification of fitted galaxy SEDs from \citet{Hossein12} using the $1\times2$~networks]{Classification of fitted galaxy SEDs from \citet{Hossein12} using the $1\times2$~network trained from the \citet{Kinney96} templates (Fig.~\ref{fig: 1by2T}). Upper panel: a hit map with the number in each node representing the number of galaxies belonging to that group. In this case 80 means that 80 of the 142 SEDs are classified into the early type group while the 62 of the 142 SEDs are categorized as starburst galaxies. Lower panel: Average SED of the galaxies in each group, early-type on the left and starburst on the right.}
                 \label{fig: 1by2V}
             \end{figure}          
             
@@ -470,41 +461,36 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
             Galaxies in this group have strong emission lines and are ultraviolet-bright, but they also have a strong 4000\AA~break, which makes them cluster closer to the early type galaxies (middle panel in the lower part of Fig.~\ref{fig: 1by2V}).
 
             \begin{figure}
-                \begin{subfigure}[b]{0.5\textwidth}
+                \begin{subfigure}[b]{\textwidth}
                     \centering
                     \includegraphics[width=\textwidth]{../image_paper2/1d/hit_v_1_by_3.png}
-                    %\caption{$1\times2$ weight map}
-                     %\label{fig: 1by3T}
                 \end{subfigure}
                 \hfill
-                \begin{subfigure}[b]{0.5\textwidth}
+                \begin{subfigure}[b]{\textwidth}
                      \includegraphics[width=\textwidth]{../image_paper2/1d/SED_total1by3.png}
-                     %\caption{$1\times2$ hits map}
-                     %\label{fig: 1by3Thits}
                 \end{subfigure}
-                \caption{Same as Fig.~\ref{fig: 1by2V}, but in this figure, we used a network with size of $1\times3$ (Fig.~\ref{fig: 1by3T}) to classify the sample galaxies.}
+                \caption[Classification of fitted galaxy SEDs from \citet{Hossein12} using the $1\times3$~networks]{Same as Fig.~\ref{fig: 1by2V}, but in this figure, we used a network with size of $1\times3$ (Fig.~\ref{fig: 1by3T}) to classify the sample galaxies.}
                 \label{fig: 1by3V}
             \end{figure}       
             
             In Fig.~\ref{fig: 1by22V}, we use the $1\times22$~network to classify the sample galaxies.
-            As mentioned in Sec.~\ref{sec: 1Dt}, in this network size we observed the first separation of the \citetalias{Kinney96} galaxies into 12 different neurons.
+            As mentioned in Section~\ref{sec: 1Dt}, in this network size we observed the first separation of the \citetalias{Kinney96} galaxies into 12 different neurons.
            As in Figs.~\ref{fig: 1by2V} and ~\ref{fig: 1by3V}, the upper panel of Fig.~\ref{fig: 1by22V} shows the number of galaxies (out of the 142) belonging to each neuron in the $1\times22$ SOM.
-            \begin{figure*}
-                \begin{subfigure}[b]{0.9\textwidth}
-                    \centering
+
+            \begin{figure}
+                \begin{subfigure}[b]{\textwidth}
                     \includegraphics[width=\textwidth]{../image_paper2/1d/hit_v_1_by_22_n.png}
-                    %\caption{$1\times2$ weight map}
-                     %\label{fig: 1by3T}
+                    \centering
                 \end{subfigure}
                 \hfill
-                \begin{subfigure}[b]{0.9\textwidth}
+                \begin{subfigure}[b]{\textwidth}
+                \centering
                      \includegraphics[width=\textwidth]{../image_paper2/1d/SED_total1by22.png}
-                     %\caption{$1\times2$ hits map}
-                     %\label{fig: 1by3Thits}
                 \end{subfigure}
-                \caption{Same as Fig.~\ref{fig: 1by2V}, but in this figure, we used a network with size of $1\times22$ (Fig.~\ref{fig: 1by22T}) to classify the sample galaxies. In the average SED of each neuron, we can clearly see the changes from early type galaxies to the starburst ones. The 4000\AA~ break weakens from left to right and the emission line strengths increase.}
+                \caption[Classification of fitted galaxy SEDs from \citet{Hossein12} using the $1\times22$~networks]{Same as Fig.~\ref{fig: 1by2V}, but in this figure, we used a network with size of $1\times22$ (Fig.~\ref{fig: 1by22T}) to classify the sample galaxies. In the average SED of each neuron, we can clearly see the changes from early type galaxies to the starburst ones. The 4000\AA~ break weakens from left to right and the emission line strengths increase.}
                 \label{fig: 1by22V}
-            \end{figure*}
+            \end{figure}
+
             The lower panels present the average SED of the galaxies in each neuron.
             Since galaxies had more space to separate, some of the neurons are left empty.
             Thus, instead of having 22 average SED plots in the lower part of Fig.~\ref{fig: 1by22V}, there are only 12.
@@ -528,8 +514,6 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
             As \citetalias{Hossein12} mentioned, part of the reason we could not classify all the galaxies using the \citetalias{Kinney96} model is that the model was constructed from co-adding spectra of 70 galaxies.
             In this small sample, it is quite possible that the best SEDs do not match any model perfectly and the original classifications have high uncertainties.
             
-            %PB20160604: is this paragraph really necessary?
-            %%Sr: I think it clears the point of having regions in middle neurons
             With other methods (e.g. $\chi^2$ fitting), trained neural network fitting of SEDs is limited to models and the results are always reported with uncertainties.
             However, with SOM, we have the freedom to categorize galaxies in intermediate groups.
             Therefore, if the SED of galaxies do not match completely with any of the model SEDs in Fig.~\ref{fig: k96}, they can be categorized as a SED with similarity to two or more of the groups.
@@ -539,12 +523,12 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
         
         \subsubsection{Properties of the clustered galaxies}
         
-        In order to check whether our conclusions in Sec.~\ref{sec: 1Dv}~are correct, in this section we test the relations between median properties of the galaxies in each neuron.
+        In order to check whether our conclusions in Section~\ref{sec: 1Dv}~are correct, in this section we test the relations between median properties of the galaxies in each neuron.
         
         \begin{figure}
             \centering
             \includegraphics[width=\textwidth]{../image_paper2/1d/props5.png}
-            \caption{Comparing the median of four properties of galaxies in each node in $1\times2$ (black circles), $1\times4$ (blue diamonds), and $1\times8$ (red triangles) networks.}
+            \caption[The median of four properties of galaxies in three networks]{Comparing the median of four properties of galaxies in each node in $1\times2$ (black circles), $1\times4$ (blue diamonds), and $1\times8$ (red triangles) networks.}
             \label{fig: props}
         \end{figure}
        
@@ -567,31 +551,31 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
         They also studied relations between the attenuation at 1500 \AA~(A$_{\rm {FUV}}$) and sSFR, age, and stellar mass and did not find any correlation.
         \citetalias{Hossein12} replicated the upper plots in Fig.~\ref{fig: props_vs_props}, and found a tighter correlation than \citetalias{Noll09} results. 
         
-               \begin{figure}
-        \begin{subfigure}[b]{0.5\textwidth}
+        \begin{figure}
+        \begin{subfigure}[b]{0.3\textwidth}
             \includegraphics[width=\textwidth]{../image_paper2/1d/f1.png}
         \end{subfigure}
         \hfill
-        \begin{subfigure}[b]{0.5\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
             \includegraphics[width=\textwidth]{../image_paper2/1d/f2.png}
         \end{subfigure}
         \hfill
-        \begin{subfigure}[b]{0.5\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
             \includegraphics[width=\textwidth]{../image_paper2/1d/f3.png}
         \end{subfigure}
         \hfill
-        \begin{subfigure}[b]{0.5\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
             \includegraphics[width=\textwidth]{../image_paper2/1d/f4.png}
         \end{subfigure}
         \hfill
-        \begin{subfigure}[b]{0.5\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
             \includegraphics[width=\textwidth]{../image_paper2/1d/f5.png}
         \end{subfigure}
        \hfill
-        \begin{subfigure}[b]{0.5\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
             \includegraphics[width=\textwidth]{../image_paper2/1d/f6.png}
         \end{subfigure}
-        \caption{From top to bottom: Correlation between age (t$_{\rm {D4000}}$) and sSFR ($\phi$), sSFR and stellar mass, age (t$_{\rm {D4000}}$) and stellar mass, and A$_{\rm {FUV}}$ with sSFR, age (t$_{\rm {D4000}}$) and stellar mass. Points show the median values of these properties of galaxies in $1\times22$ network and error bars are the standard deviation of the median values. colours shows the type of the galaxies in the new classification. The most pure red colour shows E type galaxies and the most blue one indicates the SB1 galaxies. The other colours depend on how much they are close to red or blue show that the galaxies are early type or starburst.}
+        \caption[Relations between properties of the clustered galaxies]{From top to bottom: Correlation between age (t$_{\rm {D4000}}$) and sSFR ($\phi$), sSFR and stellar mass, age (t$_{\rm {D4000}}$) and stellar mass, and A$_{\rm {FUV}}$ with sSFR, age (t$_{\rm {D4000}}$) and stellar mass. Points show the median values of these properties of galaxies in $1\times22$ network and error bars are the standard deviation of the median values. colours shows the type of the galaxies in the new classification. The most pure red colour shows E type galaxies and the most blue one indicates the SB1 galaxies. The other colours depend on how much they are close to red or blue show that the galaxies are early type or starburst.}
         \label{fig: props_vs_props}
     \end{figure}
         
@@ -625,7 +609,7 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
     The one-dimensional networks are great tools to categorize the SEDs and monitor the changes of properties of galaxies with category.
     However, each neuron in these networks is limited to be connected to one other neuron in each direction.
     In a 2D network, each neuron can have more than two immediate neighbours, providing a more complete pictures of relations between each SED type.
-    As described in Sec.~\ref{sec: method}, one of the main advantages of the SOM is that when the weight of one neuron is adjusted after finding the best matching unit, the weight of the whole map will be changed.
+    As described in Section~\ref{sec: method}, one of the main advantages of the SOM is that when the weight of one neuron is adjusted after finding the best matching unit, the weight of the whole map will be changed.
     This quality of the SOMs provides a unique opportunity to analyse 2D networks in two approaches. 
     At first, as in the 1D SOMs, we assumed that all the galaxies must have SEDs similar to any of the 12 templates in Fig.~\ref{fig: k96}.
     In this case, we can categorize SEDs of other galaxies based on those 12 types.
@@ -636,7 +620,7 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
 %    The latter case, can be used to identify outliers. 
 
     To get the best result from both methods, we should have SOMs with ``enough"  neurons to give any new types of galaxies a chance to find their places in the map.
-    ``Enough  neurons" is a vague statement, but as mentioned in the Sec.~\ref{sec: method} the size of SOMs is arbitrary and depends on the size of the input data and the kind of information needed from the SOMs.
+    ``Enough  neurons" is a vague statement, but as mentioned in the Section~\ref{sec: method} the size of SOMs is arbitrary and depends on the size of the input data and the kind of information needed from the SOMs.
     Since the training dataset (the \citetalias{Kinney96} templates) has 12 members, we assumed a SOM with size of $8\times8$~would be a good start.
     We then increased the size of the SOM to find the highest size suitable for the training sample.
     We noticed that very few changes occurred after the SOMs were grown to a size greater than $12\times12$, so we used this as the maximum size.
@@ -659,7 +643,7 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
         \begin{subfigure}[b]{0.45\textwidth}
             \includegraphics[width=\textwidth]{../image_paper2/2d/hit_v_12_by_self_org_res12.png}
         \end{subfigure}
-        \caption{$12\times12$~2D SOM results. Upper pabel: SOMs trained using the \citet{Kinney96} templates. For training 2D SOMs two different approaches were considered: either only 12 types of galaxies exist (left) or not (right). Lower panel: classifying the galaxies from \citetalias{Hossein12}, using the trained networks shown in the upper panels. From the lower right panel, we can see that there are no outliers in the galaxies from \citetalias{Hossein12}, and we can use the map in the lower left panel as a final clustering result for the \citetalias{Hossein12} galaxies.}
+        \caption[$12\times12$ two-dimensional self-organizing map results.]{$12\times12$~2D SOM results. Upper pabel: SOMs trained using the \citet{Kinney96} templates. For training 2D SOMs two different approaches were considered: either only 12 types of galaxies exist (left) or not (right). Lower panel: classifying the galaxies from \citetalias{Hossein12}, using the trained networks shown in the upper panels. From the lower right panel, we can see that there are no outliers in the galaxies from \citetalias{Hossein12}, and we can use the map in the lower left panel as a final clustering result for the \citetalias{Hossein12} galaxies.}
         \label{fig: 12by12}
     \end{figure*}
     

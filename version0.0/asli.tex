@@ -18,7 +18,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage[byname]{smartref}
-\usepackage{hyperref} %comment out for hardcopy
+\usepackage{hyperref}%comment out for hardcopy
 \usepackage{txfonts}
 \usepackage{tocloft}
 \usepackage{amsmath}
@@ -27,6 +27,8 @@
 \usepackage{times}
 \usepackage{float}
 %\usepackage{caption}
+\usepackage[font=small,labelfont=bf]{caption}
+\DeclareCaptionFont{tiny}{\tiny}
 \usepackage{subcaption}
 \usepackage{multirow}
 \usepackage{color,soul}
@@ -39,6 +41,9 @@
 \usepackage[flushleft]{threeparttable}
 \usepackage{pgffor}
 \usepackage{chapterbib}
+\usepackage{adjustbox}
+
+
 \makeatletter
 \numberwithin{figure}{chapter}
 \newenvironment{acknowledgements}%
@@ -218,13 +223,13 @@
 \newcommand{\gyear}{\number\year}
 \newcommand{\makecoauthor}{
 %Type information about coauthorship here/
-The work presented in this thesis has greatly benefited from advice by my supervisor Dr. Pauline Barmby and collaborators: Dr. Sofia Lianue, Dr. Hossein Teimoorinia, and Dr. Els Peeters. Although I led the projects, performed the analysis and wrote the manuscripts, their suggestions and feedback on the analyses and manuscripts were greatly helpful.
+The work presented in this thesis has greatly benefited from advice by my supervisor Dr. Pauline Barmby and collaborators: Dr. Sofia Lianou, Dr. Hossein Teimoorinia, and Dr. Els Peeters. Although I led the projects, performed the analysis and wrote the manuscripts, their suggestions and feedback on the analyses and manuscripts were priceless.
 
-{\bf Chapter 2}: Star formation laws in the Andromeda galaxy: gas, stars, metals and the surface density of star formation, has been published in the Monthly Notices of the Royal Astronomical Society, Volume 456, Issue 4, 2016.
+{\bf Chapter 2}: Star formation laws in the Andromeda galaxy: gas, stars, metals and the surface density of star formation, has been published in {\em Monthly Notices of the Royal Astronomical Society}, Volume 456, Issue 4, 2016.
 
-{\bf Chapter 3}: Data Mining in Nearby Galaxies, will be submitted in the near future.
+{\bf Chapter 3}: Data Mining in Nearby Galaxies, will be submitted in the near future. %TBD: change this if you change the title
 
-{\bf Chapter 4}: Clustering galaxy spectra at $0.5<z<1$: an unsupervised approach, has been submitted to The Monthly Notices of The Royal Astronomical Society.
+{\bf Chapter 4}: Clustering galaxy spectra at $0.5<z<1$: an unsupervised approach, has been submitted to {\em Monthly Notices of the Royal Astronomical Society}.
 }
 
 \newcommand{\makeacknowlege} { 1) Pauline
@@ -237,13 +242,7 @@ The work presented in this thesis has greatly benefited from advice by my superv
 }
 \newcommand{\makededications} {
 
-\emph{To my parents, my sisters,}
-
-\emph{\& Matin,}
-
-\emph{for their unconditional love and support.}
-
-
+To my parents, my sisters, \& Matin, for their unconditional love and support.
 
 }
 \newcommand{\listappendixname}{List of Appendices}
@@ -489,11 +488,11 @@ The grouped properties of the classified galaxies are found to be more tightly c
 %% "\input" makes each chapter start on a new page.                   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\include{intro0.0}
-\include{paper1}
-\include{paper3}
-\include{paper2}
-\include{summary}
+% \include{intro0.01}
+ \include{paper1}
+%\include{paper3}
+%\include{paper2}
+% \include{summary}
 
 
 
@@ -511,11 +510,12 @@ The grouped properties of the classified galaxies are found to be more tightly c
 %Appendices.
 
 % %Appendices.
-\begin{appendices}
-\include{appendixa}
-\include{appendixb}
-\include{appendixc}
-\end{appendices}
+% \begin{appendices}
+% \include{appendixa}
+% \include{appendixa_2}
+% \include{appendixb}
+% \include{appendixc}
+% \end{appendices}
 
 
 %CV only relevant stuff... not full CV.
