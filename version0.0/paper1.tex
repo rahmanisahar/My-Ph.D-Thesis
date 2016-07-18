@@ -31,7 +31,7 @@ A galaxy's metallicity is another physical quantity that likely plays a role in 
 
 
 %P2: SFR, measuring, scaling, ...
-In order to investigate star formation laws, the first step is to calculate the SFR. Many studies are devoted to determining how flux measurements of star-forming regions can be accurately translated into the rate of formation of new stars \citep[e.g.][]{Kennicutt12, Calzetti13, Zhu08, Kennicutt09, Boquien10, Boquien11, Hao11}. \citet{Kennicutt98b} calibrated luminosity of galaxies as a way of measuring the SFR in specific wavelengths using relations between the SFR per unit mass or per unit luminosity and the integrated colour of the system provided by synthesis models \citep[e.g.][]{Bruzual93}. Subsequent studies tried to find a similar calibration for measuring the SFR of galaxies in other bands. \citet{Kennicutt09} and \citet{Hao11} introduced new SFR calibrations using a combination of \halpha or far-ultraviolet (FUV) and far-infrared (FIR) emission. In addition to using suitable calibrations for each region, considering the differences between the global and the local ($\sim 0.5-1$~\kpc) cases is important. In $\S$~\ref{sec:sfr}, we will discuss the SFR in the Andromeda galaxy and how it was determined. 
+In order to investigate star formation laws, the first step is to calculate the SFR. Many studies are devoted to determining how flux measurements of star-forming regions can be accurately translated into the rate of formation of new stars \citep[e.g.][]{Kennicutt12, Calzetti13, Zhu08, Kennicutt09, Boquien10, Boquien11, Hao11}. \citet{Kennicutt98b} calibrated luminosity of galaxies as a way of measuring the SFR in specific wavelengths using relations between the SFR per unit mass or per unit luminosity and the integrated colour of the system provided by synthesis models \citep[e.g.][]{Bruzual93}. Subsequent studies tried to find a similar calibration for measuring the SFR of galaxies in other bands. \citet{Kennicutt09} and \citet{Hao11} introduced new SFR calibrations using a combination of \halpha\ or far-ultraviolet (FUV) and far-infrared (FIR) emission. In addition to using suitable calibrations for each region, considering the differences between the global and the local ($\sim 0.5-1$~\kpc) cases is important. In $\S$~\ref{sec:sfr}, we will discuss the SFR in the Andromeda galaxy and how it was determined. 
 
 %P3: Gas cloud, variety, observing etc
 Calculating the surface density of gas is the next step in testing star formation laws.
@@ -92,7 +92,7 @@ Wavelength & FWHM & Coverage area &Telescope
 Several different observational datasets are used to compute properties of M31 for testing star formation laws.
 One method for calculating the SFR uses FUV emission as a tracer of the star-forming regions: for this we
 use the FUV image of M31 as observed by the Galaxy Evolution Explorer \citep[GALEX;][]{Martin05}. 
-A second method to calculate the SFR involved using a combination of \halpha and 24~$\mu$m emission. \citet{Massey06, Massey07} mapped M31 in broad and narrow bands, including \halpha, as part of the Nearby Galaxies Survey using the KPNO 4-m telescope. A detailed description of how our \halpha map was made can be found in Appendix~\ref{app:halpha}.
+A second method to calculate the SFR involved using a combination of \halpha\ and 24~$\mu$m emission. \citet{Massey06, Massey07} mapped M31 in broad and narrow bands, including \halpha, as part of the Nearby Galaxies Survey using the KPNO 4-m telescope. A detailed description of how our \halpha\ map was made can be found in Appendix~\ref{app:halpha}.
 
 %\subsection{IR and sub mm Data}
 Calculations of the SFR using the total infrared emission requires observations at 8, 24, 70, and 160~\um, made
@@ -117,7 +117,7 @@ $ dN / d \log M \propto M^{-3.5 }$ over the full range of masses, or
 \citet{Kroupa01} $ dN / d \log M \propto M^{-\Gamma }$ 
 with $\Gamma=-2.3$ at low masses and  $\Gamma=-3.3$ for higher mass.
 For the same total mass, the Salpeter and Kroupa IMFs produce almost the same amount of high-mass stars, but the Salpeter IMF produces more low-mass stars. Different predictions of the number of stars between various IMFs are one of the main uncertainty sources in the calculation of the stellar mass \citep{Eskew12,Brewer12}. \citet{Eskew12} showed that the total mass of low-mass stars can change by a factor of 2.5 depending on the IMF.
-\citet{Calzetti13} showed the impact of different IMF assumptions on SFR calibrations. Adopting a modified \citet{Kroupa01} IMF, with its maximum stellar mass set to 30 M$_{\odot}$ instead of 100 M$_{\odot}$, changes the SFR calibration constant by factors 1.4 to 5.6 for different SFR indicators. Changes in the IMF mostly affect the calibration based on \halpha luminosity, because a significant amount of the ionizing photons comes from stars more massive than $\sim 20$~M$\odot$.
+\citet{Calzetti13} showed the impact of different IMF assumptions on SFR calibrations. Adopting a modified \citet{Kroupa01} IMF, with its maximum stellar mass set to 30 M$_{\odot}$ instead of 100 M$_{\odot}$, changes the SFR calibration constant by factors 1.4 to 5.6 for different SFR indicators. Changes in the IMF mostly affect the calibration based on \halpha\ luminosity, because a significant amount of the ionizing photons comes from stars more massive than $\sim 20$~M$\odot$.
 
 In this project we used values based on the Kroupa IMF as is standard in the field, although discussion continues on whether the IMF is universal \citep{Bastin10}. Where necessary we converted from calibration values based on the Salpeter IMF by multiplying by 0.67~\citep{Madau14}.
 
@@ -147,15 +147,15 @@ Then we smoothed the FUV$_{obs}$  map to have the same angular resolution and pi
     \label{fig:sfrs}
 \end{figure}
 
-\subsubsection{\halpha plus 24 \um Star Formation Rate}
+\subsubsection{\halpha\ plus 24 \um Star Formation Rate}
 \label{sec:sfr_halpha}
 
-The SFR can also be calculated using a combination of \halpha and \Spitzer  24 \um maps. \halpha emission of galaxies is dominated by light emitted from young and massive stars. Star formation timescales traced by this emission are $\sim 6-10$ Myr \citep[e.g.][]{Kennicutt09, Calzetti13}. Therefore, \halpha alone could be used to calibrate the SFR \citep[e.g.][]{Osterbrock06, Kennicutt09}. However, \halpha emission is very sensitive to dust extinction. Therefore, the combination of the \halpha and 24\um of considered a better choice for calculating the SFR. We used a calibration introduced by \citet{Kennicutt09} to measure the SFR:
+The SFR can also be calculated using a combination of \halpha\ and \Spitzer  24 \um maps. \halpha\ emission of galaxies is dominated by light emitted from young and massive stars. Star formation timescales traced by this emission are $\sim 6-10$ Myr \citep[e.g.][]{Kennicutt09, Calzetti13}. Therefore, \halpha\ alone could be used to calibrate the SFR \citep[e.g.][]{Osterbrock06, Kennicutt09}. However, \halpha\ emission is very sensitive to dust extinction. Therefore, the combination of the \halpha\ and 24\um of considered a better choice for calculating the SFR. We used a calibration introduced by \citet{Kennicutt09} to measure the SFR:
 \begin{equation}
 \label{equ: halphaplus24_g}
 SFR = 5.5 \times 10^{-42}[L(H{\alpha})_{\mathrm obs} + 0.020L(24\mu m)],
 \end{equation}
-\noindent where L(H${\alpha}$)$_{\mathrm obs}$ is the observed \halpha luminosity without correction for internal dust attenuation, given in the unit of erg~s$^{-1}$. L(24$\mu$m) is the $24\mu$m IR luminosity in erg~s$^{-1}$, and SFR is in M$_{\odot}~$yr$^{-1}$. It was indicated that the formulation above can only be used for the global situation, i.e., the total SFR.
+\noindent where L(H${\alpha}$)$_{\mathrm obs}$ is the observed \halpha\ luminosity without correction for internal dust attenuation, given in the unit of erg~s$^{-1}$. L(24$\mu$m) is the $24\mu$m IR luminosity in erg~s$^{-1}$, and SFR is in M$_{\odot}~$yr$^{-1}$. It was indicated that the formulation above can only be used for the global situation, i.e., the total SFR.
 
 \citet{Calzetti07} introduced a new calibration using the same bandpasses for the case of local regions:
 \begin{equation}
@@ -190,11 +190,11 @@ L(\rm TIR) = 0.95L(8) + 1.15L(24) + L(70) + L(160),
 Ref.&Method&SFR(M$_{\odot}$yr$^{-1}$) \\
 \hline
 Current work&FUV and 24~$\mu$m&0.31 \\
-Current work&\halpha and 24~$\mu$m&0.35 \\
+Current work&\halpha\ and 24~$\mu$m&0.35 \\
 Current work&TIR luminosity&0.4\\
 \citet{Ford13}&FUV and 24~$\mu$m&0.25\\
 \citet{Ford13}&TIR luminosity&0.48-0.52\\
-\citet{Azimlu11}& \halpha and 24~$\mu$m&0.34\\
+\citet{Azimlu11}& \halpha\ and 24~$\mu$m&0.34\\
 \citet{Azimlu11}&Extinction-corrected \halpha&0.44\\
 \citet{Tabatabaei10}&Extinction-corrected \halpha&0.27--0.38\\
 \citet{Barmby06}&Infrared 8\um luminosity& 0.4\\
@@ -320,7 +320,7 @@ We made three SFR maps, three gas mass density maps and a stellar mass density m
 
 
 Fig.~\ref{fig:ks_all} shows the pixel-by-pixel fitting of the K-S law on the whole galaxy. The first row of plots are the surface density of the SFR(TIR), which is calculated using the TIR emission from Section~\ref{sec:sfr_fir}, versus the gas surface density traced by only the molecular gas (H$_2$), only atomic gas (H\,{\textsc i}), and total gas from right to left, respectively. 
-The only difference between the upper and the other rows is that in the lower rows the SFR indicator is FUV plus 24~$\mu$m (second row), and \halpha plus 24~$\mu$m emission (third row). Fig.~\ref{fig:ks,regs} shows the same data as Fig.~\ref{fig:ks_all}. However, in this figure we separated pixels from different regions in the galaxy by their colours. 
+The only difference between the upper and the other rows is that in the lower rows the SFR indicator is FUV plus 24~$\mu$m (second row), and \halpha\ plus 24~$\mu$m emission (third row). Fig.~\ref{fig:ks,regs} shows the same data as Fig.~\ref{fig:ks_all}. However, in this figure we separated pixels from different regions in the galaxy by their colours. 
  There is a deviation in the middle panel plots of Fig.~\ref{fig:ks_all} which shows a set of points with with high star formation rate and low H\,{\textsc i} gas.
 As can be clearly seen in middle panel of Fig.~\ref{fig:ks,regs}, this deviation is due to regions within 8~kpc of the centre of the galaxy (red points).
  \cite{Braun09} saw a similar feature in their studies of the K-S law in M31. 

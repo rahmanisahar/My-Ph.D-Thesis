@@ -1,4 +1,4 @@
-\chapter[SOM: classifying high $Z$ galaxies]{Clustering galaxy spectra at $0.5<z<1$: an unsupervised approach}
+\chapter[Classifying High-Redshift Galaxies Using Self-Organizing Maps]{Clustering galaxy spectra at $0.5<z<1$: an unsupervised approach}
 \label{ch: paper2}
 \defcitealias{Hossein12}{T12}
 \defcitealias{Kinney96}{K96}
@@ -12,7 +12,7 @@
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
 \section{Introduction}
-\label{sec: intro}
+\label{sec: intro_somz}
 %General information about SEDs
 Nearly all information we can obtain from a galaxy is encapsulated in the light it emits; every observable phenomenon in a galaxy leaves a footprint on its spectral energy distribution (SED).
 We can determine some physical property of a galaxy by properly modeling various features observed in its SED, and the general shape of the SED can be used as an identifier of the morphological type.
@@ -82,7 +82,7 @@ First, we train self-organizing maps using the \citetalias{Kinney96} spectral te
 Then, we use the trained network to classify the SEDs of 142 galaxies with $0.5 < z < 1$ from \citetalias{Hossein12}. 
 As in \citetalias{Hossein12}, we examine the averaged properties of the new galaxy groups and compare them with previous work.
 In Section $\S$~\ref{sec: data_highZ}, we present the data that we use to train and test our networks. 
-We describe the SOM methods in Section $\S$~\ref{sec: method}. 
+We describe the SOM methods in Section $\S$~\ref{sec: method_somz}. 
 The results of the SED classifications and a comparison with previous studies are presented in Section $\S$~\ref{sec: result}. 
 In Section $\S$~\ref{sec: summary}, we summarize our results and discuss potential future work in this subject.
 %----------------------------------------------------------------------------------------
@@ -99,10 +99,10 @@ We use SED templates from \citetalias{Kinney96} to train neural networks.
 To test the trained networks, we use SED and physical properties of 142 galaxies at $0.5<z<1$ from \citetalias{Hossein12}.
 Following the \citetalias{Hossein12} work, we chose these two sets of data not only to show the application of SOMs in SED clustering, but also to easily compare supervised and unsupervised methods.
 
- \subsection{Kinney spectral model}
+ \subsection{Kinney Spectral Model}
      \begin{figure}
         \centering
-        \includegraphics[width=\textwidth]{../image_paper2/k96.jpg}
+        \includegraphics[width=0.9\textwidth]{../image_paper2/k96.jpg}
         \caption[\citet{Kinney96} spectra template for 12 types of galaxies]{\citet{Kinney96} spectra template for 12 types of galaxies from \citet{Hossein12} paper (Fig. 1 in \citet{Hossein12}). The type of each template is shown in each frame. Plots B, E, S0, Sa, Sb and SC show spectra that belong to the early types galaxies. Starburst galaxies spectra are indicated with SB 1 to 6. Higher numbers represent more intrinsic colour extinction.}
         \label{fig: k96}
     \end{figure}
@@ -123,21 +123,16 @@ Following the \citetalias{Hossein12} work, we chose these two sets of data not o
     However, in this work we only use $\sim1200< \lambda < 8000$~\AA~to train our networks; 
     this wavelength range was chosen due to availability of flux information in those wavelengths for all 12 templates. 
 
- \subsection{SED and properties of the sample galaxies} 
+ \subsection{SED and Properties of the Sample Galaxies} 
     \citetalias{Hossein12} selected 142 galaxies from the spectroscopic campaign of the ESO GOODS-South field~\citep{Vanzella05, Vanzella06, Vanzella08}.
     The 142 galaxies were selected based on the availability of photometry from HST/ACS, VLA/ISAAC, and {\it Spitzer}/MIPS and IRAC (10--13 filters with $\sim 0.4<\lambda<24~\mu$m in the observed frame).
    Data from these instruments was necessary in order to have a complete picture of stellar population and star formation rate. 
     For each galaxy, a robust spectroscopic redshift and photometric measurements from the GOODS-MUSIC catalogue \citep{Santini09} was available.
    \citetalias{Hossein12} matched the point spread function (PSF) of the photometric data with \citetalias{Kinney96} data and used the photometry as inputs to the Code Investigating GALaxy Emission ({\em CIGALE});~\citep[][hereafter N09]{Noll09} to generate the best-fit SED for each galaxy.
-   % as well as some of the physical properties of the galaxies.
-% PB 20160603: commented out following 3 lines as I don't think this fit well here. Could maybe go somewhere else.    
-%    {\em CIGALE} is a valuable tool to investigate the properties of galaxies using ultraviolet to infrared wavebands.
-%    It uses stellar populations, synthetic attenuation and dust emission models, spectral line templates, and active galactic nuclei optical spectral templates to model the SEDs of galaxies.
-%    This code was successfully tested on data from 39 galaxies selected from the Spitzer Infrared Nearby Galaxy Survey (SINGS;~\citep{Kennicutt03}) by \citetalias{Noll09}.
     \citetalias{Hossein12} produced the best SED match, with wavelength interval of 910~\AA~to $\sim 80$~cm, for each galaxy\footnote{This wavelength interval is the default output of the {\em CIGALE} code}.
     Assuming decreasing SFR and visual attenuation ($\tau$) model, Salpeter initial mass function~\citep{Salpeter55}, and old stellar population with age of $\sim 10$~Gyr, they derived physical properties of the galaxies such as age and stellar mass.
     Some of these properties are shown in Table~\ref{tab: props}.
-    In Section~\ref{sec: 1D}, we study these properties for each category.
+    In Section~\ref{sec: 1D_somz}, we study these properties for each category.
     More details on creating SEDs and extracting information about galaxy properties using {\em CIGALE} can be found in \citetalias{Noll09} and \citetalias{Hossein12}.
     
        
@@ -178,10 +173,8 @@ $A_\mathrm{FUV}$ & mag & attenuation at 1500\,\AA{} \\
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
-
-
 \section{Method}
-\label{sec: method}
+\label{sec: method_somz}
  \subsection{Self Organizing Maps}
  \label{sec: som}
  
@@ -194,8 +187,9 @@ $A_\mathrm{FUV}$ & mag & attenuation at 1500\,\AA{} \\
  \cite{Geach12} presented the application of the SOM and discussed its algorithm in detail.
  In this section we briefly discuss the algorithm of SOM, how we create our maps and a present a  test model which will help interpretation of our results. 
  
- \subsubsection{Algorithm of SOM} 
- \label{sec: algorithm}
+\subsubsection{Algorithm of SOM} 
+   \label{sec: algorithm_somz}
+   
      Assume we have a dataset which contains vectors, \boldit{V} $\in \Re^n$, and we want to map them on an S1 by S2 map. 
      We start by creating S1 $\times$ S2 empty neurons. 
      The initial arrangement of these neurons depends on the map's topology provided by the user.
@@ -223,7 +217,7 @@ $A_\mathrm{FUV}$ & mag & attenuation at 1500\,\AA{} \\
      \end{enumerate}
      These steps are then repeated $N$ times.
      
-\subsection{Creating self-organizing maps}
+\subsection{Creating Self-Organizing Maps}
 \label{sec: create_som}
      In order to create SOMs, we use {\sc matlab} neural network toolbox~\citep[NNT,][]{matlabtolbox}.
      
@@ -253,7 +247,7 @@ $A_\mathrm{FUV}$ & mag & attenuation at 1500\,\AA{} \\
     \citet{Vesanto05} suggested that a total number of $5\sqrt{n}$ neurons is a sufficient size, but users usually choose the size of the grids based on their dataset and their application of the results.
 
    
-\subsection{Mock sample}
+\subsection{Mock Sample}
  
          \begin{figure}
             \begin{subfigure}[b]{0.5\textwidth}
@@ -312,7 +306,7 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
-\section{Results and discussion}
+\section{Results and Discussion}
 \label{sec: result}
 
     In this section we show the results of the neural networks trained using the \citetalias{Kinney96} template spectra.
@@ -326,14 +320,14 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
     We create the final SOMs with initial values for number of iterations in ordering phase, ordering phase learning factor, tuning phase learning factor, and tuning phase neighbourhood distance of 1000, 0.9, 0.02, and 1, respectively.
    
     We started our analysis by creating 1D SOMs. 
-    First, we created SOMs with only two neurons ($1\times2$ map), and then increased the number of neurons one at a time in the 1D case (Section~\ref{sec: 1D}).
+    First, we created SOMs with only two neurons ($1\times2$ map), and then increased the number of neurons one at a time in the 1D case (Section~\ref{sec: 1D_somz}).
     We generate 2D networks (Section~\ref{sec: 2D}),  again starting with the smallest possible number of neurons (4 neurons in a $2\times2$ map), increasing to 144 in a $12\times12$ map.    
     For each generated network, we compare the results with the \citetalias{Kinney96} categorization.
     We also use these networks to classify the \citetalias{Hossein12} galaxy sample, and compare this classification with that from the supervised networks in \citetalias{Hossein12}.
 
-    \subsection{One-dimensional self-organizing maps}
-    \label{sec: 1D}
-        \subsubsection{Training the networks}
+    \subsection{One-Dimensional Self-Organizing Maps}
+    \label{sec: 1D_somz}
+        \subsubsection{Training the Networks}
         \label{sec: 1Dt}
             To start our clustering, we assumed that galaxies can be divided into only two general types; quiescent and starburst.
             This corresponds to a network with only two neurons.
@@ -341,16 +335,16 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
         
             Figs.~\ref{fig: 1by2T} --\ref{fig: 1by22T} show the results of the training networks.
             As in to Fig.~\ref{fig: sample}, the upper part of the figures shows the neurons and their relative distances between weight of neurons.
-            As mentioned in Section~\ref{sec: method}, an increase in the darkness of colours between neurons represents an increase in relative distance between the neurons.
+            As mentioned in Section~\ref{sec: method_somz}, an increase in the darkness of colours between neurons represents an increase in relative distance between the neurons.
             The lower panels of the figures show the number of \citetalias{Kinney96} templates that are placed in each neuron. 
             \begin{figure}
                 \begin{subfigure}[b]{\textwidth}
                     \centering
-                    \includegraphics[width=\textwidth]{../image_paper2/1d/dist_1_by_2.png}
+                    \includegraphics[width=0.8\textwidth]{../image_paper2/1d/dist_1_by_2.png}
                 \end{subfigure}
                 \hfill
                 \begin{subfigure}[b]{\textwidth}
-                     \includegraphics[width=\textwidth]{../image_paper2/1d/hit_t_1_by_2.png}
+                     \includegraphics[width=0.8\textwidth]{../image_paper2/1d/hit_t_1_by_2.png}
                 \end{subfigure}
                 \caption[Results of training network in $1\times2$~grid]{Results of training network in $1\times2$~grid. As in Fig.~\ref{fig: sample}, the upper panel is a distance map and the lower panel is a hit map. In this network, 5 of the templates from \citet{Kinney96} are categorized as quiescent galaxies and the rest are starbursts. Because of their strong emission lines, Sc galaxies are moved towards the starburst ones.}
                  \label{fig: 1by2T}
@@ -392,7 +386,7 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
                  \label{fig: 1by3T}
             \end{figure}
            
-            We increased the size of the maps gradually until the galaxies are divided into twelve groups (Figs.~\ref{fig: 1by4T} to ~\ref{fig: 1by20T} and ~\ref{fig: 1by22T}).
+            We increased the size of the maps gradually until the galaxies are divided into twelve groups (Figs.~\ref{fig: 1by4T} to ~\ref{fig: 1by20T} in Appendix~\ref{app: high_Z_1d_soms} and ~\ref{fig: 1by22T}).
             Since there are more nodes in higher grid SOMs, the  algorithm 
             pays more attention to small differences between groups.
             If the templates from \citetalias{Kinney96} had completely distinct SEDs, then a $1\times12$-sized SOM would be expected to show 12 different groups each containing a single template.
@@ -424,7 +418,7 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
             The fact that the templates need to have at least 22 different neurons to be divided into 12 groups shows that the differences between SB1 and SB2, and B and E, templates are very small.
             Because of their similarities, they tend to stay in the same group until the network becomes big enough to make attention to the smallest particularity.
            
-        \subsubsection{Classifying the galaxy sample}
+        \subsubsection{Classifying the Galaxy Sample}
          \label{sec: 1Dv}
             After training the networks as discussed in Section~\ref{sec: 1Dt}, we used them to classify the fitted SEDs of the sample of 142 galaxies from \citetalias{Hossein12}.
             The upper panel in Fig.~\ref{fig: 1by2V} shows the result of this classification using the $1\times2$~network from Fig.~\ref{fig: 1by2T}.
@@ -520,7 +514,7 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
                         
         
         
-        \subsubsection{Properties of the clustered galaxies}
+        \subsubsection{Properties of the Clustered Galaxies}
         
         In order to check whether our conclusions in Section~\ref{sec: 1Dv}~are correct, in this section we test the relations between median properties of the galaxies in each neuron.
         
@@ -535,18 +529,15 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
         In all plots, the horizontal axis is the number of the neurons divided by the size of the network.%, and vertical axis is one of the aforementioned properties.
 %        
         As shown in Fig.~\ref{fig: props}, in all three networks, stellar mass and age decrease while sSFR and $f_\mathrm{burst}$ increase as the type changes from early type galaxies to starburst. 
-       % These trends are another evidence that this method is working and can be used to categorize galaxies based on their SEDs or even their physical properties. 
-        %Considering the results from Fig.~\ref{fig: props}, we can clearly see that s
-        Separating galaxies based on SED types also leads to a separation in properties that derived (via {\sc CIGALE}) from the SEDs, as expected since the SED types are also based on {\sc CIGALE} fitting. 
+       Separating galaxies based on SED types also leads to a separation in properties that derived (via {\em CIGALE}) from the SEDs, as expected since the SED types are also based on {\em CIGALE} fitting. 
     
-        
-        %Sr07062016: Is it better?
-        {\sc CIGALE} has various models to derive the properties of galaxies.
+
+        {\em CIGALE} has various models to derive the properties of galaxies.
         Through these models, some of the properties are already known to be correlated with each other, e.g., stellar mass and star formation rate.
         \citetalias{Noll09} studied other relations between properties with no direct correlation in the models in a sample of SINGS galaxies.
         They found a tight correlation between sSFR and t$_{\rm {D4000}}$, which suggests that younger stellar population correlates with higher SFR.
         They also found correlations between stellar mass and SFR, and stellar mass and t$_{\rm {D4000}}$.
-        Since in the {\sc CIGALE} code, stellar mass is a free parameter, \citetalias{Noll09} argued that any stellar-mass-related correlation must be astrophysically meaningful. 
+        Since in the {\em CIGALE} code, stellar mass is a free parameter, \citetalias{Noll09} argued that any stellar-mass-related correlation must be astrophysically meaningful. 
         They also studied relations between the attenuation at 1500 \AA~(A$_{\rm {FUV}}$) and sSFR, age, and stellar mass and did not find any correlation.
         \citetalias{Hossein12} replicated the upper plots in Fig.~\ref{fig: props_vs_props}, and found a tighter correlation than \citetalias{Noll09} results. 
         
@@ -601,14 +592,13 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
         The correlation in the other types of galaxies is very similar to the one shown by \cite{Dale07}.
         Both \cite{Dale07} and \citetalias{Noll09} argued that these apparent trends can be a result of the dependence of star formation history on L$_{IR}$/L$_{FUV}$.
         Whether this dependence is real or not, our results here show that using self-organizing maps can separate SEDs of galaxies in such a way that the characteristics of each of these groups are in agreement with the general picture of the galaxy evolution.
-        
-        
-    \subsection{Two-dimensional self-organizing maps}
+      
+    \subsection{Two-Dimensional Self-Organizing Maps}
     \label{sec: 2D}
     The one-dimensional networks are great tools to categorize the SEDs and monitor the changes of properties of galaxies with category.
     However, each neuron in these networks is limited to be connected to one other neuron in each direction.
     In a 2D network, each neuron can have more than two immediate neighbours, providing a more complete pictures of relations between each SED type.
-    As described in Section~\ref{sec: method}, one of the main advantages of the SOM is that when the weight of one neuron is adjusted after finding the best matching unit, the weight of the whole map will be changed.
+    As described in Section~\ref{sec: method_somz}, one of the main advantages of the SOM is that when the weight of one neuron is adjusted after finding the best matching unit, the weight of the whole map will be changed.
     This quality of the SOMs provides a unique opportunity to analyse 2D networks in two approaches. 
     At first, as in the 1D SOMs, we assumed that all the galaxies must have SEDs similar to any of the 12 templates in Fig.~\ref{fig: k96}.
     In this case, we can categorize SEDs of other galaxies based on those 12 types.
@@ -616,15 +606,14 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
     This approach can be used to trace and recognize the outliers.
     To execute the second approach, we used the {\tiny selforgmap} library in {\tiny MATLAB}.
     Using the {\tiny selforgmap} code, based on the size of a map and the ordering step neighbourhood distance, we can arrange that the data spread all over the SOM or sit close together, allowing room for outliers.
-%    The latter case, can be used to identify outliers. 
 
     To get the best result from both methods, we should have SOMs with ``enough"  neurons to give any new types of galaxies a chance to find their places in the map.
-    ``Enough  neurons" is a vague statement, but as mentioned in the Section~\ref{sec: method} the size of SOMs is arbitrary and depends on the size of the input data and the kind of information needed from the SOMs.
+    ``Enough  neurons" is a vague statement, but as mentioned in the Section~\ref{sec: method_somz} the size of SOMs is arbitrary and depends on the size of the input data and the kind of information needed from the SOMs.
     Since the training dataset (the \citetalias{Kinney96} templates) has 12 members, we assumed a SOM with size of $8\times8$~would be a good start.
     We then increased the size of the SOM to find the highest size suitable for the training sample.
     We noticed that very few changes occurred after the SOMs were grown to a size greater than $12\times12$, so we used this as the maximum size.
     
-    \begin{figure*}
+    \begin{figure}
         \begin{subfigure}[b]{0.45\textwidth}
             \centering
             \includegraphics[width=\textwidth]{../image_paper2/2d/dist_12_by_12.png}
@@ -642,9 +631,9 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
         \begin{subfigure}[b]{0.45\textwidth}
             \includegraphics[width=\textwidth]{../image_paper2/2d/hit_v_12_by_self_org_res12.png}
         \end{subfigure}
-        \caption[$12\times12$ two-dimensional self-organizing map results.]{$12\times12$~2D SOM results. Upper pabel: SOMs trained using the \citet{Kinney96} templates. For training 2D SOMs two different approaches were considered: either only 12 types of galaxies exist (left) or not (right). Lower panel: classifying the galaxies from \citetalias{Hossein12}, using the trained networks shown in the upper panels. From the lower right panel, we can see that there are no outliers in the galaxies from \citetalias{Hossein12}, and we can use the map in the lower left panel as a final clustering result for the \citetalias{Hossein12} galaxies.}
+        \caption[$12\times12$ two-dimensional self-organizing map results]{$12\times12$~2D SOM results. Upper pabel: SOMs trained using the \citet{Kinney96} templates. For training 2D SOMs two different approaches were considered: either only 12 types of galaxies exist (left) or not (right). Lower panel: classifying the galaxies from \citetalias{Hossein12}, using the trained networks shown in the upper panels. From the lower right panel, we can see that there are no outliers in the galaxies from \citetalias{Hossein12}, and we can use the map in the lower left panel as a final clustering result for the \citetalias{Hossein12} galaxies.}
         \label{fig: 12by12}
-    \end{figure*}
+    \end{figure}
     
     The upper left panel in Fig.~\ref{fig: 12by12} shows the SOM results from the first approach. 
     Since we considered that SEDs of all galaxies can be categorized using the \citetalias{Kinney96} templates, the galaxies were placed all over the map.
@@ -685,7 +674,7 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
-\section{Summary and future applications}
+\section{Summary and Future Applications}
 \label{sec: summary}
 
 Self-organizing maps can be used to classify celestial objects (e.g. stars, quasars, spectra of galaxies, light curves, etc.)
