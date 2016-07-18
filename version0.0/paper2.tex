@@ -84,7 +84,7 @@ As in \citetalias{Hossein12}, we examine the averaged properties of the new gala
 In Section $\S$~\ref{sec: data_highZ}, we present the data that we use to train and test our networks. 
 We describe the SOM methods in Section $\S$~\ref{sec: method_somz}. 
 The results of the SED classifications and a comparison with previous studies are presented in Section $\S$~\ref{sec: result}. 
-In Section $\S$~\ref{sec: summary}, we summarize our results and discuss potential future work in this subject.
+In Section $\S$~\ref{sec: summary_SOMZ}, we summarize our results and discuss potential future work in this subject.
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
@@ -176,7 +176,7 @@ $A_\mathrm{FUV}$ & mag & attenuation at 1500\,\AA{} \\
 \section{Method}
 \label{sec: method_somz}
  \subsection{Self Organizing Maps}
- \label{sec: som}
+ \label{sec: som_SOMZ}
  
  The self-organizing map is a clustering method which reduces the dimension of the data, usually to one or two dimensions (1D or 2D), while preserving topological features of the original dataset.
  The result of an SOM is a set of nodes (neurons) that are arranged in a 1D or 2D arrays \citep{Kohonen98}. 
@@ -198,7 +198,7 @@ $A_\mathrm{FUV}$ & mag & attenuation at 1500\,\AA{} \\
      In this paper, we choose hexagonal topology, which gives each neuron six neighbours, and provides more interactions between neurons.
      Initially a random weight vector, \boldit{W} $\in \Re^n$, will be assigned to each node.
      The process of creating SOM happens over a series of $N$ iterations. 
-     During each iteration the weight vectors might change according to the Kohonen learning rule (equation~\ref{equ: weight adj}). 
+     During each iteration the weight vectors might change according to the Kohonen learning rule (equation~\ref{equ: weight adj_SOMZ}). 
       In each iteration, the SOM code:
      \begin{enumerate}
         \item chooses a random vector from the dataset ($V_i$).
@@ -210,7 +210,7 @@ $A_\mathrm{FUV}$ & mag & attenuation at 1500\,\AA{} \\
         where $\tau$ is a decay constant and is usually set to be the same as the number of iterations, $N$. $r^0_{BMU}$ and $r^t_{BMU}$ are the radii of the neighbourhood at 0th and $t$th iteration, respectively. 
         \item changes the weight vectors of the BMU and all the nodes within $r^t_{BMU}$ as:
         \begin{equation}
-            \label{equ: weight adj}
+            \label{equ: weight adj_SOMZ}
             w(t+1)=w(t)+L(t) \times R(t) \times(v(t)-w(t))
         \end{equation}
         where $L(t) = L_0 e^{(-t/\tau)}$ is the learning factor, which prevents the divergence of the SOM and $R(t)=\exp(-\frac{D_j^2}{2r^t_{BMU}})$ is the influence rate. $R(t)$ determines how the weight of each node in the neighbourhood of BMU will change.
@@ -259,28 +259,28 @@ $A_\mathrm{FUV}$ & mag & attenuation at 1500\,\AA{} \\
                 \includegraphics[width=\textwidth]{../image_paper2/sample/sample2_hits.png}
             \end{subfigure}
             \caption[Self-organizing map of the mock sample]{SOM of the mock sample. In both plots, the axes show the position of the neurons. Hexagonal shapes represent the neurons. The top plot is a distance map. The grey cycle colours show the differences between the weights of each neuron with white being the minimum difference and black being the maximum one. The lower plot is a ``hits plot". It represents the number of samples in each neuron, where empty means zero hits. In this sample, the 27 galaxies are clustered in 4 groups, containing 8, 7, 6 and 6 galaxies respectively.}
-            \label{fig: sample}
+            \label{fig: sample_SOMZ}
         \end{figure}
  
  To illustrate how self-organizing maps work, we create a mock sample of 27 galaxies.
  The mock sample contains two attributes for each galaxy: the type (type 1 or type 2), and the star formation rate (high or low). 
  We generated a SOM of size $10 \times 10$ using the same initial values mentioned in Section~\ref{sec: create_som}.
 
- Fig. ~\ref{fig: sample} shows the SOM of this mock sample. 
+ Fig. ~\ref{fig: sample_SOMZ} shows the SOM of this mock sample. 
  The upper panel is the distance map. 
  The axes show the position of the neurons in the $10 \times 10$ network.
- The lower panel in Fig.~\ref{fig: sample} shows the hit map.
+ The lower panel in Fig.~\ref{fig: sample_SOMZ} shows the hit map.
  On this map, similar to the distance map, the axes show the position of the neurons and the hexagonal shapes are the neurons.
  The number on the purple neurons shows the number of galaxies in that neuron.
  Colour coverage of neurons depends on the number of the hits on the sample.
  The neuron with the maximum number of hits is dark-coloured while the empty neurons are left uncoloured (white).
  
 Using this method, as expected, we are able to divide the mock sample galaxies into 4 distinct groups: Type 1 with high SFR, type 1 with low SFR, type 2 with high SFR and type 2 with low SFR. 
-The upper panel in the Fig.~\ref{fig: sample} clearly shows this division.
+The upper panel in the Fig.~\ref{fig: sample_SOMZ} clearly shows this division.
 In that plot, the upper half belongs to high star forming galaxies, while the lower half belongs to low star forming galaxies.
 The left half of the plot is where type 1 galaxies belong, and type 2 galaxies reside in the right side.
 Different shades of gray show the border between regions.
-The lower panel in Fig.~\ref{fig: sample} shows that only 4 neurons (out of 100) are occupied. 
+The lower panel in Fig.~\ref{fig: sample_SOMZ} shows that only 4 neurons (out of 100) are occupied. 
 8 galaxies are type 1 galaxies with high SFR, 7 are type 2 galaxies with high SFR, 6 are type 1 galaxies with low SFR and the other 6 are type 2 galaxies with low SFR. 
 We can conclude that although each galaxy had  the chance to occupy any of the neurons in the network, because of the similarity in the values of their attributes, they remained only in four groups.
 This network is considered a training network and can be used to cluster any new dataset with similar entries.
@@ -334,7 +334,7 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
             We increased the size of the map gradually until the 12 input samples divide into the 12 neurons. 
         
             Figs.~\ref{fig: 1by2T} --\ref{fig: 1by22T} show the results of the training networks.
-            As in to Fig.~\ref{fig: sample}, the upper part of the figures shows the neurons and their relative distances between weight of neurons.
+            As in to Fig.~\ref{fig: sample_SOMZ}, the upper part of the figures shows the neurons and their relative distances between weight of neurons.
             As mentioned in Section~\ref{sec: method_somz}, an increase in the darkness of colours between neurons represents an increase in relative distance between the neurons.
             The lower panels of the figures show the number of \citetalias{Kinney96} templates that are placed in each neuron. 
             \begin{figure}
@@ -346,7 +346,7 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
                 \begin{subfigure}[b]{\textwidth}
                      \includegraphics[width=0.8\textwidth]{../image_paper2/1d/hit_t_1_by_2.png}
                 \end{subfigure}
-                \caption[Results of training network in $1\times2$~grid]{Results of training network in $1\times2$~grid. As in Fig.~\ref{fig: sample}, the upper panel is a distance map and the lower panel is a hit map. In this network, 5 of the templates from \citet{Kinney96} are categorized as quiescent galaxies and the rest are starbursts. Because of their strong emission lines, Sc galaxies are moved towards the starburst ones.}
+                \caption[Results of training network in $1\times2$~grid]{Results of training network in $1\times2$~grid. As in Fig.~\ref{fig: sample_SOMZ}, the upper panel is a distance map and the lower panel is a hit map. In this network, 5 of the templates from \citet{Kinney96} are categorized as quiescent galaxies and the rest are starbursts. Because of their strong emission lines, Sc galaxies are moved towards the starburst ones.}
                  \label{fig: 1by2T}
             \end{figure}
         
@@ -675,7 +675,7 @@ Therefore, it is up to the users to decide the similarity or dissimilarity betwe
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
 \section{Summary and Future Applications}
-\label{sec: summary}
+\label{sec: summary_SOMZ}
 
 Self-organizing maps can be used to classify celestial objects (e.g. stars, quasars, spectra of galaxies, light curves, etc.)
 Galaxy spectra can be classified in various networks with different sizes/dimensions based on the information needed from the data. 

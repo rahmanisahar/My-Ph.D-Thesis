@@ -110,7 +110,7 @@ Emission from the $^{12}$CO (J:$1\rightarrow0$) line observed on-the-fly with th
 Before studying the star formation laws, we need to calculate the components of these laws. We used different data and calibrations to produce the SFR maps, the stellar mass surface density and the gas mass surface density. In this section we describe how we measured each ingredient using available data, and calibrations. To use these calibrations, we assumed the M31 distance to be 0.78~Mpc~\citep{McConnachie05}. The ``total'' values recorded in this paper are integrated out to a distance of~25~kpc from the centre of the galaxy along the major axis. 
 
 \subsection{Stellar Initial Mass Function}
-\label{sec: imf}
+\label{sec: imf_sfl}
 In order to determine star formation rate and stellar mass from calibrated photometric data, it is necessary to know the IMF. 
 Stellar population synthesis models make different assumptions about the IMF, often either \citet{Salpeter55},
 $ dN / d \log M \propto M^{-3.5 }$ over the full range of masses, or 
@@ -235,16 +235,16 @@ The total gas mass was calculated from:
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{../image_paper1/star.eps}
-\caption[Stellar mass surface density map produced using IRAC 3.6~$\mu$m data]{The stellar mass surface density map produced using IRAC 3.6~$\mu$m data and the calibration presented in equation~\ref{equ:eskew}.}
+\caption[Stellar mass surface density map produced using IRAC 3.6~$\mu$m data]{The stellar mass surface density map produced using IRAC 3.6~$\mu$m data and the calibration presented in equation~\ref{equ: eskew_sfl}.}
 \label{fig:stellarmass}
 \end{figure}
 
 Emission in near-infrared bands, such as 3.6~$\mu$m, 4.5~\um and $K$-band, is almost insensitive to emission from young stellar populations, dust absorption and emission, which makes these bands good tracers of the mass of older stellar populations \citep[e.g.][]{Elmgreen84, Eskew12, Zhu10}.We calculated the stellar mass within M31 using a calibration of the 3.6 \um flux by \citet{Eskew12}. They used data from the Large Magellanic Cloud and introduced an empirical relation between stellar mass and flux:
 \begin{equation}
-\label{equ:eskew}
+\label{equ: eskew_sfl}
 M _{\star}= 10^{5.97} F_{3.6}\left(\frac{D}{0.05}\right)^2,
 \end{equation}
-\noindent where M$_{\star}$ is the stellar mass in solar masses, $F_{3.6}$ is the 3.6~\um flux in Jy, and $D$ is the distance to the galaxy in Mpc. This calibration is based on the \citet{Salpeter55} IMF. Since the Kroupa IMF is adopted for the SFR maps, we corrected the calibration to the Kroupa IMF (see Section~\ref{sec: imf}). We should note that \citet{Eskew12} gave two calibrations for calculating the stellar mass in their paper: one is equation~\ref{equ:eskew} which only uses 3.6~\um emission and the other uses both 3.6~\um and 4.5~\um emission. We noticed that the second calibration can only be used in the case of total stellar mass due to the fact that the correlation shows a non-linear dependency of stellar mass on $\mathrm{F}_{3.6 \mu \mathrm{m}}$ and $\mathrm{F}_{4.5 \mu \mathrm{m}}$, though this was not mentioned in the aforementioned paper. 
+\noindent where M$_{\star}$ is the stellar mass in solar masses, $F_{3.6}$ is the 3.6~\um flux in Jy, and $D$ is the distance to the galaxy in Mpc. This calibration is based on the \citet{Salpeter55} IMF. Since the Kroupa IMF is adopted for the SFR maps, we corrected the calibration to the Kroupa IMF (see Section~\ref{sec: imf_sfl}). We should note that \citet{Eskew12} gave two calibrations for calculating the stellar mass in their paper: one is equation~\ref{equ: eskew_sfl} which only uses 3.6~\um emission and the other uses both 3.6~\um and 4.5~\um emission. We noticed that the second calibration can only be used in the case of total stellar mass due to the fact that the correlation shows a non-linear dependency of stellar mass on $\mathrm{F}_{3.6 \mu \mathrm{m}}$ and $\mathrm{F}_{4.5 \mu \mathrm{m}}$, though this was not mentioned in the aforementioned paper. 
 Fig.~\ref{fig:stellarmass} shows the stellar mass map for M31 using IRAC 3.6~\um in the original angular resolution and pixel size of the IRAC 3.6~\um image. Using the coverage map of the IRAC 3.6~\um data, we used only pixels with coverage of more than 2 images per sky position, and replaced the rest with zero M$_{\odot}$. The replaced pixels include less than 8 per cent of the data;  since these pixels are mainly  in regions with low surface brightness, their effect on the final total mass is less than 1 per cent.
 Using this method we calculated the total stellar mass of the galaxy by adding all pixel values and found it to be $6.9 \times 10^{10}$M$_{\odot}$ $\pm$ 6 per cent. This result is in fairly good agreement with the results of \citet{Tamm12}. They calculate the stellar mass of M31 to be $(10-15) \times 10^{10}$M$_{\odot}$, 56 per cent of which is in the disk with the rest in the bulge of the galaxy. In their recent work on the stellar mass of M31, \cite{Viaene14} measured the total stellar mass using the integrated fluxes to be $5.49 \times 10^{10}$M$_{\odot}$, which is in good agreement with our result.
 
