@@ -45,10 +45,10 @@ they work solely based on the underlying structure of the input data.
 The unsupervised methods are very useful tools in knowledge discovery studies, where we have limited pre-expectations for the data or when we want to make sure that we did not miss any valuable information in previous studies.
 
 The purpose of the present work is to use M31 observations to provide new insights into nearby galaxies, with a focus on relations between PAHs and other properties of the galaxy,
-as there are few studies on relations between properties of M31 with its PAH features. %generate?!
+as there are few studies on relations between properties of M31 with its PAH features.
 \cite{Cesarsky98} studied PAH spectra observed by ISOCAM spectro-imaging in four regions in M31 and found that PAH features in M31 differ from those in other galaxies in having weak or no $6.2 - 8.6$~$\mu$m emission with enhanced 11.2~$\mu$m emission. 
 However,~\cite{Dim15} using {\it Spitzer}/Infrared Spectrograph~\citep[IRS;][]{Houck04b} observations, found that the PAH spectra of M31 have the same features as the spectra of other nearby star-forming galaxies.
-Those authors re-evaluated the ISOCAM data to compare them to IRS data and found that the earlier results were likely due to incorrect background subtraction. %(PB), but the results were inconclusive. $$Sr:?
+Those authors re-evaluated the ISOCAM data to compare them to IRS data and found that the earlier results were likely due to incorrect background subtraction.
 Using IRAC imaging observations,~\cite{Barmby06} found good agreement between the M31 SFR derived using observed 8~$\mu$m luminosity with other 
 star formation indicators such as \halpha and far infrared luminosity.
 \cite{Draine14} found that the PAH abundance in M31 is almost constant up to a galactocentric radius of $\sim 20$~kpc.
@@ -64,7 +64,7 @@ We apply the 2D trained networks to the M101 data to study whether they have sim
 If our hypothesis is correct, we should be able to see that regions in M31 and M101 with the same positions in the SOM have the same properties.
 
 
-We describe the SOM method in $\S$~\ref{sec: method}. 
+We describe the SOM method in $\S$~\ref{sec: method_SOMN}. 
 In $\S$~\ref{Sec: data_SOMN}, we present the observational data from M31 and M101 that we use in this study.
 The results of the 1D SOM networks and the study of PAHs in M31 are presented in $\S$~\ref{Sec: 1d_cluster}.
 In $\S$~\ref{sec: 2d_cluster}, we present the results of 2D SOM networks and their use in extracting information about other galaxies.
@@ -76,9 +76,8 @@ In $\S$~\ref{sec: summary}, we summarize our results and discuss potential futur
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
-
 \section{Method}
-\label{sec: method}
+\label{sec: method_SOMN}
 \subsection{Choosing an Algorithm}
 
 Some of the most tested methods of data mining in astronomy are artificial neural networks (ANNs)~\citep[e.g.][and references therein]{Hossein14,Hossein16}.
@@ -104,7 +103,7 @@ Therefore, we can cluster our sample data and study the underlying structure sim
  Each neuron has a fixed position in the map and may contain one or more samples from the input data in a n-dimensional space,~\boldit{V} $\in \Re^n$.
  A weight vector,~\boldit{W} $\in \Re^n$, with the same dimension as the input data, is associated with each node and will be varied during the training process.
  The process of creating an SOM happens over a series of $N$ iterations.
- In each iteration, the algorithm calculates the Euclidean distance for each node $j$ as $D_j^2= \sum_{i=0}^{i=n} (V_i - W_i)^2$, and finds a neuron with $D_{j_,{\mathrm min}}$. 
+ In each iteration, the algorithm calculates the Euclidean distance for each node $j$ as $D_j^2= \sum_{i=0}^{i=n} (V_i - W_i)^2$, and finds a neuron with $D_{j_,\mathrm{min}}$. 
  This neuron is the winner node and is calling Best Matching Unit (BMU). 
  In each iteration (t),The weight vectors W(t) in the neighbourhood of the BMU ($r^t_{BMU}$) will change according to the Kohonen learning rule (equation~\ref{equ: weight adj}). 
   \begin{equation}
@@ -114,7 +113,7 @@ Therefore, we can cluster our sample data and study the underlying structure sim
 where $L(t) = L_0 e^{(-t/\tau)}$ is the learning factor with $L_0$ is the initial value of learning, which prevents the divergence of the SOM, and $R(t)=\exp(-\frac{D_j^2}{2r^t_{BMU}})$ is the influence rate, which determines how the weight of each node will change. 
 $\tau$ is the number of total iterations.
 Values for the number of neurons is arbitrary, and for various toolboxes values for one or all of $L_0$,$L(t)$, $R(t)$  and $r^t_{BMU}$ are arbitrary.
-~\cite{Geach12} and \cite{Rahmani16b} demonstrate the algorithm of the SOM in more detail.
+\cite{Geach12} and~\cite{Rahmani16b} demonstrate the algorithm of the SOM in more detail.
 
 
      In order to create self-organizing maps, we used the \textsc{matlab} neural network toolbox~\citep[NNT,][]{matlabtolbox}.
@@ -143,7 +142,7 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
      We created our final SOMs with initial values for number of iterations in ordering phase, ordering phase learning factor, tuning phase learning factor, and tuning phase neighbourhood distance of 500, 0.9, 0.02, and 1, respectively. 
      
     
-\subsection{Mock sample}
+\subsection{Mock Sample}
 \label{sec: mock_sample}
  
          \begin{figure}
@@ -178,7 +177,6 @@ Therefore, the user learns about similarity or dissimilarity of members of the i
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
-
 \section{Study Sample}
 \label{Sec: data_SOMN}
 
@@ -191,9 +189,9 @@ Since the spatial resolution of the observations varies from as small as $<1$\ar
 In this project we used flux per unit area, which the convolution methods conserve~\citep{Aniano12}, as the input data.
 Therefore, we did not perform any resolution matching and used data at their original resolution.
 
-\import{../image_paper3/text_files/tables/}{tab_data.tex}
+    \import{../image_paper3/text_files/tables/}{tab_data.tex}
 
-\begin{figure}
+    \begin{figure}
   \begin{subfigure}[b]{\textwidth}
         \centering
         \includegraphics[width=0.97\textwidth]{../image_paper3/images0.01/M31/M31.png}
@@ -206,11 +204,10 @@ Therefore, we did not perform any resolution matching and used data at their ori
         \caption{IRAC 3.6 $\mu$m image of M101, with positions of  8 regions studied.}
     \label{fig: regions in m101}
     \end{subfigure}
-    \caption{Position of the data in M31 (a) and M101 (b).}
+    \caption[Position of the data in M31 and M101]{Position of the data in M31 (a) and M101 (b).}
 \end{figure}
 
-
-    \subsection{M31 observations}
+    \subsection{M31 Observations}
      \label{Sec: data_M31_SOMN} 
      
      \cite{Dim15} used {\it Spitzer}/IRS observations to study PAHs in 10 regions chosen to span a range of mid-infrared flux ratios in M31 (Fig.~\ref{fig: regions in m31}). 
@@ -221,9 +218,9 @@ Therefore, we did not perform any resolution matching and used data at their ori
     For the photometry part of the sample, we used the \GALEX \citep{Martin05} far-ultraviolet and near-ultraviolet (FUV and NUV) channel images; \halpha~(6574.7\AA), \sii~(6730.72\AA) and \oiii~(5024.9\AA) narrow band images~\citep{Massey07}, IRAC 3.6, 4.5, 5.8 and 8.0~$\mu$m images~\citep{Barmby06}; MIPS~24 and 70~$\mu$m~images~\citep{Gordon06}; and PACS 100 and 160~$\mu$m and SPIRE 250, 350, and 500~$\mu$m~\citep{Fritz12} images.
      The units of all fluxes were converted to W~m$^{-2}$ in order to be the same as the PAH fluxes.
      $^{12}$CO (J:$1\rightarrow0$) line emission images~\citep{Nieten06} and atomic gas (\hi) 21~cm emission images from~\cite{Chemin09} were added to the input data. 
-     For derived values, we utilized SFR(FUV + 24$\mu$m) measured using combination of FUV and 24$\mu$m emission, stellar mass, molecular gas mass, atomic gas mass, total gas mass, and total infrared (TIR) luminosity (L$_{\mathrm TIR}$) from~\cite{Rahmani16}, and L$_{\mathrm dust}$ and dust mass from~\cite{Draine14}.
+     For derived values, we utilized SFR(FUV + 24$\mu$m) measured using combination of FUV and 24$\mu$m emission, stellar mass, molecular gas mass, atomic gas mass, total gas mass, and total infrared (TIR) luminosity (L$_\mathrm{TIR}$) from~\cite{Rahmani16}, and L$_\mathrm{dust}$ and dust mass from~\cite{Draine14}.
      
-    \subsection{M101 observations}
+    \subsection{M101 Observations}
     \label{Sec: data_M101_SOMN} 
     
      \cite{Gordon08} measured PAH fluxes and RHI for M101 in 8 star forming \hii~regions (Fig.~\ref{fig: regions in m101}).
@@ -233,7 +230,7 @@ Therefore, we did not perform any resolution matching and used data at their ori
      As with M31, we used $^{12}$CO (J:$1\rightarrow0$) line emission images~\citep{Helfer03} and atomic gas (\hi) 21~cm emission images from \cite{Walter08}.
      We calculated SFR(FUV + 24$\mu$m), stellar and total gas mass maps using the same methods as for M31.
      
-      \subsection{Preparing data for data mining}
+     \subsection{Preparing Data for Data Mining}
     
      Correlations between some of single-wavelength emission and galaxy properties are well-known.
      Emission in the 3.6$\mu$m band traces the old stellar population very well~\citep[e.g.][]{Smith07a,Leitherer99} and it can be used to calculate the stellar mass~\citep{Eskew12}.
@@ -248,7 +245,7 @@ Therefore, we did not perform any resolution matching and used data at their ori
     Fig.~\ref{fig: cor_all} shows the Pearson correlation coefficients with a confidence level of 95 per cent. 
     If the significant level of correlation becomes smaller than 0.05 (5 per cent), the correlation is marked as insignificant. 
     All the PAHs correlate with one another very well.
-    They are also highly correlated with the SPIRE and PACS emission, L$_{\mathrm dust}$, L$_{\mathrm TIR}$, SFR and metallicity.
+    They are also highly correlated with the SPIRE and PACS emission, L$_\mathrm{dust}$, L$_\mathrm{TIR}$, SFR and metallicity.
     The fluxes from PAHs 7.7, 8.3, 12.7 and 17~$\mu$m show a weak anti-correlation with RHI.
     In general, PAHs in our data set are highly correlated with most of the other quantities. 
     
@@ -274,7 +271,7 @@ Therefore, we did not perform any resolution matching and used data at their ori
     In a small sample like ours, smaller grid SOMs are very useful to find correlations that cannot be found without  clustering the data.
     On the other hand, larger grid 1D SOMs are a helpful tool to get quick insight into the data.
 
-    \subsection{Clustering M31 Data}%I am not sure about it
+    \subsection{Clustering M31 Data}
 
         In order to monitor how the data behave, we created SOMs with two to fourteen neurons (Fig.~\ref{fig: M31_nets_1d}).
         The $1\times2$ network (Fig.~\ref{fig: M31_net_1by2}) shows how the M31 data can be divided into two broad categories.
@@ -287,14 +284,12 @@ Therefore, we did not perform any resolution matching and used data at their ori
         The white colour between the two left neurons suggests that the regions which occupy these neurons are very similar to each other, while the black colour between the two right neurons indicates otherwise.
         
         %%%Talking about four right regions
-        \cite{Dim15} showed that regions 1, 2, 9, and 10 have higher PAH fluxes compared to the other regions (fig. 5 in \citealt{Dim15}). 
-        %Regions 1, 2, and 9 are in the 10~Kpc ring and region 10 is located in the bulge of M31; however, regions 3 to 8 are located slightly out of the inner ring or the 10~kpc one.
+        \cite{Dim15} showed that regions 1, 2, 9, and 10 have higher PAH fluxes compared to the other regions (fig.~5 in \citealt{Dim15}). 
         These regions also have relatively high intensities in all the mid-infrared and far-infrared bands and have high dust luminosity and dust mass.
         The higher values for these quantities could be the reason that these four regions become separated from the others in the $1\times2$ network.
         Regions 1 and 9 are in the 10~kpc ring, region 2 is slightly out of the 10~kpc ring and region 10 is in the bulge of M31; however, regions 3 to 8 are located out of the inner ring or the 10~kpc ring (Fig.~\ref{fig: regions in m31}).   
         The differences in their positions account for their difference in input parameters.
         Since region 10 is located in the bulge of M31 and has high surface brightness for most of the input values, regions 1, 2, and 9 to gradually move towards other regions and away from region 10 in the higher grid SOMs.
-       % Similarities with regions 3 to 8 in the other input values (e.g. SFR) causes regions 1, 2, and 9 to gradually move towards other regions and away from region 10 in the higher grid SOMs.
        
     \begin{figure}
     \begin{subfigure}[b]{\textwidth}
@@ -331,25 +326,23 @@ Therefore, we did not perform any resolution matching and used data at their ori
         The SOM shows that this region has completely different input values from the others: most of the values for region 10 are much higher than for the other regions, which is the main reason for its isolation.
         Region 8 occupies the right-most neuron in this network, suggesting that this region has the most differences from region 10.
         
-        
-    \subsection{Inside the 2 neuron network}
-    
+    \subsection{Inside the Two Neuron Network}
         \label{sec: inside_the_2_neurons}
         Using self-organizing maps, we can identify hidden subgroups in our samples. 
         Each of these subgroups separates for a reason.
         This reason can vary from having higher values in some specific properties, as discussed in Section~\ref{Sec: 1d_cluster}, to some unknown correlations between data that cannot be seen in other groups or in the galaxy as a whole.
         To investigate the latter, we show in Fig.~\ref{fig: cor_cluster1} the Pearson correlation coefficients for the inputs from regions 3 to 8, which were clustered together in the $1\times2$ and $1\times3$ networks (see Figs.~\ref{fig: M31_net_1by2} and ~\ref{fig: M31_net_1by3}).
         
-        \begin{figure*}
+        \begin{figure}
         \includegraphics[width=\textwidth]{../image_paper3/images0.01/cor_plots/M31_derived_3_to_8_core_plot_for_paper.pdf}
-        \caption[Pearson correlation coefficients for data from clustered regions in M31]{Same as Fig.~\ref{fig: cor_all}, but here we used data from regions grouped in the left sides of Figs.~\ref{fig: M31_net_1by2} and ~\ref{fig: M31_net_1by3}. }
+        \caption[Pearson correlation coefficients for data from the clustered regions in M31]{Same as Fig.~\ref{fig: cor_all}, but here we used data from regions grouped in the left sides of Figs.~\ref{fig: M31_net_1by2} and ~\ref{fig: M31_net_1by3}. }
           \label{fig: cor_cluster1}
-        \end{figure*}
+        \end{figure}
         
        
         Comparing the correlation coefficient plots for all 10 regions in M31 (Fig.~\ref{fig: cor_all}) and for the clustered data (Fig.~\ref{fig: cor_cluster1}) shows the differences between all 10 regions and clustered data and why regions 3 to 8 become separated from the other regions.
         The main features that differentiate these two plots are the anti-correlations between PAH features and RHI, stellar mass, \halpha, \sii, \oiii, and IRAC~5.8~$\mu$m~emission.
-        Additionally, for the PAH fluxes in Fig.~\ref{fig: cor_cluster1}, there are no significant correlations with PACS~100~$\mu$m, L$_{\mathrm dust}$, L$_{\mathrm TIR}$, SFR, or metallicity.
+        Additionally, for the PAH fluxes in Fig.~\ref{fig: cor_cluster1}, there are no significant correlations with PACS~100~$\mu$m, L$_\mathrm{dust}$, L$_\mathrm{TIR}$, SFR, or metallicity.
         The PAH fluxes correlate with the SPIRE emission, but to a lesser extent than for the data from all regions.
         
         \cite{Calzetti10} mentioned that with increasing RHI in regions, metallicity and PAH equivalent widths decrease. 
@@ -362,13 +355,13 @@ Therefore, we did not perform any resolution matching and used data at their ori
         For example, for both clusters in Fig.~\ref{fig: M31_net_1by2},
         we can see anti-correlations between PAHs and RHI, but each of them has a different slope which removes the anti-correlation over all 10 regions. 
         
-        Correlations between PAH features and SFR, and L$_{\mathrm TIR}$ are well-studied~\citep[e.g.][]{Peeters04,Tielens08}. 
+        Correlations between PAH features and SFR, and L$_\mathrm{TIR}$ are well-studied~\citep[e.g.][]{Peeters04,Tielens08}. 
         Many groups have used PAH features as a tracer of SFR by finding correlations between 
         PAH emission and SFR derived from extinction-corrected \halpha~\citep[e.g.][]{Calzetti07,Khramtsova13,Shipley16}.
         These correlations are seen in Fig.~\ref{fig: cor_all}, when we considered the data from all regions, but not in Fig.~\ref{fig: cor_cluster1} when considering the clustered data.
         Note that, since there are only 6 regions in the clustered data, even one outlier in the data may cause the correlation coefficient to become insignificant.
         Further analyses show that the absence of correlations between PAH fluxes and SFR is because of one outlier: region 6. Region 6 is located in a FUV-bright region, which breaks the correlations. 
-        When we disregard this region, high correlations between 6.2 to 17.0~$\mu$m~PAHs and SFR (and L$_{\mathrm TIR}$) reappear.
+        When we disregard this region, high correlations between 6.2 to 17.0~$\mu$m~PAHs and SFR (and L$_\mathrm{TIR}$) reappear.
         
      
         Strong anti-correlations between 6.2 to 17.0~$\mu$m~main PAH features and RHI, stellar mass, \halpha, \sii, \oiii, and IRAC~5.6~$\mu$m~emission in Fig.~\ref{fig: cor_cluster1} were not seen in Fig.~\ref{fig: cor_all} (even if we ignore the outlier values).
@@ -390,7 +383,7 @@ Therefore, we did not perform any resolution matching and used data at their ori
         and conclude that the PAH emission traces the old stellar population.
         In Fig.~\ref{fig: cor_cluster1}, we see a weak anti-correlation between SPIRE 250~$\mu$m emission and the stellar mass.
         We see no correlation between 8/250~$\mu$m luminosity and stellar mass, either in the clustered data or in all 10 regions.
-       % Some studies have indicated that strong stellar emission could lead to destruction of PAHs ~\citep[e.g.][]{Clayton03,Seok14}. %%% These are all UV emission
+
         To test that whether the anti-correlation between stellar mass and PAH emission is the result of the destruction of PAHs in high stellar mass regions, or that high stellar mass obscures PAH emission, we compared PAH abundance with stellar mass for the clustered regions.
         The ratio of 8/24~$\mu$m emission, which can be considered as a proxy for PAH abundances~\citep[e.g.][]{Sandstrom10,Khramtsova13}, does not anti-correlate with stellar mass for either the clustered data or all 10 regions.
         Therefore, we conclude that in our sample, stellar mass does not cause the destruction of PAHs.
@@ -415,7 +408,7 @@ Therefore, we did not perform any resolution matching and used data at their ori
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
- \section{Two dimensional self-Organizing Maps}
+\section{Two-Dimensional Self-Organizing Maps}
  \label{sec: 2d_cluster}
     Although 1D networks are helpful to give a general idea about the data, neurons in 1D maps have a maximum of two neighbours, which can limit the usefulness of the results.
     In 2D networks, each neuron has two to six neighbours, which allows them to capture a complete picture of the complicated relations in the input data.
@@ -459,7 +452,7 @@ Therefore, we did not perform any resolution matching and used data at their ori
             This indicates that there is more similarity between the PAH features over all 10 regions than between the other input data.
             
             We increased the dimension of input data in Fig.~\ref{fig: only_pahs} (PAH-only data) gradually, by adding other quantities to the input data. 
-            The order in which data were added is the same as the order in Fig.~\ref{fig: cor_all}, i.e. the SOM in Fig~\ref{fig: col3and11_dist} was created from PAH and H$\alpha$ emission as input data, the SOM in Fig~\ref{fig: col3and12_dist} created from PAHs, H$\alpha$ emission and \sii~ continuum, and so on. 
+            The order in which data were added is the same as the order in Fig.~\ref{fig: cor_all}, i.e. the SOM in Fig~\ref{fig: col3and11_dist} was created from PAH and \halpha\ emission as input data, the SOM in Fig~\ref{fig: col3and12_dist} created from PAHs, \halpha~emission and \sii~ continuum, and so on. 
             \import{../image_paper3/text_files/image_texts/}{col3byall.tex}
             
             At the beginning of each run, the SOM algorithm assigns a random weight to neurons that causes the overall position of regions in networks (even with the same input data) changes in each run of the algorithm.
@@ -507,25 +500,24 @@ Therefore, we did not perform any resolution matching and used data at their ori
             
             Subsets, as studied in this section, can be used to learn about the effect of each input on the SOM and tell us about variation in the input data.
             Comparing Fig.~\ref{fig: only_pahs} with other networks show us that PAH features are less variable than other input data.
-            These result is consistent with results from~\cite{Draine14}, who showed that the amount of PAHs in M31 for regions within 20~kpc radius. %PB: part of sentence missing?
+            These result is consistent with results from~\cite{Draine14}, who showed that the amount of PAHs in M31 for regions within 20~kpc radius is constant.
             Additional evidence for the PAH features varying significantly less than other parameters is that changing from the PAH single band emission to total PAHs does not affect the networks.
             In contrary, PACS~100~$\mu$m, stellar mass, total gas mass and RHI
             are the data with the most variance; adding them to input data increases the dark colours between neurons significantly.
-            Although with changing input parameters for each network the  distances between neurons and positions of the regions change, the general positions of the regions  relative to one another does not change dramatically. %PB: changed "data" to "regions" in this sentence - please check.
+            Although with changing input parameters for each network the distances between neurons and positions of the regions change, the general positions of the regions relative to one another does not change dramatically.
             Therefore, the networks created by subsets can be used to predict the properties of unobserved quantities in other regions of the galaxy.
-            For example, photometry data, stellar mass, SFR, L$_{\mathrm dust}$, L$_{\mathrm TIR}$, and dust mass are available for most of M31. 
+            For example, photometry data, stellar mass, SFR, L$_\mathrm{dust}$, L$_\mathrm{TIR}$, and dust mass are available for most of M31. 
             The network from Fig.~\ref{fig: wt_pahs} can be applied to 
             these data from another region in M31.
             By comparing the position of the new region with respect to our original 10 regions in the network, one would have an estimate for total PAHs in the new region without having any observational data for it.
 
 
-    \subsection{Testing networks using M101 observations}
+    \subsection{Applying Networks to M101 Observations}
     Another application of self-organizing maps made with data from a single galaxy is to apply its trained networks on data from other galaxies to make predictions.
     To demonstrate this, we generated an SOM using only M31 measurements which were also available for M101 (Fig.~\ref{fig: subset9}a). 
     \cite{Dim15} compared PAHs in M31 with those from \hii~regions in M101, and showed the similarity between PAHs in these two galaxies (for more detail see \cite{Dim15} and \cite{Gordon08}).
     In order to test whether these similarities are limited to PAH features or can be extended to other features in these two galaxies, we applied the SOM created using M31 data in Fig.~\ref{fig: subset9}a to M101 data (Fig.~\ref{fig: subset9}b).
     Since the neurons in the SOM network created by M31 data already have their finalized weights, the algorithm finds the minimum differences between parameters for each region in M101 and the weights of neurons and introduces the winner neuron in one iteration.
-    %This process is time efficient %PB:sentence incomplete?
     
     In the SOM that is created by M31 data in Fig.~\ref{fig: subset9}a, as in the others, region 10 is separated from other regions in M31.
     Regions 7 and 4 are close to each other with very light colours between their neurons, and as in the other SOMs regions 6, 8, and 5 are close to each other, but with medium dark colour between them.
@@ -571,7 +563,7 @@ Therefore, we did not perform any resolution matching and used data at their ori
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
-\section{SUMMARY}
+\section{Summary}
 \label{sec: summary}
 
 We present the results of studying spatially resolved regions in nearby galaxies using Kohonen self-organizing maps.
@@ -610,7 +602,7 @@ Using this ability of the SOM, we can predict properties of regions in other nea
 The networks we created used values for 26 quantities from 10 regions in M31, which is not a large sample.
 Increasing the dimension of the data and the number of regions would yield more reliable networks.
 Since there is very little spatially-resolved PAH spectroscopy for other galaxies from the \Spitzer Space Telescope, increasing the size of samples will require data from the James Webb Space Telescope.
-The method described in this work can be used to select target regions for PAH observations with that facility. %%Eh % better now?
+The method described in this work can be used to select target regions for PAH observations with that facility. 
 
 
 %----------------------------------------------------------------------------------------

@@ -18,7 +18,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage[byname]{smartref}
-\usepackage{hyperref}%comment out for hardcopy
+\usepackage[draft=false]{hyperref}%comment out for hardcopy
 \usepackage{txfonts}
 \usepackage{tocloft}
 \usepackage{amsmath}
@@ -369,16 +369,18 @@ Chair of the Thesis Examination Board
 \newcommand{\eqsigmasfr}{\Sigma_{\mathrm{sfr }}}
 \newcommand{\sigmastar}    {$\Sigma_{\mathrm {star }} $\ }
 \newcommand{\eqsigmastar}    {\Sigma_{\mathrm {star }}}
-\newcommand{\halpha}    {H$\alpha $\ }
+\newcommand{\halpha}    {H$\alpha $}
 \newcommand{\um}    {$\mu$m\ }
 \newcommand{\mice} {$\mu$m}
 \newcommand{\nprime}{N$^\prime$}
+\newcommand \boldit {\textbf{\textit{}}}
 \newcommand{\eqnprime} {N^\prime}
 \newcommand{\degr} {$^{\circ}$}
 \newcommand{\arcmin} {$^{\prime}$}
 \newcommand {\arcsec} {$^{\prime\prime}$}
 \newcommand \Spitzer {{\it Spitzer }}
 \newcommand \Galex {GALEX\ }
+\newcommand \GALEX {GALEX\ }
 \newcommand \Herschel {{\it Herschel }}
 \newcommand \sii {[S~\textsc{ii}]} 
 \newcommand \oiii {[O~\textsc{iii}]} 
@@ -469,8 +471,8 @@ The grouped properties of the classified galaxies are found to be more tightly c
 \newpage
 \addcontentsline{toc}{chapter}{List of Tables}
 \listoftables\newpage
-\addcontentsline{toc}{chapter}{List of Appendices}
-\listofmyappendices\newpage
+% \addcontentsline{toc}{chapter}{List of Appendices}
+% \listofmyappendices\newpage
 %\addcontentsline{toc}{chapter}{List of Abbreviations, Symbols, and Nomenclature}
 %\large List of Abbreviations, Symbols, and Nomenclature \normalsize
 %\newpage
@@ -489,8 +491,8 @@ The grouped properties of the classified galaxies are found to be more tightly c
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\include{intro0.01}
- \include{paper1}
-%\include{paper3}
+%\include{paper1}
+\include{paper3}
 %\include{paper2}
 % \include{summary}
 
@@ -511,9 +513,9 @@ The grouped properties of the classified galaxies are found to be more tightly c
 
 % %Appendices.
  \begin{appendices}
- \include{appendixa}
- \include{appendixa_2}
-% \include{appendixb}
+% \include{appendixa}
+% \include{appendixa_2}
+ \include{appendixb}
 % \include{appendixc}
  \end{appendices}
 
