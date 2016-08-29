@@ -90,7 +90,7 @@ The result of a SOM is a 1D or 2D network of neurons, which shows the positions 
 Since the 1990s, many studies have utilized SOMs for object classification and clustering (e.g. classifying quasars' spectra, star/galaxy classifications, gamma-ray burst clustering and light curve classification) and photometric redshift estimation~\citep[e.g.][]{Odewahn92, Hernandez94, Murtagh95, Maehoenen95,Scaringi09,Geach12,Fustes13,Meusinger16,Rahmani16b}.
 
 The K-means algorithm, SOMs, and hierarchical clustering are the main unsupervised methods that are used in astronomical studies~\citep[e.g.][]{DAbrusco12, Aycha16}.
-For both K-means and SOM algorithms, the user must define the number of clusters, and the algorithms decide how to separate the data into the desired number of clusters.
+For K-means algorithms, the user must define the number of clusters and for and SOM algorithms the user defines the number of neurons, and the algorithms decide how to separate the data into clusters.
 In the hierarchical clustering method, the user must define dissimilarity between the groups; the algorithm combines (or divides) existing groups based on their dissimilarity and creates a hierarchical structure. 
 Comparing the SOMs, K-means and hierarchical clustering methods shows that in some cases the hierarchical clustering method mis-classifies the data~\citep[][and references therein]{Mangiameli96}.
 We chose the SOM method over the K-means method due to the fact that SOMs not only cluster data, but also show similarities and dissimilarities between the clusters.
@@ -105,7 +105,7 @@ Therefore, we can cluster our sample data and study the underlying structure sim
  The process of creating an SOM happens over a series of $N$ iterations.
  In each iteration, the algorithm calculates the Euclidean distance for each node $j$ as $D_j^2= \sum_{i=0}^{i=n} (V_i - W_i)^2$, and finds a neuron with $D_{j_,\mathrm{min}}$. 
  This neuron is the winner node and is calling Best Matching Unit (BMU). 
- In each iteration (t),The weight vectors W(t) in the neighbourhood of the BMU ($r^t_{BMU}$) will change according to the Kohonen learning rule (equation~\ref{equ: weight adj}). 
+ In each iteration (t), the weight vectors W(t) in the neighbourhood of the BMU ($r^t_{BMU}$) will change according to the Kohonen learning rule (equation~\ref{equ: weight adj}). 
   \begin{equation}
             \label{equ: weight adj}
             W(t+1)=W(t)+L(t) \times R(t) \times(V(t)-W(t))
@@ -137,7 +137,7 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
 
      One feature of the SOM method is that there is no rule or restriction on the number of clusters.
      Users must decide the size of the network based on their data set and their usage of the results.
-     There has been a few attempts to find a rule for restricting the number of neurons based on the input sample \citep[e.g.][]{Vesanto05}, but none of them are certain. 
+     There have been a few attempts to find a rule for restricting the number of neurons based on the input sample \citep[e.g.][]{Vesanto05}, but none of them are certain. 
      We varied the size of SOMs from $1\times2$ to $50\times50$ in order to choose the most suitable size for the maps we generated, and found that based on the size of our sample, the best size for the 2D SOMs was $10\times10$. 
      We created our final SOMs with initial values for number of iterations in ordering phase, ordering phase learning factor, tuning phase learning factor, and tuning phase neighbourhood distance of 500, 0.9, 0.02, and 1, respectively. 
      
@@ -160,7 +160,7 @@ either 0 or 1 for low or high SFR, and 0 or 0.5 for a low or high amount of dust
  The axes show the position of the neurons in a $10 \times 10$ network and the hexagonal shapes (depicted by purple hexagons) are the neurons.
  
 Using this method, as expected, we are able to divide the mock sample into 4 distinct groups. Their boundaries are shown by grey colours in Fig.~\ref{fig: sample}: regions with high SFR and high dust content, regions with low SFR and high dust content, regions with high SFR and low dust content, and regions with low SFR and dust content. 
-In Fig.~\ref{fig: sample}, the upper part belongs to regions with low dust content, while the lower part belongs to regions with high dust content.
+In Fig.~\refthere ha{fig: sample}, the upper part belongs to regions with low dust content, while the lower part belongs to regions with high dust content.
 The left part of the plot is where regions with low SFR belong and the right side is for high SFR regions.
 Grey to black colours show the border between regions.
 This network is considered to be a trained network, and can be used to cluster any new data set with similar entries.
