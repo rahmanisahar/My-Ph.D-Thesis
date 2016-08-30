@@ -1,4 +1,4 @@
-\chapter[Classifying High-Redshift Galaxies Using Self-Organizing Maps]{Clustering galaxy spectra at $0.5<z<1$: an unsupervised approach}
+\chapter[Classifying High-Redshift Galaxies Spectra]{Clustering galaxy spectra at $0.5<z<1$: an unsupervised approach}
 \label{ch: paper2}
 \defcitealias{Hossein12}{T12}
 \defcitealias{Kinney96}{K96}
@@ -68,7 +68,7 @@ The other application of SOMs is to find outliers or errors in the data.
 \citet{Fustes13} produced a package based on SOM to classify spectra from the GAIA survey that were previously classified as ``unknown'' by the SDSS pipeline. This package can recognize an astronomical object from instrumental errors, and then classify the object based on its spectrum.
 
 %What \citetalias{Hossein12} did
-~\citet[][hereafter \citetalias{Hossein12}]{Hossein12} classified spectral types of a sample of 142 galaxies using a supervised neural network method, based on the spectral template presented by \citetalias{Kinney96}.
+~\citet[][hereafter \citetalias{Hossein12}]{Hossein12} classified spectral types of a sample of 142 galaxies using a supervised (Multi-layer feed-forward) neural network method, based on the spectral template presented by \citetalias{Kinney96}.
 With the supervised method, they could only classify spectral types of 105 out of the 142 galaxies.
 The spectra of the 37 galaxies from their samples could not be matched with any of those in the \citetalias{Kinney96} templates. 
 In order to classify the remaining 37 galaxies, they combined spectrum of the \citetalias{Kinney96} templates.
@@ -203,11 +203,9 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
      the darker the colour, the larger the distance between neurons.
      In the hit maps, neurons with zero hits are left empty.
 
-     One feature of the SOM method is that there is no rule or restriction on the number of clusters.
-     Users must decide the size of the network based on their data set and their usage of the results.
-     There have been a few attempts to find a rule for restricting the number of neurons based on the input sample \citep[e.g.][]{Vesanto05}, but none of them are well established. 
-     We varied the size of SOMs from $1\times2$ to $50\times50$ in order to choose the most suitable size for the maps we generated, and found that based on the size of our sample, the best size for the 2D SOMs was $10\times10$. 
-     We created our final SOMs with initial values for number of iterations in ordering phase, ordering phase learning factor, tuning phase learning factor, and tuning phase neighbourhood distance of 500, 0.9, 0.02, and 1, respectively. 
+       
+    The sizes of the SOM maps are arbitrary and there are no rules regarding choosing one over the other. 
+    \citet{Vesanto05} suggested that a total number of $5\sqrt{n}$ neurons is a sufficient size, but users usually choose the size of the grids based on their dataset and their application of the results.
 
    
 % \subsection{Mock Sample}
