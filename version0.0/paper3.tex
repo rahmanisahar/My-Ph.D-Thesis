@@ -87,7 +87,7 @@ These networks are used to study nonlinear and complex relations between input a
 One of the most well-known unsupervised neural networks in astronomy is a Kohonen self-organizing map (also called self-organizing map, or SOM).
 SOMs visualize complex data~\citep{Kohonen82} and show simple geometrical relationships in non-linear high dimensional data~\citep{Kohonen98}.
 The result of a SOM is a 1D or 2D network of neurons, which shows the positions of clusters and their relative distance.
-Since the 1990s, many studies have utilized SOMs for object classification and clustering (e.g. classifying quasars' spectra, star/galaxy classifications, gamma-ray burst clustering and light curve classification) and photometric redshift estimation~\citep[e.g.][]{Odewahn92, Hernandez94, Murtagh95, Maehoenen95,Scaringi09,Geach12,Fustes13,Meusinger16,Rahmani16b}.
+Since the 1990s, many studies have utilized SOMs for object classification and clustering (e.g. classifying quasars' spectra, star/galaxy classifications, gamma-ray burst clustering and light curve classification) and photometric redshift estimation~\citep[e.g.][]{Odewahn92, Hernandez94, Murtagh95, Maehoenen95,Scaringi09,Geach12,Fustes13,Meusinger16}.
 
 The K-means algorithm, SOMs, and hierarchical clustering are the main unsupervised methods that are used in astronomical studies~\citep[e.g.][]{DAbrusco12, Aycha16}.
 For K-means algorithms, the user must define the number of clusters and for and SOM algorithms the user defines the number of neurons, and the algorithms decide how to separate the data into clusters.
@@ -113,7 +113,7 @@ Therefore, we can cluster our sample data and study the underlying structure sim
      The initial arrangement of these neurons depends on the map's topology provided by the user.
      In the case of 1D maps, since each neuron has two immediate neighbours, the topology of the map does not have any effect on the final result and any topology can be chosen.
      However, in 2D maps, the shape of the neurons specifies the number of immediate neighbours for each neuron and it is up to user to choose the most suitable shape based on the data.
-     In this paper, we choose hexagonal topology, which gives each neuron six neighbours, and provides more interactions between neurons.
+     In this chapter, we choose hexagonal topology, which gives each neuron six neighbours, and provides more interactions between neurons.
      Initially a random weight vector, \boldit{W} $\in \Re^n$, will be assigned to each node.
      The process of creating SOM happens over a series of $N$ iterations. 
      During each iteration the weight vectors might change according to the Kohonen learning rule (equation~\ref{equ: weight adj_SOMZ}). 
@@ -154,15 +154,16 @@ Therefore, we can cluster our sample data and study the underlying structure sim
      To allow the fine tuning, the number of iterations in this phase must be much larger than the that of the ordering phase.
      We chose the number of epochs in the tuning phase to be 3 times the number of epochs in the ordering phase.
      
-     To present our results, we use {\sc nnt}'s built-in plotting tool.
-     Specifically, we use two of the plots in this tool: a hits map, which shows the number of times each neuron has became the winner (hits), and a distance map, which shows the distance between those neurons.
-     In the maps, the purple hexagonal shapes represent the neurons. 
-     The distances in a distance map are shown by the grey cycle colours:
-     the darker the colour, the larger the distance between neurons.
-     In the hit maps, neurons with zero hits are left empty.
+     To present our results, we use \textsc{nnt}'s built-in plotting tool.
+     Specifically, we combine two of the plots in this tool: a hits map, which shows the number of times each neuron has become the winner (hits), and a distance map, which shows the distance between weight vectors of those neurons.
+     In the maps, the purple hexagonal shapes show the neurons. 
+     The distances are shown by the grey-scale colours: the darker the colour, the larger the distance between neurons.
+     Neurons with zero hits are left empty.
+     In Section~\ref{sec: mock_sample} we used \textsc{newsom} to create SOMs from a mock sample to illustrate how this method works and how to interpret the results.
       
     The sizes of the SOM maps are arbitrary and there are no rules regarding choosing one over the other. 
     \citet{Vesanto05} suggested that a total number of $5\sqrt{n}$ neurons is a sufficient size, but users usually choose the size of the grids based on their dataset and their application of the results.
+
 \subsection{Mock Sample}
 \label{sec: mock_sample}
  
@@ -233,7 +234,8 @@ Therefore, we did not perform any resolution matching and used data at their ori
      
      \cite{Dim15} used {\it Spitzer}/IRS observations to study PAHs in 10 regions chosen to span a range of mid-infrared flux ratios in M31 (Fig.~\ref{fig: regions in m31}). 
      Fluxes and equivalent widths of PAH and atomic line features were measured using the~\textsc{pahfit idl} tool~\citep{Smith07b}.
-     \cite{Dim15} also measured metallicity and radiation hardness index (RHI) for these 10 regions.
+     Metallicity for all regions except regions 5 and 8 were adapted from~\citep{Sanders12} and for regions 5 and 8, \cite{Dim15} estimated metallicity from the radial metallicity profile.
+     \cite{Dim15} also measured radiation hardness index (RHI) using calibration of the ratio of two lines, $\left (\log \frac{[Ne~\textsc{iii}]}{[Ne~\textsc{ii}]} + \left [ 0.71 + 1.58\log\frac{[S~\textsc{iV}]}{[S~\textsc{iii}]} \right ] \right )/2$, for these 10 regions.
      We used the measured PAH feature fluxes, metallicity and RHI of each region as the input for self-organizing maps.
      
     For the photometry part of the sample, we used the \GALEX \citep{Martin05} far-ultraviolet and near-ultraviolet (FUV and NUV) channel images; \halpha~(6574.7\AA), \sii~(6730.72\AA) and \oiii~(5024.9\AA) narrow band images~\citep{Massey07}, IRAC 3.6, 4.5, 5.8 and 8.0~$\mu$m images~\citep{Barmby06}; MIPS~24 and 70~$\mu$m~images~\citep{Gordon06}; and PACS 100 and 160~$\mu$m and SPIRE 250, 350, and 500~$\mu$m~\citep{Fritz12} images.
@@ -345,7 +347,7 @@ Therefore, we did not perform any resolution matching and used data at their ori
         Two black colours between this region and the others indicate the large differences between this neuron and the other ones.
         Region 10 is located in the bulge of M31, and is physically separated from the other regions, which are mostly located around the inner or outer rings.
         The SOM shows that this region has completely different input values from the others: most of the values for region 10 are much higher than for the other regions, which is the main reason for its isolation.
-        Region 8 occupies the right-most neuron in this network, suggesting that this region has the most differences from region 10.
+        Region 8 occupies the left-most neuron in this network, suggesting that this region has the most differences from region 10.
         
     \subsection{Inside the Two Neuron Network}
         \label{sec: inside_the_2_neurons}
@@ -356,7 +358,7 @@ Therefore, we did not perform any resolution matching and used data at their ori
         
         \begin{figure}
         \includegraphics[width=\textwidth]{../image_paper3/images0.01/cor_plots/M31_derived_3_to_8_core_plot_for_paper.pdf}
-        \caption[Pearson correlation coefficients for data from the clustered regions in M31]{Same as Fig.~\ref{fig: cor_all}, but here we used data from regions grouped in the left sides of Figs.~\ref{fig: M31_net_1by2} and ~\ref{fig: M31_net_1by3}. }
+        \caption[Pearson correlation coefficients for data from the clustered regions in M31]{Same as Fig.~\ref{fig: cor_all}, but here we used data from regions grouped in the left sides of Figs.~\ref{fig: M31_net_1by2} and ~\ref{fig: M31_net_1by3}.}
           \label{fig: cor_cluster1}
         \end{figure}
         
@@ -440,11 +442,14 @@ Therefore, we did not perform any resolution matching and used data at their ori
     Using 2D networks, we are mostly interested in the ability of the SOMs to show the underlying structure of the data rather than its clustering features.
     Fig.~\ref{fig: all_derived_ones} shows the 2D SOM of the M31 data.
     Similar to Fig.~\ref{fig: M31_net_1by14}, all the 10 regions are completely separated from each other in Fig.~\ref{fig: all_derived_ones}.
+    In Fig.~\ref{fig: all_derived_ones}, all the regions except regions 4 and 7 are surrounded by white colours.
+    This indicates that all the immediate neighbours for neurons occupied with each region have similar properties as the occupied ones, except for regions 4 and 7.
+    These two regions are sitting in very close regions and their smallest dissimilarity causes the changes in distances between their neighbours.
     \import{../image_paper3/text_files/image_texts/}{all.tex}
     
     Regions 4 and 7 are in the top left of Fig.~\ref{fig: all_derived_ones} with a very bright colour between their neurons, indicating that these two regions are very similar.
     Considering the position of these two regions in M31 (both right on the edge of the star forming rings in the galaxy), similarity of these two regions was predictable.
-    The position of region 3 on the SOM is close to the position of regions 4 and 7, but with a darker colour between the nodes. 
+    The position of region 3 on the SOM is relatively close to the position of regions 4 and 7, but with a darker colour between the nodes. 
     In Fig.~\ref{fig: regions in m31} it is clear that this region in M31 is physically closer to regions 4 and 7 than to any other region, but it is on the outer side of the star forming ring.
     Regions 5 and 6 are in the second neighbourhood (there are two neurons between them) of the SOM, with a medium gray colour between them.
     These two regions are physically located around the inner ring of the galaxy.
@@ -465,7 +470,7 @@ Therefore, we did not perform any resolution matching and used data at their ori
     
             For analysing subsets, we create SOMs by using only PAH data, as well as using all data except the PAHs (Fig.~\ref{fig: PAHS_or_not_PAHs}).
              \import{../image_paper3/text_files/image_texts/}{PAHS_or_not_PAHs.tex}
-            Comparing the SOM from all data in Fig.~\ref{fig: all_derived_ones} with the SOMs in Fig.~\ref{fig: PAHS_or_not_PAHs} shows that the general position of regions in those networks are the same. 
+            Comparing the SOM from all data in Fig.~\ref{fig: all_derived_ones} with the SOMs in Fig.~\ref{fig: PAHS_or_not_PAHs} shows that the general position of almost all regions in those networks are the same. 
             Region 10 is in one corner of all three networks.
             However, in Fig.~\ref{fig: all_derived_ones} and Fig.~\ref{fig: wt_pahs}, region 10 is isolated from the other regions, while in Fig.~\ref{fig: only_pahs}, region 10 is much less isolated and only shows complete dissimilarity with region 8.
             Regions 9 and 10 are totally isolated in the SOMs in Fig.~\ref{fig: wt_pahs}, but in Fig.~\ref{fig: only_pahs}, they are more similar to other regions.
@@ -530,7 +535,7 @@ Therefore, we did not perform any resolution matching and used data at their ori
             For example, photometry data, stellar mass, SFR, L$_\mathrm{dust}$, L$_\mathrm{TIR}$, and dust mass are available for most of M31. 
             The network from Fig.~\ref{fig: wt_pahs} can be applied to 
             these data from another region in M31.
-            By comparing the position of the new region with respect to our original 10 regions in the network, one would have an estimate for total PAHs in the new region without having any observational data for it.
+            By comparing the position of the new region (with the same spatial size of these 10 regions) with respect to our original 10 regions in the network, one would have an estimate for total PAHs in the new region without having any observational data for it.
 
 
     \subsection{Applying Networks to M101 Observations}

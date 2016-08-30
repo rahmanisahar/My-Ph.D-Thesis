@@ -192,7 +192,7 @@ $A_\mathrm{FUV}$ & mag & attenuation at 1500\,\AA{} \\
 where $L(t) = L_0 e^{(-t/\tau)}$ is the learning factor with $L_0$ is the initial value of learning, which prevents the divergence of the SOM, and $R(t)=\exp(-\frac{D_j^2}{2r^t_{BMU}})$ is the influence rate, which determines how the weight of each node will change. 
 $\tau$ is the number of total iterations.
 Values for the number of neurons is arbitrary, and for various toolboxes values for one or all of $L_0$,$L(t)$, $R(t)$  and $r^t_{BMU}$ are arbitrary.
-\cite{Geach12} and~\cite{Rahmani16b} demonstrate the algorithm of the SOM in more detail.
+\cite{Geach12} demonstrate the algorithm of the SOM in more detail.
 
 
      In order to create self-organizing maps, we used the \textsc{matlab} neural network toolbox~\citep[NNT,][]{matlabtolbox}.
@@ -308,7 +308,7 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
             We increased the size of the map gradually until the 12 input samples divide into the 12 neurons. 
         
             Figs.~\ref{fig: 1by2T} --\ref{fig: 1by22T} show the results of the training networks.
-            As in to Fig.~\ref{fig: sample_SOMZ}, the upper part of the figures shows the neurons and their relative distances between weight of neurons.
+            As in to Fig.~\ref{fig: sample}, the upper part of the figures shows the neurons and their relative distances between weight of neurons.
             As mentioned in Section~\ref{sec: method_somz}, an increase in the darkness of colours between neurons represents an increase in relative distance between the neurons.
             The lower panels of the figures show the number of \citetalias{Kinney96} templates that are placed in each neuron. 
             \begin{figure}
@@ -320,7 +320,7 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
                 \begin{subfigure}[b]{\textwidth}
                     \centering \includegraphics[width=0.8\textwidth]{../image_paper2/1d/hit_t_1_by_2.png}
                 \end{subfigure}
-                \caption[Results of training network in $1\times2$~grid]{Results of training network in $1\times2$~grid. As in Fig.~\ref{fig: sample_SOMZ}, the upper panel is a distance map and the lower panel is a hit map. In this network, 5 of the templates from \citet{Kinney96} are categorized as quiescent galaxies and the rest are starbursts. Because of their strong emission lines, Sc galaxies are moved towards the starburst ones.}
+                \caption[Results of training network in $1\times2$~grid]{Results of training network in $1\times2$~grid. As in Fig.~\ref{fig: sample}, the upper panel is a distance map and the lower panel is a hit map. In this network, 5 of the templates from \citet{Kinney96} are categorized as quiescent galaxies and the rest are starbursts. Because of their strong emission lines, Sc galaxies are moved towards the starburst ones.}
                  \label{fig: 1by2T}
             \end{figure}
         
