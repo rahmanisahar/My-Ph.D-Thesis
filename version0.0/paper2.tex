@@ -195,28 +195,17 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
 \cite{Geach12} demonstrate the algorithm of the SOM in more detail.
 
 
-     In order to create self-organizing maps, we used the \textsc{matlab} neural network toolbox~\citep[NNT,][]{matlabtolbox}.
-     An SOM in \textsc{nnt} can be created by the \textsc{newsom} library, which works in two phases, the ``ordering phase" and ``tuning phase" . 
-     Phase one is the ``ordering phase". 
-     This phase starts with maximum neighbourhood distance, and an initial high learning factor, usually 0.9, which is provided by the user. 
-     The ordering phase continues for the requested number of iterations.
-     At the end of the iterations, the learning factor reduces to the tuning phase learning factor and the neighbourhood distance reaches the value set by the user. 
-     The second phase is the ``tuning phase".
-     In this phase the neighbourhood distance is at its minimum, but the learning factor decreases very slowly.
-     This minimum neighbourhood distance and slowly decreasing learning factor helps to fine tune the topology results and causes a more stable SOM. 
-     The number of iterations in this tuning phase must be much greater than the number of iterations in ordering phase, to allow the tuning to happen slowly. 
-     We chose the number of epochs in the tuning phase to be 3 times more than the number of epochs in the ordering phase.
-     
-     To present our results, we use \textsc{nnt}'s built-in plotting tool.
-     Specifically, we combine two of the plots in this tool: a hits map, which shows the number of times each neuron has become the winner (hits), and a distance map, which shows the distance between weight vectors of those neurons.
-     In the maps, the purple hexagonal shapes show the neurons. 
-     The distances are shown by the grey-scale colours: the darker the colour, the larger the distance between neurons.
-     Neurons with zero hits are left empty.
-     In Section~\ref{sec: mock_sample} we used \textsc{newsom} to create SOMs from a mock sample to illustrate how this method works and how to interpret the results.
+     The same as Chapter~\ref{ch: paper3}, we use the \textsc{matlab} neural network toolbox~\citep[NNT,][]{matlabtolbox} to create self-organizing maps.
+     To present our results in this chapter, we use {\sc nnt}'s built-in plotting tool.
+     Specifically, we use two of the plots in this tool: a hits map, which shows the number of times each neuron has became the winner (hits), and a distance map, which shows the distance between those neurons.
+     In the maps, the purple hexagonal shapes represent the neurons. 
+     The distances in a distance map are shown by the grey cycle colours:
+     the darker the colour, the larger the distance between neurons.
+     In the hit maps, neurons with zero hits are left empty.
 
      One feature of the SOM method is that there is no rule or restriction on the number of clusters.
      Users must decide the size of the network based on their data set and their usage of the results.
-     There have been a few attempts to find a rule for restricting the number of neurons based on the input sample \citep[e.g.][]{Vesanto05}, but none of them are certain. 
+     There have been a few attempts to find a rule for restricting the number of neurons based on the input sample \citep[e.g.][]{Vesanto05}, but none of them are well established. 
      We varied the size of SOMs from $1\times2$ to $50\times50$ in order to choose the most suitable size for the maps we generated, and found that based on the size of our sample, the best size for the 2D SOMs was $10\times10$. 
      We created our final SOMs with initial values for number of iterations in ordering phase, ordering phase learning factor, tuning phase learning factor, and tuning phase neighbourhood distance of 500, 0.9, 0.02, and 1, respectively. 
 
@@ -233,28 +222,28 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
 %                 \includegraphics[width=\textwidth]{../image_paper2/sample/sample2_hits.png}
 %             \end{subfigure}
 %             \caption[Self-organizing map of the mock sample]{SOM of the mock sample. In both plots, the axes show the position of the neurons. Hexagonal shapes represent the neurons. The top plot is a distance map. The grey cycle colours show the differences between the weights of each neuron with white being the minimum difference and black being the maximum one. The lower plot is a ``hits plot". It represents the number of samples in each neuron, where empty means zero hits. In this sample, the 27 galaxies are clustered in 4 groups, containing 8, 7, 6 and 6 galaxies respectively.}
-%             \label{fig: sample_SOMZ}
+%             \label{fig: sample}
 %         \end{figure}
  
 %  To illustrate how self-organizing maps work, we create a mock sample of 27 galaxies.
 %  The mock sample contains two attributes for each galaxy: the type (type 1 or type 2), and the star formation rate (high or low). 
 %  We generated a SOM of size $10 \times 10$ using the same initial values mentioned in Section~\ref{sec: create_som}.
 
-%  Fig. ~\ref{fig: sample_SOMZ} shows the SOM of this mock sample. 
+%  Fig. ~\ref{fig: sample} shows the SOM of this mock sample. 
 %  The upper panel is the distance map. 
 %  The axes show the position of the neurons in the $10 \times 10$ network.
-%  The lower panel in Fig.~\ref{fig: sample_SOMZ} shows the hit map.
+%  The lower panel in Fig.~\ref{fig: sample} shows the hit map.
 %  On this map, similar to the distance map, the axes show the position of the neurons and the hexagonal shapes are the neurons.
 %  The number on the purple neurons shows the number of galaxies in that neuron.
 %  Colour coverage of neurons depends on the number of the hits on the sample.
 %  The neuron with the maximum number of hits is dark-coloured while the empty neurons are left uncoloured (white).
  
 % Using this method, as expected, we are able to divide the mock sample galaxies into 4 distinct groups: Type 1 with high SFR, type 1 with low SFR, type 2 with high SFR and type 2 with low SFR. 
-% The upper panel in the Fig.~\ref{fig: sample_SOMZ} clearly shows this division.
+% The upper panel in the Fig.~\ref{fig: sample} clearly shows this division.
 % In that plot, the upper half belongs to high star forming galaxies, while the lower half belongs to low star forming galaxies.
 % The left half of the plot is where type 1 galaxies belong, and type 2 galaxies reside in the right side.
 % Different shades of gray show the border between regions.
-% The lower panel in Fig.~\ref{fig: sample_SOMZ} shows that only 4 neurons (out of 100) are occupied. 
+% The lower panel in Fig.~\ref{fig: sample} shows that only 4 neurons (out of 100) are occupied. 
 % 8 galaxies are type 1 galaxies with high SFR, 7 are type 2 galaxies with high SFR, 6 are type 1 galaxies with low SFR and the other 6 are type 2 galaxies with low SFR. 
 % We can conclude that although each galaxy had  the chance to occupy any of the neurons in the network, because of the similarity in the values of their attributes, they remained only in four groups.
 % This network is considered a training network and can be used to cluster any new dataset with similar entries.
@@ -397,11 +386,11 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
             After training the networks as discussed in Section~\ref{sec: 1Dt}, we used them to classify the fitted SEDs of the sample of 142 galaxies from \citetalias{Hossein12}.
             The upper panel in Fig.~\ref{fig: 1by2V} shows the result of this classification using the $1\times2$~network from Fig.~\ref{fig: 1by2T}.
             Eighty of the galaxies have SEDs similar to those of the early type galaxies and the SEDs of the rest are similar to the starburst galaxies.
-            The lower left panel shows the average SED of the 80 galaxies that were classified as early type. 
+            The lower left panel shows the median SED of the 80 galaxies that were classified as early type. 
             These galaxies are similar to the ones in the left node in the upper panel of Fig.~\ref{fig: 1by2T}:
             the SEDs clearly show the 4000\AA~break, one of the signatures of early type galaxies.
             The H$\alpha$ emission in the spectrum could be from galaxies with similar SEDs to Sa galaxies, but with stronger emission lines.
-            The average SED in the lower right panel of Fig.~\ref{fig: 1by2V} shows strong emission lines and bright ultraviolet continuum, indications of a high star formation rate.
+            The median SED in the lower right panel of Fig.~\ref{fig: 1by2V} shows strong emission lines and bright ultraviolet continuum, indications of a high star formation rate.
             \begin{figure}
                 \begin{subfigure}[b]{\textwidth}
                     \centering
@@ -415,7 +404,7 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
                      %\caption{$1\times2$ hits map}
                      %\label{fig: 1by3Thits}
                 \end{subfigure}
-                \caption[Classification of fitted galaxy SEDs from \citet{Hossein12} using the $1\times2$~networks]{Classification of fitted galaxy SEDs from \citet{Hossein12} using the $1\times2$~network trained from the \citet{Kinney96} templates (Fig.~\ref{fig: 1by2T}). Upper panel: a hit map with the number in each node representing the number of galaxies belonging to that group. In this case 80 means that 80 of the 142 SEDs are classified into the early type group while the 62 of the 142 SEDs are categorized as starburst galaxies. Lower panel: Average SED of the galaxies in each group, early-type on the left and starburst on the right.}
+                \caption[Classification of fitted galaxy SEDs from \citet{Hossein12} using the $1\times2$~networks]{Classification of fitted galaxy SEDs from \citet{Hossein12} using the $1\times2$~network trained from the \citet{Kinney96} templates (Fig.~\ref{fig: 1by2T}). Upper panel: a hit map with the number in each node representing the number of galaxies belonging to that group. In this case 80 means that 80 of the 142 SEDs are classified into the early type group while the 62 of the 142 SEDs are categorized as starburst galaxies. Lower panel: median SED of the galaxies in each group, early-type on the left and starburst on the right.}
                 \label{fig: 1by2V}
             \end{figure}          
             
@@ -454,27 +443,27 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
                 \centering
                      \includegraphics[width=\textwidth]{../image_paper2/1d/SED_total1by22.png}
                 \end{subfigure}
-                \caption[Classification of fitted galaxy SEDs from \citet{Hossein12} using the $1\times22$~networks]{Same as Fig.~\ref{fig: 1by2V}, but in this figure, we used a network with size of $1\times22$ (Fig.~\ref{fig: 1by22T}) to classify the sample galaxies. In the average SED of each neuron, we can clearly see the changes from early type galaxies to the starburst ones. The 4000\AA~ break weakens from left to right and the emission line strengths increase.}
+                \caption[Classification of fitted galaxy SEDs from \citet{Hossein12} using the $1\times22$~networks]{Same as Fig.~\ref{fig: 1by2V}, but in this figure, we used a network with size of $1\times22$ (Fig.~\ref{fig: 1by22T}) to classify the sample galaxies. In the median SED of each neuron, we can clearly see the changes from early type galaxies to the starburst ones. The 4000\AA~ break weakens from left to right and the emission line strengths increase.}
                 \label{fig: 1by22V}
             \end{figure}
 
-            The lower panels present the average SED of the galaxies in each neuron.
+            The lower panels present the median SED of the galaxies in each neuron.
             Since galaxies had more space to separate, some of the neurons are left empty.
-            Thus, instead of having 22 average SED plots in the lower part of Fig.~\ref{fig: 1by22V}, there are only 12.
+            Thus, instead of having 22 median SED plots in the lower part of Fig.~\ref{fig: 1by22V}, there are only 12.
             
             Comparing the upper panel of Fig.~\ref{fig: 1by22V} with the lower panel of Fig.~\ref{fig: 1by22T} shows that the occupied neurons are not necessarily the same.
             If a cluster from the \citetalias{Hossein12} sample fills the same neuron as a \citetalias{Kinney96} template, we can conclude that SEDs of galaxies in the cluster are very similar to those of the template.
-            Otherwise, we can conclude that the SEDs of galaxies in the cluster are similar to two of the \citetalias{Kinney96} templates.
+            Otherwise, we can conclude that the SEDs of galaxies in the cluster are (dis)similar to two of the \citetalias{Kinney96} templates.
             For the latter case, the colours establish which template has greater similarity to the \citetalias{Hossein12} cluster.
             
             The first two neurons in the upper plot in Fig.~\ref{fig: 1by22V} are empty, while these neurons were occupied by galaxies B and E in the trained network.
             We therefore conclude that there are no galaxies in the \citetalias{Hossein12} sample with SEDs similar to that of type B or E.
             There are 3 galaxies in the third neuron, similar to the S0 type. 
-            18 of the galaxies are jn the fifth neurons and similar to the Sa type, while the 7 galaxies in the fourth neurons have SEDs similar to both S0 and Sa galaxies.
-            There is one Sb type galaxy and 15 galaxies with SEDs similar to both Sa and Sb type galaxies.
+            19 of the galaxies are jn the fifth neurons and similar to the Sa type, while the 6 galaxies in the fourth neurons have SEDs similar to both S0 and Sa galaxies.
+            There are 8 Sb type galaxy and 19 galaxies with SEDs similar to both Sa and Sb type galaxies.
             The following two neurons (eighth and ninth neurons from the left) are on the edge of the early type and starburst galaxies.
             In the upper panel in Fig.~\ref{fig: 1by22T}, the colour between these two neurons is black, which shows that these two are very different.
-            Therefore, 24 galaxies in the eighth neurons have similar SEDs to Sb type galaxies, and the SEDs of the 14 galaxies in the ninth neuron are similar to the SB6 galaxies.
+            Therefore, 24 galaxies in the eighth neurons have similar SEDs to Sb type galaxies, and the SEDs of the 5 galaxies in the ninth neuron are similar to the SB6 galaxies.
             The far right neurons in the network belong to galaxies with SED comparable to types SB1 and SB2.
             
             In general, 56 galaxies correspond exactly to \citetalias{Kinney96} templates and the other 86 are placed between the initial 12 suggestions.
@@ -543,7 +532,7 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
         \label{fig: props_vs_props}
     \end{figure}
         
-        In order to compare our classifications with previous works, we produced similar plots to the ones in both \citetalias{Noll09} and \citetalias{Hossein12} (Fig.~\ref{fig: props_vs_props}).
+        In order to compare our classifications with previous work, we produced similar plots to the ones in both \citetalias{Noll09} and \citetalias{Hossein12} (Fig.~\ref{fig: props_vs_props}).
         In Fig.~\ref{fig: props_vs_props}, the data points are median values of the properties of the galaxies in each neuron in Fig.~\ref{fig: 1by22V}, and error bars show the standard deviation of those properties.
         The colours show the galaxy types, where B type galaxies are shown with red and SB1 types are shown with blue.
         The redder the colour, the more similarity with early type galaxies, while the purple to blue colours show more similarity to starburst galaxies.
@@ -573,13 +562,14 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
     However, each neuron in these networks is limited to be connected to one other neuron in each direction.
     In a 2D network, each neuron can have more than two immediate neighbours, providing a more complete pictures of relations between each SED type.
     As described in Section~\ref{sec: method_somz}, one of the main advantages of the SOM is that when the weight of one neuron is adjusted after finding the best matching unit, the weight of the whole map will be changed.
-    This quality of the SOMs provides a unique opportunity to analyse 2D networks in two approaches. 
+    This quality of the SOMs provides a unique opportunity to analyse 2D networks using two approaches. 
     At first, as in the 1D SOMs, we assumed that all the galaxies must have SEDs similar to any of the 12 templates in Fig.~\ref{fig: k96}.
     In this case, we can categorize SEDs of other galaxies based on those 12 types.
-   In the second approach, we trained networks with the assumption that there might be completely different types of galaxies not encountered before.
-    This approach can be used to trace and recognize the outliers.
-    To execute the second approach, we used the {\tiny selforgmap} library in {\tiny MATLAB}.
-    Using the {\tiny selforgmap} code, based on the size of a map and the ordering step neighbourhood distance, we can arrange that the data spread all over the SOM or sit close together, allowing room for outliers.
+    In the second approach, we trained networks with the assumption that there might be completely different types of galaxies not encountered before.
+    This approach can be used to trace and recognize the outliers, which could include galaxy types that are not presented in the \citetalias{Kinney96} templates.
+    To execute the second approach, we used the {\textsc selforgmap} library in the {\textsc matlab}.
+    Unlike the {\textsc newsom} library which the ordering step neighbourhood distance is set by default (although in an SOM it should be a free parameters), in the {\textsc selforgmap} we can change this value.
+    Using the {\textsc selforgmap} code, based on the size of a map and the ordering step neighbourhood distance, we can arrange that the data spread all over the SOM or sit close together, allowing room for outliers.
 
     To get the best result from both methods, we should have SOMs with ``enough"  neurons to give any new types of galaxies a chance to find their places in the map.
     ``Enough  neurons" is a vague statement, but as mentioned in the Section~\ref{sec: method_somz} the size of SOMs is arbitrary and depends on the size of the input data and the kind of information needed from the SOMs.
@@ -677,6 +667,11 @@ as belonging to one of the morphological types introduced by \citetalias{Kinney9
 The properties of the galaxies in the test sample using the new
 classification were found to more tightly correlate in mean values of age, specific star formation rate, stellar mass, and far-UV extinction than in previous studies. 
 The properties of the galaxies in each group are in good agreement with their morphological types.
+
+Two-dimensional networks can be used to find the relations of the neurons and classifications in more details.
+The sample galaxies have more freedom to be categorized, and only 23 of them occupies exactly the same neurons as \citetalias{Kinney96} template spectra (in one-dimensional networks this number was 56).
+Additionally, by using two-dimensional networks we showed that we do not have nay outlier in the sample galaxies.
+
 
 \addcontentsline{toc}{section}{Bibliography}
 \bibliographystyle{apj.bst}
