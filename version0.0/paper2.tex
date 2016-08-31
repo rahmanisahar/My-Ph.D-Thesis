@@ -343,12 +343,12 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
                 \begin{subfigure}[b]{\textwidth}
                      \includegraphics[width=\textwidth]{../image_paper2/1d/hit_t_1_by_3.png}
                 \end{subfigure}
-                \caption[Results of training network in $1\times3$~grid]{The same as Fig.~\ref{fig: 1by2T} but showing the results of training network in $1\times3$~grid. In this network again, 5 of the \citet{Kinney96} templates are categorized as quiescent and 7 as starbursts. However, this time 2  templates (SB5 and SB6) are separated from the starburst groups.}
+                \caption[Results of training network in $1\times3$~grid]{The same as Fig.~\ref{fig: 1by2T} but showing the results of training network in $1\times3$~grid. In this network again, 5 of the \citet{Kinney96} templates are categorized as quiescent and 7 as starbursts. However, this time 2 templates (SB5 and SB6) are separated from the starburst groups.}
                  \label{fig: 1by3T}
             \end{figure}
            
             We increased the size of the maps gradually until the galaxies are divided into twelve groups (Figs.~\ref{fig: 1by4T} to ~\ref{fig: 1by20T} in Appendix~\ref{app: high_Z_1d_soms} and ~\ref{fig: 1by22T}).
-            Since there are more nodes in higher grid SOMs, the  algorithm 
+            Since there are more nodes in higher grid SOMs, the algorithm 
             pays more attention to small differences between groups.
             If the templates from \citetalias{Kinney96} had completely distinct spectral types, then a $1\times12$-sized SOM would be expected to show 12 different groups each containing a single template.
             However, in Fig.~\ref{fig: 1by12T}, we see that three of the neurons contain two templates and three of them are empty.
@@ -535,7 +535,7 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
         The colours show the galaxy types, where B type galaxies are shown with red and SB1 types are shown with blue.
         The redder the colour, the more similarity with quiescent galaxies, while the purple to blue colours show more similarity to starburst galaxies.
         Since in this method we allow galaxies to occupy classes in between the original \citetalias{Kinney96} templates, we have more than 12 colours in Fig.~\ref{fig: props_vs_props}.
-        The purple point in the middle of the blue points in  Fig.~\ref{fig: props_vs_props} corresponds to galaxies with spectra similar to type Sc: the shape of their spectra indicates that they are old galaxies with high sSFR.
+        The purple point in the middle of the blue points in Fig.~\ref{fig: props_vs_props} corresponds to galaxies with spectra similar to type Sc: the shape of their spectra indicates that they are old galaxies with high sSFR.
         
         The upper panels in Fig.~\ref{fig: props_vs_props} show the same relations as \citetalias{Noll09} and \citetalias{Hossein12}, but with tighter correlation than those two, in all three plots.
         As mentioned in both \citetalias{Noll09} and \citetalias{Hossein12}, galaxies with smaller mass tend to be younger and more active.
@@ -570,7 +570,7 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
     Using the {\textsc selforgmap} code, based on the size of a map and the ordering step neighbourhood distance, we can arrange that the data spread all over the SOM or sit close together, allowing room for outliers.
 
     To get the best result from both methods, we should have SOMs with ``enough"  neurons to give any new types of galaxies a chance to find their places in the map.
-    ``Enough  neurons" is a vague statement, but as mentioned in the Section~\ref{sec: method_somz} the size of SOMs is arbitrary and depends on the size of the input data and the kind of information needed from the SOMs.
+    ``Enough neurons" is a vague statement, but as mentioned in the Section~\ref{sec: method_somz} the size of SOMs is arbitrary and depends on the size of the input data and the kind of information needed from the SOMs.
     Since the training dataset (the \citetalias{Kinney96} templates) has 12 members, we assumed a SOM with size of $8\times8$~would be a good start.
     We then increased the size of the SOM to find the highest size suitable for the training sample.
     We noticed that very few changes occurred after the SOMs were grown to a size greater than $12\times12$, so we used this as the maximum size.
@@ -659,7 +659,7 @@ The test results showed that using SOMs can allow identification of galaxies wit
 The freedom of having in-between types is one of the main differences between supervised and unsupervised artificial neural networks.
 \citetalias{Hossein12} used a supervised training method to train networks with \citetalias{Kinney96} spectral templates and classify the same sample of 142 galaxy spectra;
 however, they could not classify 37 out of 142 spectra.
-The unsupervised method used in this project was able to classify  all 142 spectra in the sample
+The unsupervised method used in this project was able to classify all 142 spectra in the sample
 as belonging to one of the morphological types introduced by \citetalias{Kinney96} or a class in between those types.
 
 The properties of the galaxies in the test sample using the new

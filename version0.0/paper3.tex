@@ -53,7 +53,7 @@ Using IRAC imaging observations,~\cite{Barmby06} found good agreement between th
 star formation indicators such as \halpha and far infrared luminosity.
 \cite{Draine14} found that the PAH abundance in M31 is almost constant up to a galactocentric radius of $\sim 20$~kpc.
 With data mining techniques we address the question of whether,
-compared to other galaxies, PAH features in M31 are unique as~\cite{Cesarsky98} claimed, or  are normal as ~\cite{Dim15} and \cite{Draine14} concluded.
+compared to other galaxies, PAH features in M31 are unique as~\cite{Cesarsky98} claimed, or are normal as ~\cite{Dim15} and \cite{Draine14} concluded.
 
 
 %this project 1 M31 and its extensive data we do not have any SOM in nearby galaxies
@@ -106,7 +106,7 @@ Therefore, we can cluster our sample data and study the underlying structure sim
     A weight vector ``\boldit{W}" with the same dimension as the input data is associated with each node and will be varied during the training process.
     This vector is the key factor in determining the position of the nodes in a map.
     \cite{Geach12} presented the application of the SOM and discussed its algorithm in detail.
-    In this section we briefly discuss the algorithm of SOM, how we create our maps and a present a  test model which will help interpretation of our results. 
+    In this section we briefly discuss the algorithm of SOM, how we create our maps and a present a test model which will help interpretation of our results. 
    
      Assume we have a dataset which contains vectors, \boldit{V} $\in \Re^n$, and we want to map them on an S1 by S2 map. 
      We start by creating S1 $\times$ S2 empty neurons. 
@@ -121,7 +121,7 @@ Therefore, we can cluster our sample data and study the underlying structure sim
      \begin{enumerate}
         \item chooses a random vector from the dataset ($V_i$).
         \item calculates the Euclidean distance for each node, $j$, as  $D_j^2= \sum_{i=0}^{i=n} (V_i - W_i)^2$, and finds a neuron with minimum $D_j$, (``$D_{j_{min}}$"). This neuron is the winner node and is called the Best Matching Unit (BMU). 
-        \item  computes the radius of the neighbourhood of the BMU to find nodes within this radius. The weight vectors of these nodes will be affected in the next steps. The radius of the neighbourhood is arbitrary and can be set to be as high as half of the SOM size. It then decays exponentially over each iteration as
+        \item computes the radius of the neighbourhood of the BMU to find nodes within this radius. The weight vectors of these nodes will be affected in the next steps. The radius of the neighbourhood is arbitrary and can be set to be as high as half of the SOM size. It then decays exponentially over each iteration as
         \begin{equation}
             r^t_{BMU} = r^0_{BMU}e^{(-t/\tau)}
         \end{equation}
@@ -196,7 +196,7 @@ This network is considered to be a trained network, and can be used to cluster a
 Having two regions with exactly the same values in all their quantities with real data is extremely unlikely. 
 If, in an input data set, there are two entries with similar (but not identical) values in all dimensions, one can find a network that separates these two entries in two groups.  
 However, in case of multiple similar entries in a dataset, the number of neurons must be much higher than the number of entries for complete separation.
-Therefore, the user learns about similarity or dissimilarity of members of the input dataset based on the ratio of the number of entries in the dataset and  the number of neurons. 
+Therefore, the user learns about similarity or dissimilarity of members of the input dataset based on the ratio of the number of entries in the dataset and the number of neurons. 
 
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
@@ -209,7 +209,7 @@ Therefore, the user learns about similarity or dissimilarity of members of the i
 \label{Sec: data_SOMN}
 
 Our study includes 10 regions in M31 (Fig.~\ref{fig: regions in m31}) and 8 regions in M101 (Fig.~\ref{fig: regions in m101}). 
-These specific regions were chosen for the availability of \Spitzer/IRS 5--15$\mu$m  spectroscopy covering the PAH emission bands.
+These specific regions were chosen for the availability of \Spitzer/IRS 5--15$\mu$m spectroscopy covering the PAH emission bands.
 Besides PAH band strengths, for each galaxy, we use spectroscopic and photometric observations as well as their derived properties, such as SFR, stellar mass, dust luminosity (L$_{\rm dust}$), dust mass, metallicity, and gas mass.
 Table~\ref{tab: data} shows the full list of data for both M31 and M101.
 All data were divided by the area of their region (in arcsec$^2$), to remove the distance factor from the data and compare values across galaxies.
@@ -229,7 +229,7 @@ Therefore, we did not perform any resolution matching and used data at their ori
     \hfill
     \begin{subfigure}[b]{\textwidth}
         \includegraphics[width=\textwidth]{../image_paper3/images0.01/M101/M101.png}
-        \caption{IRAC 3.6 $\mu$m image of M101, with positions of  8 regions studied.}
+        \caption{IRAC 3.6 $\mu$m image of M101, with positions of 8 regions studied.}
     \label{fig: regions in m101}
     \end{subfigure}
     \caption[Position of the data in M31 and M101]{Position of the data in M31 (a) and M101 (b).}
@@ -244,7 +244,7 @@ Therefore, we did not perform any resolution matching and used data at their ori
      \cite{Dim15} also measured radiation hardness index (RHI) using calibration of the ratio of two lines, $\left (\log \frac{[Ne~\textsc{iii}]}{[Ne~\textsc{ii}]} + \left [ 0.71 + 1.58\log\frac{[S~\textsc{iV}]}{[S~\textsc{iii}]} \right ] \right )/2$, for these 10 regions.
      We used the measured PAH feature fluxes, metallicity and RHI of each region as the input for self-organizing maps.
      
-    For the photometry part of the sample, we used the \GALEX \citep{Martin05} far-ultraviolet and near-ultraviolet (FUV and NUV) channel images; \halpha~(6574.7\AA), \sii~(6730.72\AA) and \oiii~(5024.9\AA) narrow band images~\citep{Massey07}, IRAC 3.6, 4.5, 5.8 and 8.0~$\mu$m images~\citep{Barmby06}; MIPS~24 and 70~$\mu$m~images~\citep{Gordon06}; and PACS 100 and 160~$\mu$m and SPIRE 250, 350, and 500~$\mu$m~\citep{Fritz12} images.
+    For the photometry part of the sample, we used the \GALEX \citep{Martin05} far-ultraviolet and near-ultraviolet (FUV and NUV) channel images; \halpha (6574.7\AA), \sii~(6730.72\AA) and \oiii~(5024.9\AA) narrow band images~\citep{Massey07}, IRAC 3.6, 4.5, 5.8 and 8.0~$\mu$m images~\citep{Barmby06}; MIPS~24 and 70~$\mu$m~images~\citep{Gordon06}; and PACS 100 and 160~$\mu$m and SPIRE 250, 350, and 500~$\mu$m~\citep{Fritz12} images.
      The units of all fluxes were converted to W~m$^{-2}$ in order to be the same as the PAH fluxes.
      $^{12}$CO (J:$1\rightarrow0$) line emission images~\citep{Nieten06} and atomic gas (\hi) 21~cm emission images from~\cite{Chemin09} were added to the input data. 
      For derived values, we utilized SFR(FUV + 24$\mu$m) measured using combination of FUV and 24$\mu$m emission, stellar mass, molecular gas mass, atomic gas mass, total gas mass, and total infrared (TIR) luminosity (L$_\mathrm{TIR}$) from~\cite{Rahmani16}, and L$_\mathrm{dust}$ and dust mass from~\cite{Draine14}.
@@ -263,7 +263,7 @@ Therefore, we did not perform any resolution matching and used data at their ori
     
      Correlations between some of single-wavelength emission and galaxy properties are well-known.
      Emission in the 3.6$\mu$m band traces the old stellar population very well~\citep[e.g.][]{Smith07a,Leitherer99} and it can be used to calculate the stellar mass~\citep{Eskew12}.
-     FUV, \halpha, and TIR emission are indicators of star forming regions.
+     FUV, \halphadot, and TIR emission are indicators of star forming regions.
      In this project, we used the SFR traced by the FUV emission, corrected for foreground stars using NUV emission and for dust extinction using 24~$\mu$m emission.
      Total infrared emission is calculated from a modified version of~\cite{Draine07} calibrations using using 8, 24, 70, and 160~$\mu$m emission~\citep{Boquien10}.
     
@@ -295,9 +295,9 @@ Therefore, we did not perform any resolution matching and used data at their ori
 \section{One-Dimensional Self-Organizing Maps}
     \label{Sec: 1d_cluster}
 %Why 1D maps are useful
-    The purpose of  exploring the M31 data with 1D maps is to monitor the general behaviour of the data. 
+    The purpose of exploring the M31 data with 1D maps is to monitor the general behaviour of the data. 
     One-dimensional SOMs can have the minimum number of clusters, $1\times2$, up to the highest number of clusters possible (infinity). %Els asked what is maximum possible #
-    In a small sample like ours, smaller grid SOMs are very useful to find correlations that cannot be found without  clustering the data.
+    In a small sample like ours, smaller grid SOMs are very useful to find correlations that cannot be found without clustering the data.
     On the other hand, larger grid 1D SOMs are a helpful tool to get quick insight into the data.
 
     \subsection{Clustering M31 Data}
@@ -370,7 +370,7 @@ Therefore, we did not perform any resolution matching and used data at their ori
         
        
         Comparing the correlation coefficient plots for all 10 regions in M31 (Fig.~\ref{fig: cor_all}) and for the clustered data (Fig.~\ref{fig: cor_cluster1}) shows the differences between all 10 regions and clustered data and why regions 3 to 8 become separated from the other regions.
-        The main features that differentiate these two plots are the anti-correlations between PAH features and RHI, stellar mass, \halpha, \sii, \oiii, and IRAC~5.8~$\mu$m~emission.
+        The main features that differentiate these two plots are the anti-correlations between PAH features and RHI, stellar mass, \halphadot, \sii, \oiii, and IRAC~5.8~$\mu$m~emission.
         Additionally, for the PAH fluxes in Fig.~\ref{fig: cor_cluster1}, there are no significant correlations with PACS~100~$\mu$m, L$_\mathrm{dust}$, L$_\mathrm{TIR}$, SFR, or metallicity.
         The PAH fluxes correlate with the SPIRE emission, but to a lesser extent than for the data from all regions.
         
@@ -386,26 +386,26 @@ Therefore, we did not perform any resolution matching and used data at their ori
         
         Correlations between PAH features and SFR, and L$_\mathrm{TIR}$ are well-studied~\citep[e.g.][]{Peeters04,Tielens08}. 
         Many groups have used PAH features as a tracer of SFR by finding correlations between 
-        PAH emission and SFR derived from extinction-corrected \halpha~\citep[e.g.][]{Calzetti07,Khramtsova13,Shipley16}.
+        PAH emission and SFR derived from extinction-corrected \halpha \citep[e.g.][]{Calzetti07,Khramtsova13,Shipley16}.
         These correlations are seen in Fig.~\ref{fig: cor_all}, when we considered the data from all regions, but not in Fig.~\ref{fig: cor_cluster1} when considering the clustered data.
         Note that, since there are only 6 regions in the clustered data, even one outlier in the data may cause the correlation coefficient to become insignificant.
         Further analyses show that the absence of correlations between PAH fluxes and SFR is because of one outlier: region 6. Region 6 is located in a FUV-bright region, which breaks the correlations. 
         When we disregard this region, high correlations between 6.2 to 17.0~$\mu$m~PAHs and SFR (and L$_\mathrm{TIR}$) reappear.
         
      
-        Strong anti-correlations between 6.2 to 17.0~$\mu$m~main PAH features and RHI, stellar mass, \halpha, \sii, \oiii, and IRAC~5.6~$\mu$m~emission in Fig.~\ref{fig: cor_cluster1} were not seen in Fig.~\ref{fig: cor_all} (even if we ignore the outlier values).
-        Anti-correlations between PAH features and the \halpha, \sii, and \oiii~emission could be the result of one of the following. 
+        Strong anti-correlations between 6.2 to 17.0~$\mu$m~main PAH features and RHI, stellar mass, \halphadot, \sii, \oiii, and IRAC~5.6~$\mu$m~emission in Fig.~\ref{fig: cor_cluster1} were not seen in Fig.~\ref{fig: cor_all} (even if we ignore the outlier values).
+        Anti-correlations between PAH features and the \halphadot, \sii, and \oiii~emission could be the result of one of the following. 
         First, the optical data are not corrected for dust extinction.
-        The PAH features correlate with the amount of dust while \halpha~emission anti-correlates with the amount of dust due to extinction as suggested by \cite{Calzetti94}.
-        Therefore, higher PAH fluxes imply higher dust abundance and less \halpha~emission, and the same holds for \sii~and \oiii~emission.
+        The PAH features correlate with the amount of dust while \halpha emission anti-correlates with the amount of dust due to extinction as suggested by \cite{Calzetti94}.
+        Therefore, higher PAH fluxes imply higher dust abundance and less \halpha emission, and the same holds for \sii~and \oiii~emission.
         Second is the possible effect of the structure of the observed regions.
-        If the observed regions are located near the edge of \hii~regions we would expect to see more PAH and less \halpha~emission. 
+        If the observed regions are located near the edge of \hii~regions we would expect to see more PAH and less \halpha emission. 
         The anti-correlations between 6.2 to 17.0~$\mu$m~PAH features and RHI have been seen in other studies, as well~\citep[e.g.][]{Wu06, Gordon08,Calzetti10,Dim15}. 
         \cite{Wu06} suggested these anti-correlations could be the result of PAH destruction due to a high amount of harder radiation (thus higher RHI).
         On the other hand,~\cite{Gordon08} argued that the harder radiation could make the photodissociation regions (PDRs) smaller.
         The PAH features are mostly coming from the PDRs that are surrounded by \hii~regions, and the PAH features' underlying continuum emission is from the \hii~regions.
         Therefore, the lower flux of the PAH features could be the result of the smaller size of PDRs.%Els: If you have an harder radiation field, you destroy your smaller PAHs. Hence, simply a harder RHI does not argue for a smaller PDRs being more plausible. 
-        The latter reason, which could also describe the anti-correlation between PAH features and \halpha~emission, seems to be the more probable one. 
+        The latter reason, which could also describe the anti-correlation between PAH features and \halpha emission, seems to be the more probable one. 
         
         The strong anti-correlation between PAHs and stellar mass suggests that, a higher stellar mass decreases PAH emission. 
         In observations of M33,~\cite{Calapa14} showed that the 8/250~$\mu$m luminosity ratio correlates with 3.6~$\mu$m emission, which translates to stellar mass, %Els: I'm unfamiliar with the details of this translation. But if you look at individual HII regions or starforming complexes, I would think that the 3.6um flux is not dominated by the stellar light as the stars are too hot to have a large fraction of emission at these wavelengths?
@@ -462,9 +462,9 @@ Therefore, we did not perform any resolution matching and used data at their ori
     Regions 8 and 6 are both in the inner ring of M31, but region 6's location has more star formation, which could be the main reason for their relative distance in the SOM in Fig.~\ref{fig: all_derived_ones}. 
     
     Regions 1 and 9 are close to each other and in the same side of the star forming ring. 
-    However, region 1 is in an area of the galaxy with less diffuse \halpha~emission than region 9, which might be the reason for their distances in the SOM.
+    However, region 1 is in an area of the galaxy with less diffuse \halpha emission than region 9, which might be the reason for their distances in the SOM.
     Region 2 is more distant from other regions in the galaxy and located in the star forming ring.
-    However, similar to regions 1 and 4, region 2 is located in an area of the galaxy with less diffuse \halpha~emission.
+    However, similar to regions 1 and 4, region 2 is located in an area of the galaxy with less diffuse \halpha emission.
     Therefore, the place of region 2 in the SOM tends towards regions 1 and 4. 
     Region 10 is in the bulge of the galaxy, and its position on the SOM is isolated from all the other regions by a strip of a dark colours. 
     
@@ -484,15 +484,15 @@ Therefore, we did not perform any resolution matching and used data at their ori
             This indicates that there is more similarity between the PAH features over all 10 regions than between the other input data.
             
             We increased the dimension of input data in Fig.~\ref{fig: only_pahs} (PAH-only data) gradually, by adding other quantities to the input data. 
-            The order in which data were added is the same as the order in Fig.~\ref{fig: cor_all}, i.e. the SOM in Fig~\ref{fig: col3and11_dist} was created from PAH and \halpha\ emission as input data, the SOM in Fig~\ref{fig: col3and12_dist} created from PAHs, \halpha~emission and \sii~ continuum, and so on. 
+            The order in which data were added is the same as the order in Fig.~\ref{fig: cor_all}, i.e. the SOM in Fig~\ref{fig: col3and11_dist} was created from PAH and \halpha\ emission as input data, the SOM in Fig~\ref{fig: col3and12_dist} created from PAHs, \halpha emission and \sii~ continuum, and so on. 
             \import{../image_paper3/text_files/image_texts/}{col3byall.tex}
             
             At the beginning of each run, the SOM algorithm assigns a random weight to neurons that causes the overall position of regions in networks (even with the same input data) changes in each run of the algorithm.
             However, the position of each region relative to other regions changes dramatically only when the new sets of input data are given to the algorithm (assuming all the initial values for the run are unchanged).
-            In all SOMs in Fig.~\ref{fig: inc_D_col3s}, region 10 is located in the corner of the SOMs, but in  Figs.~\ref{fig: col3and11_dist},~\ref{fig: col3and14_dist},~\ref{fig: col3and17_dist},~\ref{fig: col3and21_dist}, and ~\ref{fig: col3and22_dist}, it is placed in the left side of the SOMs and in the others it is in the right side of the networks.
+            In all SOMs in Fig.~\ref{fig: inc_D_col3s}, region 10 is located in the corner of the SOMs, but in Figs.~\ref{fig: col3and11_dist},~\ref{fig: col3and14_dist},~\ref{fig: col3and17_dist},~\ref{fig: col3and21_dist}, and ~\ref{fig: col3and22_dist}, it is placed in the left side of the SOMs and in the others it is in the right side of the networks.
             In our discussion on differences between networks, we do not address the changes in the network due to initialization of the SOM algorithm and only consider the effect of changing the input data.
             
-            Comparing Figs.~\ref{fig: col3and11_dist} to~\ref{fig: col3and25_dist} shows that adding \halpha~emission data to PAH features causes regions 9 and 10 become isolated. 
+            Comparing Figs.~\ref{fig: col3and11_dist} to~\ref{fig: col3and25_dist} shows that adding \halpha emission data to PAH features causes regions 9 and 10 become isolated. 
             Increasing the dimension of the input data makes region 10 more isolated.
             The relative positions of regions 4 and 7 stay the same with increasing the dimensions of the input data. 
             Adding SPIRE 350, 500~$\mu$m emission and L$_{\rm dust}$ does not have any obvious effect on the networks.
@@ -522,7 +522,7 @@ Therefore, we did not perform any resolution matching and used data at their ori
             \import{../image_paper3/text_files/tables/}{subset5.tex}
             \import{../image_paper3/text_files/image_texts/}{subset5.tex}
 
-            Fig.~\ref{fig: subset6} shows the SOM generated from data listed in Table~\ref{tab: subset6}, which includes all the data from Table~\ref{tab: subset5} except for  the SPIRE 250 and 500~$\mu$m emission.
+            Fig.~\ref{fig: subset6} shows the SOM generated from data listed in Table~\ref{tab: subset6}, which includes all the data from Table~\ref{tab: subset5} except for the SPIRE 250 and 500~$\mu$m emission.
             Although for most of the regions we see the changes in their positions, the colours between neurons change as well. 
             The distance between the positions of the regions 4 and 2 is increased as are the
             distances between regions 7, 3 and 6.
@@ -558,9 +558,9 @@ Therefore, we did not perform any resolution matching and used data at their ori
     \import{../image_paper3/text_files/image_texts/}{subset9.tex}
     
     Region 5 in M31 and region 8 in M101 and regions 6 in M31 and region 2 in M101 occupy neurons with a white colour between them in the network in Fig.~\ref{fig: subset9}, which immediately suggests that these regions have similar properties. 
-    Region 2 in M101 is a bright \hii~region located at the end of  one of the M101 spiral arms (see Fig.~\ref{fig: regions in m101}) while
+    Region 2 in M101 is a bright \hii~region located at the end of one of the M101 spiral arms (see Fig.~\ref{fig: regions in m101}) while
     region 6 in M31 is located near the inner star-forming ring (see Fig.~\ref{fig: regions in m31}).
-    Both regions have relatively low PAH emission and a median amount of  SFR compared to other regions in the galaxy, making them very similar.
+    Both regions have relatively low PAH emission and a median amount of SFR compared to other regions in the galaxy, making them very similar.
     
     Region 5 in M31 is in the inner ring of the galaxy and it is one of two regions in M31 that is not an  \hii~region, while
     region 8 in M101 is in a spiral arm of the galaxy.
@@ -604,10 +604,10 @@ We utilized the method to find hidden subgroups in the data as well as to find r
 
 Using smaller-sized self-organizing maps, we clustered M31 data into two major groups, which led us to correlations that could not have otherwise been seen without clustering.
 Six of the regions in M31 create a subgroup with relatively lower mid- and far-infrared emission.
-PAH fluxes in these regions are highly anti-correlated with \halpha, \sii, \oiii~and IRAC 5.8~$\mu$m emission, stellar mass and radiation hardness index.
+PAH fluxes in these regions are highly anti-correlated with \halphadot, \sii, \oiii~and IRAC 5.8~$\mu$m emission, stellar mass and radiation hardness index.
 These anti-correlations are insignificant when the full dataset is considered.
 The most probable reason for PAHs to anti-correlate with optical emission lines and RHI is a harder radiation field.
-This makes the size of \hii~regions bigger and the size of photo-dissociation regions smaller, causing more \halpha~emission and less PAH emission, respectively.
+This makes the size of \hii~regions bigger and the size of photo-dissociation regions smaller, causing more \halpha emission and less PAH emission, respectively.
 
 PAHs in clustered data also show an anti-correlation with stellar mass.
 We discussed the possibility that higher stellar mass might destroy PAHs;
@@ -622,7 +622,7 @@ A one-dimensional network with 14 neurons was needed in order to
 separate all 10 regions; some of the regions in M31 (e.g. regions 4 and 7) have very similar properties.
 Two-dimensional networks provide us with a more complete picture of the data.
 We created various subsets of the input data and generated different networks which helped to show relations between regions in M31 more clearly.
-Region 10, which is located in the bulge of M31, always becomes isolated in the networks, except when we  used only PAH data to create a network.
+Region 10, which is located in the bulge of M31, always becomes isolated in the networks, except when we used only PAH data to create a network.
 In that network region 10 blends more with the other regions and is only differentiated from region 8, which is located inside the inner ring of M31.
 These results suggest that the PAHs in all 10 regions have almost the same properties.
 
