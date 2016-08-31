@@ -84,17 +84,24 @@ Some of the most tested methods of data mining in astronomy are artificial neura
 ANNs are inspired to work in the same way that the neurons work in a human brain.
 These are networks of interconnected neurons (nodes), in which all of the connections are weighted.
 These networks are used to study nonlinear and complex relations between input and output data.
+There are quite a few data mining methods available, and each one of them has its own advantages or disadvantages. 
 One of the most well-known unsupervised neural networks in astronomy is a Kohonen self-organizing map (also called self-organizing map, or SOM).
 SOMs visualize complex data~\citep{Kohonen82} and show simple geometrical relationships in non-linear high dimensional data~\citep{Kohonen98}.
 The result of a SOM is a 1D or 2D network of neurons, which shows the positions of clusters and their relative distance.
+The main disadvantages of this method are not handling errors in the data points and having relative results.
+However, the one of the main advantages of this method beside the mentioned ones is that this method is well-tested in Astronomy. 
 Since the 1990s, many studies have utilized SOMs for object classification and clustering (e.g. classifying quasars' spectra, star/galaxy classifications, gamma-ray burst clustering and light curve classification) and photometric redshift estimation~\citep[e.g.][]{Odewahn92, Hernandez94, Murtagh95, Maehoenen95,Scaringi09,Geach12,Fustes13,Meusinger16}.
 
 The K-means algorithm, SOMs, and hierarchical clustering are the main unsupervised methods that are used in astronomical studies~\citep[e.g.][]{DAbrusco12, Aycha16}.
 For K-means algorithms, the user must define the number of clusters and for and SOM algorithms the user defines the number of neurons, and the algorithms decide how to separate the data into clusters.
 In the hierarchical clustering method, the user must define dissimilarity between the groups; the algorithm combines (or divides) existing groups based on their dissimilarity and creates a hierarchical structure. 
-Comparing the SOMs, K-means and hierarchical clustering methods shows that in some cases the hierarchical clustering method mis-classifies the data~\citep[][and references therein]{Mangiameli96}.
+There are reports of mis-classifies the data~\citep[][and references therein]{Mangiameli96} by the hierarchical clustering method, when it was compared with SOMs and K-means using the same datasets.
 We chose the SOM method over the K-means method due to the fact that SOMs not only cluster data, but also show similarities and dissimilarities between the clusters.
 Therefore, we can cluster our sample data and study the underlying structure simultaneously.
+%The other point is that as long as one of the data mining method works on a dataset, the other method will work on it, too.
+
+
+
 
      
     \subsubsection{Algorithm of SOM} 
@@ -183,14 +190,16 @@ Therefore, we can cluster our sample data and study the underlying structure sim
 To show how self-organizing maps work, we created a mock sample containing only a few regions.
 Each sample had two properties: the amount of dust and the star formation rate, where the possible values were
 either 0 or 1 for low or high SFR, and 0 or 0.5 for a low or high amount of dust. 
- We generated an SOM from the sample with a size of $10 \times 10$, using the method described in Section~\ref{sec: method_SOMN}.
- Fig.~\ref{fig: sample} shows the SOM of the mock sample. 
- The axes show the position of the neurons in a $10 \times 10$ network and the hexagonal shapes (depicted by purple hexagons) are the neurons.
+We generated an SOM from the sample with a size of $10 \times 10$, using the method described in Section~\ref{sec: method_SOMN}.
+Fig.~\ref{fig: sample} shows the SOM of the mock sample. 
+The axes show the position of the neurons in a $10 \times 10$ network and the hexagonal shapes (depicted by purple hexagons) are the neurons.
  
 Using this method, as expected, we are able to divide the mock sample into 4 distinct groups. Their boundaries are shown by grey colours in Fig.~\ref{fig: sample}: regions with high SFR and high dust content, regions with low SFR and high dust content, regions with high SFR and low dust content, and regions with low SFR and dust content. 
 In Fig.~\ref{fig: sample}, the upper part belongs to regions with low dust content, while the lower part belongs to regions with high dust content.
 The left part of the plot is where regions with low SFR belong and the right side is for high SFR regions.
 Grey to black colours show the border between regions.
+As mentioned in Section~\ref{sec: algorithm_somz}, the grey cycle shows the differences between the weight of each neurons and the initial weight is assigned randomly.
+Therefore, the colours between neurons shows the relative differences not the absolute ones.
 This network is considered to be a trained network, and can be used to cluster any new data set with similar entries.
 
 Having two regions with exactly the same values in all their quantities with real data is extremely unlikely. 
@@ -241,7 +250,7 @@ Therefore, we did not perform any resolution matching and used data at their ori
      \cite{Dim15} used {\it Spitzer}/IRS observations to study PAHs in 10 regions chosen to span a range of mid-infrared flux ratios in M31 (Fig.~\ref{fig: regions in m31}). 
      Fluxes and equivalent widths of PAH and atomic line features were measured using the~\textsc{pahfit idl} tool~\citep{Smith07b}.
      Metallicity for all regions except regions 5 and 8 was adopted from~\citep{Sanders12} and for regions 5 and 8, \cite{Dim15} estimated metallicity from the radial metallicity profile.
-     \cite{Dim15} also calculated the radiation hardness index (RHI) for these 10 regions using $\left (\log \frac{[Ne~\textsc{iii}]}{[Ne~\textsc{ii}]} + \left [ 0.71 + 1.58\log\frac{[S~\textsc{iV}]}{[S~\textsc{iii}]} \right ] \right )/2$ \citep{}. %PB: NEED CITATION HERE
+     \cite{Dim15} also calculated the radiation hardness index (RHI) for these 10 regions using $\left (\log \frac{[Ne~\textsc{iii}]}{[Ne~\textsc{ii}]} + \left [ 0.71 + 1.58\log\frac{[S~\textsc{iV}]}{[S~\textsc{iii}]} \right ] \right )/2$~\citep{Engelbracht08}. 
      We used the measured PAH feature fluxes, metallicity and RHI of each region as the input for self-organizing maps.
      
     For the photometry part of the sample, we used the \GALEX \citep{Martin05} far-ultraviolet and near-ultraviolet (FUV and NUV) channel images; \halpha (6574.7\AA), \sii~(6730.72\AA) and \oiii~(5024.9\AA) narrow band images~\citep{Massey07}, IRAC 3.6, 4.5, 5.8 and 8.0~$\mu$m images~\citep{Barmby06}; MIPS~24 and 70~$\mu$m~images~\citep{Gordon06}; and PACS 100 and 160~$\mu$m and SPIRE 250, 350, and 500~$\mu$m~\citep{Fritz12} images.
