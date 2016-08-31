@@ -1,4 +1,4 @@
-\chapter[Classifying High-Redshift Galaxies Spectra]{Clustering galaxy spectra at $0.5<z<1$: an unsupervised approach}
+\chapter[Classifying High-Redshift Galaxy Spectra]{Clustering galaxy spectra at $0.5<z<1$: an unsupervised approach}
 \label{ch: paper2}
 \defcitealias{Hossein12}{T12}
 \defcitealias{Kinney96}{K96}
@@ -16,7 +16,7 @@
 %General information about SEDs
 Nearly all information we can obtain from a galaxy is encapsulated in the light it emits; every observable phenomenon in a galaxy leaves a footprint on its spectral energy distribution (SED).
 We can determine some physical property of a galaxy by properly modeling various features observed in its SED, and the general shape of the SED can be used as an identifier of the morphological type.
-Considering the main features of SEDs, galaxies can be categorized into two main groups: elliptical or spiral.
+Considering the main features of SEDs, galaxies can be categorized into two main groups: elliptical or spiral. %PB: quiescent or SB?
 Each group has its own characteristic features and can in turn be divided into many sub-branches.
 
 %%Creating templates and NIR_UV templates
@@ -30,7 +30,7 @@ In near-infrared (NIR) to ultraviolet (UV) wavelengths (the region where energy 
 Advances in techniques and detectors have resulted in more detailed observations of SEDs and also made classification of galaxies more complex.
 Since no two galaxies, even with the same morphology, have exactly the same properties, classifying SEDs of galaxies using templates is very challenging.
 To overcome this challenge, many fitting methods have been developed and used to find template matches for SEDs, with $\chi^2$ minimization being the most commonly used. 
-Artificial neural networks, K-means clustering, and principal component analysis are some other methods used to cluster and classify spectral types of galaxies based on their SED \citep[e.g.][]{Allen13,Ordov14,Shi15}.
+Artificial neural networks, K-means clustering, and principal component analysis are some other methods used to cluster and classify spectral types of galaxies \citep[e.g.][]{Allen13,Ordov14,Shi15}.
 
 %ANNs
 Artificial neural networks (ANNs), which are inspired by the way neurons in a human brain route and process data, are very powerful tools that are used in data processing and pattern recognition problems.
@@ -53,7 +53,7 @@ It shows simple geometrical relationships in non-linear high dimensional data on
 %SOM in Astronomy
 The utilization of the SOM in astronomy dates back to the 1990s, with \citet[][]{Odewahn92}, \citet[][]{Hernandez94}, and \citet[][]{Murtagh95} among the first to use SOMs in their studies.
 \citet{Geach12} used COSMOS data to demonstrate two of the main applications of SOMs: object classification and clustering, and photometric redshift estimation. The latter has been the subject of many other studies \citep[e.g.][]{Kind14a}.
-From classifying quasars' spectra to star/galaxy classifications, from gamma-ray bursts clustering to classification of light curves, this method has proved to be useful in various fields of astronomy \citep[e.g.][]{Maehoenen95, Miller96, Andreon00, Balastegui01, Rajaniemi02, Brett04, Scaringi09}.
+From classifying quasars' spectra to star/galaxy classifications, from gamma-ray burst clustering to classification of light curves, this method has proved to be useful in various fields of astronomy \citep[e.g.][]{Maehoenen95, Miller96, Andreon00, Balastegui01, Rajaniemi02, Brett04, Scaringi09}.
 
 
 %SOM in Astronomy continued.
@@ -65,13 +65,13 @@ They used $\sim 60000$ spectra from the Sloan Digital Sky Survey \citep[SDSS;][]
 They also generated SOMs from quasars' spectra in order to find unusual types of spectra. 
 Later, \citet{Meusinger16} used these SOMs and updated data from SDSS and other surveys to find a new class of quasars.
 The other application of SOMs is to find outliers or errors in the data.
-\citet{Fustes13} produced a package based on SOM to classify spectra from the GAIA survey that were previously classified as ``unknown'' by the SDSS pipeline. This package can recognize an astronomical object from instrumental errors, and then classify the object based on its spectrum.
+\citet{Fustes13} produced a package based on SOM to classify spectra from the GAIA survey that were previously classified as ``unknown'' by the SDSS pipeline. This package can distinguish an astronomical object from instrumental errors, and then classify the object based on its spectrum.
 
 %What \citetalias{Hossein12} did
-~\citet[][hereafter \citetalias{Hossein12}]{Hossein12} classified spectral types of a sample of 142 galaxies using a supervised (Multi-layer feed-forward) neural network method, based on the spectral template presented by \citetalias{Kinney96}.
+~\citet[][hereafter \citetalias{Hossein12}]{Hossein12} classified spectral types of a sample of 142 galaxies using a supervised (Multi-layer feed-forward) neural network method, based on the spectral templates presented by \citetalias{Kinney96}.
 With the supervised method, they could only classify spectral types of 105 out of the 142 galaxies.
 The spectra of the 37 galaxies from their samples could not be matched with any of those in the \citetalias{Kinney96} templates. 
-In order to classify the remaining 37 galaxies, they combined spectrum of the \citetalias{Kinney96} templates.
+In order to classify the remaining 37 galaxies, they combined spectra of the \citetalias{Kinney96} templates.
 \citetalias{Hossein12} also showed that there are tight correlations between physical properties of galaxies, and these correlations might be different for each type of galaxy.
 
 %What we did
@@ -95,19 +95,19 @@ In Section $\S$~\ref{sec: summary_SOMZ}, we summarize our results and discuss po
 
 \section{Data}
 \label{sec: data_highZ}
-We use spectra templates from \citetalias{Kinney96} to train neural networks.
+We use spectral templates from \citetalias{Kinney96} to train neural networks.
 To test the trained networks, we use SED and physical properties of 142 galaxies at $0.5<z<1$ from \citetalias{Hossein12}.
-Following the \citetalias{Hossein12} work, we chose these two sets of data not only to show the application of SOMs in spectra clustering, but also to easily compare supervised and unsupervised methods.
+Following the \citetalias{Hossein12} work, we chose these two sets of data not only to show the application of SOMs in spectral clustering, but also to easily compare supervised and unsupervised methods.
 
  \subsection{Kinney Spectral Model}
      \begin{figure}
         \centering
         \includegraphics[width=0.9\textwidth]{../image_paper2/k96.jpg}
-        \caption[\citet{Kinney96} spectra template for 12 types of galaxies]{\citet{Kinney96} spectra template for 12 types of galaxies from \citet{Hossein12} paper (Fig. 1 in \citet{Hossein12}). The type of each template is shown in each frame. Plots B, E, S0, Sa, Sb and SC show spectra that belong to the quiescent galaxies. Starburst galaxies spectra are indicated with SB 1 to 6. Higher numbers represent more intrinsic colour extinction.}
+        \caption[\citet{Kinney96} spectral templates for 12 types of galaxies]{\citet{Kinney96} spectral templates for 12 types of galaxies from \citet{Hossein12} paper (Fig. 1 in \citet{Hossein12}). The type of each template is shown in each frame. Plots B, E, S0, Sa, Sb and SC show spectra that belong to quiescent galaxies. Starburst galaxy spectra are indicated with SB 1 to 6. Higher numbers represent more intrinsic extinction.}
         \label{fig: k96}
     \end{figure}
       
-    \citetalias{Kinney96} used ultraviolet-optical spectra of 70 star forming and quiescent nearby galaxies to produce a set of templates that contained 12 types of spectra templates.
+    \citetalias{Kinney96} used ultraviolet-optical spectra of 70 star-forming and quiescent nearby galaxies to produce a set of templates that contained 12 types of spectral templates.
     These templates have been widely used in many studies to determine morphological type of galaxies or properties of specific types of galaxies~\citep[e.g.][]{Shakouri16, Paiano16, Laporte16, Holden16}.
     \citetalias{Kinney96} stated that these templates can also be used to classify the spectra of high-redshift galaxies. 
     
@@ -192,7 +192,7 @@ $A_\mathrm{FUV}$ & mag & attenuation at 1500\,\AA{} \\
 where $L(t) = L_0 e^{(-t/\tau)}$ is the learning factor with $L_0$ is the initial value of learning, which prevents the divergence of the SOM, and $R(t)=\exp(-\frac{D_j^2}{2r^t_{BMU}})$ is the influence rate, which determines how the weight of each node will change. 
 $\tau$ is the number of total iterations.
 Values for the number of neurons is arbitrary, and for various toolboxes values for one or all of $L_0$,$L(t)$, $R(t)$  and $r^t_{BMU}$ are arbitrary.
-\cite{Geach12} demonstrate the algorithm of the SOM in more detail.
+\cite{Geach12} discussed the SOM algorithm in more detail.
 
 
      The same as Chapter~\ref{ch: paper3}, we use the \textsc{matlab} neural network toolbox~\citep[NNT,][]{matlabtolbox} to create self-organizing maps.
@@ -295,7 +295,7 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
             We increased the size of the map gradually until the 12 input samples divide into the 12 neurons. 
         
             Figs.~\ref{fig: 1by2T} --\ref{fig: 1by22T} show the results of the training networks.
-            As in to Fig.~\ref{fig: sample}, the upper part of the figures shows the neurons and their relative distances between weight of neurons.
+            As in Fig.~\ref{fig: sample}, the upper part of the figures shows the neurons and their relative distances between weight of neurons.
             As mentioned in Section~\ref{sec: method_somz}, an increase in the darkness of colours between neurons represents an increase in relative distance between the neurons.
             The lower panels of the figures show the number of \citetalias{Kinney96} templates that are placed in each neuron. 
             \begin{figure}
@@ -316,11 +316,11 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
             In the lower part of Fig.~\ref{fig: 1by2T}, we see that the templates are divided into two groups of 5 and 7.
             Although we know from \citetalias{Kinney96} and \citetalias{Hossein12} that 6 of the templates are quiescent and the other 6 are starbursts, the SOM results show 5 of the galaxies in one group and the other 7 in the second group.
             In this method, the Sc template has been categorized as starburst due to the relatively higher disk stellar population relative to that of the bulge. 
-            According to \citetalias{Kinney96}, Sc galaxies are considered to be late Hubble type galaxies which have a flattter spectra compare to other quiescent galaxies. 
+            According to \citetalias{Kinney96}, Sc galaxies are considered to be late Hubble type galaxies which have  flattter spectra compare to other quiescent galaxies. 
             
 
             Fig.~\ref{fig: 1by3T} shows the results of the training in a 1$\times$3 network.
-            In these plots we force the galaxies to be categorized in a maximum 3 groups. 
+            In these plots we force the galaxies to be categorized in a maximum of 3 groups. 
             If the templates in Fig.~\ref{fig: 1by2T} truly belonged in two groups, they would be grouped into two groups in this network, even when we try to cluster them into three. 
             However, in the lower panel of Fig.~\ref{fig: 1by3T}, we can see that the middle node contains two templates.
             These two templates, which are separated from the group of starburst templates in the lower part of Fig.~\ref{fig: 1by2T},  are the SB5 and SB6 types.
@@ -331,8 +331,8 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
             Comparing Fig.~\ref{fig: 1by2T} to Fig.~\ref{fig: 1by3T} shows that the starburst templates are divided into two groups. 
             Based on the colours between these two groups, we conclude that they are very similar; both groups are starbursting and have strong emission lines.
             On the other hand, the SB5 and SB6 templates have the highest internal extinctions; this causes the spectra to become flatter at shorter wavelengths. 
-            The flatter UV spectra makes these two templates more similar to quiescent galaxies than to other starbursts.
-            Therefore, in the networks, SB5 and SB6 types are to be grouped close to the quiescent galaxy templates.
+            The flatter UV spectra make these two templates more similar to quiescent galaxies than to other starbursts.
+            Therefore, in the networks, SB5 and SB6 types are grouped close to the quiescent galaxy templates.
                 
             \begin{figure}
                 \begin{subfigure}[b]{\textwidth}
@@ -374,7 +374,7 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
             5 groups in the left-side neurons are separated from 7 groups on the right side of the map with two dark-grey colours between them.
             This shows that even though the galaxies are clustered in twelve groups, there still remain only two main distinct groups.
             The closest occupied neuron in the starburst side of the SOM, belongs to the SB6 type. 
-            This template has the most extinction and its spectra has more similarity to quiescent galaxies than other starburst types. 
+            This template has the most extinction and its spectrum has more similarity to quiescent galaxies than other starburst types. 
             
             The fact that the templates need to have at least 22 different neurons to be divided into 12 groups shows that the differences between SB1 and SB2, and B and E, templates are very small.
             Because of their similarities, they tend to stay in the same group until the network becomes big enough to make attention to the smallest particularity.
@@ -384,11 +384,11 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
             After training the networks as discussed in Section~\ref{sec: 1Dt}, we used them to classify the fitted SEDs of the sample of 142 galaxies from \citetalias{Hossein12}.
             The upper panel in Fig.~\ref{fig: 1by2V} shows the result of this classification using the $1\times2$~network from Fig.~\ref{fig: 1by2T}.
             Eighty of the galaxies have spectral types similar to those of the quiescent galaxies and the spectral types of the rest are similar to the starburst galaxies.
-            The lower left panel shows the median spectra of the 80 galaxies that were classified as quiescent. 
+            The lower left panel shows the median spectrum of the 80 galaxies that were classified as quiescent. 
             These galaxies are similar to the ones in the left node in the upper panel of Fig.~\ref{fig: 1by2T}:
             the spectra clearly show the 4000\AA~break, one of the signatures of quiescent galaxies.
             The H$\alpha$ emission in the spectrum could be from galaxies with similar spectral types to Sa galaxies, but with stronger emission lines.
-            The median spectra in the lower right panel of Fig.~\ref{fig: 1by2V} shows strong emission lines and bright ultraviolet continuum, indications of a high star formation rate.
+            The median spectrum in the lower right panel of Fig.~\ref{fig: 1by2V} shows strong emission lines and bright ultraviolet continuum, indications of a high star formation rate.
             \begin{figure}
                 \begin{subfigure}[b]{\textwidth}
                     \centering
@@ -406,7 +406,7 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
                 \label{fig: 1by2V}
             \end{figure}          
             
-            Since in this network galaxies were forced to be divided into a maximum of two groups, the strongest feature in a galaxy's spectra predominantly decides which group the galaxy belongs to.
+            Since in this network galaxies were forced to be divided into a maximum of two groups, the strongest feature in a galaxy's spectrum predominantly decides which group the galaxy belongs to.
             Galaxies with a weak 4000\AA~break but strong emission lines and ultraviolet upturn are categorized as starbursts while galaxies with a strong 4000\AA~break are categorized as quiescent.
             Increasing the size of the SOM helps solve the problem of the galaxies which have features that are common in both groups.
             
@@ -450,18 +450,18 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
             Thus, instead of having 22 median spectral plots in the lower part of Fig.~\ref{fig: 1by22V}, there are only 12.
             
             Comparing the upper panel of Fig.~\ref{fig: 1by22V} with the lower panel of Fig.~\ref{fig: 1by22T} shows that the occupied neurons are not necessarily the same.
-            If a cluster from the \citetalias{Hossein12} sample fills the same neuron as a \citetalias{Kinney96} template, we can conclude that spectra of galaxies in the cluster are very similar to those of the template.
+            If a cluster from the \citetalias{Hossein12} sample fills the same neuron as a \citetalias{Kinney96} template, we can conclude that the spectra of galaxies in the cluster are very similar to those of the template.
             Otherwise, we can conclude that the spectra of galaxies in the cluster are (dis)similar to two of the \citetalias{Kinney96} templates.
             For the latter case, the colours establish which template has greater similarity to the \citetalias{Hossein12} cluster.
             
             The first two neurons in the upper plot in Fig.~\ref{fig: 1by22V} are empty, while these neurons were occupied by galaxies B and E in the trained network.
             We therefore conclude that there are no galaxies in the \citetalias{Hossein12} sample with spectral type similar to that of type B or E.
             There are 3 galaxies in the third neuron, similar to the S0 type. 
-            19 of the galaxies are jn the fifth neurons and similar to the Sa type, while the 6 galaxies in the fourth neurons have spectral type similar to both S0 and Sa galaxies.
+            19 of the galaxies are in the fifth neuron and similar to the Sa type, while the 6 galaxies in the fourth neuron have spectral type similar to both S0 and Sa galaxies.
             There are 8 Sb type galaxies and 19 galaxies with spectral types similar to both Sa and Sb type galaxies.
             The following two neurons (eighth and ninth neurons from the left) are on the edge of the quiescent and starburst galaxies.
             In the upper panel in Fig.~\ref{fig: 1by22T}, the colour between these two neurons is black, which shows that these two are very different.
-            Therefore, 24 galaxies in the eighth neurons have similar spectra to Sb type galaxies, and the spectra of the 5 galaxies in the ninth neuron are similar to the SB6 galaxies.
+            Therefore, 24 galaxies in the eighth neuron have similar spectra to Sb type galaxies, and the spectra of the 5 galaxies in the ninth neuron are similar to the SB6 galaxies.
             The far right neurons in the network belong to galaxies with spectra comparable to types SB1 and SB2.
             
             In general, 56 galaxies correspond exactly to \citetalias{Kinney96} templates and the other 86 are placed between the initial 12 suggestions.
@@ -470,7 +470,7 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
             
             With other methods (e.g. $\chi^2$ fitting), trained neural network fitting of spectra is limited to models and the results are always reported with uncertainties.
             However, with SOM, we have the freedom to categorize galaxies in intermediate groups.
-            Therefore, if the spectra of galaxies do not match completely with any of the spectra templates in Fig.~\ref{fig: k96}, they can be categorized as a spectra with similarity to two or more of the groups.
+            Therefore, if the spectra of galaxies do not match completely with any of the spectral templates in Fig.~\ref{fig: k96}, they can be categorized as a spectrum with similarity to two or more of the groups.
 
                         
         
@@ -490,7 +490,7 @@ Values for the number of neurons is arbitrary, and for various toolboxes values 
         In all plots, the horizontal axis is the number of the neurons divided by the size of the network.%, and vertical axis is one of the aforementioned properties.
 %        
         As shown in Fig.~\ref{fig: props}, in all three networks, stellar mass and age decrease while sSFR and $f_\mathrm{burst}$ increase as the type changes from quiescent galaxies to starburst. 
-       Separating galaxies based on spectral types also leads to a separation in properties that derived (via {\em CIGALE}) from the spectra, as expected since the spectra types are also based on {\em CIGALE} fitting. 
+       Separating galaxies based on spectral types also leads to a separation in properties derived (via {\em CIGALE}) from the spectra, as expected since the spectral types are also based on {\em CIGALE} fitting. 
     
 
         {\em CIGALE} has various models to derive the properties of galaxies.
@@ -667,8 +667,8 @@ classification were found to more tightly correlate in mean values of age, speci
 The properties of the galaxies in each group are in good agreement with their morphological types.
 
 Two-dimensional networks can be used to find the relations of the neurons and classifications in more details.
-The sample galaxies have more freedom to be categorized, and only 23 of them occupies exactly the same neurons as \citetalias{Kinney96} template spectra (in one-dimensional networks this number was 56).
-Additionally, by using two-dimensional networks we showed that we do not have nay outlier in the sample galaxies.
+The sample galaxies have more freedom to be categorized, and only 23 of them occupy exactly the same neurons as the \citetalias{Kinney96} template spectra (in one-dimensional networks this number was 56).
+Additionally, by using two-dimensional networks we showed that we do not have any outliers in the sample galaxies.
 
 
 \addcontentsline{toc}{section}{Bibliography}

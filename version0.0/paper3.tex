@@ -162,12 +162,12 @@ Therefore, we can cluster our sample data and study the underlying structure sim
      In Section~\ref{sec: mock_sample} we used \textsc{newsom} to create SOMs from a mock sample to illustrate how this method works and how to interpret the results.
 
      One feature of the SOM method is that there is no rule or restriction on the number of clusters.
-     Users must decide the size of the network based on their data set and their usage of the results.
+     Users must decide on the size of the network based on their data set and their usage of the results.
      There have been a few attempts to find a rule for restricting the number of neurons based on the input sample \citep[e.g.][]{Vesanto05}, but none of them are well established. 
-     In order to create maps that we can get the most information from them, we varied the initial values for the maps.
+     In order to create maps from which we can get the most information, we varied the initial values for the maps.
      We varied the size of SOMs from $1\times2$ to $50\times50$ in order to choose a suitable size for the maps we generated, and decided that based on the size of our sample, for the 2D SOMs, $10\times10$ gives us the most information.
-     Any map higher than this size, repeats the same results and become very time consuming.
-     We created our final SOMs with initial values for number of iterations in ordering phase, ordering phase learning factor, tuning phase learning factor, and tuning phase neighbourhood distance of 500, 0.9, 0.02, and 1, respectively. 
+     Any map larger than this size repeats the same results and becomes very time consuming to generate.
+     We created our final SOMs with initial values for the number of iterations in the ordering phase, ordering phase learning factor, tuning phase learning factor, and tuning phase neighbourhood distance of 500, 0.9, 0.02, and 1, respectively. 
     
 
 \subsection{Mock Sample}
@@ -240,8 +240,8 @@ Therefore, we did not perform any resolution matching and used data at their ori
      
      \cite{Dim15} used {\it Spitzer}/IRS observations to study PAHs in 10 regions chosen to span a range of mid-infrared flux ratios in M31 (Fig.~\ref{fig: regions in m31}). 
      Fluxes and equivalent widths of PAH and atomic line features were measured using the~\textsc{pahfit idl} tool~\citep{Smith07b}.
-     Metallicity for all regions except regions 5 and 8 were adapted from~\citep{Sanders12} and for regions 5 and 8, \cite{Dim15} estimated metallicity from the radial metallicity profile.
-     \cite{Dim15} also measured radiation hardness index (RHI) using calibration of the ratio of two lines, $\left (\log \frac{[Ne~\textsc{iii}]}{[Ne~\textsc{ii}]} + \left [ 0.71 + 1.58\log\frac{[S~\textsc{iV}]}{[S~\textsc{iii}]} \right ] \right )/2$, for these 10 regions.
+     Metallicity for all regions except regions 5 and 8 was adopted from~\citep{Sanders12} and for regions 5 and 8, \cite{Dim15} estimated metallicity from the radial metallicity profile.
+     \cite{Dim15} also calculated the radiation hardness index (RHI) for these 10 regions using $\left (\log \frac{[Ne~\textsc{iii}]}{[Ne~\textsc{ii}]} + \left [ 0.71 + 1.58\log\frac{[S~\textsc{iV}]}{[S~\textsc{iii}]} \right ] \right )/2$ \citep{}. %PB: NEED CITATION HERE
      We used the measured PAH feature fluxes, metallicity and RHI of each region as the input for self-organizing maps.
      
     For the photometry part of the sample, we used the \GALEX \citep{Martin05} far-ultraviolet and near-ultraviolet (FUV and NUV) channel images; \halpha (6574.7\AA), \sii~(6730.72\AA) and \oiii~(5024.9\AA) narrow band images~\citep{Massey07}, IRAC 3.6, 4.5, 5.8 and 8.0~$\mu$m images~\citep{Barmby06}; MIPS~24 and 70~$\mu$m~images~\citep{Gordon06}; and PACS 100 and 160~$\mu$m and SPIRE 250, 350, and 500~$\mu$m~\citep{Fritz12} images.
@@ -583,7 +583,7 @@ Therefore, we did not perform any resolution matching and used data at their ori
     If an SOM network is available, applying data from other regions to the network is very time efficient to learn about relative properties of galaxies.
     We should note that, since we normalized data before using them in the networks, we only see relative properties of the regions.
     Therefore, we need data from at least a few regions in the galaxy to use this application of SOMs and cannot use these networks to learn about properties of a single region in other galaxies.
-    As mentioned before, since we know the properties of regions in M31, from Fig.~\ref{fig: subset9}, we can quickly conclude that region 7 and 4 have relatively higher surface brightness than the other regions in M101. 
+    As mentioned before, since we know the properties of regions in M31, from Fig.~\ref{fig: subset9}, we can quickly conclude that regions 7 and 4 have relatively higher surface brightness than the other regions in M101. 
     Similarly, we can say that regions 6 and 8 in M101 have very faint surface brightness for most of the parameters, and are very different from regions 7 and 4.
     
     
